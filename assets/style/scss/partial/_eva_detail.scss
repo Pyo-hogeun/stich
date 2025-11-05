@@ -1,0 +1,133 @@
+@use 'variables' as *;
+.eva-detail{
+  padding: $cardPadding;
+  .badge{
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    height: 22px;
+    padding: 4px;
+    background-color: #F5F5F5;
+    &.eva-open{
+      color: #484848;
+    }
+    &.eva-before{
+      color: #A68FEB;
+    }
+  }
+  .content-header{
+    display: flex;
+    justify-content: space-between;
+    .flex-start{
+      .badge{
+        margin-right: 4px;
+      }
+    }
+    .flex-end{
+      .btn{
+        margin-left: 4px;
+      }
+    }
+  }
+  .content-title{
+    h3{
+      margin-top: 16px;
+      font-size: 32px;
+      font-weight: 700;
+    }
+  }
+  .content-body{
+    .summary{
+      display: flex;
+      gap: 24px;
+      .thumbnail{
+        width: 200px;
+        height: 200px;
+        border-radius: 12px;
+        overflow: hidden;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .gray-box{
+        flex: 1 1 auto;
+        padding: 20px 16px;
+        border-radius: 12px;
+        background-color: $bgPrimaryLight;
+        ul{
+          li{
+            display: flex;
+            gap: 16px;
+            margin-bottom: 18px;
+            &:last-child{
+              margin-bottom: 0;
+            }
+            .label{
+              color: #747474;
+              font-size: 14px;
+            }
+            .data{
+              font-size: 14px;
+              font-weight: 700;
+              .period{
+                color: $normalText;
+                margin-bottom: 4px;
+              }
+            }
+            .btn-wrap{
+            }
+          }
+        }
+      }
+      .status{
+        width: 300px;
+        color: $normalText;
+        .progress-bar-wrap{
+          display: flex;
+          align-items: center;
+          margin-top: 8px;
+          gap: 8px;
+        }
+      }
+    }
+    .content-detail-article{
+      font-size: 14px;
+      line-height: 1.5;
+      color: $normalText;
+      margin: 20px 0;
+    }
+  }
+  .notice-box{
+    display: flex;
+    background-color: $bgLightGray;
+    padding: 16px;
+    border-radius: 12px;
+    gap: 8px;
+    justify-content: space-between;
+    .icon{
+      flex: 0 0 24px;
+    }
+    .notice-content{
+      flex: 1 1 auto;
+      .title{
+        color: #0A0A0A;
+        font-size: 16px;
+        font-weight: 700;
+        margin-top: 4px;
+        margin-bottom: 8px;
+      }
+      .body{
+        font-size: 12px;
+        line-height: 1.5;
+        color: $normalText;
+      }
+    }
+    .btn-wrap{
+      display: flex;
+      align-items: center;
+    }
+  }
+}

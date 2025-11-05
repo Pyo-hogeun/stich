@@ -2,9 +2,11 @@
 [class*=btn-]{
   display: inline-block;
 }
-.btn-nav{
-  color: #000000;
-  padding: 8px 12px;
+.btn.border{
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 12px;
   border: 1px solid $Line_Normal;
   border-radius: 8px;
   background-color: #FFFFFF;
@@ -12,6 +14,6 @@
   line-height: 1;
   vertical-align: middle;
   img{
-    vertical-align: middle;
+    margin-right: 4px;
   }
 }

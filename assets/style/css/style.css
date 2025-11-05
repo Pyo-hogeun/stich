@@ -3,7 +3,12 @@ body {
   padding: 0;
 }
 
+body * {
+  box-sizing: border-box;
+}
+
 ul, ol {
+  margin: 0;
   padding: 0;
 }
 ul li, ol li {
@@ -12,6 +17,15 @@ ul li, ol li {
 
 a {
   text-decoration: none;
+  color: #000000;
+}
+
+.fc-black {
+  color: #000000;
+}
+
+.fc-primary {
+  color: #7A53EC;
 }
 
 :root {
@@ -285,12 +299,6 @@ a {
   padding: 40px 36px;
 }
 
-.content-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 40px;
-}
-
 @media screen and (max-width: 1024px) {
   .gnb-container {
     padding: 0 24px;
@@ -396,6 +404,24 @@ a {
     padding: 20px 16px;
   }
 }
+.progress-bar {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background-color: #EDEDED;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.progress-bar .bar {
+  position: absolute;
+  display: block;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #7A53EC;
+}
+
 body {
   background-color: #F5F5F5;
 }
@@ -403,12 +429,11 @@ body {
 .main-container {
   padding-top: 80px;
 }
-
-.content-header {
+.main-container .content-topper {
   display: block;
   gap: 12px;
 }
-.content-header .btn-nav {
+.main-container .content-topper .btn-nav {
   margin-right: 12px;
 }
 
@@ -421,13 +446,20 @@ h2 {
   color: #0A0A0A;
 }
 
+.content-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 [class*=btn-] {
   display: inline-block;
 }
 
-.btn-nav {
-  color: #000000;
-  padding: 8px 12px;
+.btn.border {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 12px;
   border: 1px solid #3A3A3A;
   border-radius: 8px;
   background-color: #FFFFFF;
@@ -435,6 +467,133 @@ h2 {
   line-height: 1;
   vertical-align: middle;
 }
-.btn-nav img {
-  vertical-align: middle;
+.btn.border img {
+  margin-right: 4px;
+}
+
+.card {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+}
+
+.eva-detail {
+  padding: 36px 24px;
+}
+.eva-detail .badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  height: 22px;
+  padding: 4px;
+  background-color: #F5F5F5;
+}
+.eva-detail .badge.eva-open {
+  color: #484848;
+}
+.eva-detail .badge.eva-before {
+  color: #A68FEB;
+}
+.eva-detail .content-header {
+  display: flex;
+  justify-content: space-between;
+}
+.eva-detail .content-header .flex-start .badge {
+  margin-right: 4px;
+}
+.eva-detail .content-header .flex-end .btn {
+  margin-left: 4px;
+}
+.eva-detail .content-title h3 {
+  margin-top: 16px;
+  font-size: 32px;
+  font-weight: 700;
+}
+.eva-detail .content-body .summary {
+  display: flex;
+  gap: 24px;
+}
+.eva-detail .content-body .summary .thumbnail {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.eva-detail .content-body .summary .thumbnail img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.eva-detail .content-body .summary .gray-box {
+  flex: 1 1 auto;
+  padding: 20px 16px;
+  border-radius: 12px;
+  background-color: #F1EEFB;
+}
+.eva-detail .content-body .summary .gray-box ul li {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.eva-detail .content-body .summary .gray-box ul li:last-child {
+  margin-bottom: 0;
+}
+.eva-detail .content-body .summary .gray-box ul li .label {
+  color: #747474;
+  font-size: 14px;
+}
+.eva-detail .content-body .summary .gray-box ul li .data {
+  font-size: 14px;
+  font-weight: 700;
+}
+.eva-detail .content-body .summary .gray-box ul li .data .period {
+  color: #747474;
+  margin-bottom: 4px;
+}
+.eva-detail .content-body .summary .status {
+  width: 300px;
+  color: #747474;
+}
+.eva-detail .content-body .summary .status .progress-bar-wrap {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  gap: 8px;
+}
+.eva-detail .content-body .content-detail-article {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #747474;
+  margin: 20px 0;
+}
+.eva-detail .notice-box {
+  display: flex;
+  background-color: #F9F9F9;
+  padding: 16px;
+  border-radius: 12px;
+  gap: 8px;
+  justify-content: space-between;
+}
+.eva-detail .notice-box .icon {
+  flex: 0 0 24px;
+}
+.eva-detail .notice-box .notice-content {
+  flex: 1 1 auto;
+}
+.eva-detail .notice-box .notice-content .title {
+  color: #0A0A0A;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+.eva-detail .notice-box .notice-content .body {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #747474;
+}
+.eva-detail .notice-box .btn-wrap {
+  display: flex;
+  align-items: center;
 }

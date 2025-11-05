@@ -4,12 +4,12 @@ body{
 }
 .main-container{
   padding-top: $gnbHeight;
-}
-.content-header{
-  display: block;
-  gap: 12px;
-  .btn-nav{
-    margin-right: 12px;
+  .content-topper{
+    display: block;
+    gap: 12px;
+    .btn-nav{
+      margin-right: 12px;
+    }
   }
 }
 h2{
@@ -19,4 +19,8 @@ h2{
   line-height: 1.4;
   font-weight: 700;
   color: $Title_Dark;
+}
+.content-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
 }

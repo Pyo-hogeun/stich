@@ -2,7 +2,11 @@ body{
   margin: 0;
   padding: 0;
 }
+body * {
+  box-sizing: border-box;
+}
 ul, ol{
+  margin: 0;
   padding: 0;
   li{
     list-style: none;
@@ -10,4 +14,5 @@ ul, ol{
 }
 a{
   text-decoration: none;
+  color: #000000;
 }
