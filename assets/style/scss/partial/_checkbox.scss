@@ -1,0 +1,118 @@
+@use 'variables' as *;
+// 기본 변수 (원하면 오버라이드)
+:root {
+  --ck-size: 20px;
+  --ck-border: 2px;
+  --ck-radius: 4px;
+  --ck-color: #4D24C3;       // 체크된 배경
+  --ck-border-color: #4D24C3; // 비활성 테두리
+  --ck-focus: 3px rgb(77, 36, 195, 0.15);
+  --ck-disabled: #f2f2f2;
+}
+
+// 레이블 기본
+.ck {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  line-height: 1;
+  font-size: 14px;
+  color: $normalText;
+
+  // 숨긴 실제 체크박스(하지만 화면리더/폼 동작 유지)
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  // 시각적 박스
+  &__box {
+    width: var(--ck-size);
+    height: var(--ck-size);
+    min-width: var(--ck-size);
+    border-radius: var(--ck-radius);
+    box-sizing: border-box;
+    border: var(--ck-border) solid var(--ck-border-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 150ms ease, border-color 150ms ease, transform 120ms ease;
+    background: #fff;
+    position: relative;
+  }
+
+  // 체크 아이콘 (체크표시는 ::after로 표시)
+  &__box::after {
+    content: "";
+    width: calc(var(--ck-size) * 0.5);
+    height: calc(var(--ck-size) * 0.26);
+    border-left: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-radius: 1px;
+    transform: rotate(-45deg) scale(1);
+    opacity: 0;
+    transition: transform 140ms cubic-bezier(.2,.9,.3,1), opacity 140ms;
+  }
+
+  // 포커스 스타일 (input에 포커스가 들어올 때)
+  input[type="checkbox"]:focus + .ck__box {
+    box-shadow: 0 0 0 var(--ck-focus);
+    outline: none;
+  }
+
+  // checked 상태: 배경색, 체크아이콘 보이기
+  input[type="checkbox"]:checked + .ck__box {
+    background: var(--ck-color);
+    border-color: var(--ck-color);
+
+    &::after {
+      border-color: #fff;
+      transform: rotate(-45deg) scale(1) translate(2px, -1px);
+      opacity: 1;
+    }
+  }
+
+  // hover 효과 (마우스 오버 시)
+  &:hover input[type="checkbox"] + .ck__box {
+    // transform: translateY(-1px);
+  }
+
+  // disabled 상태
+  input[type="checkbox"]:disabled + .ck__box {
+    background: var(--ck-disabled);
+    border-color: #e6e6e6;
+    cursor: not-allowed;
+    opacity: 0.9;
+  }
+  input[type="checkbox"]:disabled ~ .ck__label {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  // indeterminate 상태: 체크 대신 가로바 표시
+  input[type="checkbox"].indeterminate + .ck__box {
+    background: var(--ck-color);
+    border-color: var(--ck-color);
+
+    &::after {
+      /* 가로 바로 바꿈 */
+      width: calc(var(--ck-size) * 0.5);
+      height: 2px;
+      border: none;
+      background: #fff;
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  // 접근성: 레이블이 버튼처럼 포커스 되도록 처리 (키보드 이용시 input에 포커스)
+  &__label {
+    cursor: pointer;
+  }
+}

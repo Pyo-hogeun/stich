@@ -1,0 +1,84 @@
+@use 'variables' as *;
+
+/* CSS 변수로 간단하게 커스터마이징 가능 */
+:root{
+  --search-height: 40px;
+  --search-radius: 8px;
+  --search-bg: $bgLightGray;
+  --search-border-color: transparent; /* border:0 느낌 */
+  --search-focus-ring: 0 0 0 4px rgba(11,116,222,0.12);
+  --search-icon-color: #666;
+  --search-btn-bg: transparent;
+  --search-btn-hover-bg: rgba(0,0,0,0.04);
+}
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* 래퍼 (레이아웃용) */
+.search-input-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 520px; /* 원하면 조정 */
+}
+
+/* 실제 텍스트 입력 - 테두리 없음 */
+.search-input {
+  width: 100%;
+  height: var(--search-height);
+  padding: 0 44px 0 14px; /* 오른쪽 공간은 아이콘/버튼 자리 확보 */
+  border: 0;                 /* 요구사항: border 0 */
+  background-color: $bgLightGray;
+  border-radius: var(--search-radius);
+  box-sizing: border-box;
+  font-size: 14px;
+  color: $Title_Dark;
+  outline: none;
+  transition: box-shadow .16s ease, transform .12s ease;
+  /* optional subtle inner shadow to separate from background */
+}
+
+/* 포커스 시 시각적 강조 (접근성) */
+.search-input:focus {
+  border: 1px solid $primaryColor;
+}
+
+/* 검색 버튼 (우측 아이콘) */
+.search-btn {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: calc(var(--search-height) - 8px);
+  width: calc(var(--search-height) - 8px);
+  padding: 6px;
+  border-radius: 6px;
+  border: 0;
+  background: var(--search-btn-bg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--search-icon-color);
+  transition: background .12s ease, color .12s ease, transform .08s ease;
+}
+
+/* 버튼 hover / active */
+.search-btn:hover { background: var(--search-btn-hover-bg); }
+.search-btn:active { transform: translateY(-50%) scale(.98); }
+
+/* 버튼 focus (키보드 사용시 아웃라인) */
+.search-btn:focus { outline: none; box-shadow: var(--search-focus-ring); }
+
+/* svg 아이콘이 버튼 색을 따르도록 */
+.search-btn img { display: block; width: 100%; height: 100%; max-width: 18px; max-height: 18px; }
+
+/* disabled 처리 예시 */
+.search-input:disabled,
+.search-btn:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}

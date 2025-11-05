@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   margin: 0;
   padding: 0;
@@ -471,9 +472,304 @@ h2 {
   margin-right: 4px;
 }
 
+:root {
+  --ck-size: 20px;
+  --ck-border: 2px;
+  --ck-radius: 4px;
+  --ck-color: #4D24C3;
+  --ck-border-color: #4D24C3;
+  --ck-focus: 3px rgb(77, 36, 195, 0.15);
+  --ck-disabled: #f2f2f2;
+}
+
+.ck {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  line-height: 1;
+  font-size: 14px;
+  color: #747474;
+}
+.ck input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+.ck__box {
+  width: var(--ck-size);
+  height: var(--ck-size);
+  min-width: var(--ck-size);
+  border-radius: var(--ck-radius);
+  box-sizing: border-box;
+  border: var(--ck-border) solid var(--ck-border-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 150ms ease, border-color 150ms ease, transform 120ms ease;
+  background: #fff;
+  position: relative;
+}
+.ck__box::after {
+  content: "";
+  width: calc(var(--ck-size) * 0.5);
+  height: calc(var(--ck-size) * 0.26);
+  border-left: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-radius: 1px;
+  transform: rotate(-45deg) scale(1);
+  opacity: 0;
+  transition: transform 140ms cubic-bezier(0.2, 0.9, 0.3, 1), opacity 140ms;
+}
+.ck input[type=checkbox]:focus + .ck__box {
+  box-shadow: 0 0 0 var(--ck-focus);
+  outline: none;
+}
+.ck input[type=checkbox]:checked + .ck__box {
+  background: var(--ck-color);
+  border-color: var(--ck-color);
+}
+.ck input[type=checkbox]:checked + .ck__box::after {
+  border-color: #fff;
+  transform: rotate(-45deg) scale(1) translate(2px, -1px);
+  opacity: 1;
+}
+.ck input[type=checkbox]:disabled + .ck__box {
+  background: var(--ck-disabled);
+  border-color: #e6e6e6;
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+.ck input[type=checkbox]:disabled ~ .ck__label {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.ck input[type=checkbox].indeterminate + .ck__box {
+  background: var(--ck-color);
+  border-color: var(--ck-color);
+}
+.ck input[type=checkbox].indeterminate + .ck__box::after {
+  /* 가로 바로 바꿈 */
+  width: calc(var(--ck-size) * 0.5);
+  height: 2px;
+  border: none;
+  background: #fff;
+  transform: scale(1);
+  opacity: 1;
+}
+.ck__label {
+  cursor: pointer;
+}
+
+.combo {
+  position: relative;
+  width: 200px;
+}
+
+/* label이 클릭 트리거 역할 */
+.combo-label {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 8px;
+  background-color: #F9F9F9;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+  color: #0A0A0A;
+}
+
+.combo-label::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+  display: inline-block;
+  height: 6px;
+  width: 12px;
+  background-image: url("../../images/icon_arrow_select.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+/* 숨긴 checkbox */
+.combo-toggle {
+  display: none;
+}
+
+/* 옵션 목록 */
+.combo-options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: 2px 3px 10px 0px #ccc;
+  border-radius: 6px;
+  background: #fff;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+/* 토글되었을 때 표시 */
+.combo-toggle:checked + .combo-label {
+  border: 1px solid #7A53EC;
+}
+
+.combo-toggle:checked + .combo-label + .combo-options {
+  max-height: 200px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 항목 스타일 */
+.combo-options li a {
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  height: 40px;
+  color: #0A0A0A;
+  transition: background-color 0.2s;
+  font-size: 14px;
+}
+.combo-options li a.selected {
+  background-color: #F1EEFB;
+  color: #7A53EC;
+  background-image: url("../../images/icon_check_selected.svg");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+.combo-options li a:hover {
+  background-color: #f0f0f0;
+}
+
+/* CSS 변수로 간단하게 커스터마이징 가능 */
+:root {
+  --search-height: 40px;
+  --search-radius: 8px;
+  --search-bg: $bgLightGray;
+  --search-border-color: transparent; /* border:0 느낌 */
+  --search-focus-ring: 0 0 0 4px rgba(11,116,222,0.12);
+  --search-icon-color: #666;
+  --search-btn-bg: transparent;
+  --search-btn-hover-bg: rgba(0,0,0,0.04);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 래퍼 (레이아웃용) */
+.search-input-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 520px; /* 원하면 조정 */
+}
+
+/* 실제 텍스트 입력 - 테두리 없음 */
+.search-input {
+  width: 100%;
+  height: var(--search-height);
+  padding: 0 44px 0 14px; /* 오른쪽 공간은 아이콘/버튼 자리 확보 */
+  border: 0; /* 요구사항: border 0 */
+  background-color: #F9F9F9;
+  border-radius: var(--search-radius);
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #0A0A0A;
+  outline: none;
+  transition: box-shadow 0.16s ease, transform 0.12s ease;
+  /* optional subtle inner shadow to separate from background */
+}
+
+/* 포커스 시 시각적 강조 (접근성) */
+.search-input:focus {
+  border: 1px solid #7A53EC;
+}
+
+/* 검색 버튼 (우측 아이콘) */
+.search-btn {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: calc(var(--search-height) - 8px);
+  width: calc(var(--search-height) - 8px);
+  padding: 6px;
+  border-radius: 6px;
+  border: 0;
+  background: var(--search-btn-bg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--search-icon-color);
+  transition: background 0.12s ease, color 0.12s ease, transform 0.08s ease;
+}
+
+/* 버튼 hover / active */
+.search-btn:hover {
+  background: var(--search-btn-hover-bg);
+}
+
+.search-btn:active {
+  transform: translateY(-50%) scale(0.98);
+}
+
+/* 버튼 focus (키보드 사용시 아웃라인) */
+.search-btn:focus {
+  outline: none;
+  box-shadow: var(--search-focus-ring);
+}
+
+/* svg 아이콘이 버튼 색을 따르도록 */
+.search-btn img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 18px;
+  max-height: 18px;
+}
+
+/* disabled 처리 예시 */
+.search-input:disabled,
+.search-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .card {
   background-color: #FFFFFF;
   border-radius: 16px;
+}
+
+:root {
+  --color-gray-light: #D9D9D9;
 }
 
 .eva-detail {
@@ -593,7 +889,159 @@ h2 {
   line-height: 1.5;
   color: #747474;
 }
+.eva-detail .notice-box .notice-content .body em {
+  font-weight: 700;
+  font-style: normal;
+}
+.eva-detail .notice-box .notice-content .body .link-to-contact {
+  font-weight: 700;
+  color: #747474;
+  text-decoration: underline;
+}
 .eva-detail .notice-box .btn-wrap {
   display: flex;
   align-items: center;
+}
+
+.eva-field {
+  padding: 36px 24px;
+  margin-top: 24px;
+}
+.eva-field .field-tab {
+  padding: 20px 24px;
+  background-color: #7A53EC;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+.eva-field .field-tab ul {
+  display: flex;
+}
+.eva-field .field-tab ul li {
+  border-radius: 12px;
+}
+.eva-field .field-tab ul li a {
+  display: inline-flex;
+  color: #FFFFFF;
+  font-size: 18px;
+  padding: 0 20px;
+  align-items: center;
+  height: 48px;
+}
+.eva-field .field-tab ul li a:hover {
+  font-weight: 700;
+}
+.eva-field .field-tab ul li.active {
+  background-color: #FFFFFF;
+}
+.eva-field .field-tab ul li.active a {
+  color: #7A53EC;
+  font-weight: 700;
+}
+.eva-field .step-tab {
+  margin-top: 32px;
+}
+.eva-field .step-tab ol {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.eva-field .step-tab ol li a {
+  display: inline-flex;
+  padding: 0 16px;
+  align-items: center;
+  border: 1px solid #747474;
+  height: 48px;
+  border-radius: 30px;
+}
+.eva-field .step-tab ol li:not(:last-child):after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 18px;
+  height: 100%;
+  background-image: url("../../images/icon_chevron_right-16.png");
+  background-size: 4px 8px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.eva-field .select-regist-type {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  gap: 12px;
+  margin-top: 40px;
+}
+.eva-field .select-regist-type .type-card {
+  padding: 16px 24px;
+  background-color: #F9F9F9;
+  border-radius: 12px;
+}
+.eva-field .select-regist-type .type-card .img-wrap {
+  height: 60px;
+  margin-bottom: 16px;
+}
+.eva-field .select-regist-type .type-card .link-to-regist {
+  position: relative;
+  font-size: 16px;
+  font-weight: 700;
+  border-bottom: 1px solid #000000;
+  margin-left: 28px;
+}
+.eva-field .select-regist-type .type-card .link-to-regist:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: -28px;
+  top: -2px;
+  width: 24px;
+  height: 24px;
+  background-image: url("../../images/icon_edit-16.svg");
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+.eva-field .select-regist-type .type-card .desc-wrap {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #747474;
+}
+.eva-field .select-regist-type .type-card .desc-wrap .title {
+  margin-bottom: 4px;
+  color: #000000;
+}
+.eva-field hr.divider {
+  display: block;
+  margin: 40px 0 !important;
+  border: none;
+  border-top: 1px solid #E4E4E4;
+  margin: 24px 0;
+}
+.eva-field .eva-list .list-topper .total {
+  color: #747474;
+  font-size: 14px;
+  font-weight: 700;
+}
+.eva-field .eva-list .list-topper .toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.eva-field .eva-list .list-topper .toolbar .flex-start {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.eva-field .eva-list .list-topper .toolbar .divider {
+  width: 1px;
+  height: 16px;
+  background: var(--color-gray-light);
+  flex-shrink: 0;
+}
+.eva-field .eva-list .list-topper .toolbar .label {
+  font-size: 14px;
+  color: #747474;
+}
+.eva-field .eva-list .list-topper .toolbar .flex-end {
+  display: flex;
+  gap: 16px;
 }

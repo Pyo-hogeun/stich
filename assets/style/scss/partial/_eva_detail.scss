@@ -1,7 +1,13 @@
-@use 'variables' as *;
-.eva-detail{
+@use 'variables'as *;
+
+:root {
+  --color-gray-light: #D9D9D9;
+}
+
+.eva-detail {
   padding: $cardPadding;
-  .badge{
+
+  .badge {
     display: inline-flex;
     align-items: center;
     font-size: 12px;
@@ -9,83 +15,100 @@
     height: 22px;
     padding: 4px;
     background-color: #F5F5F5;
-    &.eva-open{
+
+    &.eva-open {
       color: #484848;
     }
-    &.eva-before{
+
+    &.eva-before {
       color: #A68FEB;
     }
   }
-  .content-header{
+
+  .content-header {
     display: flex;
     justify-content: space-between;
-    .flex-start{
-      .badge{
+
+    .flex-start {
+      .badge {
         margin-right: 4px;
       }
     }
-    .flex-end{
-      .btn{
+
+    .flex-end {
+      .btn {
         margin-left: 4px;
       }
     }
   }
-  .content-title{
-    h3{
+
+  .content-title {
+    h3 {
       margin-top: 16px;
       font-size: 32px;
       font-weight: 700;
     }
   }
-  .content-body{
-    .summary{
+
+  .content-body {
+    .summary {
       display: flex;
       gap: 24px;
-      .thumbnail{
+
+      .thumbnail {
         width: 200px;
         height: 200px;
         border-radius: 12px;
         overflow: hidden;
-        img{
+
+        img {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
       }
-      .gray-box{
+
+      .gray-box {
         flex: 1 1 auto;
         padding: 20px 16px;
         border-radius: 12px;
         background-color: $bgPrimaryLight;
-        ul{
-          li{
+
+        ul {
+          li {
             display: flex;
             gap: 16px;
             margin-bottom: 18px;
-            &:last-child{
+
+            &:last-child {
               margin-bottom: 0;
             }
-            .label{
+
+            .label {
               color: #747474;
               font-size: 14px;
             }
-            .data{
+
+            .data {
               font-size: 14px;
               font-weight: 700;
-              .period{
+
+              .period {
                 color: $normalText;
                 margin-bottom: 4px;
               }
             }
-            .btn-wrap{
-            }
+
+            .btn-wrap {}
           }
         }
       }
-      .status{
+
+      .status {
         width: 300px;
         color: $normalText;
-        .progress-bar-wrap{
+
+        .progress-bar-wrap {
           display: flex;
           align-items: center;
           margin-top: 8px;
@@ -93,41 +116,229 @@
         }
       }
     }
-    .content-detail-article{
+
+    .content-detail-article {
       font-size: 14px;
       line-height: 1.5;
       color: $normalText;
       margin: 20px 0;
     }
   }
-  .notice-box{
+
+  .notice-box {
     display: flex;
     background-color: $bgLightGray;
     padding: 16px;
     border-radius: 12px;
     gap: 8px;
     justify-content: space-between;
-    .icon{
+
+    .icon {
       flex: 0 0 24px;
     }
-    .notice-content{
+
+    .notice-content {
       flex: 1 1 auto;
-      .title{
+
+      .title {
         color: #0A0A0A;
         font-size: 16px;
         font-weight: 700;
         margin-top: 4px;
         margin-bottom: 8px;
       }
-      .body{
+
+      .body {
         font-size: 12px;
         line-height: 1.5;
         color: $normalText;
+
+        em {
+          font-weight: 700;
+          font-style: normal;
+        }
+
+        .link-to-contact {
+          font-weight: 700;
+          color: $normalText;
+          text-decoration: underline;
+        }
       }
     }
-    .btn-wrap{
+
+    .btn-wrap {
       display: flex;
       align-items: center;
+    }
+  }
+}
+
+.eva-field {
+  padding: $cardPadding;
+  margin-top: 24px;
+
+  .field-tab {
+    padding: 20px 24px;
+    background-color: $primaryColor;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+
+    ul {
+      display: flex;
+
+      li {
+        border-radius: 12px;
+
+        a {
+          display: inline-flex;
+          color: #FFFFFF;
+          font-size: 18px;
+          padding: 0 20px;
+          align-items: center;
+          height: 48px;
+
+          &:hover {
+            font-weight: 700;
+          }
+        }
+
+        &.active {
+          background-color: #FFFFFF;
+
+          a {
+            color: $primaryColor;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  .step-tab {
+    margin-top: 32px;
+
+    ol {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      li {
+        a {
+          display: inline-flex;
+          padding: 0 16px;
+          align-items: center;
+          border: 1px solid $normalText;
+          height: 48px;
+          border-radius: 30px;
+        }
+
+        &:not(:last-child):after {
+          content: '';
+          display: inline-block;
+          vertical-align: middle;
+          width: 18px;
+          height: 100%;
+          background-image: url('../../images/icon_chevron_right-16.png');
+          background-size: 4px 8px;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+    }
+  }
+
+  .select-regist-type {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    gap: 12px;
+    margin-top: 40px;
+
+    .type-card {
+      padding: 16px 24px;
+      background-color: $bgLightGray;
+      border-radius: 12px;
+
+      .img-wrap {
+        height: 60px;
+        margin-bottom: 16px;
+      }
+
+      .link-to-regist {
+        position: relative;
+        font-size: 16px;
+        font-weight: 700;
+        border-bottom: 1px solid #000000;
+        margin-left: 28px;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          left: -28px;
+          top: -2px;
+          width: 24px;
+          height: 24px;
+          background-image: url('../../images/icon_edit-16.svg');
+          background-repeat: no-repeat;
+          background-size: auto;
+        }
+      }
+
+      .desc-wrap {
+        margin-top: 16px;
+        font-size: 14px;
+        line-height: 1.5;
+        color: $normalText;
+
+        .title {
+          margin-bottom: 4px;
+          color: #000000;
+        }
+      }
+    }
+  }
+
+  hr.divider {
+    display: block;
+    margin: 40px 0 !important;
+    border: none;
+    border-top: 1px solid $cardBorderColor;
+    margin: 24px 0;
+  }
+
+  .eva-list {
+    .list-topper {
+      .total {
+        color: $normalText;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .toolbar {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+        .flex-start{
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+        .divider {
+          width: 1px;
+          height: 16px;
+          background: var(--color-gray-light);
+          flex-shrink: 0;
+        }
+        .label{
+          font-size: 14px;
+          color: $normalText;
+        }
+        .flex-end{
+          display: flex;
+          gap: 16px;
+        }
+      }
     }
   }
 }
