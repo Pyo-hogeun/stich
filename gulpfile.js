@@ -2,6 +2,8 @@
 import gulp from 'gulp';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
 import browserSync from 'browser-sync';
 import { deleteAsync } from 'del';
 import { globSync } from 'glob';
@@ -100,23 +102,29 @@ async function cleanIndex() {
 }
 
 // -------------------------------------
-// SCSS → CSS 컴파일
+// SCSS → CSS 컴파일 + autoprefixer
 // -------------------------------------
 function compileScss() {
   return gulp
-    .src(path.join(paths.scssRoot, '*.scss')) // partial/_*.scss 제외
-    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+    .src('assets/style/scss/**/*.scss') // _partial 제외
+    .pipe(
+      sass({
+        outputStyle: 'expanded', // 보기 좋은 형태
+        includePaths: [paths.scssRoot],
+      }).on('error', sass.logError)
+    )
+    .pipe(postcss([autoprefixer({ overrideBrowserslist: ['> 1%', 'last 2 versions', 'not dead'] })]))
     .pipe(gulp.dest(paths.cssDest))
-    .pipe(browserSync.stream()); // CSS만 live reload (페이지 새로고침 X)
+    .pipe(browserSync.stream()); // CSS만 Live Reload (전체 새로고침 X)
 }
 
 // -------------------------------------
-// 로컬 서버 구동 + 감시
+// 로컬 서버 구동 + Live Reload 감시
 // -------------------------------------
 function serve(done) {
   browserSync.init({
     server: {
-      baseDir: [paths.pages, __dirname], // pages + 루트
+      baseDir: [paths.pages, __dirname],
       index: 'index.html',
     },
     port: 3000,

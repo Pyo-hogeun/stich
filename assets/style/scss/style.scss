@@ -1,2 +1,6 @@
-@import './partial/resets';
-@import './partial/gnb';
+@use 'partial/resets' as *;
+@use 'partial/variables' as *;
+@use 'partial/gnb' as *;
+@use 'partial/main_container' as *;
+@use 'partial/button' as *;
+

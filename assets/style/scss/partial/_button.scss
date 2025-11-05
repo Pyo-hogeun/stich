@@ -1,0 +1,17 @@
+@use 'variables' as *;
+[class*=btn-]{
+  display: inline-block;
+}
+.btn-nav{
+  color: #000000;
+  padding: 8px 12px;
+  border: 1px solid $Line_Normal;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  line-height: 1;
+  vertical-align: middle;
+  img{
+    vertical-align: middle;
+  }
+}

@@ -10,6 +10,10 @@ ul li, ol li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 :root {
   --color-white: #FFF;
   --color-line-normal: #3A3A3A;
@@ -284,6 +288,7 @@ ul li, ol li {
 .content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
+  padding-top: 40px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -333,11 +338,11 @@ ul li, ol li {
     width: 22px;
     height: 22px;
   }
-  .gnb-settings svg {
+  .gnb-settings img {
     width: 14px;
     height: 14px;
   }
-  .gnb-logout svg {
+  .gnb-logout img {
     width: 20px;
     height: 20px;
   }
@@ -390,4 +395,46 @@ ul li, ol li {
     margin-top: 56px;
     padding: 20px 16px;
   }
+}
+body {
+  background-color: #F5F5F5;
+}
+
+.main-container {
+  padding-top: 80px;
+}
+
+.content-header {
+  display: block;
+  gap: 12px;
+}
+.content-header .btn-nav {
+  margin-right: 12px;
+}
+
+h2 {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #0A0A0A;
+}
+
+[class*=btn-] {
+  display: inline-block;
+}
+
+.btn-nav {
+  color: #000000;
+  padding: 8px 12px;
+  border: 1px solid #3A3A3A;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  line-height: 1;
+  vertical-align: middle;
+}
+.btn-nav img {
+  vertical-align: middle;
 }

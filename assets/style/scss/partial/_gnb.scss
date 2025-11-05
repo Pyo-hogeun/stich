@@ -1,3 +1,4 @@
+@use 'variables' as *;
 :root {
   --color-white: #FFF;
   --color-line-normal: #3A3A3A;
@@ -26,7 +27,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 36px;
-  height: 80px;
+  height: $gnbHeight;
   max-width: 1920px;
   margin: 0 auto;
 }
@@ -332,6 +333,7 @@
 .content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
+  padding-top: 40px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -394,12 +396,12 @@
     height: 22px;
   }
 
-  .gnb-settings svg {
+  .gnb-settings img {
     width: 14px;
     height: 14px;
   }
 
-  .gnb-logout svg {
+  .gnb-logout img {
     width: 20px;
     height: 20px;
   }
