@@ -1,0 +1,46 @@
+/* 탭 그룹 래퍼 */
+.view-toggle {
+  display: inline-flex;
+  border: 1px solid #000;
+  border-radius: 8px;
+  overflow: hidden;
+  
+  /* 탭 기본 스타일 */
+  .view-tab {
+    display: inline-flex;
+    align-items: center;
+    height: 40px;
+    gap: 6px;
+    padding: 0 16px;
+    font-size: 15px;
+    cursor: pointer;
+    color: #fff;
+    background: #000;
+    transition: all 0.2s;
+    user-select: none;
+  }
+
+  /* active 상태 - 흰 배경, 검은 글자 */
+  input[type="radio"]:checked+.view-tab {
+    background: #fff;
+    color: #000;
+  }
+
+
+}
+
+/* input 숨기기 */
+.view-toggle input[type="radio"] {
+  display: none;
+}
+
+
+/* 구분선 효과 (결합형 버튼처럼) */
+.view-tab+input+label {
+  border-left: 1px solid #000;
+}
+
+/* hover 시 약간 밝게 */
+.view-tab:hover {
+  filter: brightness(1.2);
+}

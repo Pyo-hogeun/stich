@@ -1,0 +1,237 @@
+@use 'variables' as *;
+
+.service-usage-card {
+  width: 348px;
+  padding: $cardPadding;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__title {
+    color: $Title_Dark;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__payment {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+  }
+
+  &__payment-label {
+    color: $Title_Dark;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: normal;
+    align-self: stretch;
+  }
+
+  &__payment-amount {
+    color: $primaryColor;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__divider-thick {
+    height: 2px;
+    background: #5E5E5E;
+  }
+
+  &__divider-thin {
+    height: 1px;
+    background: $cardBorderColor;
+  }
+
+  &__usage {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__usage-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__usage-title {
+    color: $Title_Dark;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__usage-label {
+    color: $normalText;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__usage-label-current {
+    color: $primaryColor;
+    font-weight: 700;
+  }
+
+  &__usage-label-max {
+    color: $normalText;
+  }
+
+  &__usage-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__usage-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__usage-item-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  &__usage-item-name {
+    color: $normalText;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__badge {
+    display: flex;
+    height: 22px;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background: #E9E9E9;
+    color: #484848;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 150%;
+  }
+
+  &__usage-item-value {
+    color: $normalText;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: right;
+  }
+
+  &__usage-item-value-current {
+    color: $primaryColor;
+    font-weight: 700;
+  }
+
+  &__usage-item-value-max {
+    color: $normalText;
+  }
+
+  &__overage {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__overage-title {
+    color: $Title_Dark;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__overage-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+  }
+
+  &__overage-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__overage-item-label {
+    color: $normalText;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__overage-item-value {
+    color: $primaryColor;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__overage-item-count {
+    color: #484848;
+    font-weight: 700;
+  }
+
+  &__overage-item-operator {
+    color: $normalText;
+    font-weight: 400;
+  }
+
+  &__overage-item-price {
+    color: $primaryColor;
+    font-weight: 700;
+  }
+
+  &__overage-total {
+    color: $primaryColor;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__btn {
+    display: flex;
+    height: 50px;
+    padding: 12px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 8px;
+    background: #4D24C3;
+    color: #FFF;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background: #4D24C3;
+      opacity: 0.9;
+    }
+  }
+}

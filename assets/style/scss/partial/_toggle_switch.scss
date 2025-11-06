@@ -1,0 +1,55 @@
+@use 'variables' as *;
+
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+
+  &__label {
+    color: $Title_Dark;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + .toggle-switch__slider {
+      background-color: $primaryColor;
+      border-color: $primaryColor;
+
+      &::before {
+        transform: translateX(15px);
+        background-color: #FFFFFF;
+      }
+    }
+  }
+
+  &__slider {
+    position: relative;
+    display: flex;
+    width: 39px;
+    height: 24px;
+    padding: 3px;
+    align-items: center;
+    border-radius: 74.25px;
+    border: 0.75px solid $Line_Normal;
+    background-color: #FFFFFF;
+    transition: all 0.3s ease;
+
+    &::before {
+      content: '';
+      width: 18px;
+      height: 18px;
+      border-radius: 9px;
+      background-color: #D9D9D9;
+      transition: all 0.3s ease;
+    }
+  }
+}

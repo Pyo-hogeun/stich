@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STICH - Service Usage Card</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+</head>
+
+<body>
+  <header class="gnb">
+    <div class="gnb-container">
+      <a href="/" class="gnb-logo">
+        <img src="../../assets/images/icon_gnb_logo.svg" alt="stich logo">
+      </a>
+
+      <nav class="gnb-menu">
+        <a href="/" class="gnb-menu-item menu-home">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_home.png" alt="home" class="icon-gnb-home">
+          </div>
+        </a>
+
+        <a href="/pages/COM/com_01_001.html" class="gnb-menu-item menu-competition">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_competition.png" alt="home" class="icon-gnb-competition">
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-notice">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_notice.png" alt="home" class="icon-gnb-notice">
+            <div class="badge-new">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="20" rx="10" fill="#FF44BF" />
+                <path
+                  d="M13.4863 5.51562V14H12.127L8.10742 8.19922H8.03711V14H6.51367V5.51562H7.89648L11.8926 11.3164H11.9746V5.51562H13.4863Z"
+                  fill="white" />
+              </svg>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-career">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_career.png" alt="home" class="icon-gnb-career">
+          </div>
+        </a>
+      </nav>
+
+      <div class="gnb-user">
+        <div class="gnb-profile">
+          <div class="gnb-profile-icon">
+            <img src="../../assets/images/icon_my_profile.png" alt="사용자 아이콘">
+          </div>
+          <p class="gnb-profile-text">
+            <span class="gnb-profile-greeting">안녕하세요. </span>
+            <span class="gnb-profile-name">홍길동님</span>
+          </p>
+          <a href="/" class="gnb-settings" aria-label="설정">
+            <img src="../../assets/images/icon_my_setting.png" alt="사용자 설정">
+          </a>
+        </div>
+
+        <div class="gnb-divider"></div>
+
+        <button class="gnb-logout">
+          <img src="../../assets/images/icon_gnb_logout.png" class="icon-gnb-logout" alt="로그아웃 아이콘">
+          <span>로그아웃</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="content-wrapper">
+      <div class="service-usage-card card">
+        <h2 class="service-usage-card__title">이용중인 서비스</h2>
+
+        <div class="service-usage-card__payment">
+          <h3 class="service-usage-card__payment-label">결제예정 금액</h3>
+          <p class="service-usage-card__payment-amount">₩ 10,000</p>
+        </div>
+
+        <div class="service-usage-card__divider-thick"></div>
+
+        <div class="service-usage-card__usage">
+          <div class="service-usage-card__usage-header">
+            <h3 class="service-usage-card__usage-title">이용중</h3>
+            <p class="service-usage-card__usage-label">
+              <span class="service-usage-card__usage-label-current">이용</span>
+              <span class="service-usage-card__usage-label-max"> / 최대</span>
+            </p>
+          </div>
+
+          <div class="service-usage-card__usage-items">
+            <div class="service-usage-card__usage-item">
+              <div class="service-usage-card__usage-item-label">
+                <span class="service-usage-card__usage-item-name">등록한 평가 대상</span>
+                <span class="service-usage-card__badge">10개 무료</span>
+              </div>
+              <p class="service-usage-card__usage-item-value">
+                <span class="service-usage-card__usage-item-value-current">0 </span>
+                <span class="service-usage-card__usage-item-value-max">/ 10건</span>
+              </p>
+            </div>
+
+            <div class="service-usage-card__usage-item">
+              <div class="service-usage-card__usage-item-label">
+                <span class="service-usage-card__usage-item-name">초대한 평가 위원</span>
+                <span class="service-usage-card__badge">무료 1명</span>
+              </div>
+              <p class="service-usage-card__usage-item-value">
+                <span class="service-usage-card__usage-item-value-current">1 </span>
+                <span class="service-usage-card__usage-item-value-max">/ 1명</span>
+              </p>
+            </div>
+
+            <div class="service-usage-card__usage-item">
+              <div class="service-usage-card__usage-item-label">
+                <span class="service-usage-card__usage-item-name">총 평가 파일 용량</span>
+                <span class="service-usage-card__badge">무료 1GB</span>
+              </div>
+              <p class="service-usage-card__usage-item-value">
+                <span class="service-usage-card__usage-item-value-current">0.00 </span>
+                <span class="service-usage-card__usage-item-value-max">/ 1 GB</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-usage-card__divider-thin"></div>
+
+        <div class="service-usage-card__overage">
+          <h3 class="service-usage-card__overage-title">초과 이용분</h3>
+
+          <div class="service-usage-card__overage-items">
+            <div class="service-usage-card__overage-item">
+              <span class="service-usage-card__overage-item-label">평가대상</span>
+              <p class="service-usage-card__overage-item-value">
+                <span class="service-usage-card__overage-item-count">90건</span>
+                <span class="service-usage-card__overage-item-operator"> X</span>
+                <span class="service-usage-card__overage-item-price"> ₩ 10,000</span>
+              </p>
+            </div>
+
+            <div class="service-usage-card__overage-item">
+              <span class="service-usage-card__overage-item-label">평가위원</span>
+              <p class="service-usage-card__overage-item-value">
+                <span class="service-usage-card__overage-item-count">3건</span>
+                <span class="service-usage-card__overage-item-operator"> X</span>
+                <span class="service-usage-card__overage-item-price"> ₩ 10,000</span>
+              </p>
+            </div>
+
+            <div class="service-usage-card__overage-item">
+              <span class="service-usage-card__overage-item-label">평가파일용량</span>
+              <p class="service-usage-card__overage-item-value">
+                <span class="service-usage-card__overage-item-count">105MB</span>
+                <span class="service-usage-card__overage-item-operator"> X</span>
+                <span class="service-usage-card__overage-item-price"> ₩ 1,000</span>
+              </p>
+            </div>
+
+            <div class="service-usage-card__divider-thin"></div>
+
+            <p class="service-usage-card__overage-total">₩ 10,000</p>
+          </div>
+        </div>
+
+        <button class="service-usage-card__btn">결제하기</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../assets/js/script.js"></script>
+</body>
+
+</html>

@@ -1,8 +1,8 @@
 @use 'variables' as *;
 // 기본 변수 (원하면 오버라이드)
 :root {
-  --ck-size: 20px;
-  --ck-border: 2px;
+  --ck-size: 16px;
+  --ck-border: 1px;
   --ck-radius: 4px;
   --ck-color: #4D24C3;       // 체크된 배경
   --ck-border-color: #4D24C3; // 비활성 테두리
@@ -11,13 +11,13 @@
 }
 
 // 레이블 기본
-.ck {
+.ckb {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   cursor: pointer;
   user-select: none;
-  line-height: 1;
+  line-height: 1.1;
   font-size: 14px;
   color: $normalText;
 
@@ -61,13 +61,13 @@
   }
 
   // 포커스 스타일 (input에 포커스가 들어올 때)
-  input[type="checkbox"]:focus + .ck__box {
+  input[type="checkbox"]:focus + .ckb__box {
     box-shadow: 0 0 0 var(--ck-focus);
     outline: none;
   }
 
   // checked 상태: 배경색, 체크아이콘 보이기
-  input[type="checkbox"]:checked + .ck__box {
+  input[type="checkbox"]:checked + .ckb__box {
     background: var(--ck-color);
     border-color: var(--ck-color);
 
@@ -79,24 +79,24 @@
   }
 
   // hover 효과 (마우스 오버 시)
-  &:hover input[type="checkbox"] + .ck__box {
+  &:hover input[type="checkbox"] + .ckb__box {
     // transform: translateY(-1px);
   }
 
   // disabled 상태
-  input[type="checkbox"]:disabled + .ck__box {
+  input[type="checkbox"]:disabled + .ckb__box {
     background: var(--ck-disabled);
     border-color: #e6e6e6;
     cursor: not-allowed;
     opacity: 0.9;
   }
-  input[type="checkbox"]:disabled ~ .ck__label {
+  input[type="checkbox"]:disabled ~ .ckb__label {
     opacity: 0.6;
     cursor: not-allowed;
   }
 
   // indeterminate 상태: 체크 대신 가로바 표시
-  input[type="checkbox"].indeterminate + .ck__box {
+  input[type="checkbox"].indeterminate + .ckb__box {
     background: var(--ck-color);
     border-color: var(--ck-color);
 

@@ -1,0 +1,249 @@
+@use 'variables' as *;
+
+.evaluation-flow-card {
+  display: flex;
+  width: 348px;
+  padding: 36px 24px;
+  flex-direction: column;
+  gap: 24px;
+  border-radius: 16px;
+  margin-top: 24px;
+  margin-bottom: 50px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__title {
+    color: $Title_Dark;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__body {
+    display: flex;
+    gap: 24px;
+  }
+}
+
+.tip-badge {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__arrow {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 10px;
+    height: 9px;
+    fill: #FF44BF;
+  }
+
+  &__text {
+    position: relative;
+    left: 8px;
+    display: flex;
+    padding: 1.636px 4px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    background-color: #FF44BF;
+    color: #FFFFFF;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+}
+
+.flow-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    min-height: 33px;
+
+    &--active {
+      .flow-timeline__dot {
+        &::before {
+          content: '';
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          background-color: #A68FEB;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: #4D24C4;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+
+  &__dot {
+    position: relative;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #B0B0B0;
+    margin: 4px 5.5px;
+    flex-shrink: 0;
+
+    
+    &--active {
+      width: 16px;
+      height: 16px;
+      background-color: transparent;
+      margin: 0;
+    }
+    &--inactive {
+      width: 5px;
+      height: 5px;
+      background-color: #B0B0B0;
+    }
+  }
+
+  &__connector {
+    position: absolute;
+    left: 7.5px;
+    top: 13px;
+    width: 1px;
+    height: 20px;
+    stroke-dasharray: 2 2;
+
+    &--purple {
+      background: repeating-linear-gradient(
+        to bottom,
+        #A68FEB,
+        #A68FEB 2px,
+        transparent 2px,
+        transparent 4px
+      );
+    }
+
+    &--inactive {
+      background: repeating-linear-gradient(
+        to bottom,
+        #B0B0B0,
+        #B0B0B0 2px,
+        transparent 2px,
+        transparent 4px
+      );
+    }
+  }
+
+  &__label {
+    margin-left: 8px;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    white-space: nowrap;
+
+    &--active {
+      margin-top: -2px;
+      color: #4D24C3;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 150%;
+    }
+
+    &--inactive {
+      color: $normalText;
+    }
+  }
+}
+
+.flow-content {
+  display: flex;
+  width: 201px;
+  padding: 24px 12px;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  border-radius: 12px;
+  background-color: $bgLightGray;
+
+  &--single {
+    gap: 12px;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  &__instruction {
+    color: $Title_Dark;
+    text-align: center;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 130%;
+  }
+
+  &__hint {
+    color: $normalText;
+    text-align: center;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 130%;
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: $cardBorderColor;
+  }
+}
+
+.btn-outline {
+  display: inline-flex;
+  padding: 8px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  cursor: pointer;
+  border: none;
+
+  &--primary {
+    border: 1px solid $primaryColor;
+    color: $primaryColor;
+  }
+
+  &--sm {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12px;
+  }
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STICH - Pagination</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+</head>
+
+<body>
+  <header class="gnb">
+    <div class="gnb-container">
+      <a href="/" class="gnb-logo">
+        <img src="../../assets/images/icon_gnb_logo.svg" alt="stich logo">
+      </a>
+
+      <nav class="gnb-menu">
+        <a href="/" class="gnb-menu-item menu-home">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_home.png" alt="home" class="icon-gnb-home">
+          </div>
+        </a>
+
+        <a href="/pages/COM/com_01_001.html" class="gnb-menu-item menu-competition gnb-menu-item-active">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반��">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_competition.png" alt="home" class="icon-gnb-competition">
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-notice">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_notice.png" alt="home" class="icon-gnb-notice">
+            <div class="badge-new">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="20" rx="10" fill="#FF44BF" />
+                <path
+                  d="M13.4863 5.51562V14H12.127L8.10742 8.19922H8.03711V14H6.51367V5.51562H7.89648L11.8926 11.3164H11.9746V5.51562H13.4863Z"
+                  fill="white" />
+              </svg>
+
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-career">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_career.png" alt="home" class="icon-gnb-career">
+          </div>
+        </a>
+      </nav>
+
+      <div class="gnb-user">
+        <div class="gnb-profile">
+          <div class="gnb-profile-icon">
+            <img src="../../assets/images/icon_my_profile.png" alt="사용자 아이콘">
+          </div>
+          <p class="gnb-profile-text">
+            <span class="gnb-profile-greeting">안녕하세요. </span>
+            <span class="gnb-profile-name">홍길동님</span>
+          </p>
+          <a href="/" class="gnb-settings" aria-label="설정">
+            <img src="../../assets/images/icon_my_setting.png" alt="사용자 설정">
+          </a>
+        </div>
+
+        <div class="gnb-divider"></div>
+
+        <button class="gnb-logout">
+          <img src="../../assets/images/icon_gnb_logout.png" class="icon-gnb-logout" alt="로그아웃 아이콘">
+          <span>로그아웃</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="content-wrapper">
+      <div class="pagination-container">
+        <nav class="pagination" aria-label="페이지네이션">
+          <div class="pagination-nav-group">
+            <button class="pagination-btn pagination-btn-first" aria-label="첫 페이지">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 3L2.73749 7.38542C2.35369 7.70526 2.35369 8.29474 2.73749 8.61458L8 13" stroke="#BDBDBD" stroke-linecap="round"/>
+                <path d="M14 3L8.73749 7.38542C8.35369 7.70526 8.35369 8.29474 8.73749 8.61458L14 13" stroke="#BDBDBD" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <button class="pagination-btn pagination-btn-prev" aria-label="이전 페이지">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 3L5.73749 7.38542C5.35369 7.70526 5.35369 8.29474 5.73749 8.61458L11 13" stroke="#BDBDBD" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+
+          <button class="pagination-page pagination-page-active" aria-label="1페이지" aria-current="page">1</button>
+          <button class="pagination-page" aria-label="2페이지">2</button>
+          <button class="pagination-page" aria-label="3페이지">3</button>
+          <button class="pagination-page" aria-label="4페이지">4</button>
+          <button class="pagination-page" aria-label="5페이지">5</button>
+          <button class="pagination-page" aria-label="6페이지">6</button>
+          <button class="pagination-page" aria-label="7페이지">7</button>
+          <button class="pagination-page" aria-label="8페이지">8</button>
+          <button class="pagination-page" aria-label="9페이지">9</button>
+          <button class="pagination-page" aria-label="10페이지">10</button>
+
+          <div class="pagination-nav-group">
+            <button class="pagination-btn pagination-btn-next" aria-label="다음 페이지">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 13L10.2625 8.61458C10.6463 8.29474 10.6463 7.70526 10.2625 7.38542L5 3" stroke="#0A0A0A" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <button class="pagination-btn pagination-btn-last" aria-label="마지막 페이지">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 3L13.2625 7.38542C13.6463 7.70526 13.6463 8.29474 13.2625 8.61458L8 13" stroke="#0A0A0A" stroke-linecap="round"/>
+                <path d="M2 3L7.26251 7.38542C7.64631 7.70526 7.64631 8.29474 7.26251 8.61458L2 13" stroke="#0A0A0A" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../assets/js/script.js"></script>
+</body>
+
+</html>
