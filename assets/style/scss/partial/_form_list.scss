@@ -1,0 +1,26 @@
+@use 'variables' as *;
+.form-list{
+  width: 100%;
+  &__item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  &__label{
+    flex-basis: 100px;
+    font-size: 14px;
+    color: $normalText;
+    &.require{
+      &:after{
+        content: '*';
+        vertical-align: text-top;
+        color: #FF44BF;
+        font-size: 20px;
+        margin-left: -2px;
+      }
+    }
+  }
+  &__input{
+    flex: 1 1 auto;
+  }
+}

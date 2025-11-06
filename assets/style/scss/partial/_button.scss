@@ -17,3 +17,21 @@
     margin-right: 4px;
   }
 }
+.btn{
+  &.underline{
+    position: relative;
+    background-color: transparent;
+    font-size: 14px;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: $Title_Dark;
+    color: $Title_Dark;
+    &__icon{
+      margin-left: 20px;
+      .icon{
+        position: absolute;
+        left: -20px;
+      }
+    }
+  }
+}

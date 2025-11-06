@@ -2,6 +2,8 @@
 
 :root {
   --color-gray-light: #D9D9D9;
+  --bg-step-tab-active: #DDD3FF;
+  --bg-step-tab-text-active: #4322A3;
 }
 
 .eva-detail {
@@ -184,8 +186,9 @@
     border-top-right-radius: 16px;
 
     ul {
-      display: flex;
-
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
       li {
         border-radius: 12px;
 
@@ -196,6 +199,7 @@
           padding: 0 20px;
           align-items: center;
           height: 48px;
+          white-space: nowrap;
 
           &:hover {
             font-weight: 700;
@@ -220,7 +224,8 @@
     ol {
       display: flex;
       width: 100%;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px 0;
 
       li {
         a {
@@ -230,6 +235,12 @@
           border: 1px solid $normalText;
           height: 48px;
           border-radius: 30px;
+          white-space: nowrap;
+          &.active{
+            background-color: var(--bg-step-tab-active);
+            border-color: $primaryColor;
+            color: var(--bg-step-tab-text-active);
+          }
         }
 
         &:not(:last-child):after {
@@ -297,14 +308,6 @@
         }
       }
     }
-  }
-
-  hr.divider {
-    display: block;
-    margin: 40px 0 !important;
-    border: none;
-    border-top: 1px solid $cardBorderColor;
-    margin: 24px 0;
   }
 
   .eva-list {

@@ -1,0 +1,14 @@
+h4{
+  font-size: 18px;
+  margin: 0;
+}
+h1,h2,h3,h4{
+  &.require{
+    &:after{
+      content: '*';
+      vertical-align: text-top;
+      color: #FF44BF;
+      font-size: 1em;
+    }
+  }
+}

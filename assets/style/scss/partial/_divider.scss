@@ -1,0 +1,14 @@
+@use 'variables' as *;
+.divider {
+  width: 1px;
+  height: 16px;
+  background: var(--color-gray-light);
+  flex-shrink: 0;
+}
+.divider_hr {
+  display: block;
+  margin: 40px 0 !important;
+  border: none;
+  border-top: 1px solid $cardBorderColor;
+  margin: 24px 0;
+}

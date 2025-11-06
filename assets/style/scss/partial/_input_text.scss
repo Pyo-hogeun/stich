@@ -27,6 +27,9 @@
   position: relative;
   width: 100%;
   max-width: 500px; /* 원하면 조정 */
+  &__wide{
+    max-width: 100%;
+  }
 }
 
 /* 실제 텍스트 입력 */
