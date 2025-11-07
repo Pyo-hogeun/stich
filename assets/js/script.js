@@ -66,74 +66,86 @@ const fileUpload = () => {
 //폼생성 섹션 순서 drag&drop
 const sectionDragAndDrop = () => {
   const container = document.querySelector(".section-container");
-    let dragged = null;
-    let placeholder = document.createElement("div");
-    placeholder.className = "placeholder";
+  let dragged = null;
+  let placeholder = document.createElement("div");
+  placeholder.className = "placeholder";
 
-    container.addEventListener("dragstart", (e) => {
-      const handle = e.target.closest(".handle-drag");
-      if (!handle) return;
+  container.addEventListener("dragstart", (e) => {
+    const handle = e.target.closest(".handle-drag");
+    if (!handle) return;
 
-      const section = handle.closest("section");
-      dragged = section;
-      section.classList.add("dragging");
+    const section = handle.closest("section");
+    dragged = section;
+    section.classList.add("dragging");
+    e.dataTransfer.effectAllowed = "move";
+    e.dataTransfer.setData("text/plain", "dragging"); // dummy 데이터
+  });
 
-      e.dataTransfer.effectAllowed = "move";
-      e.dataTransfer.setData("text/plain", "dragging"); // 필수 dummy 데이터
-    });
-
-    container.addEventListener("dragend", (e) => {
-      if (dragged) {
-        dragged.classList.remove("dragging");
-        placeholder.remove();
-        dragged = null;
-      }
-    });
-
-    container.addEventListener("dragover", (e) => {
-      e.preventDefault();
-      const afterElement = getDragAfterElement(container, e.clientY);
-      if (afterElement == null) {
-        if (!container.contains(placeholder)) {
-          container.appendChild(placeholder);
-        }
-      } else {
-        container.insertBefore(placeholder, afterElement);
-      }
-    });
-
-    container.addEventListener("drop", (e) => {
-      e.preventDefault();
-      if (dragged) {
-        container.insertBefore(dragged, placeholder);
-        placeholder.remove();
-        dragged.classList.remove("dragging");
-        dragged = null;
-      }
-    });
-
-    // section을 드래그 가능하게 설정
-    document.querySelectorAll(".section-container section").forEach((sec) => {
-      sec.setAttribute("draggable", "true");
-    });
-
-    function getDragAfterElement(container, y) {
-      const draggableElements = [
-        ...container.querySelectorAll("section:not(.dragging)"),
-      ];
-
-      return draggableElements.reduce(
-        (closest, child) => {
-          const box = child.getBoundingClientRect();
-          const offset = y - box.top - box.height / 2;
-          if (offset < 0 && offset > closest.offset) {
-            return { offset: offset, element: child };
-          } else {
-            return closest;
-          }
-        },
-        { offset: Number.NEGATIVE_INFINITY }
-      ).element;
+  container.addEventListener("dragend", () => {
+    if (dragged) {
+      dragged.classList.remove("dragging");
+      placeholder.remove();
+      dragged = null;
     }
+  });
+
+  container.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    const afterElement = getDragAfterElement(container, e.clientY);
+
+    if (!afterElement) {
+      container.appendChild(placeholder);
+    } else {
+      container.insertBefore(placeholder, afterElement);
+    }
+
+    // 드래그 중 직접 위치 이동 효과
+    const allSections = [...container.querySelectorAll("section:not(.dragging)")];
+    allSections.forEach((sec) => sec.classList.remove("shift-up", "shift-down"));
+
+    const indexPlaceholder = [...container.children].indexOf(placeholder);
+    const indexDragged = [...container.children].indexOf(dragged);
+
+    if (indexPlaceholder > -1 && indexDragged > -1) {
+      allSections.forEach((sec, i) => {
+        if (i === indexPlaceholder - 1 && indexDragged < indexPlaceholder)
+          sec.classList.add("shift-up");
+        if (i === indexPlaceholder + 1 && indexDragged > indexPlaceholder)
+          sec.classList.add("shift-down");
+      });
+    }
+  });
+
+  container.addEventListener("drop", (e) => {
+    e.preventDefault();
+    if (dragged) {
+      container.insertBefore(dragged, placeholder);
+      placeholder.remove();
+      dragged.classList.remove("dragging");
+      dragged = null;
+    }
+  });
+
+  // 모든 section을 드래그 가능하게
+  document.querySelectorAll(".section-container section").forEach((sec) => {
+    sec.setAttribute("draggable", "true");
+  });
+
+  function getDragAfterElement(container, y) {
+    const draggableElements = [...container.querySelectorAll("section:not(.dragging)")];
+    return draggableElements.reduce(
+      (closest, child) => {
+        const box = child.getBoundingClientRect();
+        const offset = y - box.top - box.height / 2;
+        if (offset < 0 && offset > closest.offset) {
+          return { offset: offset, element: child };
+        } else {
+          return closest;
+        }
+      },
+      { offset: Number.NEGATIVE_INFINITY }
+    ).element;
+  }
+
 
 }

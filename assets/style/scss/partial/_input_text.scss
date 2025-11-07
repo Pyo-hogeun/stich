@@ -29,6 +29,7 @@
   max-width: 500px; /* 원하면 조정 */
   &__wide{
     max-width: 100%;
+    flex: 1;
   }
 }
 
