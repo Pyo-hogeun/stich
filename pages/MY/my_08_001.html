@@ -240,7 +240,7 @@
 
           <div class="form-list">
             <div class="form-list__item">
-              <div class="form-list__label require">
+              <div class="form-list__label required">
                 접수 약관
               </div>
               <div class="form-list__input">
@@ -283,11 +283,21 @@
             접수 폼 제목과 설명을 수정하지 않으면 <em>평가 대표 이미지, 평가 제목, 평가 설명, 평가 기간 정보</em>가 기본적으로 나타나며, 미리보기를 통해 보실 수 있습니다.
           </div>
 
+          <div class="regist-info__owner">
+            <h5>주최사</h5>
+            <div class="item">
+              <div class="thumbnail">
+                <img src="../../assets/images/sample/sample600.png" alt="샘플">
+              </div>
+              <div class="name">오뚜기</div>
+            </div>
+          </div>
+
           <div class="regist-detail-desc">
-            <h4 class="require">접수 상세 설명</h4>
+            <h4 class="required">접수 상세 설명</h4>
             <div class="regist-detail-desc__grid">
               <div class="form__item">
-                <div class="form__label require">접수 썸네일</div>
+                <div class="form__label required">접수 썸네일</div>
                 <div class="form__input">
                   <div class="img-uploader">
                     <img src="../../assets/images/sample/image_thumbnail.png" alt="sample">
@@ -304,7 +314,7 @@
                 </div>
               </div>
               <div class="form__item">
-                <div class="form__label require">접수 폼 제목</div>
+                <div class="form__label required">접수 폼 제목</div>
                 <div class="form__input">
                   <div class="input-text-wrapper__wide">
                     <input id="q" name="q" type="text" class="input-text" placeholder="평가 이름 출력(Default)"
@@ -316,7 +326,7 @@
                 </div>
               </div>
               <div class="form__item_wide">
-                <div class="form__label require">접수 설명</div>
+                <div class="form__label required">접수 설명</div>
                 <div class="form__input">
                   <!-- 에디터 -->
                   <div style="border-radius: 16px;background-color: lightgray;height: 100px;font-size: 12px;padding: 10px">에디터 영역</div>
@@ -332,9 +342,137 @@
             </div>
           </div>
 
+          <hr class="divider_hr">
 
-        
+          <div class="regist-info__title">
+            <h3>접수 입력 항목</h3>
+          </div>
 
+          <div class="regist-info-detail">
+            <h4>공통 필수 항목</h4>
+            <div class="item-common">
+              <h5>이메일</h5>
+              <div class="form__item_inline">
+                <div class="form__label">항목 제목</div>
+                <div class="form__input">
+                  <div class="input-text-wrapper__wide">
+                    <input id="q" name="q" type="text" class="input-text" placeholder="이메일 주소를 입력해 주세요."
+                      autocomplete="off" />
+                    <button type="button" class="search-btn" aria-label="검색">
+                      <img src="../../assets/images/icon_search.svg" alt="검색">
+                    </button>
+                  </div> 
+                </div>
+                <div class="form__notice">
+                  <i><img src="../../assets/images/icon_alert.svg" alt="알림"></i> ‘이메일’은 고정 및 필수 항목입니다.
+                </div>
+              </div>
+            </div>
+            <hr class="divider_hr">
+  
+            <div class="form-container">
+              <h4>[평가분야1] 접수 폼 항목</h4>
+  
+              <div class="section-container">
+                <section>
+                  <div class="section__title_bar">
+                    <span class="title">섹션1</span>
+                    <div class="fn-group">
+                      <a href="" class="btn underline underline__icon">
+                        <img src="../../assets/images/icon_copy_white.png" alt="" class="icon icon-copy-white">
+                        복제
+                      </a>
+                      <a href="" class="btn underline underline__icon">
+                        <img src="../../assets/images/icon_delete_white.png" alt="" class="icon icon-delete-white">
+                        삭제
+                      </a>
+
+                      <button type="button" class="toggle">
+                        <img src="../../assets/images/icon_arrow_acc.svg" alt="아코디언 토글">
+                      </button>
+
+                      <div class="handle-drag">
+                        <img src="../../assets/images/icon_handle_drag.svg" alt="드래그핸들">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section__form">
+                    <div class="section__form_item">
+                      <div class="section__label required">섹션 제목</div>
+                      <div class="section__input">
+                        <div class="input-text-wrapper__wide">
+                          <input id="q" name="q" type="text" class="input-text" placeholder="항목 제목을 입력해 주세요. (200자 이내)"
+                            autocomplete="off" />
+                          <button type="button" class="search-btn" aria-label="검색">
+                            <img src="../../assets/images/icon_search.svg" alt="검색">
+                          </button>
+                        </div> 
+                      </div>
+                    </div>
+                    <div class="section__form_item">
+                      <div class="section__label required">섹션 설명</div>
+                      <div class="section__input">
+                        <div class="input-text-wrapper__wide">
+                          <textarea id="q" name="q" type="text" class="input-textarea" placeholder="섹션 설명을 입력해 주세요. (1,000자 이내)" rows="5" autocomplete="off"></textarea>
+                          <button type="button" class="search-btn" aria-label="검색">
+                            <img src="../../assets/images/icon_search.svg" alt="검색">
+                          </button>
+                        </div> 
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section>
+                  <div class="section__title_bar">
+                    <span class="title">섹션2</span>
+                    <div class="fn-group">
+                      <a href="" class="btn underline underline__icon">
+                        <img src="../../assets/images/icon_copy_white.png" alt="" class="icon icon-copy-white">
+                        복제
+                      </a>
+                      <a href="" class="btn underline underline__icon">
+                        <img src="../../assets/images/icon_delete_white.png" alt="" class="icon icon-delete-white">
+                        삭제
+                      </a>
+
+                      <button type="button" class="toggle">
+                        <img src="../../assets/images/icon_arrow_acc.svg" alt="아코디언 토글">
+                      </button>
+
+                      <div class="handle-drag">
+                        <img src="../../assets/images/icon_handle_drag.svg" alt="드래그핸들">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section__form">
+                    <div class="section__form_item">
+                      <div class="section__label required">섹션 제목</div>
+                      <div class="section__input">
+                        <div class="input-text-wrapper__wide">
+                          <input id="q" name="q" type="text" class="input-text" placeholder="항목 제목을 입력해 주세요. (200자 이내)"
+                            autocomplete="off" />
+                          <button type="button" class="search-btn" aria-label="검색">
+                            <img src="../../assets/images/icon_search.svg" alt="검색">
+                          </button>
+                        </div> 
+                      </div>
+                    </div>
+                    <div class="section__form_item">
+                      <div class="section__label required">섹션 설명</div>
+                      <div class="section__input">
+                        <div class="input-text-wrapper__wide">
+                          <textarea id="q" name="q" type="text" class="input-textarea" placeholder="섹션 설명을 입력해 주세요. (1,000자 이내)" rows="5" autocomplete="off"></textarea>
+                          <button type="button" class="search-btn" aria-label="검색">
+                            <img src="../../assets/images/icon_search.svg" alt="검색">
+                          </button>
+                        </div> 
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="regist-input"></div>
 
@@ -443,6 +581,10 @@
   </main>
 
   <script src="../../assets/js/script.js"></script>
+  <script>
+    //section drag&drop
+    sectionDragAndDrop();
+  </script>
 </body>
 
 </html>
