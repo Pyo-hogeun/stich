@@ -50,7 +50,16 @@
       }
     }
   }
+  &__contact{
+    border: 1px solid #E4E4E4;
+    border-radius: 16px;
+    padding: 24px;
+    .regist-info__notice{
+      margin-bottom: 16px;
+    }
+  }
 }
+
 .form{
   &__item{
     &_wide{
@@ -143,25 +152,11 @@
   section{
     margin-bottom: 12px;
     background-color: #fff;
-    transition: transform 0.2s ease, background-color 0.2s ease;
     &:after{
       content:'';
       display: block;
       border-bottom: 2px dashed #5E5E5E;
       margin: 40px -24px;
-    }
-    &.dragging {
-      opacity: 0.6;
-      transform: scale(0.98);
-      background: #f5f5f5;
-    }
-    
-    &.shift-up {
-      transform: translateY(-10px);
-    }
-    
-    &.shift-down {
-      transform: translateY(10px);
     }
   }
   .section{
@@ -213,20 +208,7 @@
       }
     }
   }
-  .placeholder {
-    border: 1px dashed $primaryColor;
-    margin: 12px -24px;
-    height: 60px;
-    background-color: rgba(0, 123, 255, 0.05);
-    border-radius: 16px;
-    transition: all 0.2s ease;
-  }
-  .handle-drag{
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    cursor: grab;
-  }
+  
 }
 button.btn-add{
   display: flex;
@@ -271,5 +253,16 @@ button.btn-add{
     height: 36px;
     border-radius: 50%;
     background-color: #FFF;
+  }
+}
+
+.regist-info-fn-group{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  .btn{
+    height: 44px;
+    padding: 0 16px;
+    font-size: 16px;
   }
 }

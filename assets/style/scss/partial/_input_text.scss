@@ -28,6 +28,7 @@
   width: 100%;
   max-width: 500px; /* 원하면 조정 */
   &__wide{
+    position: relative;
     max-width: 100%;
     flex: 1;
   }

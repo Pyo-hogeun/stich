@@ -26,3 +26,6 @@ em{
   font-style: normal;
   font-weight: 700;
 }
+img[src$=".svg"] {
+  image-rendering: crisp-edges;
+}
