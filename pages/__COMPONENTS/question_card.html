@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STICH - Question Card</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+  <link rel="stylesheet" href="../../assets/dist/js/bundle.css">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> -->
+
+</head>
+
+<body>
+  <main class="main-content">
+    <div class="content-wrapper">
+
+      <div class="question-card question-card--single-word">
+        <div class="question-card__header">
+          <div class="question-card__header-left">
+            <h3 class="question-card__type-label">단답형</h3>
+            <div class="question-card__divider"></div>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_copy.svg" alt="" style="width: 17px;" class="icon">
+              복제
+            </a>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_delete.svg" alt="" style="width: 13px;left:-18px;top:2px" class="icon">
+              삭제
+            </a>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">필수 여부</span>
+            </label>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">평가위원 노출 여부</span>
+            </label>
+
+          </div>
+
+          <button class="question-card__drag-handle" aria-label="항목 순서 변경">
+            <img src="../../assets/images/icon_eva_drag_handle.svg" alt="">
+          </button>
+        </div>
+
+        <div class="input-text-wrapper__wide">
+          <div class="question-option-item">
+            <label for="" class="question-option-item__label">제목</label>
+            <input type="text" class="input-text" placeholder="항목 제목을 입력해 주세요. ex&#41;이름, 성명">
+          </div>
+        </div>
+
+      </div>
+      <br />
+      <div class="question-card question-card--single-word viewer">
+        <div class="question-card__header">
+          <span class="title required">입력한 제목 출력</span>
+        </div>
+
+        <div class="input-text-wrapper__wide">
+          <textarea name="" id="1" cols="30" rows="5" class="input-textarea" style="height: 50px"></textarea>
+          <div class="text-length align-r">0/{입력한 제한 글자수}</div>
+        </div>
+
+      </div>
+
+      <hr class="divider_hr">
+
+      <div class="question-card question-card--descriptive">
+        <div class="question-card__header">
+          <div class="question-card__header-left">
+            <h3 class="question-card__type-label">서술형</h3>
+            <div class="question-card__divider"></div>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_copy.svg" alt="" style="width: 17px;" class="icon">
+              복제
+            </a>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_delete.svg" alt="" style="width: 13px;left:-18px;top:2px" class="icon">
+              삭제
+            </a>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">필수 여부</span>
+            </label>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">평가위원 노출 여부</span>
+            </label>
+
+            <div class="question-card__divider"></div>
+
+            <label for="countLength" class="question-card__select_label">최대 입력 글자 수</label>
+            <select name="" id="countLength" class="styled-select select-view-length">
+              <option value="">100</option>
+            </select>
+          </div>
+
+          <button class="question-card__drag-handle" aria-label="항목 순서 변경">
+            <img src="../../assets/images/icon_eva_drag_handle.svg" alt="">
+          </button>
+        </div>
+
+        <div class="input-text-wrapper__wide">
+          <input type="text" class="input-text" placeholder="항목 제목을 입력해 주세요. ex&#41;이름, 성명">
+        </div>
+
+      </div>
+      <br />
+      <div class="question-card question-card--single-word viewer">
+        <div class="question-card__header">
+          <span class="title required">입력한 제목 출력</span>
+        </div>
+
+        <div class="input-text-wrapper__wide">
+          <textarea name="" id="1" cols="30" rows="5" class="input-textarea"></textarea>
+          <div class="text-length align-r">0/{입력한 제한 글자수}</div>
+        </div>
+
+      </div>
+
+      <hr class="divider_hr">
+      <div class="question-card question-card--phone">
+        <div class="question-card__header">
+          <div class="question-card__header-left">
+            <h3 class="question-card__type-label">연락처</h3>
+            <div class="question-card__divider"></div>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_copy.svg" alt="" style="width: 17px;" class="icon">
+              복제
+            </a>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_delete.svg" alt="" style="width: 13px;left:-18px;top:2px" class="icon">
+              삭제
+            </a>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">필수 여부</span>
+            </label>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">평가위원 노출 여부</span>
+            </label>
+
+          </div>
+
+          <button class="question-card__drag-handle" aria-label="항목 순서 변경">
+            <img src="../../assets/images/icon_eva_drag_handle.svg" alt="">
+          </button>
+        </div>
+
+        <div class="input-text-wrapper__wide">
+          <div class="question-option-item">
+            <label for="" class="question-option-item__label">제목</label>
+            <input type="text" class="input-text" placeholder="항목 제목을 입력해 주세요. ex&#41;핸드폰 번호, 전화번호">
+          </div>
+        </div>
+
+      </div>
+      <br />
+      <div class="question-card question-card--phone viewer">
+        <div class="question-card__header">
+          <span class="title required">입력한 제목 출력</span>
+        </div>
+
+        <div class="input-text-wrapper__wide">
+          <input type="text" class="input-text">
+          <div class="text-length align-r">0/{입력한 제한 글자수}</div>
+        </div>
+
+      </div>
+
+      <hr class="divider_hr">
+
+      <div class="question-card question-card--address">
+        <div class="question-card__header">
+          <div class="question-card__header-left">
+            <h3 class="question-card__type-label">주소</h3>
+            <div class="question-card__divider"></div>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_copy.svg" alt="" style="width: 17px;" class="icon">
+              복제
+            </a>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_delete.svg" alt="" style="width: 13px;left:-18px;top:2px" class="icon">
+              삭제
+            </a>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">필수 여부</span>
+            </label>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">평가위원 노출 여부</span>
+            </label>
+
+          </div>
+
+          <button class="question-card__drag-handle" aria-label="항목 순서 변경">
+            <img src="../../assets/images/icon_eva_drag_handle.svg" alt="">
+          </button>
+        </div>
+
+        <div class="input-text-wrapper__wide">
+          <div class="question-option-item">
+            <label for="" class="question-option-item__label">제목</label>
+            <input type="text" class="input-text" placeholder="항목 제목을 입력해 주세요. ex&#41;주소 입력">
+          </div>
+        </div>
+
+      </div>
+      <br />
+      <div class="question-card question-card--address viewer">
+        <div class="question-card__header">
+          <span class="title required">입력한 제목 출력</span>
+        </div>
+
+        <div class="address-wrap">
+          <div class="first-line">
+            <div class="input-text-wrapper__wide">
+              <input type="text" class="input-text" disabled>
+            </div>
+            <button class="btn border btn-search-address">주소검색</button>
+          </div>
+          <div class="second-line">
+            <div class="input-text-wrapper__wide">
+              <input type="text" class="input-text">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      <hr class="divider_hr">
+
+      <div class="question-card question-card--date">
+        <div class="question-card__header">
+          <div class="question-card__header-left">
+            <h3 class="question-card__type-label">날짜</h3>
+            <div class="question-card__divider"></div>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_copy.svg" alt="" style="width: 17px;" class="icon">
+              복제
+            </a>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_delete.svg" alt="" style="width: 13px;left:-18px;top:2px" class="icon">
+              삭제
+            </a>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">필수 여부</span>
+            </label>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">평가위원 노출 여부</span>
+            </label>
+
+          </div>
+
+          <button class="question-card__drag-handle" aria-label="항목 순서 변경">
+            <img src="../../assets/images/icon_eva_drag_handle.svg" alt="">
+          </button>
+        </div>
+
+        <div class="input-text-wrapper__wide">
+          <div class="question-option-item">
+            <label for="" class="question-option-item__label">제목</label>
+            <input type="text" class="input-text" placeholder="항목 제목을 입력해 주세요. ex&#41;날짜, 인터뷰 희망 날짜">
+          </div>
+        </div>
+
+      </div>
+      <br />
+      <div class="question-card question-card--date viewer">
+        <div class="question-card__header">
+          <span class="title required">입력한 제목 출력</span>
+        </div>
+
+        <div class="input-text-wrapper__wide">
+          <div class="question-option-item">
+            <input data-type="datepicker" id="datePicker" class="input-text-calendar" placeholder="YYYY-MM-DD HH:MM">
+
+            <!-- 시작/종료 시간 입력 -->
+            <div class="time-inputs">
+              <div class="time-item">
+                <label class="time-item__label">시작 시간</label>
+                <input type="time" id="startTime" class="input-time" value="12:00" />
+              </div>
+              <div class="time-item">
+                <label class="time-item__label">종료 시간</label>
+                <input type="time" id="endTime" class="input-time" value="12:00" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 선택된 결과 표시 -->
+        <!-- <div class="result">
+          <span id="selectedRange">기간을 선택하세요.</span>
+        </div> -->
+
+      </div>
+      <hr class="divider_hr" />
+
+
+      <div class="question-card question-card--period ">
+        <div class="question-card__header">
+          <div class="question-card__header-left">
+            <h3 class="question-card__type-label">기간</h3>
+            <div class="question-card__divider"></div>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_copy.svg" alt="" style="width: 17px;" class="icon">
+              복제
+            </a>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_delete.svg" alt="" style="width: 13px;left:-18px;top:2px" class="icon">
+              삭제
+            </a>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">필수 여부</span>
+            </label>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">평가위원 노출 여부</span>
+            </label>
+
+          </div>
+
+          <button class="question-card__drag-handle" aria-label="항목 순서 변경">
+            <img src="../../assets/images/icon_eva_drag_handle.svg" alt="">
+          </button>
+        </div>
+
+        <div class="input-text-wrapper__wide">
+          <div class="question-option-item">
+            <label for="" class="question-option-item__label">제목</label>
+            <input type="text" class="input-text" placeholder="항목 제목을 입력해 주세요. ex&#41;기간, 제작 기간">
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="question-card question-card--period viewer">
+        <div class="question-card__header">
+          <span class="title required">입력한 제목 출력</span>
+        </div>
+
+        <div class="input-text-wrapper__wide">
+          <div class="question-option-item">
+            <input data-type="datepicker" id="rangePicker" class="input-text-calendar" placeholder="YYYY-MM-DD ~ YYYY-MM-DD">
+
+          </div>
+        </div>
+
+        <!-- 선택된 결과 표시 -->
+        <!-- <div class="result">
+          <span id="selectedRange">기간을 선택하세요.</span>
+        </div> -->
+
+      </div>
+
+      <hr class="divider_hr" />
+
+
+      <div class="question-card question-card--url">
+        <div class="question-card__header">
+          <div class="question-card__header-left">
+            <h3 class="question-card__type-label">URL</h3>
+            <div class="question-card__divider"></div>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_copy.svg" alt="" style="width: 17px;" class="icon">
+              복제
+            </a>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_delete.svg" alt="" style="width: 13px;left:-18px;top:2px" class="icon">
+              삭제
+            </a>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">필수 여부</span>
+            </label>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">평가위원 노출 여부</span>
+            </label>
+
+          </div>
+
+          <button class="question-card__drag-handle" aria-label="항목 순서 변경">
+            <img src="../../assets/images/icon_eva_drag_handle.svg" alt="">
+          </button>
+        </div>
+
+        <div class="input-text-wrapper__wide">
+          <div class="question-option-item">
+            <label for="" class="question-option-item__label">제목</label>
+            <input type="text" class="input-text" placeholder="항목 제목을 입력해 주세요. ex&#41;작품을 확인할 수 있는 유튜브 URL 입력">
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="question-card question-card--url viewer">
+        <div class="question-card__header">
+          <span class="title required">입력한 제목 출력</span>
+        </div>
+
+        <div class="input-text-wrapper__wide">
+          <input type="text" class="input-text">
+          <div class="text-length align-r">0/20</div>
+        </div>
+
+      </div>
+
+      <hr class="divider_hr">
+      <div class="question-card question-card--file">
+        <div class="question-card__header">
+          <div class="question-card__header-left">
+            <h3 class="question-card__type-label">파일 첨부</h3>
+            <div class="question-card__divider"></div>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_copy.svg" alt="" style="width: 17px;" class="icon">
+              복제
+            </a>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_delete.svg" alt="" style="width: 13px;left:-18px;top:2px" class="icon">
+              삭제
+            </a>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">필수 여부</span>
+            </label>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">평가위원 노출 여부</span>
+            </label>
+
+          </div>
+
+          <button class="question-card__drag-handle" aria-label="항목 순서 변경">
+            <img src="../../assets/images/icon_eva_drag_handle.svg" alt="">
+          </button>
+        </div>
+
+        <div class="input-text-wrapper__wide">
+          <div class="question-option-item">
+            <label for="" class="question-option-item__label">제목</label>
+            <input type="text" class="input-text" placeholder="항목 제목을 입력해 주세요. ex&#41;첨부할 파일을 선택해주세요">
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="question-card question-card--file viewer">
+        <div class="question-card__header">
+          <span class="title required">입력한 제목 출력</span>
+        </div>
+
+        <label class="file-upload-area" id="fileUploadArea">
+          <img src="../../assets/images/icon_upload_primary.png" alt="파일업로드 아이콘" class="file-upload-icon">
+          <span class="file-upload-text">클릭 또는 파일을 여기로 드래그해주세요</span>
+          <input type="file" id="fileInput" hidden>
+        </label>
+
+        <div id="fileList"></div>
+
+      </div>
+
+      <hr class="divider_hr" />
+      <div class="question-card question-card--file-extend">
+        <div class="question-card__header">
+          <div class="question-card__header-left">
+            <h3 class="question-card__type-label">파일 첨부</h3>
+            <div class="question-card__divider"></div>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_copy.svg" alt="" style="width: 17px;" class="icon">
+              복제
+            </a>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_delete.svg" alt="" style="width: 13px;left:-18px;top:2px" class="icon">
+              삭제
+            </a>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">필수 여부</span>
+            </label>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">평가위원 노출 여부</span>
+            </label>
+
+          </div>
+
+          <button class="question-card__drag-handle" aria-label="항목 순서 변경">
+            <img src="../../assets/images/icon_eva_drag_handle.svg" alt="">
+          </button>
+        </div>
+
+        <div class="input-text-wrapper__wide">
+          <div class="question-option-item">
+            <label for="" class="question-option-item__label">제목</label>
+            <input type="text" class="input-text" placeholder="항목 제목을 입력해 주세요. ex&#41;첨부할 파일을 선택해주세요">
+          </div>
+        </div>
+
+        <div class="question-card__options">
+          <div class="question-card__options-header">
+            <div class="question-card__options-header-left">
+              <h4 class="question-card__options-title">파일 확장자 설정</h4>
+            </div>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_plus_16.svg" alt="" class="icon" style="width: 17px">
+              확장자 추가
+            </a>
+          </div>
+
+          <div class="question-card__options-list">
+            <div class="question-option-item">
+              <select name="" id="" class="styled-select" style="width: 140px">
+                <option value="">파일 확장자 선택</option>
+              </select>
+
+              <label for="" class="input-label">파일 최대 용량(MB)</label>
+              <div class="input-text-wrapper__wide">
+                <input type="text" class="input-text" placeholder="용량 제한을 입력해 주세요. (최대 10MB, 영상 300MB 이내)">
+              </div>
+            </div>
+
+            <div class="question-option-item">
+              <select name="" id="" class="styled-select" style="width: 140px">
+                <option value="">파일 확장자 선택</option>
+              </select>
+
+              <label for="" class="input-label">파일 최대 용량(MB)</label>
+              <div class="input-text-wrapper__wide">
+                <input type="text" class="input-text" placeholder="용량 제한을 입력해 주세요. (최대 10MB, 영상 300MB 이내)">
+              </div>
+
+              <button class="btn-icon-only" aria-label="항목 삭제">
+                <img src="../../assets/images/icon_minus_16.svg" alt="삭제">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="divider_hr">
+
+      <div class="question-card question-card--single-choice">
+        <div class="question-card__header">
+          <div class="question-card__header-left">
+            <h3 class="question-card__type-label">단일 선택</h3>
+            <div class="question-card__divider"></div>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_copy.svg" alt="" style="width: 17px;" class="icon">
+              복제
+            </a>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_delete.svg" alt="" style="width: 13px;left:-18px;top:2px" class="icon">
+              삭제
+            </a>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">필수 여부</span>
+            </label>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">평가위원 노출 여부</span>
+            </label>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" checked />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">항목 선택으로 섹션 이동</span>
+            </label>
+          </div>
+
+          <button class="question-card__drag-handle" aria-label="항목 순서 변경">
+            <img src="../../assets/images/icon_eva_drag_handle.svg" alt="">
+          </button>
+        </div>
+
+        <div class="input-text-wrapper__wide">
+          <input type="text" class="input-text" placeholder="항목 제목을 입력해 주세요. ex&#41;공모전을 접하게된 계기를 선택해 주세요.">
+        </div>
+
+        <div class="question-card__options">
+          <div class="question-card__options-header">
+            <div class="question-card__options-header-left">
+              <h4 class="question-card__options-title">항목 설정</h4>
+              <p class="question-card__options-description">기본 2 항목이고, 최대 10항목까지 가능합니다.</p>
+            </div>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_plus_16.svg" alt="" class="icon" style="width: 17px">
+              선택항목 추가
+            </a>
+          </div>
+
+          <div class="question-card__options-list">
+            <div class="question-option-item">
+              <label class="radio-btn">
+                <input type="radio" name="single-choice-demo" class="radio-btn__input">
+                <span class="radio-btn__circle"></span>
+              </label>
+
+              <div class="input-text-wrapper__wide">
+                <input type="text" class="input-text" placeholder="선택 항목명을 입력해 주세요. (200자 이내)">
+              </div>
+
+              <button class="btn-icon-only" aria-label="항목 삭제">
+                <img src="../../assets/images/icon_close_16.svg" alt="삭제">
+              </button>
+            </div>
+
+            <div class="question-option-item">
+              <label class="radio-btn">
+                <input type="radio" name="single-choice-demo" class="radio-btn__input">
+                <span class="radio-btn__circle"></span>
+              </label>
+
+              <div class="input-text-wrapper__wide">
+                <input type="text" class="input-text" placeholder="선택 항목명을 입력해 주세요. (200자 이내)">
+              </div>
+
+              <button class="btn-icon-only" aria-label="항목 삭제">
+                <img src="../../assets/images/icon_close_16.svg" alt="삭제">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="question-card question-card--single-choice viewer">
+        <div class="question-card__header">
+          <span class="title required">입력한 제목 출력</span>
+        </div>
+
+        <div class="question-card__options">
+
+          <div class="question-card__options-list">
+            <div class="question-option-item">
+              <label class="radio-btn">
+                <input type="radio" name="single-choice-demo" class="radio-btn__input">
+                <span class="radio-btn__circle"></span>
+                <span class="label">
+                  입력한 단일 선택지 출력 (선택시 2번 색션으로 이동)
+                </span>
+              </label>
+            </div>
+            <div class="question-option-item">
+              <label class="radio-btn">
+                <input type="radio" name="single-choice-demo" class="radio-btn__input">
+                <span class="radio-btn__circle"></span>
+                <span class="label">
+                  입력한 단일 선택지 출력 (선택시 2번 색션으로 이동)
+                </span>
+              </label>
+            </div>
+            <div class="question-option-item">
+              <label class="radio-btn">
+                <input type="radio" name="single-choice-demo" class="radio-btn__input">
+                <span class="radio-btn__circle"></span>
+                <span class="label">
+                  입력한 단일 선택지 출력 (선택시 2번 색션으로 이동)
+                </span>
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <hr class="divider_hr">
+
+      <div class="question-card question-card--single-choice">
+        <div class="question-card__header">
+          <div class="question-card__header-left">
+            <h3 class="question-card__type-label">단일 선택</h3>
+            <div class="question-card__divider"></div>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_copy.svg" alt="" style="width: 17px;" class="icon">
+              복제
+            </a>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_delete.svg" alt="" style="width: 13px;left:-18px;top:2px" class="icon">
+              삭제
+            </a>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">필수 여부</span>
+            </label>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">평가위원 노출 여부</span>
+            </label>
+
+          </div>
+
+          <button class="question-card__drag-handle" aria-label="항목 순서 변경">
+            <img src="../../assets/images/icon_eva_drag_handle.svg" alt="">
+          </button>
+        </div>
+
+        <div class="input-text-wrapper__wide">
+          <input type="text" class="input-text" placeholder="항목 제목을 입력해 주세요. ex&#41;공모전을 접하게된 계기를 선택해 주세요.">
+        </div>
+
+        <div class="question-card__options">
+          <div class="question-card__options-header">
+            <div class="question-card__options-header-left">
+              <h4 class="question-card__options-title">항목 설정</h4>
+              <p class="question-card__options-description">기본 2 항목이고, 최대 10항목까지 가능합니다.</p>
+            </div>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_plus_16.svg" alt="" class="icon" style="width: 17px">
+              선택항목 추가
+            </a>
+          </div>
+
+          <div class="question-card__options-list">
+            <div class="question-option-item">
+              <label class="radio-btn">
+                <input type="radio" name="single-choice-demo" class="radio-btn__input">
+                <span class="radio-btn__circle"></span>
+              </label>
+
+              <div class="input-text-wrapper__wide">
+                <input type="text" class="input-text" placeholder="선택 항목명을 입력해 주세요. (200자 이내)">
+              </div>
+
+              <label for="" class="input-label">선택 시</label>
+              <select name="" id="" class="styled-select" style="width: 160px">
+                <option value="">다음 섹션으로 이동</option>
+              </select>
+
+              <button class="btn-icon-only" aria-label="항목 삭제">
+                <img src="../../assets/images/icon_close_16.svg" alt="삭제">
+              </button>
+            </div>
+            <div class="question-option-item">
+              <label class="radio-btn">
+                <input type="radio" name="single-choice-demo" class="radio-btn__input">
+                <span class="radio-btn__circle"></span>
+              </label>
+
+              <div class="input-text-wrapper__wide">
+                <input type="text" class="input-text" placeholder="선택 항목명을 입력해 주세요. (200자 이내)">
+              </div>
+
+              <label for="" class="input-label">선택 시</label>
+              <select name="" id="" class="styled-select" style="width: 160px">
+                <option value="">다음 섹션으로 이동</option>
+              </select>
+
+              <button class="btn-icon-only" aria-label="항목 삭제">
+                <img src="../../assets/images/icon_close_16.svg" alt="삭제">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <hr class="divider_hr">
+
+      <div class="question-card question-card--multie-choice">
+        <div class="question-card__header">
+          <div class="question-card__header-left">
+            <h3 class="question-card__type-label">복수 선택</h3>
+            <div class="question-card__divider"></div>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_copy.svg" alt="" style="width: 17px;" class="icon">
+              복제
+            </a>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_delete.svg" alt="" style="width: 13px;left:-18px;top:2px" class="icon">
+              삭제
+            </a>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">필수 여부</span>
+            </label>
+
+            <label class="ckb question-card__checkbox">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">평가위원 노출 여부</span>
+            </label>
+
+          </div>
+
+          <button class="question-card__drag-handle" aria-label="항목 순서 변경">
+            <img src="../../assets/images/icon_eva_drag_handle.svg" alt="">
+          </button>
+        </div>
+
+        <div class="input-text-wrapper__wide">
+          <input type="text" class="input-text" placeholder="항목 제목을 입력해 주세요. ex&#41;공모전을 접하게된 계기를 선택해 주세요.">
+        </div>
+
+        <div class="question-card__options">
+          <div class="question-card__options-header">
+            <div class="question-card__options-header-left">
+              <h4 class="question-card__options-title">항목 설정</h4>
+              <p class="question-card__options-description">기본 2 항목이고, 최대 10항목까지 가능합니다.</p>
+            </div>
+
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_plus_16.svg" alt="" class="icon" style="width: 17px">
+              선택항목 추가
+            </a>
+          </div>
+
+          <div class="question-card__options-list">
+            <div class="question-option-item">
+              <label class="ckb question-card__checkbox">
+                <input type="checkbox" />
+                <span class="ckb__box"></span>
+              </label>
+
+              <div class="input-text-wrapper__wide">
+                <input type="text" class="input-text" placeholder="선택 항목명을 입력해 주세요. (200자 이내)">
+              </div>
+
+              <button class="btn-icon-only" aria-label="항목 삭제">
+                <img src="../../assets/images/icon_close_16.svg" alt="삭제">
+              </button>
+            </div>
+            <div class="question-option-item">
+              <label class="ckb question-card__checkbox">
+                <input type="checkbox" />
+                <span class="ckb__box"></span>
+              </label>
+
+              <div class="input-text-wrapper__wide">
+                <input type="text" class="input-text" placeholder="선택 항목명을 입력해 주세요. (200자 이내)">
+              </div>
+
+              <button class="btn-icon-only" aria-label="항목 삭제">
+                <img src="../../assets/images/icon_close_16.svg" alt="삭제">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="question-card question-card--multie-choice viewer">
+        <div class="question-card__header">
+          <span class="title required">입력한 제목 출력</span>
+        </div>
+
+        <div class="question-card__options">
+
+          <div class="question-card__options-list">
+            <div class="question-option-item">
+              <label class="ckb question-card__checkbox">
+                <input type="checkbox" />
+                <span class="ckb__box"></span>
+                <span class="ckb__label">입력한 복수 선택지 출력</span>
+              </label>
+            </div>
+            <div class="question-option-item">
+              <label class="ckb question-card__checkbox">
+                <input type="checkbox" />
+                <span class="ckb__box"></span>
+                <span class="ckb__label">입력한 복수 선택지 출력</span>
+              </label>
+            </div>
+            <div class="question-option-item">
+              <label class="ckb question-card__checkbox">
+                <input type="checkbox" />
+                <span class="ckb__box"></span>
+                <span class="ckb__label">입력한 복수 선택지 출력</span>
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <script src="../../assets/dist/js/bundle.js"></script>
+  <script>
+
+  </script>
+</body>
+
+</html>
