@@ -540,6 +540,16 @@ h2 {
   margin-right: 4px;
 }
 
+.btn.filled.submit {
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 16px;
+  color: #FFF;
+  background-color: #7A53EC;
+  border-radius: 8px;
+}
+
 .btn.underline {
   position: relative;
   background-color: transparent;
@@ -1279,6 +1289,16 @@ h2 {
   border: 1px solid #BDBDBD;
   background: #FFF;
   box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.12);
+}
+
+.submit-btn-wrap {
+  display: block;
+  text-align: center;
+  padding: 24px 0 60px;
+}
+.submit-btn-wrap img {
+  width: 17px;
+  margin-right: 4px;
 }
 
 .pagination-container {

@@ -17,6 +17,17 @@
     margin-right: 4px;
   }
 }
+.btn.filled{
+  &.submit{
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 16px;
+    color: #FFF;
+    background-color: $primaryColor;
+    border-radius: 8px;
+  }
+}
 .btn{
   &.underline{
     position: relative;
