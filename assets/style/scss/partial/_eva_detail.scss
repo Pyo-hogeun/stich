@@ -370,7 +370,15 @@
     }
   }
 }
-
+.submit-btn-wrap{
+  display: block;
+  text-align: center;
+  padding: 24px 0 60px;
+  img{
+    width: 17px;
+    margin-right: 4px;
+  }
+}
 .pagination-container{
   position: relative;
   .select-view-length{
