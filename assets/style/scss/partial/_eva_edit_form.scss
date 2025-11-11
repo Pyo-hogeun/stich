@@ -158,6 +158,9 @@
       border-bottom: 2px dashed #5E5E5E;
       margin: 40px -24px;
     }
+    &.sortable-chosen{
+      padding: 0 12px;
+    }
   }
   .section{
     &__title_bar{
@@ -188,6 +191,9 @@
           border: 0;
           margin: 0 8px;
         }
+      }
+      .handle-drag{
+        cursor: pointer;
       }
     }
     &__form_item{
