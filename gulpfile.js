@@ -10,6 +10,20 @@ import { globSync } from 'glob';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
+import babel from "gulp-babel";
+import concat from "gulp-concat";
+import terser from "gulp-terser";
+
+import { rollup } from "rollup"; // rollup-stream 대신 rollup 직접 import
+
+import source from "vinyl-source-stream";
+import buffer from "vinyl-buffer";
+import resolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
+import postcssPlugin from "rollup-plugin-postcss";
+
+
+const { series, watch } = gulp;
 
 // -------------------------------------
 // 기본 설정
@@ -26,6 +40,8 @@ const paths = {
   images: path.join(__dirname, 'assets/images/**/*'),
   index: path.join(__dirname, 'pages/index.html'),
   htmlGlob: path.join(__dirname, 'pages/**/*.html'),
+  js: path.join(__dirname, 'assets/js/**/*.js'),
+  dist: path.join(__dirname, 'assets/dist/js'),
 };
 
 const HTML_GLOB = path.join(paths.pages, '**/*.html');
@@ -106,16 +122,62 @@ async function cleanIndex() {
 // -------------------------------------
 function compileScss() {
   return gulp
-    .src('assets/style/scss/**/*.scss') // _partial 제외
+    .src('assets/style/scss/**/*.scss')
     .pipe(
       sass({
-        outputStyle: 'expanded', // 보기 좋은 형태
+        outputStyle: 'expanded',
         includePaths: [paths.scssRoot],
       }).on('error', sass.logError)
     )
     .pipe(postcss([autoprefixer({ overrideBrowserslist: ['> 1%', 'last 2 versions', 'not dead'] })]))
     .pipe(gulp.dest(paths.cssDest))
-    .pipe(browserSync.stream()); // CSS만 Live Reload (전체 새로고침 X)
+    .pipe(browserSync.stream());
+}
+
+// -------------------------------------
+// JS 번들링 & 트랜스파일링
+// -------------------------------------
+export async function bundleJS() {
+  const bundle = await rollup({
+    input: "assets/js/script.js", // 엔트리 파일
+    plugins: [
+      resolve({
+        browser: true,
+        preferBuiltins: false,
+      }),
+      commonjs(),
+      postcssPlugin({
+        extract: true, // 별도 CSS 파일 생성
+        minimize: true,
+      }),
+      babel({
+        babelHelpers: "bundled",
+        presets: ["@babel/preset-env"],
+      }),
+    ],
+  });
+
+  await bundle.write({
+    file: "assets/dist/js/bundle.js",
+    format: "iife", // 즉시 실행 (브라우저용)
+    name: "AppBundle",
+    sourcemap: false,
+  });
+
+  await bundle.close();
+  console.log("✅ JS bundle updated");
+}
+// Gulp가 비동기 Task를 인식하도록 callback 래핑
+function bundleJSTask(done) {
+  bundleJS()
+    .then(() => {
+      browserSync.reload();
+      done();
+    })
+    .catch((err) => {
+      console.error(err);
+      done(err);
+    });
 }
 
 // -------------------------------------
@@ -132,10 +194,10 @@ function serve(done) {
     notify: false,
   });
 
-  // 감시 대상
-  gulp.watch([paths.scss], compileScss);
-  gulp.watch([paths.htmlGlob, `!${OUT_INDEX}`], generateIndex);
-  gulp.watch([paths.images]).on('change', browserSync.reload);
+  watch(paths.scss, compileScss);
+  watch([paths.htmlGlob, `!${OUT_INDEX}`], generateIndex);
+  watch(paths.images).on('change', browserSync.reload);
+  watch(paths.js, series(bundleJSTask));
 
   done();
 }
@@ -143,7 +205,9 @@ function serve(done) {
 // -------------------------------------
 // Task 등록
 // -------------------------------------
-export const buildIndex = gulp.series(cleanIndex, generateIndex);
-export const build = gulp.series(buildIndex, compileScss);
-export const dev = gulp.series(build, serve);
+export const buildIndex = series(cleanIndex, generateIndex);
+export const build = series(buildIndex, compileScss, bundleJS);
+export const dev = series(build, serve);
+export const js = bundleJS;
+
 export default build;

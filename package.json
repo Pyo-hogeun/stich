@@ -11,17 +11,30 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
     "browser-sync": "^3.0.4",
     "del": "^8.0.1",
     "glob": "^11.0.3",
     "gulp": "^5.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
     "gulp-sass": "^6.0.1",
+    "gulp-terser": "^2.1.0",
+    "rollup": "^4.53.2",
+    "rollup-plugin-postcss": "^4.0.2",
     "sass": "^1.93.3"
   },
   "type": "module",
   "dependencies": {
+    "@rollup/plugin-babel": "^6.1.0",
     "autoprefixer": "^10.4.21",
+    "flatpickr": "^4.6.13",
     "gulp-postcss": "^10.0.0",
-    "sortablejs": "^1.15.6"
+    "sortablejs": "^1.15.6",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   }
 }

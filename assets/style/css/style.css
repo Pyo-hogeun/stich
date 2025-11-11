@@ -778,7 +778,7 @@ h2 {
 }
 
 /* 실제 텍스트 입력 */
-.input-text, .input-textarea {
+.input-text, .input-textarea, .input-text-calendar, .input-time {
   width: 100%;
   height: var(--search-height);
   padding: 0 44px 0 14px; /* 오른쪽 공간은 아이콘/버튼 자리 확보 */
@@ -793,8 +793,12 @@ h2 {
   transition: box-shadow 0.16s ease, transform 0.12s ease;
   /* optional subtle inner shadow to separate from background */
 }
+.input-text:disabled, .input-textarea:disabled, .input-text-calendar:disabled, .input-time:disabled {
+  background-color: #E9E9E9;
+}
 
 .input-textarea {
+  display: block;
   height: 100px;
   padding: 12px 16px;
   resize: vertical;
@@ -803,6 +807,14 @@ h2 {
 /* 포커스 시 시각적 강조 (접근성) */
 .input-text:focus {
   border: 1px solid #7A53EC;
+}
+
+.input-text-calendar {
+  width: 400px;
+  padding: 0 16px 0 52px;
+  background-image: url("../../images/icon_calendar.svg");
+  background-repeat: no-repeat;
+  background-position: left 16px center;
 }
 
 /* 검색 버튼 (우측 아이콘) */
@@ -822,7 +834,7 @@ h2 {
   justify-content: center;
   cursor: pointer;
   color: var(--search-icon-color);
-  transition: background 0.12s ease, color 0.12s ease, transform 0.08s ease;
+  transition: background-color 0.12s ease, color 0.12s ease, transform 0.08s ease;
 }
 
 /* 버튼 hover / active */
@@ -2497,9 +2509,45 @@ button.btn-add:hover {
   flex-direction: column;
   gap: 8px;
 }
+.question-card__options-list .radio-btn .label {
+  font-size: 14px;
+  color: #3A3A3A;
+}
+.question-card__options-list .question-card__checkbox {
+  align-items: center;
+}
+.question-card__options-list .question-card__checkbox .ckb__label {
+  font-size: 14px;
+  color: #3A3A3A;
+}
 .question-card__select_label {
   font-size: 12px;
   color: #747474;
+}
+
+.viewer.question-card {
+  gap: 8px;
+}
+.viewer .question-card__header {
+  gap: 8px;
+}
+.viewer .question-card__header .title {
+  font-size: 14px;
+  font-weight: 600;
+}
+.viewer .question-card__header .title.required:after {
+  content: "*";
+  vertical-align: text-top;
+  color: #FF44BF;
+  font-size: 1em;
+}
+.viewer .text-length {
+  color: #919191;
+  font-size: 12px;
+  margin-top: 8px;
+}
+.viewer .text-length.align-r {
+  text-align: right;
 }
 
 .question-option-item {
@@ -2629,6 +2677,44 @@ button.btn-add:hover {
 }
 .radio-btn:hover .radio-btn__circle {
   border-color: #4D24C3;
+}
+
+.question-card--address .address-wrap .first-line {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.question-card--address .address-wrap .btn-search-address {
+  height: 40px;
+}
+
+.time-inputs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.time-inputs .time-item {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.time-inputs .time-item__label {
+  font-size: 12px;
+  padding-right: 4px;
+  white-space: nowrap;
+}
+.time-inputs .input-time {
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.time-inputs .result {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #444;
+  background: #f7f7f7;
+  padding: 8px 10px;
+  border-radius: 6px;
 }
 
 .file-list-popup {
