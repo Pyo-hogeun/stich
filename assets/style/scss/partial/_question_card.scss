@@ -12,7 +12,8 @@
   gap: 24px;
   padding: 24px;
   border-radius: 16px;
-  border: 2px solid #4D24C3;
+  // border: 2px solid #4D24C3;
+  border: 2px solid #E4E4E4;
   background: #FFF;
 
   &__header {
@@ -199,6 +200,45 @@
     }
   }
 
+}
+.answer{
+  .question-card__header{
+    display: flex;
+    align-items: flex-start;
+    &-left{
+      display: block;
+      .title{
+        font-size: 18px;
+        font-weight: 700;
+        color: $Title_Dark;
+      }
+      .description{
+        margin-top: 8px;
+        font-size: 14px;
+        color: $normalText;
+      }
+    }
+    &-right{
+      .tag{
+        display: inline-block;
+        padding: 4px;
+        background-color: $NormalDarkGray;
+        border-radius: 4px;
+        color: #484848;
+        font-size: 12px;
+        font-weight: 700;
+      }
+    }
+  }
+  .slider-form-fields{
+    .min, .max{
+      font-size: 14px;
+      color: $normalText;
+      &:after{
+        content: '점';
+      }
+    }
+  }
 }
 
 .question-option-item {
@@ -593,8 +633,13 @@
     margin-top: 4px;
   }
 
+  .noUi-connects{
+    border-radius: 10px;
+  }
+
   .noUi-connect {
     background: #7A53EC;
+    border-radius: 10px;
   }
 
   .noUi-handle {

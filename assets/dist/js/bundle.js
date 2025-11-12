@@ -12966,12 +12966,40 @@ var AppBundle = (function (exports) {
   // noUiSlider initialization for slider question cards
   const initSliderQuestionCard = () => {
     document.querySelectorAll('.question-card--slider').forEach((card) => {
-      card.querySelector('.range-slider');
       const sliderElement = card.querySelector('.range-slider__element');
+      if (!sliderElement) return;
+
+      const isViewer = card.classList.contains('answer');
+
+      if (isViewer) {
+        // [1] viewer 전용: 단일 슬라이더만 표시 (min/max 조절 없이)
+        const minLabel = card.querySelector('.min');
+        const maxLabel = card.querySelector('.max');
+
+        const minValue = 0;
+        const maxValue = 10;
+
+        if (minLabel) minLabel.textContent = minValue;
+        if (maxLabel) maxLabel.textContent = maxValue;
+
+        noUiSlider.create(sliderElement, {
+          start: [5],          // 초기값 중앙
+          connect: [true, false],
+          range: { min: minValue, max: maxValue },
+          step: 1,
+          tooltips: true,
+          format: {
+            to: (v) => Number(v).toFixed(),
+            from: (v) => Number(v),
+          },
+        });
+        return;
+      }
+
+      // [2] 일반 카드 (stepper 포함)
       const minStepper = card.querySelector('.score-stepper--min');
       const maxStepper = card.querySelector('.score-stepper--max');
-
-      if (!sliderElement || !minStepper || !maxStepper) return;
+      if (!minStepper || !maxStepper) return;
 
       const minValueSpan = minStepper.querySelector('.stepper-value');
       const maxValueSpan = maxStepper.querySelector('.stepper-value');
@@ -12983,39 +13011,32 @@ var AppBundle = (function (exports) {
       let minValue = parseInt(minValueSpan.textContent) || 1;
       let maxValue = parseInt(maxValueSpan.textContent) || 10;
 
-      // Initialize noUiSlider
       noUiSlider.create(sliderElement, {
         start: [minValue, maxValue],
         connect: true,
-        range: {
-          'min': 0,
-          'max': 10
-        },
+        range: { min: 0, max: 100 },
         step: 1,
         tooltips: true,
         format: {
-          to: function (value) {
-            return Number(value).toFixed(2);
-          },
-          from: function (value) {
-            return Number(value).toFixed(2);
-          }
-        }
+          to: (v) => Number(v).toFixed(2),
+          from: (v) => Number(v),
+        },
       });
 
-      // Update values when slider changes
-      sliderElement.noUiSlider.on('update', function (values, handle) {
+      // 슬라이더 값 변경 시 표시 업데이트
+      sliderElement.noUiSlider.on('update', (values, handle) => {
+        const value = parseInt(values[handle]);
         if (handle === 0) {
-          minValue = parseInt(values[0]);
-          minValueSpan.textContent = minValue;
+          minValue = value;
+          minValueSpan.textContent = value;
         } else {
-          maxValue = parseInt(values[1]);
-          maxValueSpan.textContent = maxValue;
+          maxValue = value;
+          maxValueSpan.textContent = value;
         }
       });
 
-      // Stepper button handlers for min value
-      minUpBtn.addEventListener('click', (e) => {
+      // 최소 스텝 조절
+      minUpBtn?.addEventListener('click', (e) => {
         e.preventDefault();
         if (minValue < maxValue - 1) {
           minValue++;
@@ -13023,7 +13044,7 @@ var AppBundle = (function (exports) {
         }
       });
 
-      minDownBtn.addEventListener('click', (e) => {
+      minDownBtn?.addEventListener('click', (e) => {
         e.preventDefault();
         if (minValue > 0) {
           minValue--;
@@ -13031,8 +13052,8 @@ var AppBundle = (function (exports) {
         }
       });
 
-      // Stepper button handlers for max value
-      maxUpBtn.addEventListener('click', (e) => {
+      // 최대 스텝 조절
+      maxUpBtn?.addEventListener('click', (e) => {
         e.preventDefault();
         if (maxValue < 100) {
           maxValue++;
@@ -13040,7 +13061,7 @@ var AppBundle = (function (exports) {
         }
       });
 
-      maxDownBtn.addEventListener('click', (e) => {
+      maxDownBtn?.addEventListener('click', (e) => {
         e.preventDefault();
         if (maxValue > minValue + 1) {
           maxValue--;
@@ -13050,7 +13071,7 @@ var AppBundle = (function (exports) {
     });
   };
 
-  // Initialize on DOM ready
+  // DOM 로드 시 실행
   document.addEventListener('DOMContentLoaded', () => {
     initSliderQuestionCard();
   });

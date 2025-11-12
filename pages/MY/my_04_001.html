@@ -627,140 +627,110 @@
 
 
             <div class="question-card-container">
-              <div class="question-card question-card--single-choice">
+              <div class="question-card question-card--slider">
                 <div class="question-card__header">
                   <div class="question-card__header-left">
-                    <h3 class="question-card__type-label">단일 선택</h3>
-                    <div class="question-card__divider"></div>
-
-                    <a href="" class="btn underline underline__icon">
-                      <img src="../../assets/images/icon_copy.svg" alt="" style="width: 17px;" class="icon">
-                      복제
-                    </a>
-
-                    <a href="" class="btn underline underline__icon">
-                      <img src="../../assets/images/icon_delete.svg" alt="" style="width: 13px;left:-18px;top:2px"
-                        class="icon">
-                      삭제
-                    </a>
-
-                    <label class="ckb question-card__checkbox">
-                      <input type="checkbox" />
-                      <span class="ckb__box"></span>
-                      <span class="ckb__label">필수 여부</span>
-                    </label>
-
-                    <label class="ckb question-card__checkbox">
-                      <input type="checkbox" />
-                      <span class="ckb__box"></span>
-                      <span class="ckb__label">평가위원 노출 여부</span>
-                    </label>
-
                     <label class="ckb question-card__checkbox">
                       <input type="checkbox" checked />
                       <span class="ckb__box"></span>
-                      <span class="ckb__label">항목 선택으로 섹션 이동</span>
                     </label>
-                  </div>
-
-                  <button class="question-card__drag-handle" aria-label="항목 순서 변경">
-                    <img src="../../assets/images/icon_eva_drag_handle.svg" alt="">
-                  </button>
-                </div>
-
-                <div class="input-text-wrapper__wide">
-                  <input type="text" class="input-text" placeholder="항목 제목을 입력해 주세요. ex)공모전을 접하게된 계기를 선택해 주세요.">
-                </div>
-
-                <div class="question-card__options">
-                  <div class="question-card__options-header">
-                    <div class="question-card__options-header-left">
-                      <h5 class="question-card__options-title">항목 설정</h5>
-                      <p class="question-card__options-description">기본 2 항목이고, 최대 10항목까지 가능합니다.</p>
+        
+                    <div class="slider-type-indicator">
+                      <span class="slider-type-label">슬라이더형</span>
+                      <img src="../../assets/images/icon_slider.svg" alt="">
                     </div>
-
-                    <a href="" class="btn underline underline__icon">
-                      <img src="../../assets/images/icon_plus_16.svg" alt="" class="icon" style="width: 17px">
-                      선택항목 추가
-                    </a>
                   </div>
-
-                  <div class="question-card__options-list">
-                    <div class="question-option-item">
-                      <label class="radio-btn">
-                        <input type="radio" name="single-choice-demo" class="radio-btn__input">
-                        <span class="radio-btn__circle"></span>
-                      </label>
-
-                      <div class="input-text-wrapper__wide">
-                        <input type="text" class="input-text" placeholder="선택 항목명을 입력해 주세요. (200자 이내)">
+                  
+                  <div class="question-card__header-right">
+                    <div class="score-ratio-group">
+                      <label class="score-ratio-label">배점 비율</label>
+                      <div class="score-ratio-input">
+                        <input type="number" class="input-text-ratio" value="1">
+                        %
                       </div>
-
-                      <button class="btn-icon-only" aria-label="항목 삭제">
-                        <img src="../../assets/images/icon_close_16.svg" alt="삭제">
-                      </button>
                     </div>
-
-                    <div class="question-option-item">
-                      <label class="radio-btn">
-                        <input type="radio" name="single-choice-demo" class="radio-btn__input">
-                        <span class="radio-btn__circle"></span>
-                      </label>
-
-                      <div class="input-text-wrapper__wide">
-                        <input type="text" class="input-text" placeholder="선택 항목명을 입력해 주세요. (200자 이내)">
+          
+                    <div class="question-card__actions">
+                      <a href="" class="btn underline underline__icon">
+                        <img src="../../assets/images/icon_copy.svg" alt="" style="width: 17px;" class="icon">
+                        복제
+                      </a>
+          
+                      <a href="" class="btn underline underline__icon">
+                        <img src="../../assets/images/icon_delete.svg" alt="" style="width: 13px;left:-18px;top:2px" class="icon">
+                        삭제
+                      </a>
+                    </div>
+                    <button class="question-card__drag-handle" aria-label="항목 순서 변경">
+                      <img src="../../assets/images/icon_eva_drag_handle.svg" alt="">
+                    </button>
+                  </div>
+        
+                </div>
+        
+                <div class="slider-form-fields">
+                  <div class="slider-field-row">
+                    <label class="slider-field-label">
+                      <span class="label-text">제목</span>
+                      <span class="label-required">*</span>
+                    </label>
+                    <div class="input-text-wrapper__wide">
+                      <input type="text" class="input-text" placeholder="평가 항목의 제목을 입력해 주세요.(200자 이내)">
+                    </div>
+                  </div>
+        
+                  <div class="slider-field-row">
+                    <label class="slider-field-label">
+                      <span class="label-text">설명</span>
+                      <span class="label-required">*</span>
+                    </label>
+                    <div class="input-text-wrapper__wide">
+                      <input type="text" class="input-text" placeholder="평가 항목의 설명을 입력해 주세요(1000자 이내)">
+                    </div>
+                  </div>
+        
+                  <div class="slider-field-row slider-range-row">
+                    <div class="score-stepper score-stepper--min">
+                      <span class="stepper-label">최소 점수</span>
+                      <div class="stepper-divider"></div>
+                      <span class="stepper-value">1</span>
+                      <div class="stepper-controls">
+                        <button class="stepper-btn stepper-btn--up" aria-label="값 증가">
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.20568 0.371052C5.6202 -0.123683 6.3798 -0.123684 6.79432 0.371051L11.7551 6.29178C12.3218 6.96819 11.842 8 10.9608 8H1.03924C0.157975 8 -0.321811 6.96819 0.244928 6.29178L5.20568 0.371052Z" fill="#5E5E5E"/>
+                          </svg>
+                        </button>
+                        <button class="stepper-btn stepper-btn--down" aria-label="값 감소">
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.20568 11.6289C5.6202 12.1237 6.3798 12.1237 6.79432 11.6289L11.7551 5.70822C12.3218 5.03181 11.842 4 10.9608 4H1.03924C0.157975 4 -0.321811 5.03181 0.244928 5.70822L5.20568 11.6289Z" fill="#5E5E5E"/>
+                          </svg>
+                        </button>
                       </div>
-
-                      <button class="btn-icon-only" aria-label="항목 삭제">
-                        <img src="../../assets/images/icon_close_16.svg" alt="삭제">
-                      </button>
+                    </div>
+        
+                    <div class="range-slider">
+                      <div class="range-slider__element"></div>
+                    </div>
+        
+                    <div class="score-stepper score-stepper--max">
+                      <span class="stepper-label">최대 점수</span>
+                      <div class="stepper-divider"></div>
+                      <span class="stepper-value">10</span>
+                      <div class="stepper-controls">
+                        <button class="stepper-btn stepper-btn--up" aria-label="값 증가">
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.20568 0.371052C5.6202 -0.123683 6.3798 -0.123684 6.79432 0.371051L11.7551 6.29178C12.3218 6.96819 11.842 8 10.9608 8H1.03924C0.157975 8 -0.321811 6.96819 0.244928 6.29178L5.20568 0.371052Z" fill="#5E5E5E"/>
+                          </svg>
+                        </button>
+                        <button class="stepper-btn stepper-btn--down" aria-label="값 감소">
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.20568 11.6289C5.6202 12.1237 6.3798 12.1237 6.79432 11.6289L11.7551 5.70822C12.3218 5.03181 11.842 4 10.9608 4H1.03924C0.157975 4 -0.321811 5.03181 0.244928 5.70822L5.20568 11.6289Z" fill="#5E5E5E"/>
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="question-card question-card--single-word">
-                <div class="question-card__header">
-                  <div class="question-card__header-left">
-                    <h3 class="question-card__type-label">단답형</h3>
-                    <div class="question-card__divider"></div>
-
-                    <a href="" class="btn underline underline__icon">
-                      <img src="../../assets/images/icon_copy.svg" alt="" style="width: 17px;" class="icon">
-                      복제
-                    </a>
-
-                    <a href="" class="btn underline underline__icon">
-                      <img src="../../assets/images/icon_delete.svg" alt="" style="width: 13px;left:-18px;top:2px"
-                        class="icon">
-                      삭제
-                    </a>
-
-                    <label class="ckb question-card__checkbox">
-                      <input type="checkbox" />
-                      <span class="ckb__box"></span>
-                      <span class="ckb__label">필수 여부</span>
-                    </label>
-
-                    <label class="ckb question-card__checkbox">
-                      <input type="checkbox" />
-                      <span class="ckb__box"></span>
-                      <span class="ckb__label">평가위원 노출 여부</span>
-                    </label>
-
-                  </div>
-
-                  <button class="question-card__drag-handle" aria-label="항목 순서 변경">
-                    <img src="../../assets/images/icon_eva_drag_handle.svg" alt="">
-                  </button>
-                </div>
-
-                <div class="input-text-wrapper__wide">
-                  <div class="question-option-item">
-                    <label for="" class="question-option-item__label">제목</label>
-                    <input type="text" class="input-text" placeholder="항목 제목을 입력해 주세요. ex&#41;이름, 성명">
-                  </div>
-                </div>
-
               </div>
             </div>
 
@@ -768,6 +738,63 @@
               <img src="../../assets/images/icon_plus.svg" alt="" style="width: 13px;">
               항목 추가하기
             </button>
+          </section>
+          <section data-section-id="2">
+            <div class="section__title_bar">
+              <span class="title">섹션 제목 2</span>
+              <div class="fn-group">
+                <a href="" class="btn underline underline__icon">
+                  <img src="../../assets/images/icon_copy_white.png" alt="" class="icon icon-copy-white">
+                  복제
+                </a>
+                <a href="" class="btn underline underline__icon">
+                  <img src="../../assets/images/icon_delete_white.png" alt="" class="icon icon-delete-white">
+                  삭제
+                </a>
+
+                <button type="button" class="toggle">
+                  <img src="../../assets/images/icon_arrow_acc.svg" alt="아코디언 토글">
+                </button>
+
+                <div class="handle-drag">
+                  <img src="../../assets/images/icon_handle_drag.svg" alt="드래그핸들">
+                </div>
+              </div>
+            </div>
+            <p class="section__description">본 섹션은 건강과 관련된 섹션입니다. 평가해주세요.</p>
+
+
+            <div class="question-card-container">
+              <div class="question-card question-card--slider answer">
+                <div class="question-card__header">
+                  <div class="question-card__header-left">
+                    <span class="title">논리성</span>
+                    <p class="description">주장과 근거의 연결, 전개 흐름의 명확성</p>
+                  </div>
+                  
+                  <div class="question-card__header-right">
+                    <div class="question-card__header-right">
+                      <span class="tag">배점 비율 20%</span>
+                    </div>
+                  </div>
+        
+                </div>
+        
+                <div class="slider-form-fields">
+        
+                  <div class="slider-field-row slider-range-row">
+                    <span class="min"></span>
+        
+                    <div class="range-slider">
+                      <div class="range-slider__element"></div>
+                    </div>
+        
+                    <span class="max"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </section>
         </div>
 
