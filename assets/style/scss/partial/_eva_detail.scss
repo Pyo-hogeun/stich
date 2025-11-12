@@ -370,12 +370,68 @@
     }
   }
 }
+.eva-template{
+  h5.title{
+    font-size: 14px;
+    font-weight: 600;
+    color: $Title_Dark;
+    margin-bottom: 16px;
+    &:not(:first-child){
+      margin-top: 24px;
+    }
+  }
+}
+.eva-section-container{
+  margin-top: 24px;
+  padding: 24px;
+  .content-header{
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: $normalText;
+    &__upper{
+      margin-bottom: 16px;
+      em{
+        color: $primaryColor;
+        font-weight: 700;
+      }
+    }
+    &__lower{
+      display: flex;
+      justify-content: space-between;
+      .start, .end{
+        display: flex;
+        gap: 12px; 
+      }
+      .end{
+        justify-content: flex-end;
+      }
+      .toggle-switch__label{
+        color: $normalText;
+      }
+    }
+  }
+
+
+}
 .submit-btn-wrap{
-  display: block;
-  text-align: center;
+  display: flex;
   padding: 24px 0 60px;
+  &__start{
+    flex-basis: 50%;
+  }
+  &__end{
+    flex-basis: 50%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+  &__center{
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+  }
   img{
-    width: 17px;
+    width: 16px;
     margin-right: 4px;
   }
 }

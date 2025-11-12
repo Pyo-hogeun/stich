@@ -4,45 +4,51 @@ import "flatpickr/dist/flatpickr.min.css";
 import "flatpickr/dist/themes/stich.css";
 import { Korean } from "flatpickr/dist/l10n/ko.js";
 
+import Swiper from "swiper";
+import { Navigation, Pagination } from 'swiper/modules';
+import "swiper/swiper.css";
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 //드래그 파일업로더
 export const fileUpload = () => {
   const uploadArea = document.getElementById('fileUploadArea');
   const fileInput = document.getElementById('fileInput');
   const fileList = document.getElementById('fileList');
-  
-  if(uploadArea){
+
+  if (uploadArea) {
     // 클릭으로 파일 선택
     uploadArea.addEventListener('click', () => fileInput.click());
-  
+
     // 파일 선택 시
     fileInput.addEventListener('change', handleFiles);
-  
+
     // 드래그 이벤트 처리
     uploadArea.addEventListener('dragover', (e) => {
       e.preventDefault();
       uploadArea.classList.add('dragover');
     });
-  
+
     uploadArea.addEventListener('dragleave', () => {
       uploadArea.classList.remove('dragover');
     });
-  
+
     uploadArea.addEventListener('drop', (e) => {
       e.preventDefault();
       uploadArea.classList.remove('dragover');
       handleFiles({ target: { files: e.dataTransfer.files } });
     });
-  
+
     // 파일 목록 표시
     function handleFiles(e) {
       const files = e.target.files;
       fileList.innerHTML = '';
-  
+
       Array.from(files).forEach((file) => {
-        // file-item 컨테이너 생성
+        // file-item ���테이너 생성
         const fileItem = document.createElement('div');
         fileItem.classList.add('file-item');
-  
+
         // 내부 구조 작성
         fileItem.innerHTML = `
           <div class="file-item__content">
@@ -57,13 +63,13 @@ export const fileUpload = () => {
             </button>
           </div>
         `;
-  
+
         // 삭제 버튼 클릭 시 파일 항목 제거
         const deleteBtn = fileItem.querySelector('.file-item__delete');
         deleteBtn.addEventListener('click', () => {
           fileItem.remove();
         });
-  
+
         fileList.appendChild(fileItem);
       });
     }
@@ -76,7 +82,7 @@ fileUpload();
  * SortableJS 기반 중첩 드래그&드롭 구현
  * - 섹션 drag: handle '.handle-drag', container '.section-container'
  * - 카드 drag: handle '.question-card__drag-handle', 각 .question-card-container 별도 인스턴스
- * - 카드 이동은 같은 컨테이너 내부에서만 허용 (cross-section 이동 비허용)
+ * - 카드 이동은 같은 컨테이너 내부에서만 허용 (cross-section 이��� 비허용)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -105,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 2) 카드용 Sortable 초기화 (각 section에 있는 question-card-container 마다 인스턴스 생성)
-  // 카드 간 이동을 "같은 컨테이너 내에서만" 허용하려면 group: { name: 'cards', pull: false, put: false }
+  // 카드 간 이동을 "같�� 컨테이너 내에서만" 허용하려면 group: { name: 'cards', pull: false, put: false }
   const cardSortables = new Map(); // container -> Sortable instance (필요하면 destroy 가능)
 
   function initCardSortables() {
@@ -132,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
         group: { name: 'cards-' + container.getAttribute('data-card-container-id'), pull: false, put: false },
         onEnd: (evt) => {
           console.log('CARD moved within container:', container, evt);
-          // 카드 순서 저장 (특정 섹션의 카드 순서)
+          // 카드 순서 ���장 (특정 섹션의 카드 순서)
           const order = getCardOrder(container);
           console.log('New card order for container:', container.getAttribute('data-card-container-id'), order);
           // TODO: 서버 저장 호출
@@ -183,10 +189,11 @@ export const rangePickerInit = (targetId) => {
   const nextArrow = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M9 5L13.6612 10.4381C14.4316 11.3369 14.4316 12.6631 13.6612 13.5619L9 19" stroke="#3A3A3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>`;
-  
+
   const rangeInput = document.querySelector(targetId);
-  if(!rangeInput){
+  if (!rangeInput) {
     console.warn("⚠️ datepicker input not found");
+    return
   }
   // const startTimeInput = document.querySelector("#startTime");
   // const endTimeInput = document.querySelector("#endTime");
@@ -246,10 +253,11 @@ export const datePickerInit = (targetId) => {
   const nextArrow = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M9 5L13.6612 10.4381C14.4316 11.3369 14.4316 12.6631 13.6612 13.5619L9 19" stroke="#3A3A3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>`;
-  
+
   const date_picker = document.querySelector(targetId);
-  if(!date_picker){
+  if (!date_picker) {
     console.warn("⚠️ datepicker input not found");
+    return
   }
   // const startTimeInput = document.querySelector("#startTime");
   // const endTimeInput = document.querySelector("#endTime");
@@ -299,3 +307,68 @@ export const datePickerInit = (targetId) => {
   console.log(date_picker);
 }
 datePickerInit("#datePicker");
+
+
+
+const swiper = new Swiper(".mySwiper", {
+  modules: [Pagination, Navigation],
+  slidesPerView: 1.2,
+  spaceBetween: 16,
+  loop: true,
+  pagination: { el: ".swiper-pagination" },
+  effect: "cards", // 카드 전환 효과
+  grabCursor: true,
+
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+
+// 평가 템플릿 클릭 active
+function bindCardClickEvents() {
+  document.querySelectorAll('.template-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.template-card--selected').forEach(el =>
+        el.classList.remove('template-card--selected')
+      );
+      card.classList.add('template-card--selected');
+    });
+  });
+}
+// 평가 템플릿 SWIPER
+const templateSwiper = new Swiper(".template-swiper", {
+  modules: [Navigation],
+  slidesPerView: 'auto',
+  spaceBetween: 16,
+  grabCursor: true,
+  freeMode: true,
+  // Navigation arrows
+  navigation: {
+    nextEl: '.button-next.tmp',
+    prevEl: '.button-prev.tmp',
+  },
+});
+const templateSwiperMine = new Swiper(".template-swiper-mine", {
+  modules: [Navigation],
+  slidesPerView: 'auto',
+  spaceBetween: 16,
+  grabCursor: true,
+  freeMode: true,
+  // Navigation arrows
+  navigation: {
+    nextEl: '.button-next.tmp-mine',
+    prevEl: '.button-prev.tmp-mine',
+  },
+});
+
+document.addEventListener('DOMContentLoaded', bindCardClickEvents);
+templateSwiper.on('slideChange', bindCardClickEvents);
+templateSwiperMine.on('slideChange', bindCardClickEvents);
