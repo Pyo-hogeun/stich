@@ -544,9 +544,77 @@ export const initStarRateSetting = () => {
   });
 };
 
+export const initStarRatingUI = () => {
+  document.querySelectorAll('.star-rate').forEach((container) => {
+    const starItems = Array.from(container.querySelectorAll('li'));
+
+    if (!starItems.length) return;
+
+    const getScoreForItem = (item, index) => {
+      const itemScore = Number(item.dataset.score);
+      return Number.isFinite(itemScore) && itemScore > 0 ? itemScore : index + 1;
+    };
+
+    let selectedScore = starItems.reduce((acc, item, index) => {
+      if (item.classList.contains('active')) {
+        return Math.max(acc, getScoreForItem(item, index));
+      }
+      return acc;
+    }, 0);
+
+    const updateActiveState = (score) => {
+      starItems.forEach((item, index) => {
+        const itemScore = getScoreForItem(item, index);
+        if (itemScore <= score) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+
+      container.dataset.score = String(score);
+    };
+
+    if (selectedScore > 0) {
+      updateActiveState(selectedScore);
+    } else {
+      container.dataset.score = '0';
+    }
+
+    starItems.forEach((item, index) => {
+      const interactiveTarget = item.querySelector('a') || item;
+
+      const score = getScoreForItem(item, index);
+
+      interactiveTarget.addEventListener('click', (event) => {
+        event.preventDefault();
+        selectedScore = score;
+        updateActiveState(score);
+
+        container.dispatchEvent(
+          new CustomEvent('change', {
+            detail: {
+              score,
+            },
+          }),
+        );
+      });
+
+      item.addEventListener('mouseenter', () => {
+        updateActiveState(score);
+      });
+
+      item.addEventListener('mouseleave', () => {
+        updateActiveState(selectedScore);
+      });
+    });
+  });
+};
+
 // DOM 로드 시 실행
 document.addEventListener('DOMContentLoaded', () => {
   initSliderQuestionCard();
   initStarRateSetting();
+  initStarRatingUI();
 });
 
