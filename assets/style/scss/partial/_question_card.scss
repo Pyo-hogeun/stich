@@ -720,5 +720,26 @@
         color: $primaryColor;
       }
     }
+    &__score{
+      font-size: 18px;
+      font-weight: 700;
+      color: $Title_Dark;
+    }
+  }
+  &.answer{
+    .star-rate{
+      ol{
+        li{
+          a{
+            color: #F9F9F9;
+          }
+          &.active{
+            a{
+              color: $primaryColor;
+            }
+          }
+        }
+      }
+    }
   }
 }

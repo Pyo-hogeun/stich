@@ -3325,6 +3325,17 @@ button.btn-add:hover {
   box-sizing: border-box;
   color: #7A53EC;
 }
+.question-card--star .star-rate__score {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0A0A0A;
+}
+.question-card--star.answer .star-rate ol li a {
+  color: #F9F9F9;
+}
+.question-card--star.answer .star-rate ol li.active a {
+  color: #7A53EC;
+}
 
 .file-list-popup {
   position: absolute;

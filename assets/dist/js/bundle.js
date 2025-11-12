@@ -13075,6 +13075,7 @@ var AppBundle = (function (exports) {
     document.querySelectorAll('.star-rate-setting').forEach((container) => {
       const lengthStepper = container.querySelector('.score-stepper--length');
       const starRateList = container.querySelector('.star-rate ol');
+
       if (!lengthStepper || !starRateList) return;
 
       const valueElement = lengthStepper.querySelector('.stepper-value');
