@@ -717,7 +717,22 @@
         text-align: center;
         flex: 0 0 24px;
         box-sizing: border-box;
-        color: $primaryColor;
+        color: #d4d4d4;
+        cursor: pointer;
+        transition: color .2s ease;
+
+        &.active{
+          color: $primaryColor;
+        }
+
+        a{
+          display: block;
+          color: inherit;
+        }
+
+        svg{
+          display: block;
+        }
       }
     }
     &__score{
