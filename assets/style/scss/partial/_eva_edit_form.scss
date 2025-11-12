@@ -1,15 +1,48 @@
 @use 'variables' as *;
+:root{
+  --tag-bg: #F5F5F5;
+}
 .expose-set{
   display: flex;
   align-items: center;
   margin: 24px 0;
   gap: 12px;
 }
+.set-description{
+  margin-top: 40px;
+  font-size: 14px;
+  color: $normalText;
+  &__label{
+    font-weight: 600;
+    color: #000;
+    margin-right: 12px;
+  }
+}
+.eva-field-edit{
+  margin-bottom: 24px;
+  &__tag{
+    display: inline-flex;
+    align-items: center;
+    margin-right: 8px;
+    padding: 0 8px;
+    height: 24px;
+    font-size: 12px;
+    background-color: var(--tag-bg);
+    border-radius: 20px;
+    color: $smallText;
+  }
+}
+
 .regist-info{
   &__title{
     display: flex;
     justify-content: space-between;
     margin-top: 24px;
+    h3{
+      font-size: 20px;
+      font-weight: 700;
+      color: $Title_Dark;
+    }
   }
   &__notice{
     font-size: 14px;
@@ -212,6 +245,11 @@
           font-size: 18px;
         }
       }
+    }
+    &__description{
+      margin-bottom: 24px;
+      font-size: 14px;
+      font-weight: 600;
     }
   }
   

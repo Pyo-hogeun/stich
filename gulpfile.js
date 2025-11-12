@@ -147,7 +147,7 @@ export async function bundleJS() {
       }),
       commonjs(),
       postcssPlugin({
-        extract: true, // 별도 CSS 파일 생성
+        extract: 'bundle.css', // 별도 CSS 파일 생성
         minimize: true,
       }),
       babel({
