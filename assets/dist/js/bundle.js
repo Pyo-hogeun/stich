@@ -13071,14 +13071,75 @@ var AppBundle = (function (exports) {
     });
   };
 
+  const initStarRateSetting = () => {
+    document.querySelectorAll('.star-rate-setting').forEach((container) => {
+      const lengthStepper = container.querySelector('.score-stepper--length');
+      const starRateList = container.querySelector('.star-rate ol');
+      if (!lengthStepper || !starRateList) return;
+
+      const valueElement = lengthStepper.querySelector('.stepper-value');
+      const increaseButton = lengthStepper.querySelector('.stepper-btn--up');
+      const decreaseButton = lengthStepper.querySelector('.stepper-btn--down');
+      const templateStar = container.querySelector('.star-rate li');
+
+      if (!valueElement || !increaseButton || !decreaseButton || !templateStar) return;
+
+      const starTemplateHTML = templateStar.innerHTML.trim();
+      const minStars = Number(lengthStepper.dataset.min) || 1;
+      const maxStarsData = Number(lengthStepper.dataset.max);
+      const maxStars = Number.isFinite(maxStarsData) && maxStarsData > 0 ? maxStarsData : Number.POSITIVE_INFINITY;
+
+      const renderStars = (count) => {
+        starRateList.innerHTML = '';
+
+        for (let i = 0; i < count; i += 1) {
+          const starItem = document.createElement('li');
+          starItem.innerHTML = starTemplateHTML;
+          starRateList.appendChild(starItem);
+        }
+      };
+
+      let currentCount = parseInt(valueElement.textContent, 10);
+
+      if (!Number.isFinite(currentCount)) {
+        currentCount = starRateList.children.length || minStars;
+      }
+
+      currentCount = Math.min(Math.max(currentCount, minStars), maxStars);
+
+      const updateUI = () => {
+        valueElement.textContent = String(currentCount);
+        renderStars(currentCount);
+      };
+
+      updateUI();
+
+      increaseButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (currentCount >= maxStars) return;
+        currentCount += 1;
+        updateUI();
+      });
+
+      decreaseButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (currentCount <= minStars) return;
+        currentCount -= 1;
+        updateUI();
+      });
+    });
+  };
+
   // DOM 로드 시 실행
   document.addEventListener('DOMContentLoaded', () => {
     initSliderQuestionCard();
+    initStarRateSetting();
   });
 
   exports.datePickerInit = datePickerInit;
   exports.fileUpload = fileUpload;
   exports.initSliderQuestionCard = initSliderQuestionCard;
+  exports.initStarRateSetting = initStarRateSetting;
   exports.rangePickerInit = rangePickerInit;
 
   return exports;
