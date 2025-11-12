@@ -10,6 +10,9 @@ import "swiper/swiper.css";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+import noUiSlider from 'nouislider';
+import 'nouislider/dist/nouislider.css';
+
 //드래그 파일업로더
 export const fileUpload = () => {
   const uploadArea = document.getElementById('fileUploadArea');
@@ -372,3 +375,95 @@ const templateSwiperMine = new Swiper(".template-swiper-mine", {
 document.addEventListener('DOMContentLoaded', bindCardClickEvents);
 templateSwiper.on('slideChange', bindCardClickEvents);
 templateSwiperMine.on('slideChange', bindCardClickEvents);
+
+// noUiSlider initialization for slider question cards
+export const initSliderQuestionCard = () => {
+  document.querySelectorAll('.question-card--slider').forEach((card) => {
+    const rangeSlider = card.querySelector('.range-slider');
+    const sliderElement = card.querySelector('.range-slider__element');
+    const minStepper = card.querySelector('.score-stepper--min');
+    const maxStepper = card.querySelector('.score-stepper--max');
+
+    if (!sliderElement || !minStepper || !maxStepper) return;
+
+    const minValueSpan = minStepper.querySelector('.stepper-value');
+    const maxValueSpan = maxStepper.querySelector('.stepper-value');
+    const minUpBtn = minStepper.querySelector('.stepper-btn--up');
+    const minDownBtn = minStepper.querySelector('.stepper-btn--down');
+    const maxUpBtn = maxStepper.querySelector('.stepper-btn--up');
+    const maxDownBtn = maxStepper.querySelector('.stepper-btn--down');
+
+    let minValue = parseInt(minValueSpan.textContent) || 1;
+    let maxValue = parseInt(maxValueSpan.textContent) || 10;
+
+    // Initialize noUiSlider
+    noUiSlider.create(sliderElement, {
+      start: [minValue, maxValue],
+      connect: true,
+      range: {
+        'min': 0,
+        'max': 10
+      },
+      step: 1,
+      tooltips: true,
+      format: {
+        to: function (value) {
+          return Number(value).toFixed(2);
+        },
+        from: function (value) {
+          return Number(value).toFixed(2);
+        }
+      }
+    });
+
+    // Update values when slider changes
+    sliderElement.noUiSlider.on('update', function (values, handle) {
+      if (handle === 0) {
+        minValue = parseInt(values[0]);
+        minValueSpan.textContent = minValue;
+      } else {
+        maxValue = parseInt(values[1]);
+        maxValueSpan.textContent = maxValue;
+      }
+    });
+
+    // Stepper button handlers for min value
+    minUpBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (minValue < maxValue - 1) {
+        minValue++;
+        sliderElement.noUiSlider.set([minValue, null]);
+      }
+    });
+
+    minDownBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (minValue > 0) {
+        minValue--;
+        sliderElement.noUiSlider.set([minValue, null]);
+      }
+    });
+
+    // Stepper button handlers for max value
+    maxUpBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (maxValue < 100) {
+        maxValue++;
+        sliderElement.noUiSlider.set([null, maxValue]);
+      }
+    });
+
+    maxDownBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (maxValue > minValue + 1) {
+        maxValue--;
+        sliderElement.noUiSlider.set([null, maxValue]);
+      }
+    });
+  });
+};
+
+// Initialize on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+  initSliderQuestionCard();
+});

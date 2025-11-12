@@ -25,7 +25,7 @@
 
             <a href="" class="btn underline underline__icon">
               <img src="../../assets/images/icon_copy.svg" alt="" style="width: 17px;" class="icon">
-              복제
+              복��
             </a>
 
             <a href="" class="btn underline underline__icon">
@@ -431,7 +431,7 @@
 
           </div>
 
-          <button class="question-card__drag-handle" aria-label="항목 순서 변경">
+          <button class="question-card__drag-handle" aria-label="항��� 순서 변경">
             <img src="../../assets/images/icon_eva_drag_handle.svg" alt="">
           </button>
         </div>
@@ -487,7 +487,7 @@
 
           </div>
 
-          <button class="question-card__drag-handle" aria-label="항목 순�� 변경">
+          <button class="question-card__drag-handle" aria-label="항목 순서 변경">
             <img src="../../assets/images/icon_eva_drag_handle.svg" alt="">
           </button>
         </div>
@@ -495,7 +495,7 @@
         <div class="input-text-wrapper__wide">
           <div class="question-option-item">
             <label for="" class="question-option-item__label">제목</label>
-            <input type="text" class="input-text" placeholder="항목 제목을 입력해 주세요. ex&#41;첨부할 파일을 선택해주세요">
+            <input type="text" class="input-text" placeholder="항목 제목을 입력해 주세요. ex&#41;첨부할 파���을 선택해주세요">
           </div>
         </div>
       </div>
@@ -578,7 +578,7 @@
 
               <label for="" class="input-label">파일 최대 용량(MB)</label>
               <div class="input-text-wrapper__wide">
-                <input type="text" class="input-text" placeholder="용량 제한을 입력해 주세요. (최대 10MB, ���상 300MB 이내)">
+                <input type="text" class="input-text" placeholder="용량 제한을 입력해 주세요. (최대 10MB, 영상 300MB 이내)">
               </div>
             </div>
 
@@ -818,7 +818,7 @@
 
               <label for="" class="input-label">선택 시</label>
               <select name="" id="" class="styled-select" style="width: 160px">
-                <option value="">다음 ���션으로 이동</option>
+                <option value="">다음 섹션으로 이동</option>
               </select>
 
               <button class="btn-icon-only" aria-label="항목 삭제">
@@ -963,39 +963,35 @@
 
             <div class="slider-type-indicator">
               <span class="slider-type-label">슬라이더형</span>
-              <div class="mini-slider">
-                <div class="mini-slider__bg"></div>
-                <div class="mini-slider__track"></div>
-                <div class="mini-slider__handle mini-slider__handle--start"></div>
-                <div class="mini-slider__handle mini-slider__handle--end"></div>
-              </div>
+              <img src="../../assets/images/icon_slider.svg" alt="">
             </div>
-
-            <div class="question-card__divider"></div>
-
+          </div>
+          
+          <div class="question-card__header-right">
             <div class="score-ratio-group">
               <label class="score-ratio-label">배점 비율</label>
               <div class="score-ratio-input">
-                <input type="text" class="input-text-ratio" value="1%">
+                <input type="number" class="input-text-ratio" value="1">
+                %
               </div>
             </div>
-
+  
             <div class="question-card__actions">
               <a href="" class="btn underline underline__icon">
                 <img src="../../assets/images/icon_copy.svg" alt="" style="width: 17px;" class="icon">
                 복제
               </a>
-
+  
               <a href="" class="btn underline underline__icon">
                 <img src="../../assets/images/icon_delete.svg" alt="" style="width: 13px;left:-18px;top:2px" class="icon">
                 삭제
               </a>
             </div>
+            <button class="question-card__drag-handle" aria-label="항목 순서 변경">
+              <img src="../../assets/images/icon_eva_drag_handle.svg" alt="">
+            </button>
           </div>
 
-          <button class="question-card__drag-handle" aria-label="항목 순서 변경">
-            <img src="../../assets/images/icon_eva_drag_handle.svg" alt="">
-          </button>
         </div>
 
         <div class="slider-form-fields">
@@ -1020,7 +1016,7 @@
           </div>
 
           <div class="slider-field-row slider-range-row">
-            <div class="score-stepper">
+            <div class="score-stepper score-stepper--min">
               <span class="stepper-label">최소 점수</span>
               <div class="stepper-divider"></div>
               <span class="stepper-value">1</span>
@@ -1039,13 +1035,10 @@
             </div>
 
             <div class="range-slider">
-              <div class="range-slider__bg"></div>
-              <div class="range-slider__track"></div>
-              <div class="range-slider__handle range-slider__handle--min"></div>
-              <div class="range-slider__handle range-slider__handle--max"></div>
+              <div class="range-slider__element"></div>
             </div>
 
-            <div class="score-stepper">
+            <div class="score-stepper score-stepper--max">
               <span class="stepper-label">최대 점수</span>
               <div class="stepper-divider"></div>
               <span class="stepper-value">10</span>
