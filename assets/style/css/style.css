@@ -2899,11 +2899,11 @@ button.btn-add:hover {
   font-size: 12px;
   font-weight: 700;
 }
-.answer .slider-form-fields .min, .answer .slider-form-fields .max {
+.answer .form-fields .min, .answer .form-fields .max {
   font-size: 14px;
   color: #747474;
 }
-.answer .slider-form-fields .min:after, .answer .slider-form-fields .max:after {
+.answer .form-fields .min:after, .answer .form-fields .max:after {
   content: "점";
 }
 
@@ -3089,7 +3089,7 @@ button.btn-add:hover {
   top: -4px;
 }
 
-.slider-type-indicator {
+.type-indicator {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -3147,18 +3147,18 @@ button.btn-add:hover {
   outline: none;
 }
 
-.slider-form-fields {
+.form-fields {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.slider-field-row {
+.field-row {
   display: flex;
   align-items: center;
   gap: 16px;
 }
-.slider-field-row.slider-range-row {
+.field-row.slider-range-row {
   gap: 16px;
 }
 
@@ -3301,6 +3301,29 @@ button.btn-add:hover {
   height: 12px;
   background-image: url("../../images/icon_tip_down.svg");
   background-repeat: no-repeat;
+}
+
+.question-card--star .star-rate-setting {
+  display: flex;
+  gap: 16px;
+}
+.question-card--star .star-rate {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+}
+.question-card--star .star-rate ol {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 2px;
+}
+.question-card--star .star-rate ol li {
+  height: 24px;
+  text-align: center;
+  flex: 0 0 24px;
+  box-sizing: border-box;
+  color: #7A53EC;
 }
 
 .file-list-popup {

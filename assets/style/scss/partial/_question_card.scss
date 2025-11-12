@@ -230,7 +230,7 @@
       }
     }
   }
-  .slider-form-fields{
+  .form-fields{
     .min, .max{
       font-size: 14px;
       color: $normalText;
@@ -457,7 +457,7 @@
   }
 }
 
-.slider-type-indicator {
+.type-indicator {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -521,13 +521,13 @@
 
 }
 
-.slider-form-fields {
+.form-fields {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.slider-field-row {
+.field-row {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -696,4 +696,29 @@
     }
   }
 
+}
+
+.question-card--star{
+  .star-rate-setting{
+    display: flex;
+    gap: 16px;
+  }
+  .star-rate{
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    ol{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 2px;
+      li{
+        height: 24px;
+        text-align: center;
+        flex: 0 0 24px;
+        box-sizing: border-box;
+        color: $primaryColor;
+      }
+    }
+  }
 }
