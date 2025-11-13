@@ -2,6 +2,7 @@
 // 기본 변수 (원하면 오버라이드)
 :root {
   --ck-size: 16px;
+  --ck-size-lg: 24px;
   --ck-border: 1px;
   --ck-radius: 4px;
   --ck-color: #4D24C3;       // 체크된 배경
@@ -46,6 +47,17 @@
     background: #fff;
     position: relative;
   }
+  &.size-lg{
+    .ckb__box{
+      width: var(--ck-size-lg);
+      height: var(--ck-size-lg);
+    }
+    input[type="checkbox"]:checked + .ckb__box {
+      &::after {
+        transform: rotate(-45deg) scale(1.5) translate(1px, -1px);
+      }
+    }
+  }
 
   // 체크 아이콘 (체크표시는 ::after로 표시)
   &__box::after {
@@ -76,6 +88,7 @@
       transform: rotate(-45deg) scale(1) translate(1px, -1px);
       opacity: 1;
     }
+    
   }
 
   // hover 효과 (마우스 오버 시)

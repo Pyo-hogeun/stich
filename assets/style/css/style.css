@@ -581,6 +581,7 @@ h2 {
 
 :root {
   --ck-size: 16px;
+  --ck-size-lg: 24px;
   --ck-border: 1px;
   --ck-radius: 4px;
   --ck-color: #4D24C3;
@@ -621,6 +622,13 @@ h2 {
   transition: background-color 150ms ease, border-color 150ms ease, transform 120ms ease;
   background: #fff;
   position: relative;
+}
+.ckb.size-lg .ckb__box {
+  width: var(--ck-size-lg);
+  height: var(--ck-size-lg);
+}
+.ckb.size-lg input[type=checkbox]:checked + .ckb__box::after {
+  transform: rotate(-45deg) scale(1.5) translate(1px, -1px);
 }
 .ckb__box::after {
   content: "";
@@ -2814,13 +2822,6 @@ button.btn-add:hover {
   font-size: 14px;
   color: #747474;
 }
-.question-card__checkbox .ckb__box {
-  width: var(--ch-size);
-  height: var(--ch-size);
-}
-.question-card__checkbox input[type=checkbox]:checked + .ckb__box::after {
-  transform: rotate(-45deg) scale(1.5) translate(1px, -1px);
-}
 .question-card__drag-handle {
   display: flex;
   align-items: center;
@@ -2930,12 +2931,13 @@ button.btn-add:hover {
   color: #FF44BF;
   font-size: 1em;
 }
-.viewer .text-length {
+
+.text-length {
   color: #919191;
   font-size: 12px;
   margin-top: 8px;
 }
-.viewer .text-length.align-r {
+.text-length.align-r {
   text-align: right;
 }
 
@@ -3203,6 +3205,7 @@ button.btn-add:hover {
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
+  white-space: nowrap;
 }
 
 .stepper-divider {
@@ -3564,6 +3567,45 @@ button.btn-add:hover {
 .question-card--step-score .step-score__input-wrap {
   display: flex;
   gap: 12px;
+}
+.question-card--step-score.answer .step-score-tab {
+  display: flex;
+  border: 1px solid #BDBDBD;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.question-card--step-score.answer .step-score-tab__item {
+  flex: 1 1 auto;
+  border: 1px solid #BDBDBD;
+  border-width: 0 1px 0 0;
+}
+.question-card--step-score.answer .step-score-tab__item:last-child {
+  border-right: 0;
+}
+.question-card--step-score.answer .step-score-tab__item.active {
+  background-color: #7A53EC;
+}
+.question-card--step-score.answer .step-score-tab__item.active a {
+  color: #FFFFFF;
+}
+.question-card--step-score.answer .step-score-tab__item a {
+  display: flex;
+  height: 57px;
+  align-items: center;
+  justify-content: center;
+  color: #747474;
+  font-size: 14px;
+}
+.question-card--step-score.answer .step-score__give-score {
+  width: 110px;
+  display: inline-flex;
+  flex-direction: column;
+}
+.question-card--step-score.answer .step-score__label {
+  font-size: 14px;
+  color: #747474;
+  white-space: nowrap;
+  margin-bottom: 8px;
 }
 
 .file-list-popup {

@@ -959,7 +959,7 @@
       <div class="question-card question-card--slider">
         <div class="question-card__header">
           <div class="question-card__header-left">
-            <label class="ckb question-card__checkbox">
+            <label class="ckb question-card__checkbox size-lg">
               <input type="checkbox" checked />
               <span class="ckb__box"></span>
             </label>
@@ -1106,7 +1106,7 @@
       <div class="question-card question-card--star">
         <div class="question-card__header">
           <div class="question-card__header-left">
-            <label class="ckb question-card__checkbox">
+            <label class="ckb question-card__checkbox size-lg">
               <input type="checkbox" checked />
               <span class="ckb__box"></span>
             </label>
@@ -1326,7 +1326,7 @@
       <div class="question-card question-card--single-choice-score">
         <div class="question-card__header">
           <div class="question-card__header-left">
-            <label class="ckb question-card__checkbox">
+            <label class="ckb size-lg question-card__checkbox">
               <input type="checkbox" checked />
               <span class="ckb__box"></span>
             </label>
@@ -1564,7 +1564,7 @@
       <div class="question-card question-card--step-score">
         <div class="question-card__header">
           <div class="question-card__header-left">
-            <label class="ckb question-card__checkbox">
+            <label class="ckb size-lg question-card__checkbox">
               <input type="checkbox" checked />
               <span class="ckb__box"></span>
             </label>
@@ -1773,6 +1773,8 @@
         </div>
       </div>
 
+      <br>
+
       <div class="question-card question-card--step-score answer">
         <div class="question-card__header">
           <div class="question-card__header-left">
@@ -1785,9 +1787,7 @@
               <span class="tag">배점 비율 20%</span>
             </div>
           </div>
-
         </div>
-
         <div class="question-card__options">
           <div class="step-score-tab">
             <div class="step-score-tab__item active"><a href="">매우 부족</a></div>
@@ -1798,6 +1798,134 @@
           </div>
         </div>
       </div>
+
+      <hr class="divider_hr">
+      <div class="question-card question-card--step-score">
+        <div class="question-card__header">
+          <div class="question-card__header-left">
+            <label class="ckb size-lg question-card__checkbox">
+              <input type="checkbox" checked />
+              <span class="ckb__box"></span>
+            </label>
+
+            <div class="type-indicator">
+              <span class="slider-type-label">단계별 점수형</span>
+              <img src="../../assets/images/icon_step_score.svg" alt="">
+            </div>
+          </div>
+
+          <div class="question-card__header-right">
+            <div class="score-ratio-group">
+              <label class="score-ratio-label">배점 비율</label>
+              <div class="score-ratio-input">
+                <input type="number" class="input-text-ratio" value="1">
+                %
+              </div>
+            </div>
+
+            <div class="question-card__actions">
+              <a href="" class="btn underline underline__icon">
+                <img src="../../assets/images/icon_copy.svg" alt="" style="width: 17px;" class="icon">
+                복제
+              </a>
+
+              <a href="" class="btn underline underline__icon">
+                <img src="../../assets/images/icon_delete.svg" alt="" style="width: 13px;left:-18px;top:2px"
+                  class="icon">
+                삭제
+              </a>
+            </div>
+            <button class="question-card__drag-handle" aria-label="항목 순서 변경">
+              <img src="../../assets/images/icon_eva_drag_handle.svg" alt="">
+            </button>
+          </div>
+
+        </div>
+
+        <div class="form-fields">
+          <div class="field-row">
+            <label class="slider-field-label">
+              <span class="label-text">제목</span>
+              <span class="label-required">*</span>
+            </label>
+            <div class="input-text-wrapper__wide">
+              <input type="text" class="input-text" placeholder="평가 항목의 제목을 입력해 주세요.(200자 이내)">
+            </div>
+          </div>
+
+          <div class="field-row">
+            <label class="slider-field-label">
+              <span class="label-text">설명</span>
+              <span class="label-required">*</span>
+            </label>
+            <div class="input-text-wrapper__wide">
+              <input type="text" class="input-text" placeholder="평가 항목의 설명을 입력해 주세요(1000자 이내)">
+            </div>
+            <div class="score-stepper score-stepper--length">
+              <span class="stepper-label">최대 점수</span>
+              <div class="stepper-divider"></div>
+              <span class="stepper-value">1</span>
+              <div class="stepper-controls">
+                <button class="stepper-btn stepper-btn--up" aria-label="값 증가">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.20568 0.371052C5.6202 -0.123683 6.3798 -0.123684 6.79432 0.371051L11.7551 6.29178C12.3218 6.96819 11.842 8 10.9608 8H1.03924C0.157975 8 -0.321811 6.96819 0.244928 6.29178L5.20568 0.371052Z" fill="#5E5E5E"></path>
+                  </svg>
+                </button>
+                <button class="stepper-btn stepper-btn--down" aria-label="값 감소">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.20568 11.6289C5.6202 12.1237 6.3798 12.1237 6.79432 11.6289L11.7551 5.70822C12.3218 5.03181 11.842 4 10.9608 4H1.03924C0.157975 4 -0.321811 5.03181 0.244928 5.70822L5.20568 11.6289Z" fill="#5E5E5E"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <br>
+      <div class="question-card question-card--step-score answer">
+        <div class="question-card__header">
+          <div class="question-card__header-left">
+            <span class="title">종합 의견 및 개선 제안</span>
+            <p class="description">자유롭게 서술해 주세요.</p>
+          </div>
+
+          <div class="question-card__header-right">
+            <div class="question-card__header-right">
+              <span class="tag">배점 비율 20%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-text-wrapper__wide">
+          <textarea name="" id="1" cols="30" rows="5" class="input-textarea" placeholder="최대 2,000자까지 입력해 주세요."></textarea>
+          <div class="text-length align-r">0/{입력한 제한 글자수}</div>
+        </div>
+
+        <div class="question-card__options">
+          <div class="step-score__give-score">
+            <div class="step-score__label">평가 점수(최대 2점)</div>
+            <div class="score-stepper score-stepper--length">
+              <span class="stepper-label">점수</span>
+              <div class="stepper-divider"></div>
+              <span class="stepper-value">1</span>
+              <div class="stepper-controls">
+                <button class="stepper-btn stepper-btn--up" aria-label="값 증가">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.20568 0.371052C5.6202 -0.123683 6.3798 -0.123684 6.79432 0.371051L11.7551 6.29178C12.3218 6.96819 11.842 8 10.9608 8H1.03924C0.157975 8 -0.321811 6.96819 0.244928 6.29178L5.20568 0.371052Z" fill="#5E5E5E"></path>
+                  </svg>
+                </button>
+                <button class="stepper-btn stepper-btn--down" aria-label="값 감소">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.20568 11.6289C5.6202 12.1237 6.3798 12.1237 6.79432 11.6289L11.7551 5.70822C12.3218 5.03181 11.842 4 10.9608 4H1.03924C0.157975 4 -0.321811 5.03181 0.244928 5.70822L5.20568 11.6289Z" fill="#5E5E5E"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
 
 

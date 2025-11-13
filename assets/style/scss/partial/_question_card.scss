@@ -30,6 +30,7 @@
     align-items: center;
     gap: 12px;
     flex-wrap: wrap;
+    
   }
 
   &__header-right {
@@ -56,14 +57,6 @@
   &__checkbox {
     font-size: 14px;
     color: $normalText;
-    .ckb__box{
-      width: var(--ch-size);
-      height: var(--ch-size);
-    }
-    input[type=checkbox]:checked + .ckb__box{
-      &::after{
-        transform: rotate(-45deg) scale(1.5) translate(1px, -1px)      }
-    }
   }
 
   &__drag-handle {
@@ -199,17 +192,15 @@
       }
     }
   }
+}
+.text-length {
+  color: $smallText;
+  font-size: 12px;
+  margin-top: 8px;
 
-  .text-length {
-    color: $smallText;
-    font-size: 12px;
-    margin-top: 8px;
-
-    &.align-r {
-      text-align: right;
-    }
+  &.align-r {
+    text-align: right;
   }
-
 }
 .answer{
   .question-card__header{
@@ -522,6 +513,7 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
+  white-space: nowrap;
 }
 
 .stepper-divider {
@@ -950,6 +942,50 @@
     &__input-wrap{
       display: flex;
       gap: 12px;
+    }
+  }
+  &.answer{
+    .step-score-tab{
+      display: flex;
+      border: 1px solid #BDBDBD;
+      border-radius: 12px;
+      overflow: hidden;
+      // justify-content: space-between;
+      &__item{
+        flex: 1 1 auto;
+        border: 1px solid #BDBDBD;
+        border-width: 0 1px 0 0;
+        &:last-child{
+          border-right: 0;
+        }
+        &.active{
+          background-color: $primaryColor;
+          a{
+            color: #FFFFFF;
+          }
+        }
+        a{
+          display: flex;
+          height: 57px;
+          align-items: center;
+          justify-content: center;
+          color: $normalText;
+          font-size: 14px;
+        }
+      }
+    }
+    .step-score{
+      &__give-score{
+        width: 110px;
+        display: inline-flex;
+        flex-direction: column;
+      }
+      &__label{
+        font-size: 14px;
+        color: $normalText;
+        white-space: nowrap;
+        margin-bottom: 8px;
+      }
     }
   }
 }

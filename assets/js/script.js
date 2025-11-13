@@ -616,15 +616,14 @@ export const initStepScoreTab = () => {
     const tabItems = Array.from(container.querySelectorAll('.step-score-tab__item'));
     if (!tabItems.length) return
 
-    tabItems.forEach((el) => {
-      el.querySelector('a').addEventListener('click', (e)=>{
+    tabItems.forEach((tab) => {
+      const link = tab.querySelector('a');
+      link.addEventListener('click', (e)=>{
         e.preventDefault();
-        tabItems.forEach((e)=>{
-          const parent = e.target.closest('.step-score-tab__item');
-          parent.classList.remove('active');
+        tabItems.forEach((item)=>{
+          item.classList.remove('active')
         });
-        e.target.parentElement.classList.add('active');
-        
+        tab.classList.add('active');
       })
 
     });
