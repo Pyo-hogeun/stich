@@ -245,7 +245,7 @@ export const rangePickerInit = (targetId) => {
   console.log(`✅ Initialized rangeInput flatpickr instances`);
   console.log(rangeInput);
 }
-rangePickerInit("#rangePicker");
+
 
 export const datePickerInit = (targetId) => {
 
@@ -309,7 +309,7 @@ export const datePickerInit = (targetId) => {
   console.log(`✅ Initialized date_picker flatpickr instances`);
   console.log(date_picker);
 }
-datePickerInit("#datePicker");
+
 
 
 
@@ -610,11 +610,35 @@ export const initStarRatingUI = () => {
     });
   });
 };
+export const initStepScoreTab = () => {
+
+  document.querySelectorAll('.step-score-tab').forEach((container) => {
+    const tabItems = Array.from(container.querySelectorAll('.step-score-tab__item'));
+    if (!tabItems.length) return
+
+    tabItems.forEach((el) => {
+      el.querySelector('a').addEventListener('click', (e)=>{
+        e.preventDefault();
+        tabItems.forEach((e)=>{
+          const parent = e.target.closest('.step-score-tab__item');
+          parent.classList.remove('active');
+        });
+        e.target.parentElement.classList.add('active');
+        
+      })
+
+    });
+
+  })
+}
 
 // DOM 로드 시 실행
 document.addEventListener('DOMContentLoaded', () => {
+  rangePickerInit("#rangePicker");
+  datePickerInit("#datePicker");
   initSliderQuestionCard();
   initStarRateSetting();
   initStarRatingUI();
+  initStepScoreTab();
 });
 

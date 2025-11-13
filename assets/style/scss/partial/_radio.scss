@@ -1,0 +1,62 @@
+@use 'variables' as *;
+.radio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__circle {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    border-radius: 50%;
+    border: 1px solid $Line_Normal;
+    background: #FFF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.15s ease;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #FFF;
+      opacity: 0;
+      transform: scale(0);
+      transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+  }
+
+  &__input:checked+&__circle {
+    // border-color: #4D24C3;
+    // border-width: 1px;
+    background-color: $primaryColor;
+
+    &::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &__input:focus+&__circle {
+    box-shadow: 0 0 0 3px rgba(77, 36, 195, 0.15);
+  }
+
+  &:hover &__circle {
+    border-color: #4D24C3;
+  }
+}

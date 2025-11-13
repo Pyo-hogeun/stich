@@ -12832,7 +12832,7 @@ var AppBundle = (function (exports) {
     console.log(`✅ Initialized rangeInput flatpickr instances`);
     console.log(rangeInput);
   };
-  rangePickerInit("#rangePicker");
+
 
   const datePickerInit = (targetId) => {
 
@@ -12896,7 +12896,7 @@ var AppBundle = (function (exports) {
     console.log(`✅ Initialized date_picker flatpickr instances`);
     console.log(date_picker);
   };
-  datePickerInit("#datePicker");
+
 
 
 
@@ -13197,12 +13197,36 @@ var AppBundle = (function (exports) {
       });
     });
   };
+  const initStepScoreTab = () => {
+
+    document.querySelectorAll('.step-score-tab').forEach((container) => {
+      const tabItems = Array.from(container.querySelectorAll('.step-score-tab__item'));
+      if (!tabItems.length) return
+
+      tabItems.forEach((el) => {
+        el.querySelector('a').addEventListener('click', (e)=>{
+          e.preventDefault();
+          tabItems.forEach((e)=>{
+            const parent = e.target.closest('.step-score-tab__item');
+            parent.classList.remove('active');
+          });
+          e.target.parentElement.classList.add('active');
+          
+        });
+
+      });
+
+    });
+  };
 
   // DOM 로드 시 실행
   document.addEventListener('DOMContentLoaded', () => {
+    rangePickerInit("#rangePicker");
+    datePickerInit("#datePicker");
     initSliderQuestionCard();
     initStarRateSetting();
     initStarRatingUI();
+    initStepScoreTab();
   });
 
   exports.datePickerInit = datePickerInit;
@@ -13210,6 +13234,7 @@ var AppBundle = (function (exports) {
   exports.initSliderQuestionCard = initSliderQuestionCard;
   exports.initStarRateSetting = initStarRateSetting;
   exports.initStarRatingUI = initStarRatingUI;
+  exports.initStepScoreTab = initStepScoreTab;
   exports.rangePickerInit = rangePickerInit;
 
   return exports;
