@@ -12832,7 +12832,7 @@ var AppBundle = (function (exports) {
     console.log(`✅ Initialized rangeInput flatpickr instances`);
     console.log(rangeInput);
   };
-  rangePickerInit("#rangePicker");
+
 
   const datePickerInit = (targetId) => {
 
@@ -12896,7 +12896,7 @@ var AppBundle = (function (exports) {
     console.log(`✅ Initialized date_picker flatpickr instances`);
     console.log(date_picker);
   };
-  datePickerInit("#datePicker");
+
 
 
 
@@ -13071,14 +13071,169 @@ var AppBundle = (function (exports) {
     });
   };
 
+  const initStarRateSetting = () => {
+    document.querySelectorAll('.star-rate-setting').forEach((container) => {
+      const lengthStepper = container.querySelector('.score-stepper--length');
+      const starRateList = container.querySelector('.star-rate ol');
+
+      if (!lengthStepper || !starRateList) return;
+
+      const valueElement = lengthStepper.querySelector('.stepper-value');
+      const increaseButton = lengthStepper.querySelector('.stepper-btn--up');
+      const decreaseButton = lengthStepper.querySelector('.stepper-btn--down');
+      const templateStar = container.querySelector('.star-rate li');
+
+      if (!valueElement || !increaseButton || !decreaseButton || !templateStar) return;
+
+      const starTemplateHTML = templateStar.innerHTML.trim();
+      const minStars = Number(lengthStepper.dataset.min) || 1;
+      const maxStarsData = Number(lengthStepper.dataset.max);
+      const maxStars = Number.isFinite(maxStarsData) && maxStarsData > 0 ? maxStarsData : Number.POSITIVE_INFINITY;
+
+      const renderStars = (count) => {
+        starRateList.innerHTML = '';
+
+        for (let i = 0; i < count; i += 1) {
+          const starItem = document.createElement('li');
+          starItem.innerHTML = starTemplateHTML;
+          starRateList.appendChild(starItem);
+        }
+      };
+
+      let currentCount = parseInt(valueElement.textContent, 10);
+
+      if (!Number.isFinite(currentCount)) {
+        currentCount = starRateList.children.length || minStars;
+      }
+
+      currentCount = Math.min(Math.max(currentCount, minStars), maxStars);
+
+      const updateUI = () => {
+        valueElement.textContent = String(currentCount);
+        renderStars(currentCount);
+      };
+
+      updateUI();
+
+      increaseButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (currentCount >= maxStars) return;
+        currentCount += 1;
+        updateUI();
+      });
+
+      decreaseButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (currentCount <= minStars) return;
+        currentCount -= 1;
+        updateUI();
+      });
+    });
+  };
+
+  const initStarRatingUI = () => {
+    document.querySelectorAll('.star-rate').forEach((container) => {
+      const starItems = Array.from(container.querySelectorAll('li'));
+
+      if (!starItems.length) return;
+
+      const getScoreForItem = (item, index) => {
+        const itemScore = Number(item.dataset.score);
+        return Number.isFinite(itemScore) && itemScore > 0 ? itemScore : index + 1;
+      };
+
+      let selectedScore = starItems.reduce((acc, item, index) => {
+        if (item.classList.contains('active')) {
+          return Math.max(acc, getScoreForItem(item, index));
+        }
+        return acc;
+      }, 0);
+
+      const updateActiveState = (score) => {
+        starItems.forEach((item, index) => {
+          const itemScore = getScoreForItem(item, index);
+          if (itemScore <= score) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
+          }
+        });
+
+        container.dataset.score = String(score);
+      };
+
+      if (selectedScore > 0) {
+        updateActiveState(selectedScore);
+      } else {
+        container.dataset.score = '0';
+      }
+
+      starItems.forEach((item, index) => {
+        const interactiveTarget = item.querySelector('a') || item;
+
+        const score = getScoreForItem(item, index);
+
+        interactiveTarget.addEventListener('click', (event) => {
+          event.preventDefault();
+          selectedScore = score;
+          updateActiveState(score);
+
+          container.dispatchEvent(
+            new CustomEvent('change', {
+              detail: {
+                score,
+              },
+            }),
+          );
+        });
+
+        item.addEventListener('mouseenter', () => {
+          updateActiveState(score);
+        });
+
+        item.addEventListener('mouseleave', () => {
+          updateActiveState(selectedScore);
+        });
+      });
+    });
+  };
+  const initStepScoreTab = () => {
+
+    document.querySelectorAll('.step-score-tab').forEach((container) => {
+      const tabItems = Array.from(container.querySelectorAll('.step-score-tab__item'));
+      if (!tabItems.length) return
+
+      tabItems.forEach((tab) => {
+        const link = tab.querySelector('a');
+        link.addEventListener('click', (e)=>{
+          e.preventDefault();
+          tabItems.forEach((item)=>{
+            item.classList.remove('active');
+          });
+          tab.classList.add('active');
+        });
+
+      });
+
+    });
+  };
+
   // DOM 로드 시 실행
   document.addEventListener('DOMContentLoaded', () => {
+    rangePickerInit("#rangePicker");
+    datePickerInit("#datePicker");
     initSliderQuestionCard();
+    initStarRateSetting();
+    initStarRatingUI();
+    initStepScoreTab();
   });
 
   exports.datePickerInit = datePickerInit;
   exports.fileUpload = fileUpload;
   exports.initSliderQuestionCard = initSliderQuestionCard;
+  exports.initStarRateSetting = initStarRateSetting;
+  exports.initStarRatingUI = initStarRatingUI;
+  exports.initStepScoreTab = initStepScoreTab;
   exports.rangePickerInit = rangePickerInit;
 
   return exports;
