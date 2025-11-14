@@ -212,7 +212,7 @@
       }
     }
   }
-  .add-item-interest{
+  .add-item-interest, .add-item-link{
     display: flex;
     gap: 8px;
     &__item{
@@ -245,7 +245,7 @@
   .file-list{
     margin-top: 8px;
   }
-  .file-item{
+  .file-item, .link-item{
     background-color: $bgLightGray;
     padding: 18px 16px;
     height: 60px;

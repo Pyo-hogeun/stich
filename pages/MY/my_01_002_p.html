@@ -300,8 +300,47 @@
         </label>
         <div id="fileList" class="file-list" data-upload-variant="sortable">
         </div>
+        <hr class="divider_hr">
         
         <h3>링크</h3>
+        <div class="add-item-link">
+          <div class="input-text-wrapper" style="flex-basis: 200px;">
+            <input type="text" class="input-text">
+          </div>
+          <div class="input-text-wrapper" style="flex-basis: 420px">
+            <input type="text" class="input-text">
+          </div>
+          <button class="btn border h40">
+            <img src="../../assets/images/icon_plus_black.svg" alt="">
+            등록
+          </button>
+        </div>
+
+        <div id="linkList" class="file-list" data-upload-variant="sortable">
+          <div class="link-item" data-file-id="">
+            <div class="link-item__content">
+              <div class="link-item__info">
+                <div class="link-item__icon">
+                  <img src="../../assets/images/icon_file_added.png" alt="파일">
+                </div>
+                <span class="link-item__name">회사 홈페이지</span>
+                <span class="divider"></span>
+                <span class="link-item__size">http://dev.stich.kr/corp/profile</span>
+              </div>
+              <div class="item-actions">
+                <button class="item-drag-handle" aria-label="항목 순서 변경">
+                  <img src="../../assets/images/icon_handle.svg" alt="">
+                </button>
+                <button class="item-close-btn" aria-label="항목 삭제">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.33203 3.3335L12.6659 12.6674" stroke="#0A0A0A" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.668 3.3335L3.3341 12.6674" stroke="#0A0A0A" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="layer-popup__footer">
         <div class="layer-popup__footer-left">
