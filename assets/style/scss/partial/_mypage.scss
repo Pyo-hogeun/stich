@@ -1,0 +1,302 @@
+@use 'variables' as *;
+:root{
+  --color-body-normal: #3A3A3A;
+  --color-gray-border: #EAEAEA
+}
+.mypage-main{
+  padding-top: 80px;
+  &__topper{
+    display: flex;
+    gap: 56px;
+    justify-content: center;
+    padding-bottom: 12px;
+    .profile-img-wrapper{
+      display: inline-block;
+      position: relative;
+      .img-wrap{
+        width: 160px;
+        height: 160px;
+        border-radius: 20px;
+        overflow: hidden;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .btn-setting{
+        position: absolute;
+        bottom: -12px;
+        right: -12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: #FFF;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.12);
+      }
+    }
+    .profile-name{
+      .name{
+        font-size: 40px;
+        font-weight: 700;
+        color: $Title_Dark;
+      }
+      .description-about-profile{
+        margin-top: 14px;
+        font-size: 14px;
+        color: var(--color-body-normal);
+      }
+    }
+  }
+  &__tabs{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    border-bottom: 1px solid #B0B0B0;
+    &_item{
+      a{
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        font-size: 18px;
+        padding: 0 16px;
+        height: 40px;
+        &.active{
+          color: $primaryColor2;
+          font-weight: 700;
+          &:after{
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background-color: $primaryColor2;
+          }
+        }
+      }
+    }
+  }
+
+  &__profile{
+    padding-top: 40px;
+    h2{
+      font-size: 24px;
+      font-weight: 700;
+      color: $Title_Dark;
+      margin-bottom: 24px;
+    }
+    .content-wrap{
+      padding: 40px 24px;
+      border-bottom: 1px solid $cardBorderColor;
+      &:last-child{
+        border-bottom: 0;
+      }
+      h3{
+        font-size: 18px;
+        color: $Title_Dark;
+        .btn{
+          font-size: 12px;
+          margin-left: 32px;
+          .icon{
+            top:0;
+          }
+        }
+      }
+      &__desc{
+        font-size: 14px;
+        color: $normalText;
+        line-height: 1.5;
+        margin-top: 24px;
+      }
+      .interest-category{
+        margin-top: 24px;
+        &__item{
+          display: inline-flex;
+          border: 1px solid #3A3A3A;
+          border-radius: 20px;
+          height: 32px;
+          align-items: center;
+          padding: 0 12px;
+          font-size: 14px;
+          color: $Title_Dark;
+          margin-right: 8px;
+        }
+      }
+      .file-list{
+        margin-top: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        .file-item{
+          display: inline-block;
+          &__content{
+            min-width: auto;
+          }
+        }
+      }
+      .link-wrap{
+        margin-top: 24px;
+        a.link{
+          font-size: 14px;
+          color: $Title_Dark;
+          text-decoration: underline;
+        }
+      }
+      .manager-list{
+        margin-top: 26px;
+        li{
+          display: flex;
+          font-size: 14px;
+          color: $Title_Dark;
+          gap: 8px;
+          align-items: center;
+          margin-bottom: 16px;
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+        .manager-icon-circle{
+          display: inline-block;
+          width: 26px;
+          height: 26px;
+          background-image: url('../../images/icon_profile_icon.svg');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-color: #F5F5F5;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+        .verified{
+          color: $pointColor2;
+        }
+        .unverified{
+          color: $pointColor1;
+        }
+      }
+    }
+  }
+
+
+}
+.profile-edit{
+  .profile{
+    &__wrapper{
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+    }
+    &__img{
+      border-radius: 20px;
+      border: 1px solid var(--color-gray-border);
+      overflow: hidden;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &__name{
+      &_title{
+        font-size: 40px;
+        font-weight: 700;
+        color: $Title_Dark;
+      }
+      &_desc{
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 16px;
+      }
+    }
+  }
+  .add-item-interest, .add-item-link{
+    display: flex;
+    gap: 8px;
+    &__item{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+      .item{
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid $Line_Normal;
+        border-radius: 20px;
+        padding: 0 12px;
+        font-size: 14px;
+        height: 32px;
+        gap: 4px;
+        .btn-remove{
+          border: 0;
+          background-color: transparent;
+          width: 12px;
+          height: 12px;
+          padding: 0;
+        }
+      }
+    }
+  }
+  hr.divider_hr{
+    margin: 24px 0 !important;
+  }
+  .file-list{
+    margin-top: 8px;
+  }
+  .file-item, .link-item{
+    background-color: $bgLightGray;
+    padding: 18px 16px;
+    height: 60px;
+    border: 0;
+    margin-bottom: 8px;
+    .item-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .item-drag-handle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      width: 16px;
+      height: 16px;
+      padding: 3.5px 2px;
+      background: transparent;
+      border: none;
+      cursor: grab;
+  
+      &:active {
+        cursor: grabbing;
+      }
+    }
+    .item-close-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+  
+      &:hover {
+        opacity: 0.7;
+      }
+  
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+    &__size{
+      font-size: 14px;
+      color: $normalText;
+    }
+  }
+}

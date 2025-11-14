@@ -1,0 +1,104 @@
+@use 'variables' as *;
+
+.layer-dimmed {
+  position: fixed;
+  inset: $gnbHeight 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: rgba(10, 10, 10, 0.35);
+  z-index: 900;
+}
+
+.layer-popup {
+  width: 800px;
+  max-width: 100%;
+  max-height: calc(100vh - 160px);
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(10, 10, 10, 0.16);
+  overflow: hidden;
+
+  &__header {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 40px 40px 20px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 40px;
+      right: 40px;
+      display: block;
+      border-bottom: 1px solid #5E5E5E;
+    }
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    font-size: 24px;
+    font-weight: 700;
+    color: $Title_Dark;
+  }
+
+  &__close {
+    flex: none;
+    width: 24px;
+    height: 24px;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &__body {
+    flex: 1 1 auto;
+    padding: 40px;
+    overflow: auto;
+    color: #3A3A3A;
+    line-height: 1.6;
+    h3{
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    p + p {
+      margin-top: 16px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 40px;
+    border-top: 1px solid #EEEEEE;
+    box-shadow: 0 -4px 4px 0 rgba(0, 0, 0, 0.10);
+
+    > div {
+      flex: 1 1 0;
+      display: flex;
+      gap: 8px;
+    }
+
+    &-left {
+      justify-content: flex-start;
+    }
+
+    &-center {
+      justify-content: center;
+    }
+
+    &-right {
+      justify-content: flex-end;
+    }
+  }
+}
