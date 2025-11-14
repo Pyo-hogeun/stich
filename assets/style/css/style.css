@@ -2416,6 +2416,10 @@ button.btn-add:hover {
   display: none;
 }
 
+.file-list .file-item {
+  margin-bottom: 8px;
+}
+
 .service-usage-card {
   width: 348px;
   padding: 36px 24px;
@@ -4117,6 +4121,7 @@ button.btn-add:hover {
   padding: 18px 16px;
   height: 60px;
   border: 0;
+  margin-bottom: 8px;
 }
 .profile-edit .file-item .item-actions {
   display: flex;
