@@ -13,152 +13,404 @@ import 'swiper/css/pagination';
 import noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
 
-//드래그 파일업로더
-export const fileUpload = () => {
-  const uploadArea = document.getElementById('fileUploadArea');
-  const fileInput = document.getElementById('fileInput');
-  const fileList = document.getElementById('fileList');
+// 드래그 파일업로더
+const FILE_UPLOAD_VARIANTS = {
+  BASIC: 'basic',
+  SORTABLE: 'sortable',
+  AUTO: 'auto',
+};
+
+const DEFAULT_UPLOAD_SELECTORS = {
+  uploadArea: '#fileUploadArea',
+  fileInput: '#fileInput',
+  fileList: '#fileList',
+};
+
+const isDomElement = (value) => typeof HTMLElement !== 'undefined' && value instanceof HTMLElement;
+
+const resolveElement = (ref, fallbackSelector) => {
+  if (isDomElement(ref)) {
+    return ref;
+  }
+
+  if (typeof ref === 'string' && ref.length > 0) {
+    return document.querySelector(ref) ?? document.getElementById(ref);
+  }
+
+  if (!fallbackSelector) {
+    return null;
+  }
+
+  return (
+    document.querySelector(fallbackSelector) ||
+    document.getElementById(
+      fallbackSelector.startsWith('#') ? fallbackSelector.slice(1) : fallbackSelector
+    )
+  );
+};
+
+const resolveTargets = (options = {}) => {
+  const uploadArea = resolveElement(options.uploadArea, DEFAULT_UPLOAD_SELECTORS.uploadArea);
+  const fileInput = resolveElement(options.fileInput, DEFAULT_UPLOAD_SELECTORS.fileInput);
+  const fileList = resolveElement(options.fileList, DEFAULT_UPLOAD_SELECTORS.fileList);
+
+  return { uploadArea, fileInput, fileList };
+};
+
+const determineVariant = (requestedVariant, targets) => {
+  if (requestedVariant && requestedVariant !== FILE_UPLOAD_VARIANTS.AUTO) {
+    return requestedVariant;
+  }
+
+  const areaVariant = targets.uploadArea?.dataset?.uploadVariant?.toLowerCase();
+  const listVariant = targets.fileList?.dataset?.uploadVariant?.toLowerCase();
+
+  if (areaVariant === FILE_UPLOAD_VARIANTS.SORTABLE || listVariant === FILE_UPLOAD_VARIANTS.SORTABLE) {
+    return FILE_UPLOAD_VARIANTS.SORTABLE;
+  }
+
+  return FILE_UPLOAD_VARIANTS.BASIC;
+};
+
+const markInitialized = (targets, variant) => {
+  if (targets.uploadArea) {
+    targets.uploadArea.dataset.fileUploadInitialized = 'true';
+    targets.uploadArea.dataset.fileUploadActiveVariant = variant;
+  }
+
+  if (targets.fileList) {
+    targets.fileList.dataset.fileUploadInitialized = 'true';
+    targets.fileList.dataset.fileUploadActiveVariant = variant;
+  }
+};
+
+const clearInitializationFlag = (targets) => {
+  if (targets.uploadArea) {
+    delete targets.uploadArea.dataset.fileUploadInitialized;
+    delete targets.uploadArea.dataset.fileUploadActiveVariant;
+  }
+
+  if (targets.fileList) {
+    delete targets.fileList.dataset.fileUploadInitialized;
+    delete targets.fileList.dataset.fileUploadActiveVariant;
+  }
+};
+
+const setupBasicUpload = (targets) => {
+  const { uploadArea, fileInput, fileList } = targets;
+  if (!uploadArea || !fileInput || !fileList) {
+    return null;
+  }
+
+  const openFileDialog = () => fileInput.click();
+
+  const renderFileList = (files) => {
+    fileList.innerHTML = '';
+
+    files.forEach((file) => {
+      const fileItem = document.createElement('div');
+      fileItem.classList.add('file-item');
+      fileItem.innerHTML = `
+        <div class="file-item__content">
+          <div class="file-item__info">
+            <div class="file-item__icon">
+              <img src="../../assets/images/icon_file_added.png" alt="파일">
+            </div>
+            <span class="file-item__name">${file.name}</span>
+          </div>
+          <button class="file-item__delete" aria-label="파일 삭제">
+            <img src="../../assets/images/icon_file_delete.png" alt="삭제">
+          </button>
+        </div>
+      `;
+
+      const deleteBtn = fileItem.querySelector('.file-item__delete');
+      deleteBtn.addEventListener('click', () => {
+        fileItem.remove();
+      });
+
+      fileList.appendChild(fileItem);
+    });
+  };
+
+  const handleIncomingFiles = (listLike) => {
+    if (!listLike) {
+      return;
+    }
+
+    const files = Array.from(listLike);
+    if (!files.length) {
+      fileList.innerHTML = '';
+      return;
+    }
+
+    renderFileList(files);
+  };
+
+  const onInputChange = (event) => {
+    handleIncomingFiles(event.target.files);
+    event.target.value = '';
+  };
+
+  const onDragOver = (event) => {
+    event.preventDefault();
+    uploadArea.classList.add('dragover');
+  };
+
+  const onDragLeave = () => {
+    uploadArea.classList.remove('dragover');
+  };
+
+  const onDrop = (event) => {
+    event.preventDefault();
+    uploadArea.classList.remove('dragover');
+    handleIncomingFiles(event.dataTransfer?.files);
+  };
+
+  uploadArea.addEventListener('click', openFileDialog);
+  fileInput.addEventListener('change', onInputChange);
+  uploadArea.addEventListener('dragover', onDragOver);
+  uploadArea.addEventListener('dragleave', onDragLeave);
+  uploadArea.addEventListener('drop', onDrop);
+
+  return {
+    variant: FILE_UPLOAD_VARIANTS.BASIC,
+    destroy: () => {
+      uploadArea.removeEventListener('click', openFileDialog);
+      fileInput.removeEventListener('change', onInputChange);
+      uploadArea.removeEventListener('dragover', onDragOver);
+      uploadArea.removeEventListener('dragleave', onDragLeave);
+      uploadArea.removeEventListener('drop', onDrop);
+      clearInitializationFlag(targets);
+    },
+  };
+};
+
+const formatFileSize = (bytes) => {
+  if (!bytes) {
+    return '0B';
+  }
+
+  const units = ['B', 'KB', 'MB', 'GB'];
+  const exponent = Math.floor(Math.log(bytes) / Math.log(1024));
+  const value = bytes / Math.pow(1024, exponent);
+  const fixed = exponent === 0 ? value.toFixed(0) : value.toFixed(2);
+  return `${fixed}${units[exponent]}`;
+};
+
+const setupSortableUpload = (targets) => {
+  const { uploadArea, fileInput, fileList } = targets;
+  if (!uploadArea || !fileInput || !fileList) {
+    return null;
+  }
+
   let uploadedFiles = [];
   let fileListSortable = null;
 
-  if (uploadArea) {
-    // 클릭으로 파일 선택
-    uploadArea.addEventListener('click', () => fileInput.click());
+  const openFileDialog = () => fileInput.click();
 
-    // 파일 선택 시
-    fileInput.addEventListener('change', (e) => {
-      processFiles(e.target.files);
-      // 동일 파일을 다시 선택할 수 있도록 초기화
-      e.target.value = '';
-    });
+  const generateFileId = (file) => `${file.name}-${file.lastModified}-${Math.random().toString(16).slice(2)}`;
 
-    // 드래그 이벤트 처리
-    uploadArea.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      uploadArea.classList.add('dragover');
-    });
+  const processFiles = (fileListObj) => {
+    if (!fileListObj) {
+      return;
+    }
 
-    uploadArea.addEventListener('dragleave', () => {
-      uploadArea.classList.remove('dragover');
-    });
+    const incomingFiles = Array.from(fileListObj);
+    if (!incomingFiles.length) {
+      return;
+    }
 
-    uploadArea.addEventListener('drop', (e) => {
-      e.preventDefault();
-      uploadArea.classList.remove('dragover');
-      processFiles(e.dataTransfer.files);
-    });
+    let appended = false;
 
-    function processFiles(fileListObj) {
-      if (!fileListObj) return;
-
-      const incomingFiles = Array.from(fileListObj);
-      if (!incomingFiles.length) return;
-
-      incomingFiles.forEach((file) => {
-        const isDuplicate = uploadedFiles.some((item) =>
+    incomingFiles.forEach((file) => {
+      const isDuplicate = uploadedFiles.some(
+        (item) =>
           item.file.name === file.name &&
           item.file.size === file.size &&
           item.file.lastModified === file.lastModified
-        );
+      );
 
-        if (isDuplicate) return;
+      if (isDuplicate) {
+        return;
+      }
 
-        uploadedFiles.push({
-          id: `${file.name}-${file.lastModified}-${Math.random().toString(16).slice(2)}`,
-          file,
-        });
+      uploadedFiles.push({
+        id: generateFileId(file),
+        file,
       });
+      appended = true;
+    });
 
+    if (appended) {
       renderFileList();
     }
+  };
 
-    function formatFileSize(bytes) {
-      if (bytes === 0) return '0B';
-      const sizes = ['B', 'KB', 'MB', 'GB'];
-      const i = Math.floor(Math.log(bytes) / Math.log(1024));
-      const value = bytes / Math.pow(1024, i);
-      return `${value.toFixed(i === 0 ? 0 : 2)}${sizes[i]}`;
-    }
+  const renderFileList = () => {
+    fileList.innerHTML = '';
 
-    function renderFileList() {
-      if (!fileList) return;
+    uploadedFiles.forEach(({ id, file }) => {
+      const fileItem = document.createElement('div');
+      fileItem.classList.add('file-item');
+      fileItem.dataset.fileId = id;
 
-      fileList.innerHTML = '';
-
-      uploadedFiles.forEach(({ id, file }) => {
-        const fileItem = document.createElement('div');
-        fileItem.classList.add('file-item');
-        fileItem.setAttribute('data-file-id', id);
-
-        fileItem.innerHTML = `
-          <div class="file-item__content">
-            <div class="file-item__info">
-              <div class="file-item__icon">
-                <img src="../../assets/images/icon_file_added.png" alt="파일">
-              </div>
-              <span class="file-item__name">${file.name}</span>
-              <span class="divider"></span>
-              <span class="file-item__size">${formatFileSize(file.size)}</span>
+      fileItem.innerHTML = `
+        <div class="file-item__content">
+          <div class="file-item__info">
+            <div class="file-item__icon">
+              <img src="../../assets/images/icon_file_added.png" alt="파일">
             </div>
-            <div class="item-actions">
-              <button class="item-drag-handle" aria-label="항목 순서 변경">
-                <img src="../../assets/images/icon_handle.svg" alt="">
-              </button>
-              <button class="item-close-btn" aria-label="항목 삭제">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3.33203 3.3335L12.6659 12.6674" stroke="#0A0A0A" stroke-linecap="round" stroke-linejoin="round"></path>
-                  <path d="M12.668 3.3335L3.3341 12.6674" stroke="#0A0A0A" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-              </button>
-            </div>
+            <span class="file-item__name">${file.name}</span>
+            <span class="divider"></span>
+            <span class="file-item__size">${formatFileSize(file.size)}</span>
           </div>
-        `;
+          <div class="item-actions">
+            <button class="item-drag-handle" aria-label="항목 순서 변경">
+              <img src="../../assets/images/icon_handle.svg" alt="">
+            </button>
+            <button class="item-close-btn" aria-label="항목 삭제">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.33203 3.3335L12.6659 12.6674" stroke="#0A0A0A" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M12.668 3.3335L3.3341 12.6674" stroke="#0A0A0A" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      `;
 
-        const deleteBtn = fileItem.querySelector('.item-close-btn');
-        deleteBtn.addEventListener('click', () => {
-          uploadedFiles = uploadedFiles.filter((item) => item.id !== id);
-          renderFileList();
-        });
-
-        fileList.appendChild(fileItem);
+      const deleteBtn = fileItem.querySelector('.item-close-btn');
+      deleteBtn.addEventListener('click', () => {
+        uploadedFiles = uploadedFiles.filter((item) => item.id !== id);
+        renderFileList();
       });
 
-      initSortable();
+      fileList.appendChild(fileItem);
+    });
+
+    initSortable();
+  };
+
+  const initSortable = () => {
+    if (fileListSortable) {
+      fileListSortable.destroy();
+      fileListSortable = null;
     }
 
-    function initSortable() {
-      if (!fileList) return;
+    if (uploadedFiles.length <= 1) {
+      return;
+    }
 
+    fileListSortable = new Sortable(fileList, {
+      animation: 150,
+      handle: '.item-drag-handle',
+      ghostClass: 'sortable-ghost',
+      chosenClass: 'sortable-chosen',
+      onEnd: syncOrderFromDom,
+    });
+  };
+
+  const syncOrderFromDom = () => {
+    const orderedIds = Array.from(fileList.querySelectorAll('.file-item')).map((item) => item.dataset.fileId);
+    const orderMap = new Map(orderedIds.map((fileId, index) => [fileId, index]));
+    uploadedFiles.sort((a, b) => {
+      const aIndex = orderMap.get(a.id) ?? 0;
+      const bIndex = orderMap.get(b.id) ?? 0;
+      return aIndex - bIndex;
+    });
+  };
+
+  const onInputChange = (event) => {
+    processFiles(event.target.files);
+    event.target.value = '';
+  };
+
+  const onDragOver = (event) => {
+    event.preventDefault();
+    uploadArea.classList.add('dragover');
+  };
+
+  const onDragLeave = () => {
+    uploadArea.classList.remove('dragover');
+  };
+
+  const onDrop = (event) => {
+    event.preventDefault();
+    uploadArea.classList.remove('dragover');
+    processFiles(event.dataTransfer?.files);
+  };
+
+  uploadArea.addEventListener('click', openFileDialog);
+  fileInput.addEventListener('change', onInputChange);
+  uploadArea.addEventListener('dragover', onDragOver);
+  uploadArea.addEventListener('dragleave', onDragLeave);
+  uploadArea.addEventListener('drop', onDrop);
+
+  return {
+    variant: FILE_UPLOAD_VARIANTS.SORTABLE,
+    getFiles: () => uploadedFiles.map((item) => item.file),
+    destroy: () => {
+      uploadArea.removeEventListener('click', openFileDialog);
+      fileInput.removeEventListener('change', onInputChange);
+      uploadArea.removeEventListener('dragover', onDragOver);
+      uploadArea.removeEventListener('dragleave', onDragLeave);
+      uploadArea.removeEventListener('drop', onDrop);
       if (fileListSortable) {
         fileListSortable.destroy();
         fileListSortable = null;
       }
+      uploadedFiles = [];
+      fileList.innerHTML = '';
+      clearInitializationFlag(targets);
+    },
+  };
+};
 
-      if (uploadedFiles.length <= 1) {
-        return;
-      }
+const initFileUpload = (options = {}) => {
+  const targets = resolveTargets(options);
 
-      fileListSortable = new Sortable(fileList, {
-        animation: 150,
-        handle: '.item-drag-handle',
-        ghostClass: 'sortable-ghost',
-        chosenClass: 'sortable-chosen',
-        onEnd: syncOrderFromDom,
-      });
-    }
+  if (!targets.uploadArea || !targets.fileInput || !targets.fileList) {
+    return null;
+  }
 
-    function syncOrderFromDom() {
-      const orderedIds = Array.from(fileList.querySelectorAll('.file-item')).map((item) => item.getAttribute('data-file-id'));
-      const orderMap = new Map(orderedIds.map((fileId, index) => [fileId, index]));
-      uploadedFiles.sort((a, b) => {
-        const aIndex = orderMap.get(a.id) ?? 0;
-        const bIndex = orderMap.get(b.id) ?? 0;
-        return aIndex - bIndex;
-      });
-    }
+  if (targets.uploadArea.dataset.fileUploadInitialized === 'true') {
+    return null;
+  }
+
+  const variant = determineVariant(options.variant, targets);
+
+  const controller =
+    variant === FILE_UPLOAD_VARIANTS.SORTABLE
+      ? setupSortableUpload(targets)
+      : setupBasicUpload(targets);
+
+  if (controller) {
+    markInitialized(targets, controller.variant);
+  }
+
+  return controller;
+};
+
+export const fileUpload = (options = {}) =>
+  initFileUpload({ ...options, variant: FILE_UPLOAD_VARIANTS.BASIC });
+
+export const fileUploadSortable = (options = {}) =>
+  initFileUpload({ ...options, variant: FILE_UPLOAD_VARIANTS.SORTABLE });
+
+export const fileUploadAuto = (options = {}) =>
+  initFileUpload({ ...options, variant: options.variant ?? FILE_UPLOAD_VARIANTS.AUTO });
+
+const autoInitializeFileUpload = () => {
+  initFileUpload({ variant: FILE_UPLOAD_VARIANTS.AUTO });
+};
+
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', autoInitializeFileUpload, { once: true });
+  } else {
+    autoInitializeFileUpload();
   }
 }
-fileUpload();
 
 
 /**
