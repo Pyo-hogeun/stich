@@ -104,33 +104,29 @@ const setupBasicUpload = (targets) => {
 
   const openFileDialog = () => fileInput.click();
 
-  const renderFileList = (files) => {
-    fileList.innerHTML = '';
-
-    files.forEach((file) => {
-      const fileItem = document.createElement('div');
-      fileItem.classList.add('file-item');
-      fileItem.innerHTML = `
-        <div class="file-item__content">
-          <div class="file-item__info">
-            <div class="file-item__icon">
-              <img src="../../assets/images/icon_file_added.png" alt="파일">
-            </div>
-            <span class="file-item__name">${file.name}</span>
+  const createFileItem = (file) => {
+    const fileItem = document.createElement('div');
+    fileItem.classList.add('file-item');
+    fileItem.innerHTML = `
+      <div class="file-item__content">
+        <div class="file-item__info">
+          <div class="file-item__icon">
+            <img src="../../assets/images/icon_file_added.png" alt="파일">
           </div>
-          <button class="file-item__delete" aria-label="파일 삭제">
-            <img src="../../assets/images/icon_file_delete.png" alt="삭제">
-          </button>
+          <span class="file-item__name">${file.name}</span>
         </div>
-      `;
+        <button class="file-item__delete" aria-label="파일 삭제">
+          <img src="../../assets/images/icon_file_delete.png" alt="삭제">
+        </button>
+      </div>
+    `;
 
-      const deleteBtn = fileItem.querySelector('.file-item__delete');
-      deleteBtn.addEventListener('click', () => {
-        fileItem.remove();
-      });
-
-      fileList.appendChild(fileItem);
+    const deleteBtn = fileItem.querySelector('.file-item__delete');
+    deleteBtn.addEventListener('click', () => {
+      fileItem.remove();
     });
+
+    return fileItem;
   };
 
   const handleIncomingFiles = (listLike) => {
@@ -140,11 +136,15 @@ const setupBasicUpload = (targets) => {
 
     const files = Array.from(listLike);
     if (!files.length) {
-      fileList.innerHTML = '';
       return;
     }
 
-    renderFileList(files);
+    const fragment = document.createDocumentFragment();
+    files.forEach((file) => {
+      fragment.appendChild(createFileItem(file));
+    });
+
+    fileList.appendChild(fragment);
   };
 
   const onInputChange = (event) => {
