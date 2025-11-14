@@ -81,6 +81,11 @@ img[src$=".svg"] {
   height: 16px;
 }
 
+.icon-download-16 {
+  width: 16px;
+  height: 16px;
+}
+
 :root {
   --color-white: #FFF;
   --color-line-normal: #3A3A3A;
@@ -3764,4 +3769,182 @@ button.btn-add:hover {
   font-weight: 400;
   line-height: 16px;
   text-decoration-line: underline;
+}
+
+:root {
+  --color-body-normal: #3A3A3A;
+}
+
+.mypage-main {
+  padding-top: 80px;
+}
+.mypage-main__topper {
+  display: flex;
+  gap: 56px;
+  justify-content: center;
+  padding-bottom: 12px;
+}
+.mypage-main__topper .profile-img-wrapper {
+  display: inline-block;
+  position: relative;
+}
+.mypage-main__topper .profile-img-wrapper .img-wrap {
+  width: 160px;
+  height: 160px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.mypage-main__topper .profile-img-wrapper .img-wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.mypage-main__topper .profile-img-wrapper .btn-setting {
+  position: absolute;
+  bottom: -12px;
+  right: -12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #FFF;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.12);
+}
+.mypage-main__topper .profile-name .name {
+  font-size: 40px;
+  font-weight: 700;
+  color: #0A0A0A;
+}
+.mypage-main__topper .profile-name .description-about-profile {
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--color-body-normal);
+}
+.mypage-main__tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  border-bottom: 1px solid #B0B0B0;
+}
+.mypage-main__tabs_item a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-size: 18px;
+  padding: 0 16px;
+  height: 40px;
+}
+.mypage-main__tabs_item a.active {
+  color: #4D24C3;
+  font-weight: 700;
+}
+.mypage-main__tabs_item a.active:after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background-color: #4D24C3;
+}
+.mypage-main__profile {
+  padding-top: 40px;
+}
+.mypage-main__profile h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0A0A0A;
+  margin-bottom: 24px;
+}
+.mypage-main__profile .content-wrap {
+  padding: 40px 24px;
+  border-bottom: 1px solid #E4E4E4;
+}
+.mypage-main__profile .content-wrap:last-child {
+  border-bottom: 0;
+}
+.mypage-main__profile .content-wrap h3 {
+  font-size: 18px;
+  color: #0A0A0A;
+}
+.mypage-main__profile .content-wrap h3 .btn {
+  font-size: 12px;
+  margin-left: 32px;
+}
+.mypage-main__profile .content-wrap h3 .btn .icon {
+  top: 0;
+}
+.mypage-main__profile .content-wrap__desc {
+  font-size: 14px;
+  color: #747474;
+  line-height: 1.5;
+  margin-top: 24px;
+}
+.mypage-main__profile .content-wrap .interest-category {
+  margin-top: 24px;
+}
+.mypage-main__profile .content-wrap .interest-category__item {
+  display: inline-flex;
+  border: 1px solid #3A3A3A;
+  border-radius: 20px;
+  height: 32px;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 14px;
+  color: #0A0A0A;
+  margin-right: 8px;
+}
+.mypage-main__profile .content-wrap .file-list {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.mypage-main__profile .content-wrap .file-list .file-item {
+  display: inline-block;
+}
+.mypage-main__profile .content-wrap .file-list .file-item__content {
+  min-width: auto;
+}
+.mypage-main__profile .content-wrap .link-wrap {
+  margin-top: 24px;
+}
+.mypage-main__profile .content-wrap .link-wrap a.link {
+  font-size: 14px;
+  color: #0A0A0A;
+  text-decoration: underline;
+}
+.mypage-main__profile .content-wrap .manager-list {
+  margin-top: 26px;
+}
+.mypage-main__profile .content-wrap .manager-list li {
+  display: flex;
+  font-size: 14px;
+  color: #0A0A0A;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.mypage-main__profile .content-wrap .manager-list li:last-child {
+  margin-bottom: 0;
+}
+.mypage-main__profile .content-wrap .manager-list .manager-icon-circle {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  background-image: url("../../images/icon_profile_icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #F5F5F5;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.mypage-main__profile .content-wrap .manager-list .verified {
+  color: #007AFF;
+}
+.mypage-main__profile .content-wrap .manager-list .unverified {
+  color: #FF44BF;
 }
