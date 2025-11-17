@@ -234,7 +234,12 @@
       <div class="layer-popup__body">
         <div class="profile__wrapper">
           <div class="profile__img">
-            <img src="../../assets/images/sample/sample_profile.png" alt="">
+            <div class="img-wrap">
+              <img src="../../assets/images/sample/sample_profile.png" alt="">
+            </div>
+            <a href="" class="btn-remove-img">
+              <img src="../../assets/images/icon_remove_circle.svg" alt="">
+            </a>
           </div>
           <div class="profile__name">
             <div class="profile__name_title">기업프로필_이름</div>
@@ -305,10 +310,10 @@
         <h3>링크</h3>
         <div class="add-item-link">
           <div class="input-text-wrapper" style="flex-basis: 200px;">
-            <input type="text" class="input-text">
+            <input type="text" class="input-text" placeholder="링크 명을 입력해주세요">
           </div>
           <div class="input-text-wrapper" style="flex-basis: 420px">
-            <input type="text" class="input-text">
+            <input type="text" class="input-text" placeholder="URL 주소를 입력해 주세요">
           </div>
           <button class="btn border h40">
             <img src="../../assets/images/icon_plus_black.svg" alt="">
@@ -321,11 +326,34 @@
             <div class="link-item__content">
               <div class="link-item__info">
                 <div class="link-item__icon">
-                  <img src="../../assets/images/icon_file_added.png" alt="파일">
+                  <img src="../../assets/images/icon_link.svg" alt="파일">
                 </div>
                 <span class="link-item__name">회사 홈페이지</span>
                 <span class="divider"></span>
-                <span class="link-item__size">http://dev.stich.kr/corp/profile</span>
+                <span class="link-item__url">http://dev.stich.kr/corp/profile</span>
+              </div>
+              <div class="item-actions">
+                <button class="item-drag-handle" aria-label="항목 순서 변경">
+                  <img src="../../assets/images/icon_handle.svg" alt="">
+                </button>
+                <button class="item-close-btn" aria-label="항목 삭제">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.33203 3.3335L12.6659 12.6674" stroke="#0A0A0A" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.668 3.3335L3.3341 12.6674" stroke="#0A0A0A" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="link-item" data-file-id="">
+            <div class="link-item__content">
+              <div class="link-item__info">
+                <div class="link-item__icon">
+                  <img src="../../assets/images/icon_link.svg" alt="파일">
+                </div>
+                <span class="link-item__name">스티치 사이트</span>
+                <span class="divider"></span>
+                <span class="link-item__url">http://dev.stich.kr/corp/profiledev.stich.kr/corp/profiledev.stich.kr/corp/profiledev.s...</span>
               </div>
               <div class="item-actions">
                 <button class="item-drag-handle" aria-label="항목 순서 변경">
