@@ -4220,16 +4220,26 @@ button.btn-add:hover {
   color: #0A0A0A;
   margin-left: 24px;
 }
+.mypage-main__eva-list .eva-list__topper .btn-toggle-eva .btn-toggle-eva__label {
+  display: inline-block;
+}
 .mypage-main__eva-list .eva-list__topper .btn-toggle-eva .icon {
   position: absolute;
   left: -24px;
   top: 0;
+  transition: transform 0.2s ease;
+}
+.mypage-main__eva-list .eva-list__topper .btn-toggle-eva.is-collapsed .icon {
+  transform: rotate(180deg);
 }
 .mypage-main__eva-list .eva-list__category {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
   margin-top: 16px;
+}
+.mypage-main__eva-list .eva-list__category.is-hidden {
+  display: none;
 }
 .mypage-main__eva-list .eva-list__category .item {
   display: inline-flex;
