@@ -336,10 +336,19 @@
         font-size: 16px;
         color: $Title_Dark;
         margin-left: 24px;
+        .btn-toggle-eva__label{
+          display: inline-block;
+        }
         .icon{
           position: absolute;
           left: -24px;
           top: 0;
+          transition: transform 0.2s ease;
+        }
+        &.is-collapsed{
+          .icon{
+            transform: rotate(180deg);
+          }
         }
       }
     }
@@ -348,6 +357,9 @@
       gap: 8px;
       flex-wrap: wrap;
       margin-top: 16px;
+      &.is-hidden{
+        display: none;
+      }
      .item{
       display: inline-flex;
       height: 32px;

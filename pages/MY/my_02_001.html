@@ -123,9 +123,9 @@
 
           <div class="eva-list__topper">
             <h2>평가 목록</h2>
-            <button type="button" class="btn-toggle-eva">
+            <button type="button" class="btn-toggle-eva" aria-expanded="true">
               <img src="../../assets/images/icon_arrow_upside_24.svg" alt="" class="icon">
-              평가 분야 숨기기
+              <span class="btn-toggle-eva__label">평가 분야 숨기기</span>
             </button>
           </div>
 
@@ -385,6 +385,33 @@
   </main>
 
   <script src="../../assets/dist/js/bundle.js"></script>
+  <script>
+    (function () {
+      const toggleButton = document.querySelector('.btn-toggle-eva');
+      const evaCategory = document.querySelector('.eva-list__category');
+
+      if (!toggleButton || !evaCategory) return;
+
+      const label = toggleButton.querySelector('.btn-toggle-eva__label');
+      const hideText = '평가 분야 숨기기';
+      const showText = '평가 분야 보기';
+
+      const updateState = (isHidden) => {
+        evaCategory.classList.toggle('is-hidden', isHidden);
+        toggleButton.classList.toggle('is-collapsed', isHidden);
+        toggleButton.setAttribute('aria-expanded', (!isHidden).toString());
+
+        if (label) {
+          label.textContent = isHidden ? showText : hideText;
+        }
+      };
+
+      toggleButton.addEventListener('click', () => {
+        const isHidden = !toggleButton.classList.contains('is-collapsed');
+        updateState(isHidden);
+      });
+    })();
+  </script>
 </body>
 
 </html>
