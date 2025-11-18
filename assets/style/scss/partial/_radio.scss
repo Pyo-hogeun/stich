@@ -28,7 +28,7 @@
     justify-content: center;
     transition: border-color 0.15s ease;
     position: relative;
-
+    
     &::after {
       content: "";
       width: 10px;
@@ -38,6 +38,15 @@
       opacity: 0;
       transform: scale(0);
       transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+    &.sm{
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      &::after{
+        width: 7px;
+        height: 7px;
+      }
     }
   }
 
