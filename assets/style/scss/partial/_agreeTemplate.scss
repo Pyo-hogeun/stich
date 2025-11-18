@@ -1,0 +1,41 @@
+@use 'variables' as *;
+.agree-template{
+  h3{
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 700;
+    color: $Title_Dark;
+    margin: 24px 0 16px;
+    &.required{
+      &:after{
+        content: '*';
+        vertical-align: text-top;
+        color: #FF44BF;
+        font-size: 1em;
+      }
+    }
+  }
+  &__desc{
+    font-size: 14px;
+    color: $normalText;
+    line-height: 1.5;
+    em{
+      font-weight: 400;
+      color: $Title_Dark;
+    }
+  }
+  &__checklist{
+    margin-top: 8px;
+    &_header{
+      border-bottom: 1px solid #B0B0B0;
+      padding-bottom: 16px;
+    }
+    &_body{
+      >ul{
+        display: grid;
+        grid-template-columns: repeat(2, 180px);
+        gap: 0 24px;
+      }
+    }
+  }
+}

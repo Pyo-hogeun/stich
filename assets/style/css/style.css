@@ -2250,6 +2250,11 @@ button.btn-add:hover {
   font-weight: 700;
   color: #0A0A0A;
 }
+.eva-create h3 .sub-text {
+  font-size: 12px;
+  color: #919191;
+  font-weight: 400;
+}
 .eva-create__label {
   font-size: 14px;
   font-weight: 600;
@@ -2332,6 +2337,10 @@ button.btn-add:hover {
 .eva-create__form .input-radio .label {
   font-size: 14px;
 }
+.eva-create__form .input-field-name {
+  display: flex;
+  gap: 8px;
+}
 
 .host-list {
   margin-top: 24px;
@@ -2398,15 +2407,65 @@ button.btn-add:hover {
   border: 0;
 }
 
+.use-setting__label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0A0A0A;
+}
 .use-setting__sub-text {
   font-size: 14px;
   line-height: 1.5;
   color: #747474;
   margin-bottom: 8px;
 }
+.use-setting__sub-text em {
+  color: #0A0A0A;
+  font-weight: 400;
+}
 .use-setting__form {
   margin-bottom: 24px;
 }
+.use-setting__form .toggle-switch {
+  display: inline-flex;
+  vertical-align: middle;
+  margin-right: 16px;
+}
+
+.agree-template h3 {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 700;
+  color: #0A0A0A;
+  margin: 24px 0 16px;
+}
+.agree-template h3.required:after {
+  content: "*";
+  vertical-align: text-top;
+  color: #FF44BF;
+  font-size: 1em;
+}
+.agree-template__desc {
+  font-size: 14px;
+  color: #747474;
+  line-height: 1.5;
+}
+.agree-template__desc em {
+  font-weight: 400;
+  color: #0A0A0A;
+}
+.agree-template__checklist {
+  margin-top: 8px;
+}
+.agree-template__checklist_header {
+  border-bottom: 1px solid #B0B0B0;
+  padding-bottom: 16px;
+}
+.agree-template__checklist_body > ul {
+  display: grid;
+  grid-template-columns: repeat(2, 180px);
+  gap: 0 24px;
+}
+
 .pagination-container {
   display: flex;
   justify-content: center;

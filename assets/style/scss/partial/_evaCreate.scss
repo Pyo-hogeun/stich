@@ -4,6 +4,11 @@
     font-size: 18px;
     font-weight: 700;
     color: $Title_Dark;
+    .sub-text{
+      font-size: 12px;
+      color: $smallText;
+      font-weight: 400;
+    }
   }
   &__label{
     font-size: 14px;
@@ -95,6 +100,10 @@
         font-size: 14px;
       }
     }
+    .input-field-name{
+      display: flex;
+      gap: 8px;
+    }
   }
 }
 .host-list{
@@ -162,16 +171,27 @@
   
 }
 .use-setting{
+  &__label{
+    font-size: 14px;
+    font-weight: 600;
+    color: $Title_Dark;
+  }
   &__sub-text{
     font-size: 14px;
     line-height: 1.5;
     color: $normalText;
     margin-bottom: 8px;
+    em{
+      color: $Title_Dark;
+      font-weight: 400;
+    }
   }
   &__form{
     margin-bottom: 24px;
     .toggle-switch{
-
+      display: inline-flex;
+      vertical-align: middle;
+      margin-right: 16px;
     }
   }
 }
