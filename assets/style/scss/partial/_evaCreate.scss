@@ -104,6 +104,13 @@
       display: flex;
       gap: 8px;
     }
+    .limit-setting{
+      display: flex;
+      align-items: center;
+      .input-text-wrapper{
+        flex: 0 0 150px;
+      }
+    }
   }
 }
 .host-list{

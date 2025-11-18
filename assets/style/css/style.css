@@ -987,7 +987,7 @@ h2 {
 .input-text, .input-textarea, .input-text-calendar, .input-time {
   width: 100%;
   height: var(--search-height);
-  padding: 0 44px 0 14px; /* 오른쪽 공간은 아이콘/버튼 자리 확보 */
+  padding: 0 14px; /* 오른쪽 공간은 아이콘/버튼 자리 확보 */
   border: 1px solid transparent;
   background-color: #F9F9F9;
   border-radius: var(--search-radius);
@@ -1001,6 +1001,9 @@ h2 {
 }
 .input-text:disabled, .input-textarea:disabled, .input-text-calendar:disabled, .input-time:disabled {
   background-color: #E9E9E9;
+}
+.input-text.search, .input-textarea.search, .input-text-calendar.search, .input-time.search {
+  padding-right: 44px;
 }
 
 .input-textarea {
@@ -2340,6 +2343,13 @@ button.btn-add:hover {
 .eva-create__form .input-field-name {
   display: flex;
   gap: 8px;
+}
+.eva-create__form .limit-setting {
+  display: flex;
+  align-items: center;
+}
+.eva-create__form .limit-setting .input-text-wrapper {
+  flex: 0 0 150px;
 }
 
 .host-list {
