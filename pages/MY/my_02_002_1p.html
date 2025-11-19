@@ -238,6 +238,52 @@
   </div>
 
   <script src="../../assets/dist/js/bundle.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const checklist = document.querySelector('.agree-template__checklist');
+
+      if (!checklist) return;
+
+      const agreeAllCheckbox = checklist.querySelector('input[name="agree-all"]');
+      const itemCheckboxes = checklist.querySelectorAll(
+        '.agree-template__checklist_body input[type="checkbox"]'
+      );
+
+      if (!agreeAllCheckbox || itemCheckboxes.length === 0) return;
+
+      const getEnabledItemCheckboxes = () =>
+        Array.from(itemCheckboxes).filter((checkbox) => !checkbox.disabled);
+
+      const updateAgreeAllState = () => {
+        const enabledItems = getEnabledItemCheckboxes();
+        const checkedItems = enabledItems.filter((checkbox) => checkbox.checked);
+
+        agreeAllCheckbox.checked = checkedItems.length > 0 && checkedItems.length === enabledItems.length;
+        agreeAllCheckbox.indeterminate =
+          checkedItems.length > 0 && checkedItems.length < enabledItems.length;
+      };
+
+      const toggleAllItems = (checked) => {
+        getEnabledItemCheckboxes().forEach((checkbox) => {
+          checkbox.checked = checked;
+        });
+
+        updateAgreeAllState();
+      };
+
+      agreeAllCheckbox.addEventListener('change', (event) => {
+        toggleAllItems(event.target.checked);
+      });
+
+      itemCheckboxes.forEach((checkbox) => {
+        checkbox.addEventListener('change', () => {
+          updateAgreeAllState();
+        });
+      });
+
+      updateAgreeAllState();
+    });
+  </script>
 </body>
 
 </html>
