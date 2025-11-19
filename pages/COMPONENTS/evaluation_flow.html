@@ -121,15 +121,86 @@
             </div>
   
             <div class="flow-content flow-content--single">
-              <div class="flow-content__section">
+              <div class="flow-content__section align-l">
                 <p class="flow-content__instruction">평가대상 선정하기</p>
                 <p class="flow-content__desc">항목 선택 후 <em>평가대상으로 이동 버튼</em>을 눌러 평가할 대상으로 선정해 주세요.</p>
                 
                 <p class="flow-content__instruction">평가대상 제외하기</p>
                 <p class="flow-content__desc">선택한 항목을 <em>평가제외 버튼</em>을 눌러 평가대상에서 제외할 수 있어요.</p>
 
-                <button class="btn-outline btn-outline--primary btn-outline--sm">접수 폼 편집하기</button>
-                <p class="flow-content__hint">*온라인 접수 폼 메뉴에서도<br>편집할 수 있습니다.</p>
+                <button class="btn-outline btn-outline--primary btn-outline--sm" style="">접수목록 메뉴로 이동하기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="evaluation-flow-card card">
+          <div class="evaluation-flow-card__header">
+            <h2 class="evaluation-flow-card__title">평가진행 플로우</h2>
+            <div class="tip-badge">
+              <svg class="tip-badge__arrow" width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.426217 5.62755C-0.142308 5.31744 -0.142306 4.50109 0.426219 4.19099L8.10938 0.000177944L8.10938 9.81836L0.426217 5.62755Z" fill="#FF44BF"/>
+              </svg>
+              <span class="tip-badge__text">Tip</span>
+            </div>
+          </div>
+  
+          <div class="evaluation-flow-card__body">
+            <div class="flow-timeline">
+              <div class="flow-timeline__item">
+                <div class="flow-timeline__dot flow-timeline__dot--inactive"></div>
+                <div class="flow-timeline__connector flow-timeline__connector--purple"></div>
+                <span class="flow-timeline__label flow-timeline__label--inactive">평가 생성</span>
+              </div>
+
+              <div class="flow-timeline__item">
+                <div class="flow-timeline__dot flow-timeline__dot--inactive"></div>
+                <div class="flow-timeline__connector flow-timeline__connector--inactive"></div>
+                <span class="flow-timeline__label flow-timeline__label--inactive">접수</span>
+              </div>
+  
+              <div class="flow-timeline__item flow-timeline__item--active">
+                <div class="flow-timeline__dot flow-timeline__dot--active"></div>
+                <div class="flow-timeline__connector flow-timeline__connector--inactive"></div>
+                <span class="flow-timeline__label flow-timeline__label--active">평가 준비</span>
+              </div>
+  
+              <div class="flow-timeline__item">
+                <div class="flow-timeline__dot flow-timeline__dot--inactive"></div>
+                <div class="flow-timeline__connector flow-timeline__connector--inactive"></div>
+                <span class="flow-timeline__label flow-timeline__label--inactive">위원 초대</span>
+              </div>
+  
+              <div class="flow-timeline__item">
+                <div class="flow-timeline__dot flow-timeline__dot--inactive"></div>
+                <div class="flow-timeline__connector flow-timeline__connector--inactive"></div>
+                <span class="flow-timeline__label flow-timeline__label--inactive">평가 시작</span>
+              </div>
+  
+              <div class="flow-timeline__item">
+                <div class="flow-timeline__dot flow-timeline__dot--inactive"></div>
+                <span class="flow-timeline__label flow-timeline__label--inactive">평가 완료</span>
+              </div>
+            </div>
+  
+            <div class="flow-content">
+              <div class="flow-content__section">
+                <p class="flow-content__instruction">대상을 평가할 항목을<br>설정해 주세요.</p>
+                <button class="btn-outline btn-outline--primary btn-outline--sm">평가항목 편집하기</button>
+                <p class="flow-content__hint">*평가항목 편집 메뉴에서도<br>편집할 수 있습니다.</p>
+              </div>
+  
+              <div class="flow-content__divider"></div>
+  
+              <div class="flow-content__section">
+                <p class="flow-content__instruction">평가항목 설정이 끝났다면<br>평가를 오픈해 주세요</p>
+                
+                <label class="toggle-switch">
+                  <span class="toggle-switch__label">평가오픈</span>
+                  <input type="checkbox" class="toggle-switch__input">
+                  <span class="toggle-switch__slider"></span>
+                </label>
+  
+                <p class="flow-content__hint">*평가오픈 후에 평가위원을<br>초대할 수 있어요.</p>
               </div>
             </div>
           </div>

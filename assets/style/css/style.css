@@ -3090,6 +3090,9 @@ button.btn-add:hover {
   gap: 12px;
   width: 100%;
 }
+.flow-content__section.align-l {
+  align-items: flex-start;
+}
 .flow-content__instruction {
   color: #0A0A0A;
   text-align: center;
@@ -3110,6 +3113,16 @@ button.btn-add:hover {
   width: 100%;
   height: 1px;
   background-color: #E4E4E4;
+}
+.flow-content__desc {
+  font-size: 14px;
+  line-height: 1.3;
+  color: #747474;
+  word-break: keep-all;
+}
+.flow-content__desc em {
+  font-weight: 400;
+  color: #007AFF;
 }
 
 .btn-outline {
