@@ -834,6 +834,15 @@ h2 {
   transform: scale(0);
   transition: opacity 0.15s ease, transform 0.15s ease;
 }
+.radio-btn__circle.sm {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+}
+.radio-btn__circle.sm::after {
+  width: 7px;
+  height: 7px;
+}
 .radio-btn__input:checked + .radio-btn__circle {
   background-color: #7A53EC;
 }
@@ -978,7 +987,7 @@ h2 {
 .input-text, .input-textarea, .input-text-calendar, .input-time {
   width: 100%;
   height: var(--search-height);
-  padding: 0 44px 0 14px; /* 오른쪽 공간은 아이콘/버튼 자리 확보 */
+  padding: 0 14px; /* 오른쪽 공간은 아이콘/버튼 자리 확보 */
   border: 1px solid transparent;
   background-color: #F9F9F9;
   border-radius: var(--search-radius);
@@ -992,6 +1001,9 @@ h2 {
 }
 .input-text:disabled, .input-textarea:disabled, .input-text-calendar:disabled, .input-time:disabled {
   background-color: #E9E9E9;
+}
+.input-text.search, .input-textarea.search, .input-text-calendar.search, .input-time.search {
+  padding-right: 44px;
 }
 
 .input-textarea {
@@ -2236,6 +2248,234 @@ button.btn-add:hover {
   flex-shrink: 0;
 }
 
+.eva-create h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0A0A0A;
+}
+.eva-create h3 .sub-text {
+  font-size: 12px;
+  color: #919191;
+  font-weight: 400;
+}
+.eva-create__label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0A0A0A;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.eva-create__label.required:after {
+  content: "*";
+  vertical-align: text-top;
+  color: #FF44BF;
+  font-size: 1em;
+}
+.eva-create .img-select {
+  display: grid;
+  grid-template-columns: repeat(5, 136px);
+  gap: 10px;
+}
+.eva-create .img-select .item {
+  border: 2px solid transparent;
+  height: 136px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.eva-create .img-select .item > img {
+  width: 100%;
+  height: 100%;
+}
+.eva-create .img-select .item.active {
+  position: relative;
+  border: 2px solid #7A53EC;
+}
+.eva-create .img-select .item.active:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(241, 238, 251, 0.5);
+}
+.eva-create .img-select .item.active:after {
+  content: "";
+  display: inline-flex;
+  position: absolute;
+  left: calc(50% - 30px);
+  top: calc(50% - 30px);
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background-image: url("../../images/icon_check_29.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(77, 36, 195, 0.8);
+}
+.eva-create .img-select__uploader button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 100%;
+  width: 100%;
+  border: 0;
+  background-color: #747474;
+  color: #FFFFFF;
+}
+.eva-create .img-select__uploader button img {
+  width: 48px;
+  height: 41px;
+}
+.eva-create .img-select__uploader button .label {
+  font-size: 12px;
+}
+.eva-create__form .input-radio .radio-btn {
+  margin-right: 16px;
+}
+.eva-create__form .input-radio .label {
+  font-size: 14px;
+}
+.eva-create__form .input-field-name {
+  display: flex;
+  gap: 8px;
+}
+.eva-create__form .limit-setting {
+  display: flex;
+  align-items: center;
+}
+.eva-create__form .limit-setting .input-text-wrapper {
+  flex: 0 0 150px;
+}
+
+.host-list {
+  margin-top: 24px;
+}
+.host-list .item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.host-list .item:last-child {
+  margin-bottom: 0;
+}
+.host-list .item .img-wrap {
+  border: 1px solid #EAEAEA;
+  border-radius: 8px;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  overflow: hidden;
+}
+.host-list .item .img-wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.host-list .item .img-wrap:hover {
+  position: relative;
+}
+.host-list .item .img-wrap:hover:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.host-list .item .img-wrap:hover:after {
+  content: "";
+  display: inline-flex;
+  position: absolute;
+  top: calc(50% - 12px);
+  left: calc(50% - 12px);
+  width: 24px;
+  height: 24px;
+  background-color: #FFF;
+  border-radius: 50%;
+  background-image: url("../../images/icon_edit-16.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.host-list .item .btn-add-logo {
+  border-radius: 8px;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  background-color: #747474;
+  color: #FFF;
+  font-size: 12px;
+  text-decoration: underline;
+  border: 0;
+}
+
+.use-setting__label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0A0A0A;
+}
+.use-setting__sub-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #747474;
+  margin-bottom: 8px;
+}
+.use-setting__sub-text em {
+  color: #0A0A0A;
+  font-weight: 400;
+}
+.use-setting__form {
+  margin-bottom: 24px;
+}
+.use-setting__form .toggle-switch {
+  display: inline-flex;
+  vertical-align: middle;
+  margin-right: 16px;
+}
+
+.agree-template h3 {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 700;
+  color: #0A0A0A;
+  margin: 24px 0 16px;
+}
+.agree-template h3.required:after {
+  content: "*";
+  vertical-align: text-top;
+  color: #FF44BF;
+  font-size: 1em;
+}
+.agree-template__desc {
+  font-size: 14px;
+  color: #747474;
+  line-height: 1.5;
+}
+.agree-template__desc em {
+  font-weight: 400;
+  color: #0A0A0A;
+}
+.agree-template__checklist {
+  margin-top: 8px;
+}
+.agree-template__checklist_header {
+  border-bottom: 1px solid #B0B0B0;
+  padding-bottom: 16px;
+}
+.agree-template__checklist_body > ul {
+  display: grid;
+  grid-template-columns: repeat(2, 180px);
+  gap: 0 24px;
+}
+
 .pagination-container {
   display: flex;
   justify-content: center;
@@ -2850,6 +3090,9 @@ button.btn-add:hover {
   gap: 12px;
   width: 100%;
 }
+.flow-content__section.align-l {
+  align-items: flex-start;
+}
 .flow-content__instruction {
   color: #0A0A0A;
   text-align: center;
@@ -2870,6 +3113,16 @@ button.btn-add:hover {
   width: 100%;
   height: 1px;
   background-color: #E4E4E4;
+}
+.flow-content__desc {
+  font-size: 14px;
+  line-height: 1.3;
+  color: #747474;
+  word-break: keep-all;
+}
+.flow-content__desc em {
+  font-weight: 400;
+  color: #007AFF;
 }
 
 .btn-outline {
@@ -3058,12 +3311,12 @@ button.btn-add:hover {
   font-size: 1em;
 }
 
-.text-length {
+.text-length, .text-notice {
   color: #919191;
   font-size: 12px;
   margin-top: 8px;
 }
-.text-length.align-r {
+.text-length.align-r, .text-notice.align-r {
   text-align: right;
 }
 

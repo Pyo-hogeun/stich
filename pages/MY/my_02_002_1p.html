@@ -1,0 +1,289 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STICH</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+  <link rel="stylesheet" href="../../assets/dist/js/bundle.css">
+
+</head>
+
+<body>
+  <header class="gnb">
+    <div class="gnb-container">
+      <a href="/" class="gnb-logo">
+        <img src="../../assets/images/icon_gnb_logo.svg" alt="stich logo">
+      </a>
+
+      <nav class="gnb-menu">
+        <a href="/" class="gnb-menu-item menu-home">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_home.png" alt="home" class="icon-gnb-home">
+          </div>
+        </a>
+
+        <a href="/pages/COM/com_01_001.html" class="gnb-menu-item menu-competition gnb-menu-item-active">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_competition.png" alt="home" class="icon-gnb-competition">
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-notice">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_notice.png" alt="home" class="icon-gnb-notice">
+            <div class="badge-new">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="20" rx="10" fill="#FF44BF" />
+                <path
+                  d="M13.4863 5.51562V14H12.127L8.10742 8.19922H8.03711V14H6.51367V5.51562H7.89648L11.8926 11.3164H11.9746V5.51562H13.4863Z"
+                  fill="white" />
+              </svg>
+
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-career">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_career.png" alt="home" class="icon-gnb-career">
+          </div>
+        </a>
+      </nav>
+
+      <div class="gnb-user">
+        <div class="gnb-profile">
+          <div class="gnb-profile-icon">
+            <img src="../../assets/images/icon_my_profile.png" alt="사용자 아이콘">
+          </div>
+          <p class="gnb-profile-text">
+            <span class="gnb-profile-greeting">안녕하세요. </span>
+            <span class="gnb-profile-name">홍길동님</span>
+          </p>
+          <a href="/" class="gnb-settings" aria-label="설정">
+            <img src="../../assets/images/icon_my_setting.png" alt="사용자 설정">
+          </a>
+        </div>
+
+        <div class="gnb-divider"></div>
+
+        <button class="gnb-logout">
+          <img src="../../assets/images/icon_gnb_logout.png" class="icon-gnb-logout" alt="로그아웃 아이콘">
+          <span>로그아웃</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="content-wrapper">
+      <div class="mypage-main">
+      </div>
+    </div>
+  </main>
+
+  <div class="layer-dimmed" role="dialog" aria-modal="true">
+    <div class="layer-popup profile-edit">
+      <div class="layer-popup__header">
+        <h3 class="layer-popup__title">동의서 항목 설정하기</h3>
+        <button type="button" class="layer-popup__close" aria-label="레이어 닫기">
+          <img src="../../assets/images/icon_close_popup.svg" alt="">
+        </button>
+      </div>
+      <div class="layer-popup__body">
+
+        <div class="agree-template">
+          <div class="agree-template__desc">
+            평가하기 전, 평가위원이 평가에 대한 동의를 받을 수 있도록 평가위원 동의서를 작성해 주세요.<br />
+            <em>내용은 직접 작성이 필요합니다.(평가위원에게 동의 받을 내용을 입력해 주세요.)</em>
+          </div>
+          <h3 class="required">동의 항목</h3>
+          <div class="agree-template__desc">
+            평가 동의서에 평가 위원이 작성할 항목을 설정해 주세요.<br />
+            체크된 항목은 평가 동의서에 평가위원이 입력할 항목으로 출력됩니다.
+          </div>
+
+          <div class="agree-template__checklist">
+            <div class="agree-template__checklist_header">
+              <label class="ckb">
+                <input type="checkbox" name="agree-all" />
+                <span class="ckb__box" aria-hidden="true"></span>
+                <span class="ckb__label">전체 선택</span>
+              </label>
+            </div>
+            <div class="agree-template__checklist_body">
+              <ul>
+                <li>
+                  <label class="ckb">
+                    <input type="checkbox" name="agree" />
+                    <span class="ckb__box" aria-hidden="true"></span>
+                    <span class="ckb__label">이름</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="ckb">
+                    <input type="checkbox" name="agree" />
+                    <span class="ckb__box" aria-hidden="true"></span>
+                    <span class="ckb__label">주민번호</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="ckb">
+                    <input type="checkbox" name="agree" />
+                    <span class="ckb__box" aria-hidden="true"></span>
+                    <span class="ckb__label">휴대전화</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="ckb">
+                    <input type="checkbox" name="agree" />
+                    <span class="ckb__box" aria-hidden="true"></span>
+                    <span class="ckb__label">이메일</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="ckb">
+                    <input type="checkbox" name="agree" />
+                    <span class="ckb__box" aria-hidden="true"></span>
+                    <span class="ckb__label">소속 기관/소속 부서/직위</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="ckb">
+                    <input type="checkbox" name="agree" />
+                    <span class="ckb__box" aria-hidden="true"></span>
+                    <span class="ckb__label">회사 전화</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="ckb">
+                    <input type="checkbox" name="agree" />
+                    <span class="ckb__box" aria-hidden="true"></span>
+                    <span class="ckb__label">주소</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="ckb">
+                    <input type="checkbox" name="agree" />
+                    <span class="ckb__box" aria-hidden="true"></span>
+                    <span class="ckb__label">전공/최종학위</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="ckb">
+                    <input type="checkbox" name="agree" />
+                    <span class="ckb__box" aria-hidden="true"></span>
+                    <span class="ckb__label">주요경력</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="ckb">
+                    <input type="checkbox" name="agree" />
+                    <span class="ckb__box" aria-hidden="true"></span>
+                    <span class="ckb__label">평가비 입금 계좌</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <hr class="divider_hr">
+          <h3 class="required">서약 내용</h3>
+
+          <div class="editor">
+            editor
+          </div>
+
+
+        </div>
+
+      </div>
+      <div class="layer-popup__footer">
+        <div class="layer-popup__footer-left">
+        </div>
+        <div class="layer-popup__footer-center">
+          <button type="button" class="btn border border__icon submit">
+            닫기
+          </button>
+        </div>
+        <div class="layer-popup__footer-right">
+          <button type="button" class="btn filled filled__icon btn-primary submit">
+            <img src="../../assets/images/icon_check_10_white.svg" alt="" class="icon">
+            저장
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/dist/js/bundle.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const checklist = document.querySelector('.agree-template__checklist');
+
+      if (!checklist) return;
+
+      const agreeAllCheckbox = checklist.querySelector('input[name="agree-all"]');
+      const itemCheckboxes = checklist.querySelectorAll(
+        '.agree-template__checklist_body input[type="checkbox"]'
+      );
+
+      if (!agreeAllCheckbox || itemCheckboxes.length === 0) return;
+
+      const getEnabledItemCheckboxes = () =>
+        Array.from(itemCheckboxes).filter((checkbox) => !checkbox.disabled);
+
+      const updateAgreeAllState = () => {
+        const enabledItems = getEnabledItemCheckboxes();
+        const checkedItems = enabledItems.filter((checkbox) => checkbox.checked);
+
+        agreeAllCheckbox.checked = checkedItems.length > 0 && checkedItems.length === enabledItems.length;
+        agreeAllCheckbox.indeterminate =
+          checkedItems.length > 0 && checkedItems.length < enabledItems.length;
+      };
+
+      const toggleAllItems = (checked) => {
+        getEnabledItemCheckboxes().forEach((checkbox) => {
+          checkbox.checked = checked;
+        });
+
+        updateAgreeAllState();
+      };
+
+      agreeAllCheckbox.addEventListener('change', (event) => {
+        toggleAllItems(event.target.checked);
+      });
+
+      itemCheckboxes.forEach((checkbox) => {
+        checkbox.addEventListener('change', () => {
+          updateAgreeAllState();
+        });
+      });
+
+      updateAgreeAllState();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,360 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STICH</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+  <link rel="stylesheet" href="../../assets/dist/js/bundle.css">
+
+</head>
+
+<body>
+  <header class="gnb">
+    <div class="gnb-container">
+      <a href="/" class="gnb-logo">
+        <img src="../../assets/images/icon_gnb_logo.svg" alt="stich logo">
+      </a>
+
+      <nav class="gnb-menu">
+        <a href="/" class="gnb-menu-item menu-home">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_home.png" alt="home" class="icon-gnb-home">
+          </div>
+        </a>
+
+        <a href="/pages/COM/com_01_001.html" class="gnb-menu-item menu-competition gnb-menu-item-active">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_competition.png" alt="home" class="icon-gnb-competition">
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-notice">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_notice.png" alt="home" class="icon-gnb-notice">
+            <div class="badge-new">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="20" rx="10" fill="#FF44BF" />
+                <path
+                  d="M13.4863 5.51562V14H12.127L8.10742 8.19922H8.03711V14H6.51367V5.51562H7.89648L11.8926 11.3164H11.9746V5.51562H13.4863Z"
+                  fill="white" />
+              </svg>
+
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-career">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_career.png" alt="home" class="icon-gnb-career">
+          </div>
+        </a>
+      </nav>
+
+      <div class="gnb-user">
+        <div class="gnb-profile">
+          <div class="gnb-profile-icon">
+            <img src="../../assets/images/icon_my_profile.png" alt="사용자 아이콘">
+          </div>
+          <p class="gnb-profile-text">
+            <span class="gnb-profile-greeting">안녕하세요. </span>
+            <span class="gnb-profile-name">홍길동님</span>
+          </p>
+          <a href="/" class="gnb-settings" aria-label="설정">
+            <img src="../../assets/images/icon_my_setting.png" alt="사용자 설정">
+          </a>
+        </div>
+
+        <div class="gnb-divider"></div>
+
+        <button class="gnb-logout">
+          <img src="../../assets/images/icon_gnb_logout.png" class="icon-gnb-logout" alt="로그아웃 아이콘">
+          <span>로그아웃</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="content-wrapper">
+      <div class="mypage-main">
+      </div>
+    </div>
+  </main>
+
+  <div class="layer-dimmed" role="dialog" aria-modal="true">
+    <div class="layer-popup profile-edit">
+      <div class="layer-popup__header">
+        <h3 class="layer-popup__title">평가 만들기</h3>
+        <button type="button" class="layer-popup__close" aria-label="레이어 닫기">
+          <img src="../../assets/images/icon_close_popup.svg" alt="">
+        </button>
+      </div>
+      <div class="layer-popup__body">
+
+        <div class="eva-create">
+          <h3>평가 개요</h3>
+          <div class="eva-create__form">
+            <div class="eva-create__label required">
+              평가 제목
+            </div>
+            <div class="input-text-wrapper__wide">
+              <input type="text" class="input-text" placeholder="제목을 입력하세요" />
+              <div class="text-length align-r">0/100자</div>
+            </div>
+          </div>
+          <div class="eva-create__form">
+            <div class="eva-create__label">
+              대표 이미지
+            </div>
+            <div class="img-select">
+              <div class="item active">
+                <img src="../../assets/images/sample/sample32.png" alt="">
+              </div>
+              <div class="item">
+                <img src="../../assets/images/sample/sample32_02.png" alt="">
+              </div>
+              <div class="item">
+                <img src="../../assets/images/sample/sample32_02.png" alt="">
+              </div>
+              <div class="item">
+                <img src="../../assets/images/sample/sample32_02.png" alt="">
+              </div>
+              <div class="item img-select__uploader">
+                <button type="button">
+                  <img src="../../assets/images/icon_img_upoad.svg" alt="">
+                  <span class="label">대표 이미지 올리기</span>
+                </button>
+              </div>
+            </div>
+            <div class="text-notice align-r">3MB 용량의 jpeg, jpg, png 파일 형식만 등록해주세요.</div>
+          </div>
+          <div class="eva-create__form">
+            <div class="eva-create__label">
+              평가 설명
+            </div>
+            <div class="input-text-wrap__wide">
+              <textarea class="input-textarea" name="" id="" cols="30" rows="10" placeholder="평가 상세 설명을 입력하세요"></textarea>
+              <div class="text-length align-r">0/1,000자</div>
+            </div>
+          </div>
+
+          <hr class="divider_hr">
+
+          <h3>주최사 설정</h3>
+          <div class="use-setting__form">
+            <div class="use-setting__sub-text">
+              별도의 주최사가 있다면 주최사를 등록해 주세요.
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" class="toggle-switch__input">
+              <span class="toggle-switch__slider"></span>
+              <span class="toggle-switch__label">사용</span>
+            </label>
+          </div>
+          <div class="eva-create__form">
+            <div class="host-list">
+              <div class="item">
+                <button type="button" class="img-wrap">
+                  <img src="../../assets/images/sample/sample600.png" alt="">
+                </button>
+                <div class="input-text-wrapper__wide">
+                  <input type="text" class="input-text" value="오뚜기">
+                </div>
+                <button class="btn border h40">
+                  <img src="../../assets/images/icon_minus_16.svg" alt="">
+                  삭제
+                </button>
+              </div>
+              <div class="item">
+                <button type="button" class="img-wrap">
+                  <img src="../../assets/images/sample/sample600.png" alt="">
+                </button>
+                <div class="input-text-wrapper__wide">
+                  <input type="text" class="input-text">
+                </div>
+                <button class="btn border h40">
+                  <img src="../../assets/images/icon_minus_16.svg" alt="">
+                  삭제
+                </button>
+              </div>
+              <div class="item">
+                <button type="button" class="btn-add-logo">
+                  로고 등록
+                </button>
+                <div class="input-text-wrapper__wide">
+                  <input type="text" class="input-text" placeholder="주최사 이름과 로고 파일을 모두 입력 후 ‘등록' 버튼을 눌러 추가하세요">
+                </div>
+                <button class="btn border h40">
+                  <img src="../../assets/images/icon_plus_black.svg" alt="">
+                  등록
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <hr class="divider_hr">
+          <h3>온라인 접수</h3>
+          <div class="use-setting__form">
+            <div class="use-setting__sub-text">
+              사용 시 온라인을 통해 평가대상을 접수 받을 수 있습니다.
+              평가 대상 모집을 위한 온라인 접수 폼을 간편하게 생성하고, 접수부터 평가까지 한 번에 관리할 수 있습니다.
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" class="toggle-switch__input">
+              <span class="toggle-switch__slider"></span>
+              <span class="toggle-switch__label">사용</span>
+            </label>
+          </div>
+          <div class="eva-create__form">
+            <div class="eva-create__label">
+              평가 설명
+            </div>
+            <div class="input-text-wrapper__wide">
+              <div class="question-option-item">
+                <input data-type="datepicker" id="rangePicker" class="input-text-calendar"
+                  placeholder="YYYY-MM-DD ~ YYYY-MM-DD">
+              </div>
+            </div>
+            <div class="eva-create__label" style="margin-top: 24px;">
+              접수 대상 수 제한
+            </div>
+            <div class="limit-setting">
+              <div class="input-radio">
+                <label class="radio-btn">
+                  <input type="radio" name="single-choice-demo" class="radio-btn__input" checked="">
+                  <span class="radio-btn__circle sm"></span>
+                  <span class="label">
+                    제한 없음
+                  </span>
+                </label>
+                <label class="radio-btn">
+                  <input type="radio" name="single-choice-demo" class="radio-btn__input" checked="">
+                  <span class="radio-btn__circle sm"></span>
+                  <span class="label">
+                    제한 있음
+                  </span>
+                </label>
+              </div>
+              <div class="input-text-wrapper">
+                <input type="text" class="input-text" value="5000" placeholder="대상 수를 입력해 주세요.">
+              </div>
+            </div>
+
+          </div>
+          <hr class="divider_hr">
+
+          <h3>평가 기간 <span class="sub-text">(최대 14일간 평가기간을 설정할 수 있습니다.)</span></h3>
+
+          <div class="input-text-wrapper__wide">
+            <div class="question-option-item">
+              <input data-type="datepicker" id="rangePicker" class="input-text-calendar"
+                placeholder="YYYY-MM-DD ~ YYYY-MM-DD">
+            </div>
+          </div>
+          <hr class="divider_hr">
+          <h3>평가 분야</h3>
+          <div class="use-setting__form">
+            <div class="use-setting__sub-text">
+              사용 시 각 분야별로 접수, 평가항목 생성, 평가위원 초대 및 평가를 할 수 있습니다. 예)25년 신입공채 채용 분야가 여럿일 때, 공모전 공모 분야가 여럿일 때 각 분야별로 평가를 진행할
+              수 있습니다.
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" class="toggle-switch__input">
+              <span class="toggle-switch__slider"></span>
+              <span class="toggle-switch__label">사용</span>
+            </label>
+          </div>
+          <div class="eva-create__form">
+            <div class="eva-create__label">
+              분야 명 입력
+            </div>
+            <div class="input-field-name">
+              <div class="input-text-wrapper__wide">
+                <input class="input-text" name="" id="" placeholder="관심분야를 입력 후 ‘Enter’을 누르거나 ‘등록'을 눌러 분야를 추가하세요" />
+              </div>
+              <button class="btn border h40">
+                <img src="../../assets/images/icon_plus_black.svg" alt="">
+                등록
+              </button>
+            </div>
+          </div>
+          <hr class="divider_hr">
+
+          <h3>평가 위원</h3>
+          <div class="use-setting__form">
+            <div class="use-setting__label">평가위원 동의서</div>
+            <div class="use-setting__sub-text">
+              평가하기 전, 평가위원이 평가에 대한 동의를 받을 수 있도록 설정할 수 있습니다.
+              <br />
+              <em>
+                내용은 직접 작성이 필요합니다.(평가위원에게 동의 받을 내용을 입력해 주세요.)
+              </em>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" class="toggle-switch__input">
+              <span class="toggle-switch__slider"></span>
+              <span class="toggle-switch__label">미사용</span>
+            </label>
+            <a href="" class="btn underline underline__icon">
+              <img src="../../assets/images/icon_setting.svg" alt="" class="icon" style="width:13px;left: -16px">
+              설정하기
+            </a>
+          </div>
+          <div class="use-setting__form">
+            <div class="use-setting__label">평가 댓글</div>
+            <div class="use-setting__sub-text">
+              평가위원이 평가할 때 평가 대상별 댓글을 작성하고 소통의 공간으로 사용할 수 있습니다.
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" class="toggle-switch__input">
+              <span class="toggle-switch__slider"></span>
+              <span class="toggle-switch__label">미사용</span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+      <div class="layer-popup__footer">
+        <div class="layer-popup__footer-left">
+        </div>
+        <div class="layer-popup__footer-center">
+          <button type="button" class="btn border border__icon submit">
+            닫기
+          </button>
+        </div>
+        <div class="layer-popup__footer-right">
+          <button type="button" class="btn filled filled__icon btn-primary submit">
+            <img src="../../assets/images/icon_check_10_white.svg" alt="" class="icon">
+            만들기
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/dist/js/bundle.js"></script>
+</body>
+
+</html>
