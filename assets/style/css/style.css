@@ -2995,7 +2995,7 @@ button.btn-add:hover {
   align-items: flex-start;
   min-height: 33px;
 }
-.flow-timeline__item--active .flow-timeline__dot::before {
+.flow-timeline__item.is-active .flow-timeline__dot::before {
   content: "";
   position: absolute;
   width: 16px;
@@ -3006,7 +3006,7 @@ button.btn-add:hover {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.flow-timeline__item--active .flow-timeline__dot::after {
+.flow-timeline__item.is-active .flow-timeline__dot::after {
   content: "";
   position: absolute;
   width: 8px;
@@ -3026,16 +3026,11 @@ button.btn-add:hover {
   margin: 4px 5.5px;
   flex-shrink: 0;
 }
-.flow-timeline__dot--active {
+.flow-timeline__item.is-active .flow-timeline__dot {
   width: 16px;
   height: 16px;
   background-color: transparent;
   margin: 0;
-}
-.flow-timeline__dot--inactive {
-  width: 5px;
-  height: 5px;
-  background-color: #B0B0B0;
 }
 .flow-timeline__connector {
   position: absolute;
@@ -3044,12 +3039,10 @@ button.btn-add:hover {
   width: 1px;
   height: 20px;
   stroke-dasharray: 2 2;
-}
-.flow-timeline__connector--purple {
-  background: repeating-linear-gradient(to bottom, #A68FEB, #A68FEB 2px, transparent 2px, transparent 4px);
-}
-.flow-timeline__connector--inactive {
   background: repeating-linear-gradient(to bottom, #B0B0B0, #B0B0B0 2px, transparent 2px, transparent 4px);
+}
+.flow-timeline__connector.is-active {
+  background: repeating-linear-gradient(to bottom, #A68FEB, #A68FEB 2px, transparent 2px, transparent 4px);
 }
 .flow-timeline__label {
   margin-left: 8px;
@@ -3058,16 +3051,14 @@ button.btn-add:hover {
   font-weight: 400;
   line-height: normal;
   white-space: nowrap;
+  color: #747474;
 }
-.flow-timeline__label--active {
+.flow-timeline__item.is-active .flow-timeline__label {
   margin-top: -2px;
   color: #4D24C3;
   font-size: 16px;
   font-weight: 700;
   line-height: 150%;
-}
-.flow-timeline__label--inactive {
-  color: #747474;
 }
 
 .flow-content {
