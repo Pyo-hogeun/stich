@@ -119,11 +119,6 @@
       background-color: transparent;
       margin: 0;
     }
-    &--inactive {
-      width: 5px;
-      height: 5px;
-      background-color: #B0B0B0;
-    }
   }
 
   &__connector {
@@ -133,22 +128,19 @@
     width: 1px;
     height: 20px;
     stroke-dasharray: 2 2;
+    background: repeating-linear-gradient(
+      to bottom,
+      #B0B0B0,
+      #B0B0B0 2px,
+      transparent 2px,
+      transparent 4px
+    );
 
     &--purple {
       background: repeating-linear-gradient(
         to bottom,
         #A68FEB,
         #A68FEB 2px,
-        transparent 2px,
-        transparent 4px
-      );
-    }
-
-    &--inactive {
-      background: repeating-linear-gradient(
-        to bottom,
-        #B0B0B0,
-        #B0B0B0 2px,
         transparent 2px,
         transparent 4px
       );
@@ -162,6 +154,7 @@
     font-weight: 400;
     line-height: normal;
     white-space: nowrap;
+    color: $normalText;
 
     &--active {
       margin-top: -2px;
@@ -169,10 +162,6 @@
       font-size: 16px;
       font-weight: 700;
       line-height: 150%;
-    }
-
-    &--inactive {
-      color: $normalText;
     }
   }
 }
