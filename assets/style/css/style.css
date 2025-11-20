@@ -2142,6 +2142,19 @@ button.btn-add:hover {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.eva-target__file_list .item .img-wrap.png, .eva-target__file_list .item .img-wrap.txt, .eva-target__file_list .item .img-wrap.pdf {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.eva-target__file_list .item .img-wrap.png {
+  background-image: url("../../images/icon_png.svg");
+}
+.eva-target__file_list .item .img-wrap.txt {
+  background-image: url("../../images/icon_txt.svg");
+}
+.eva-target__file_list .item .img-wrap.pdf {
+  background-image: url("../../images/icon_pdf.svg");
+}
 .eva-target__file_list .item__content {
   font-size: 10px;
 }

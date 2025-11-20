@@ -56,6 +56,19 @@
           height: 100%;
           object-fit: cover;
         }
+        &.png,&.txt,&.pdf{
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        &.png{
+          background-image: url('../../images/icon_png.svg');
+        }
+        &.txt{
+          background-image: url('../../images/icon_txt.svg');
+        }
+        &.pdf{
+          background-image: url('../../images/icon_pdf.svg');
+        }
       }
       &__content{
         font-size: 10px;
