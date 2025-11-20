@@ -1,0 +1,67 @@
+@use 'variables' as *;
+:root{
+  --nav-button-height: 30px;
+}
+.eva-file-swiper{
+  width: 100%;
+  position: relative;
+  .swiper-wrapper{
+    display: flex;
+    height: auto;
+  }
+  .button-next, .button-prev{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - var(--nav-button-height)/2);
+    width: 30px;
+    height: var(--nav-button-height);
+    z-index: 11;
+    box-shadow: 0 1px 4px 0 rgba(122,83,236,0.20);
+    color: $primaryColor;
+    cursor: pointer;
+    &.swiper-button-disabled{
+      color: #B0B0B0;
+    }
+  }
+  .button-prev{
+    left: -15px;
+    svg{
+      transform: rotate(180deg);
+    }
+  }
+  .button-next{
+    right: -15px;
+  }
+  .download-file{
+    position: absolute;
+    display: inline-flex;
+    padding: 10px 16px;
+    font-size: 12px;
+    color: $Title_Dark;
+    text-decoration: underline;
+    background: #FFF;
+    border-radius: 20px;
+    bottom: 16px;
+    left: calc(50% - 50px);
+    z-index: 1;
+    img{
+      margin-right: 4px;
+    }
+  }
+  .swiper-pagination{
+    position: absolute;
+    bottom: -20px !important;
+  }
+  .swiper-pagination-bullet{
+    transition: all 0.2s;
+  }
+  .swiper-pagination-bullet-active{
+    width: 16px !important;
+    background-color: $primaryColor;
+    border-radius: 10px;
+  }
+}

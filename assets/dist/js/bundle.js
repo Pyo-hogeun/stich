@@ -13295,6 +13295,21 @@ var AppBundle = (function (exports) {
   templateSwiper.on('slideChange', bindCardClickEvents);
   templateSwiperMine.on('slideChange', bindCardClickEvents);
 
+  // 평가 템플릿 SWIPER
+  new Swiper(".eva-file-swiper .swiper", {
+    modules: [Navigation, Pagination],
+    slidesPerView: 'auto',
+    spaceBetween: 16,
+    grabCursor: true,
+    freeMode: true,
+    // Navigation arrows
+    navigation: {
+      nextEl: '.button-next.file-nav',
+      prevEl: '.button-prev.file-nav',
+    },
+    pagination: {el: '.swiper-pagination'},
+  });
+
   // noUiSlider initialization for slider question cards
   const initSliderQuestionCard = () => {
     document.querySelectorAll('.question-card--slider').forEach((card) => {

@@ -1,0 +1,223 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STICH</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+  <link rel="stylesheet" href="../../assets/dist/js/bundle.css">
+
+</head>
+
+<body>
+  <header class="gnb">
+    <div class="gnb-container">
+      <a href="/" class="gnb-logo">
+        <img src="../../assets/images/icon_gnb_logo.svg" alt="stich logo">
+      </a>
+
+      <nav class="gnb-menu">
+        <a href="/" class="gnb-menu-item menu-home">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_home.png" alt="home" class="icon-gnb-home">
+          </div>
+        </a>
+
+        <a href="/pages/COM/com_01_001.html" class="gnb-menu-item menu-competition gnb-menu-item-active">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_competition.png" alt="home" class="icon-gnb-competition">
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-notice">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_notice.png" alt="home" class="icon-gnb-notice">
+            <div class="badge-new">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="20" rx="10" fill="#FF44BF" />
+                <path
+                  d="M13.4863 5.51562V14H12.127L8.10742 8.19922H8.03711V14H6.51367V5.51562H7.89648L11.8926 11.3164H11.9746V5.51562H13.4863Z"
+                  fill="white" />
+              </svg>
+
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-career">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_career.png" alt="home" class="icon-gnb-career">
+          </div>
+        </a>
+      </nav>
+
+      <div class="gnb-user">
+        <div class="gnb-profile">
+          <div class="gnb-profile-icon">
+            <img src="../../assets/images/icon_my_profile.png" alt="사용자 아이콘">
+          </div>
+          <p class="gnb-profile-text">
+            <span class="gnb-profile-greeting">안녕하세요. </span>
+            <span class="gnb-profile-name">홍길동님</span>
+          </p>
+          <a href="/" class="gnb-settings" aria-label="설정">
+            <img src="../../assets/images/icon_my_setting.png" alt="사용자 설정">
+          </a>
+        </div>
+
+        <div class="gnb-divider"></div>
+
+        <button class="gnb-logout">
+          <img src="../../assets/images/icon_gnb_logout.png" class="icon-gnb-logout" alt="로그아웃 아이콘">
+          <span>로그아웃</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="content-wrapper">
+      <div class="mypage-main">
+      </div>
+    </div>
+  </main>
+
+  <div class="layer-dimmed" role="dialog" aria-modal="true">
+    <div class="layer-popup">
+      <div class="layer-popup__header">
+        <h3 class="layer-popup__title">김영희님_평가파일 보기</h3>
+        <button type="button" class="layer-popup__close" aria-label="레이어 닫기">
+          <img src="../../assets/images/icon_close_popup.svg" alt="">
+        </button>
+      </div>
+      <div class="layer-popup__body">
+        <div class="title-18">평가분야 명</div>
+
+        <div class="template-swiper-container eva-file-swiper">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="../../assets/images/sample/sample_file.png" alt="" class="eva-card__image">
+              </div>
+              <div class="swiper-slide">
+                <img src="../../assets/images/sample/sample_file.png" alt="" class="eva-card__image">
+              </div>
+            </div>
+          </div>
+          <div class="button-prev file-nav">
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1.70605 0.292969C1.31553 -0.0975015 0.682498 -0.0975375 0.291992 0.292969C-0.0984602 0.683479 -0.0984602 1.31652 0.291992 1.70703L5.24121 6.65625L0.291992 11.6055C-0.098309 11.996 -0.0984097 12.6291 0.291992 13.0195C0.682448 13.41 1.31551 13.4099 1.70605 13.0195L7.34473 7.38086C7.35072 7.37516 7.3574 7.37014 7.36328 7.36426C7.68062 7.04692 7.7404 6.5688 7.54199 6.19141C7.49617 6.104 7.43675 6.02171 7.36328 5.94824C7.35724 5.9422 7.35088 5.93652 7.34473 5.93066L1.70605 0.292969Z"
+                fill="currentColor" />
+              <path
+                d="M1.70605 0.292969C1.31553 -0.0975015 0.682498 -0.0975375 0.291992 0.292969C-0.0984602 0.683479 -0.0984602 1.31652 0.291992 1.70703L5.24121 6.65625L0.291992 11.6055C-0.098309 11.996 -0.0984097 12.6291 0.291992 13.0195C0.682448 13.41 1.31551 13.4099 1.70605 13.0195L7.34473 7.38086C7.35072 7.37516 7.3574 7.37014 7.36328 7.36426C7.68062 7.04692 7.7404 6.5688 7.54199 6.19141C7.49617 6.104 7.43675 6.02171 7.36328 5.94824C7.35724 5.9422 7.35088 5.93652 7.34473 5.93066L1.70605 0.292969Z"
+                fill="currentColor" />
+            </svg>
+
+          </div>
+          <div class="button-next file-nav">
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1.70605 0.292969C1.31553 -0.0975015 0.682498 -0.0975375 0.291992 0.292969C-0.0984602 0.683479 -0.0984602 1.31652 0.291992 1.70703L5.24121 6.65625L0.291992 11.6055C-0.098309 11.996 -0.0984097 12.6291 0.291992 13.0195C0.682448 13.41 1.31551 13.4099 1.70605 13.0195L7.34473 7.38086C7.35072 7.37516 7.3574 7.37014 7.36328 7.36426C7.68062 7.04692 7.7404 6.5688 7.54199 6.19141C7.49617 6.104 7.43675 6.02171 7.36328 5.94824C7.35724 5.9422 7.35088 5.93652 7.34473 5.93066L1.70605 0.292969Z"
+                fill="currentColor" />
+              <path
+                d="M1.70605 0.292969C1.31553 -0.0975015 0.682498 -0.0975375 0.291992 0.292969C-0.0984602 0.683479 -0.0984602 1.31652 0.291992 1.70703L5.24121 6.65625L0.291992 11.6055C-0.098309 11.996 -0.0984097 12.6291 0.291992 13.0195C0.682448 13.41 1.31551 13.4099 1.70605 13.0195L7.34473 7.38086C7.35072 7.37516 7.3574 7.37014 7.36328 7.36426C7.68062 7.04692 7.7404 6.5688 7.54199 6.19141C7.49617 6.104 7.43675 6.02171 7.36328 5.94824C7.35724 5.9422 7.35088 5.93652 7.34473 5.93066L1.70605 0.292969Z"
+                fill="currentColor" />
+            </svg>
+
+          </div>
+
+          <a href="" class="download-file"><img src="../../assets/images/icon_download_16.svg" alt=""> 파일 받기</a>
+
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <hr class="divider_hr">
+
+
+      </div>
+      <div class="layer-popup__footer">
+        <div class="layer-popup__footer-left">
+        </div>
+        <div class="layer-popup__footer-center">
+          <button type="button" class="btn border submit">
+            닫기
+          </button>
+        </div>
+        <div class="layer-popup__footer-right">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/dist/js/bundle.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const checklist = document.querySelector('.agree-template__checklist');
+
+      if (!checklist) return;
+
+      const agreeAllCheckbox = checklist.querySelector('input[name="agree-all"]');
+      const itemCheckboxes = checklist.querySelectorAll(
+        '.agree-template__checklist_body input[type="checkbox"]'
+      );
+
+      if (!agreeAllCheckbox || itemCheckboxes.length === 0) return;
+
+      const getEnabledItemCheckboxes = () =>
+        Array.from(itemCheckboxes).filter((checkbox) => !checkbox.disabled);
+
+      const updateAgreeAllState = () => {
+        const enabledItems = getEnabledItemCheckboxes();
+        const checkedItems = enabledItems.filter((checkbox) => checkbox.checked);
+
+        agreeAllCheckbox.checked = checkedItems.length > 0 && checkedItems.length === enabledItems.length;
+        agreeAllCheckbox.indeterminate =
+          checkedItems.length > 0 && checkedItems.length < enabledItems.length;
+      };
+
+      const toggleAllItems = (checked) => {
+        getEnabledItemCheckboxes().forEach((checkbox) => {
+          checkbox.checked = checked;
+        });
+
+        updateAgreeAllState();
+      };
+
+      agreeAllCheckbox.addEventListener('change', (event) => {
+        toggleAllItems(event.target.checked);
+      });
+
+      itemCheckboxes.forEach((checkbox) => {
+        checkbox.addEventListener('change', () => {
+          updateAgreeAllState();
+        });
+      });
+
+      updateAgreeAllState();
+    });
+  </script>
+</body>
+
+</html>
