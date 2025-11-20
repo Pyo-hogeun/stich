@@ -1,0 +1,340 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STICH</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+  <link rel="stylesheet" href="../../assets/dist/js/bundle.css">
+
+</head>
+
+<body>
+  <header class="gnb">
+    <div class="gnb-container">
+      <a href="/" class="gnb-logo">
+        <img src="../../assets/images/icon_gnb_logo.svg" alt="stich logo">
+      </a>
+
+      <nav class="gnb-menu">
+        <a href="/" class="gnb-menu-item menu-home">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_home.png" alt="home" class="icon-gnb-home">
+          </div>
+        </a>
+
+        <a href="/pages/COM/com_01_001.html" class="gnb-menu-item menu-competition gnb-menu-item-active">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_competition.png" alt="home" class="icon-gnb-competition">
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-notice">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_notice.png" alt="home" class="icon-gnb-notice">
+            <div class="badge-new">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="20" rx="10" fill="#FF44BF" />
+                <path
+                  d="M13.4863 5.51562V14H12.127L8.10742 8.19922H8.03711V14H6.51367V5.51562H7.89648L11.8926 11.3164H11.9746V5.51562H13.4863Z"
+                  fill="white" />
+              </svg>
+
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-career">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_career.png" alt="home" class="icon-gnb-career">
+          </div>
+        </a>
+      </nav>
+
+      <div class="gnb-user">
+        <div class="gnb-profile">
+          <div class="gnb-profile-icon">
+            <img src="../../assets/images/icon_my_profile.png" alt="사용자 아이콘">
+          </div>
+          <p class="gnb-profile-text">
+            <span class="gnb-profile-greeting">안녕하세요. </span>
+            <span class="gnb-profile-name">홍길동님</span>
+          </p>
+          <a href="/" class="gnb-settings" aria-label="설정">
+            <img src="../../assets/images/icon_my_setting.png" alt="사용자 설정">
+          </a>
+        </div>
+
+        <div class="gnb-divider"></div>
+
+        <button class="gnb-logout">
+          <img src="../../assets/images/icon_gnb_logout.png" class="icon-gnb-logout" alt="로그아웃 아이콘">
+          <span>로그아웃</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="content-wrapper">
+      <div class="mypage-main">
+      </div>
+    </div>
+  </main>
+
+  <div class="layer-dimmed" role="dialog" aria-modal="true">
+    <div class="layer-popup">
+      <div class="layer-popup__header">
+        <h3 class="layer-popup__title">평가 대상 상세</h3>
+        <button type="button" class="layer-popup__close" aria-label="레이어 닫기">
+          <img src="../../assets/images/icon_close_popup.svg" alt="">
+        </button>
+      </div>
+      <div class="layer-popup__body">
+
+        <div class="eva-target">
+          <div class="eva-target__header">
+            <div class="start">
+              <span class="badge">No.12-123</span>
+              <span class="badge">평가분야 명</span>
+            </div>
+            <div class="end">
+              <span class="badge">이용 서비스 추가 시 심사위원의 평가 목록에 출력되며 평가가 가능합니다.</span>
+            </div>
+          </div>
+          
+          <h3>이송희</h3>
+          <div class="eva-target__detail">
+            <p class="eva-target__detail_desc">
+              샘플 상세설명 샘플샘플 상세설명 샘플샘플 상세설명 샘플샘플 상세설명 샘플 샘플 상세설명 샘플샘플 상세설명 샘플 상세설명 입니다.
+            </p>
+          </div>
+          
+          <h3>평가 파일</h3>
+          <div class="eva-target__file">
+            <div class="eva-target__file_topper">
+              총 업로드한 파일 : <em>3개</em>
+            </div>
+            <div class="eva-target__file_list">
+              <div class="item">
+                <div class="img-wrap">
+                  <img src="../../assets/images/sample/image_thumbnail.png" alt="">
+                </div>
+                <div class="item__content">
+                  <div class="filename">사진_홍길동.png</div>
+                  <div class="info">
+                    <span class="date">2024.10.10 17:15</span>
+                    <span class="divider"></span>
+                    <span class="size">4.4MB</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-wrap">
+                  <img src="../../assets/images/sample/image_thumbnail.png" alt="">
+                </div>
+                <div class="item__content">
+                  <div class="filename">사진_홍길동.png</div>
+                  <div class="info">
+                    <span class="date">2024.10.10 17:15</span>
+                    <span class="divider"></span>
+                    <span class="size">4.4MB</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-wrap">
+                  <img src="../../assets/images/sample/sample600.png" alt="">
+                </div>
+                <div class="item__content">
+                  <div class="filename">사진_홍길동.png</div>
+                  <div class="info">
+                    <span class="date">2024.10.10 17:15</span>
+                    <span class="divider"></span>
+                    <span class="size">4.4MB</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-wrap">
+                  <!-- 이미지 없는 경우 -->
+                </div>
+                <div class="item__content">
+                  <div class="filename">사진_홍길동.png</div>
+                  <div class="info">
+                    <span class="date">2024.10.10 17:15</span>
+                    <span class="divider"></span>
+                    <span class="size">4.4MB</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-wrap">
+                  <img src="../../assets/images/sample/image_thumbnail.png" alt="">
+                </div>
+                <div class="item__content">
+                  <div class="filename">사진_홍길동.png</div>
+                  <div class="info">
+                    <span class="date">2024.10.10 17:15</span>
+                    <span class="divider"></span>
+                    <span class="size">4.4MB</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3>평가 결과</h3>
+          <div class="eva-target__result">
+            <div class="eva-target__result_item">
+              <div class="eva-target__result_label">득점 평균</div>
+              <div class="eva-target__result_value"><span><em>15점</em> / 100점</span></div>
+            </div>
+            <div class="eva-target__result_item">
+              <div class="eva-target__result_label">평가 현황</div>
+              <div class="eva-target__result_value">
+                <div class="percentage">10%</div>
+                <div class="progress-bar-wrapper">
+                  <div class="progress-bar">
+                    <span class="bar" style="width: 30%"></span>
+                  </div>
+                </div>
+                <div class="count"><em>1명 완료</em>/ 10명</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="eva-target__tabs">
+            <div class="eva-target__tabs_item"><a href="" class="active">항목별 점수</a></div>
+            <div class="eva-target__tabs_item"><a href="">평가 위원별 점수</a></div>
+            <div class="eva-target__tabs_item"><a href="">댓글</a></div>
+          </div>
+
+          <div class="eva-target__total">
+            <span class="label">득점 평균</span>
+            <span class="score"><em>70.31</em> / 100</span>
+            <div class="progress-bar">
+              <div class="bar" style="width: 70%"></div>
+            </div>
+          </div>
+
+          <div class="eva-target__score-list">
+            <div class="item">
+              <div class="item__title">과제 완성도</div>
+              <div class="item__desc">과제의 핵심 주제를 적절하게 작성했는지 평가 상세 설명 평가 항목 상세 설명</div>
+              <div class="item__score_info">
+                <div class="start">
+                  <div class="badge">배점 비율 30%</div>
+                </div>
+                <div class="end">
+                  <span class="calc-score__label">배점 비율 반영 점수</span>
+                  <span class="calc-score">16.66점</span>
+                </div>
+              </div>
+              <div class="item__score_wrap">
+                <div class="progress-bar">
+                  <div class="bar" style="width: 30%"></div>
+                </div>
+                <div class="score"><em>5점</em> / 10점</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item__title">과제 완성도</div>
+              <div class="item__desc">과제의 핵심 주제를 적절하게 작성했는지 평가 상세 설명 평가 항목 상세 설명</div>
+              <div class="item__score_info">
+                <div class="start">
+                  <div class="badge">배점 비율 30%</div>
+                </div>
+                <div class="end">
+                  <span class="calc-score__label">배점 비율 반영 점수</span>
+                  <span class="calc-score">16.66점</span>
+                </div>
+              </div>
+              <div class="item__score_wrap">
+                <div class="progress-bar">
+                  <div class="bar" style="width: 30%"></div>
+                </div>
+                <div class="score"><em>5점</em> / 10점</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item__title">과제 완성도</div>
+              <div class="item__desc">과제의 핵심 주제를 적절하게 작성했는지 평가 상세 설명 평가 항목 상세 설명</div>
+              <div class="item__score_info">
+                <div class="start">
+                  <div class="badge">배점 비율 30%</div>
+                </div>
+                <div class="end">
+                  <span class="calc-score__label">배점 비율 반영 점수</span>
+                  <span class="calc-score">16.66점</span>
+                </div>
+              </div>
+              <div class="item__score_wrap">
+                <div class="progress-bar">
+                  <div class="bar" style="width: 30%"></div>
+                </div>
+                <div class="score"><em>5점</em> / 10점</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layer-popup__footer eva-target__footer">
+        <div class="nav">
+          <a href="" class="prev">
+            <img src="../../assets/images/icon_nav_24_left.svg" alt="" class="icon">
+            <span class="nav-label">이전 평가 대상</span>
+            <span class="target">(평가 대상 명)</span>
+          </a>
+          <a href="" class="next">
+            <span class="nav-label">다음 평가 대상</span>
+            <span class="target">(평가 대상 명)</span>
+            <img src="../../assets/images/icon_nav_24_right.svg" alt="" class="icon">
+          </a>
+        </div>
+        <div class="layer-popup__footer-left">
+          <button type="button" class="btn border border__icon submit">
+            <img src="../../assets/images/icon_delete_16.svg" alt="" class="icon-eva-delete">
+            삭제
+          </button>
+        </div>
+        <div class="layer-popup__footer-center">
+          <button type="button" class="btn border border__icon submit">
+            닫기
+          </button>
+        </div>
+        <div class="layer-popup__footer-right">
+          <button type="button" class="btn border border__icon submit">
+            <img src="../../assets/images/icon_edit-16.svg" alt="" class="icon-edit">
+            수정
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/dist/js/bundle.js"></script>
+</body>
+
+</html>
