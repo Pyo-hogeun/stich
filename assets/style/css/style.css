@@ -2219,6 +2219,7 @@ button.btn-add:hover {
   display: flex;
   justify-content: center;
   margin-top: 40px;
+  margin-bottom: 24px;
   border-bottom: 1px solid #B0B0B0;
 }
 .eva-target__tabs_item a {
@@ -2324,6 +2325,48 @@ button.btn-add:hover {
 }
 .eva-target__score-list .item__score_wrap .progress-bar + .score em {
   color: #000;
+}
+
+.eva-committee {
+  display: flex;
+  gap: 16px;
+}
+.eva-committee .eva-committee__member {
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.eva-committee .eva-committee__member.active .eva-committee__img-wrap {
+  border: 2px solid #7A53EC;
+  opacity: 1;
+}
+.eva-committee .eva-committee__member.active .eva-committee__name {
+  color: #7A53EC;
+  font-weight: 700;
+}
+.eva-committee__img-wrap {
+  width: 40px;
+  height: 40px;
+  background-color: #EBEBEB;
+  border-radius: 50%;
+  overflow: hidden;
+  background-image: url("../../images/icon_member.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5;
+}
+.eva-committee__img-wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.eva-committee__name {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #8A8A8A;
+  margin-top: 8px;
 }
 
 .evaluation-card {
