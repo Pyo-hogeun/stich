@@ -1,0 +1,1457 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>이미지 자산 모음</title>
+  <link rel="stylesheet" href="/assets/style/css/style.css">
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif; padding: 24px; background:#f8fafc; color:#111827; }
+    h1 { margin: 0 0 6px; font-size: 26px; }
+    p.meta { margin: 0 0 20px; color:#6b7280; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+    .card { background:#fff; border:1px solid #e5e7eb; border-radius: 12px; padding: 10px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); display:flex; flex-direction:column; gap: 10px; }
+    .thumb-wrap { background:#f9fafb; border:1px solid #e5e7eb; border-radius: 10px; padding: 8px; display:flex; align-items:center; justify-content:center; height: 120px; overflow: hidden; }
+    .thumb { max-width: 100%; max-height: 100%; object-fit: contain; }
+    .info { font-size: 13px; color:#374151; word-break: break-all; display:flex; flex-direction:column; gap: 4px; }
+    .info strong { display:block; color:#111827; margin-bottom: 4px; font-size: 14px; }
+    .meta-row { display:flex; justify-content:space-between; gap: 8px; align-items:center; }
+    .meta-row span { display:block; }
+    .meta-label { color:#6b7280; font-size:12px; letter-spacing: -0.01em; }
+    .meta-value { color:#111827; font-weight:600; font-size: 13px; }
+    .meta-value.dimensions { color:#1f2937; }
+    .meta-value.loading { color:#9ca3af; font-weight:500; }
+    .empty { padding: 24px; border:1px dashed #d1d5db; border-radius: 12px; text-align:center; background:#fff; color:#6b7280; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>이미지 자산 모음</h1>
+    <p class="meta">/assets/images 안의 모든 이미지 파일을 한눈에 확인하세요.</p>
+  </header>
+  <main>
+    <section class="grid">
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/Chevron_up_24.svg" alt="Chevron_up_24.svg"></div>
+          <div class="info">
+            <strong>Chevron_up_24.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">274 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_alert.svg" alt="icon_alert.svg"></div>
+          <div class="info">
+            <strong>icon_alert.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">443 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_alram.svg" alt="icon_alram.svg"></div>
+          <div class="info">
+            <strong>icon_alram.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">706 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_arrow_acc.svg" alt="icon_arrow_acc.svg"></div>
+          <div class="info">
+            <strong>icon_arrow_acc.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">278 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_arrow_select.svg" alt="icon_arrow_select.svg"></div>
+          <div class="info">
+            <strong>icon_arrow_select.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">278 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_arrow_upside_24.svg" alt="icon_arrow_upside_24.svg"></div>
+          <div class="info">
+            <strong>icon_arrow_upside_24.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">274 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_blind.svg" alt="icon_blind.svg"></div>
+          <div class="info">
+            <strong>icon_blind.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">2.3 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_calendar.svg" alt="icon_calendar.svg"></div>
+          <div class="info">
+            <strong>icon_calendar.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">805 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_check_10_white.svg" alt="icon_check_10_white.svg"></div>
+          <div class="info">
+            <strong>icon_check_10_white.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">255 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_check_29.svg" alt="icon_check_29.svg"></div>
+          <div class="info">
+            <strong>icon_check_29.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">345 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_check_selected.svg" alt="icon_check_selected.svg"></div>
+          <div class="info">
+            <strong>icon_check_selected.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">285 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_chevron_left-12.svg" alt="icon_chevron_left-12.svg"></div>
+          <div class="info">
+            <strong>icon_chevron_left-12.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">229 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_chevron_right-16.png" alt="icon_chevron_right-16.png"></div>
+          <div class="info">
+            <strong>icon_chevron_right-16.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">288 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_chevron_right-16.svg" alt="icon_chevron_right-16.svg"></div>
+          <div class="info">
+            <strong>icon_chevron_right-16.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">253 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_close_16.svg" alt="icon_close_16.svg"></div>
+          <div class="info">
+            <strong>icon_close_16.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">317 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_close_popup.svg" alt="icon_close_popup.svg"></div>
+          <div class="info">
+            <strong>icon_close_popup.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">336 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_copy_white.png" alt="icon_copy_white.png"></div>
+          <div class="info">
+            <strong>icon_copy_white.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">309 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_copy_white.svg" alt="icon_copy_white.svg"></div>
+          <div class="info">
+            <strong>icon_copy_white.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">313 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_copy.png" alt="icon_copy.png"></div>
+          <div class="info">
+            <strong>icon_copy.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">394 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_copy.svg" alt="icon_copy.svg"></div>
+          <div class="info">
+            <strong>icon_copy.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">317 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_delete_16.svg" alt="icon_delete_16.svg"></div>
+          <div class="info">
+            <strong>icon_delete_16.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">799 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_delete_white.png" alt="icon_delete_white.png"></div>
+          <div class="info">
+            <strong>icon_delete_white.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">465 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_delete.svg" alt="icon_delete.svg"></div>
+          <div class="info">
+            <strong>icon_delete.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">483 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_doc.svg" alt="icon_doc.svg"></div>
+          <div class="info">
+            <strong>icon_doc.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">465 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_download_16.png" alt="icon_download_16.png"></div>
+          <div class="info">
+            <strong>icon_download_16.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">391 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_download_16.svg" alt="icon_download_16.svg"></div>
+          <div class="info">
+            <strong>icon_download_16.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">388 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_download.svg" alt="icon_download.svg"></div>
+          <div class="info">
+            <strong>icon_download.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">419 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_edit-16.svg" alt="icon_edit-16.svg"></div>
+          <div class="info">
+            <strong>icon_edit-16.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">760 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_eva_delete.png" alt="icon_eva_delete.png"></div>
+          <div class="info">
+            <strong>icon_eva_delete.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">665 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_eva_delete.svg" alt="icon_eva_delete.svg"></div>
+          <div class="info">
+            <strong>icon_eva_delete.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">807 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_eva_drag_handle.svg" alt="icon_eva_drag_handle.svg"></div>
+          <div class="info">
+            <strong>icon_eva_drag_handle.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">394 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_eva_info_mod.png" alt="icon_eva_info_mod.png"></div>
+          <div class="info">
+            <strong>icon_eva_info_mod.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">547 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_file_added.png" alt="icon_file_added.png"></div>
+          <div class="info">
+            <strong>icon_file_added.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">654 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_file_delete.png" alt="icon_file_delete.png"></div>
+          <div class="info">
+            <strong>icon_file_delete.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">755 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_file.svg" alt="icon_file.svg"></div>
+          <div class="info">
+            <strong>icon_file.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">661 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_form.svg" alt="icon_form.svg"></div>
+          <div class="info">
+            <strong>icon_form.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">465 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_gnb_career.png" alt="icon_gnb_career.png"></div>
+          <div class="info">
+            <strong>icon_gnb_career.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">496 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_gnb_competition.png" alt="icon_gnb_competition.png"></div>
+          <div class="info">
+            <strong>icon_gnb_competition.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">654 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_gnb_home.png" alt="icon_gnb_home.png"></div>
+          <div class="info">
+            <strong>icon_gnb_home.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">772 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_gnb_logo.svg" alt="icon_gnb_logo.svg"></div>
+          <div class="info">
+            <strong>icon_gnb_logo.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">3.6 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_gnb_logout.png" alt="icon_gnb_logout.png"></div>
+          <div class="info">
+            <strong>icon_gnb_logout.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">790 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_gnb_notice.png" alt="icon_gnb_notice.png"></div>
+          <div class="info">
+            <strong>icon_gnb_notice.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">611 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_handle_drag.svg" alt="icon_handle_drag.svg"></div>
+          <div class="info">
+            <strong>icon_handle_drag.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">390 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_handle.svg" alt="icon_handle.svg"></div>
+          <div class="info">
+            <strong>icon_handle.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">339 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_img_selected.svg" alt="icon_img_selected.svg"></div>
+          <div class="info">
+            <strong>icon_img_selected.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">1.2 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_img_upoad.svg" alt="icon_img_upoad.svg"></div>
+          <div class="info">
+            <strong>icon_img_upoad.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">762 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_link.svg" alt="icon_link.svg"></div>
+          <div class="info">
+            <strong>icon_link.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">575 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_list_delete.png" alt="icon_list_delete.png"></div>
+          <div class="info">
+            <strong>icon_list_delete.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">381 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_member.svg" alt="icon_member.svg"></div>
+          <div class="info">
+            <strong>icon_member.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">862 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_minus_16.svg" alt="icon_minus_16.svg"></div>
+          <div class="info">
+            <strong>icon_minus_16.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">189 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_more_dot.png" alt="icon_more_dot.png"></div>
+          <div class="info">
+            <strong>icon_more_dot.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">414 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_my_profile.png" alt="icon_my_profile.png"></div>
+          <div class="info">
+            <strong>icon_my_profile.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">1.5 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_my_setting.png" alt="icon_my_setting.png"></div>
+          <div class="info">
+            <strong>icon_my_setting.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">1.0 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_nav_24_left.svg" alt="icon_nav_24_left.svg"></div>
+          <div class="info">
+            <strong>icon_nav_24_left.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">248 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_nav_24_right.svg" alt="icon_nav_24_right.svg"></div>
+          <div class="info">
+            <strong>icon_nav_24_right.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">272 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_open.svg" alt="icon_open.svg"></div>
+          <div class="info">
+            <strong>icon_open.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">839 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_pdf.svg" alt="icon_pdf.svg"></div>
+          <div class="info">
+            <strong>icon_pdf.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">1.2 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_plus_16.svg" alt="icon_plus_16.svg"></div>
+          <div class="info">
+            <strong>icon_plus_16.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">298 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_plus_black.svg" alt="icon_plus_black.svg"></div>
+          <div class="info">
+            <strong>icon_plus_black.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">298 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_plus.svg" alt="icon_plus.svg"></div>
+          <div class="info">
+            <strong>icon_plus.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">285 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_png.svg" alt="icon_png.svg"></div>
+          <div class="info">
+            <strong>icon_png.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">1.4 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_preview.png" alt="icon_preview.png"></div>
+          <div class="info">
+            <strong>icon_preview.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">584 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_preview.svg" alt="icon_preview.svg"></div>
+          <div class="info">
+            <strong>icon_preview.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">905 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_profile_icon.svg" alt="icon_profile_icon.svg"></div>
+          <div class="info">
+            <strong>icon_profile_icon.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">423 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_regist_direct.svg" alt="icon_regist_direct.svg"></div>
+          <div class="info">
+            <strong>icon_regist_direct.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">3.8 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_regist_eva_form.svg" alt="icon_regist_eva_form.svg"></div>
+          <div class="info">
+            <strong>icon_regist_eva_form.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">484 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_regist_many.svg" alt="icon_regist_many.svg"></div>
+          <div class="info">
+            <strong>icon_regist_many.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">10.3 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_remove_black_circle.svg" alt="icon_remove_black_circle.svg"></div>
+          <div class="info">
+            <strong>icon_remove_black_circle.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">577 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_remove_circle.svg" alt="icon_remove_circle.svg"></div>
+          <div class="info">
+            <strong>icon_remove_circle.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">556 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_remove_item.svg" alt="icon_remove_item.svg"></div>
+          <div class="info">
+            <strong>icon_remove_item.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">317 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_remove_profile_img.svg" alt="icon_remove_profile_img.svg"></div>
+          <div class="info">
+            <strong>icon_remove_profile_img.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">556 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_reply_arrow.svg" alt="icon_reply_arrow.svg"></div>
+          <div class="info">
+            <strong>icon_reply_arrow.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">260 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_reset.svg" alt="icon_reset.svg"></div>
+          <div class="info">
+            <strong>icon_reset.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">427 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_search.svg" alt="icon_search.svg"></div>
+          <div class="info">
+            <strong>icon_search.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">386 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_section.svg" alt="icon_section.svg"></div>
+          <div class="info">
+            <strong>icon_section.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">484 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_select_arrow.svg" alt="icon_select_arrow.svg"></div>
+          <div class="info">
+            <strong>icon_select_arrow.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">278 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_setting.svg" alt="icon_setting.svg"></div>
+          <div class="info">
+            <strong>icon_setting.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">1.9 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_single_choice_score.svg" alt="icon_single_choice_score.svg"></div>
+          <div class="info">
+            <strong>icon_single_choice_score.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">2.8 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_slider.svg" alt="icon_slider.svg"></div>
+          <div class="info">
+            <strong>icon_slider.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">2.6 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_star_rate.svg" alt="icon_star_rate.svg"></div>
+          <div class="info">
+            <strong>icon_star_rate.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">4.9 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_star.svg" alt="icon_star.svg"></div>
+          <div class="info">
+            <strong>icon_star.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">793 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_step_score.svg" alt="icon_step_score.svg"></div>
+          <div class="info">
+            <strong>icon_step_score.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">2.0 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_swiper_arrow_off.svg" alt="icon_swiper_arrow_off.svg"></div>
+          <div class="info">
+            <strong>icon_swiper_arrow_off.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">1.1 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_swiper_arrow.svg" alt="icon_swiper_arrow.svg"></div>
+          <div class="info">
+            <strong>icon_swiper_arrow.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">1.1 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_tip_down.svg" alt="icon_tip_down.svg"></div>
+          <div class="info">
+            <strong>icon_tip_down.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">251 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_txt.svg" alt="icon_txt.svg"></div>
+          <div class="info">
+            <strong>icon_txt.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">937 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_union.svg" alt="icon_union.svg"></div>
+          <div class="info">
+            <strong>icon_union.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">154 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_upload_primary.png" alt="icon_upload_primary.png"></div>
+          <div class="info">
+            <strong>icon_upload_primary.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">454 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_upload.png" alt="icon_upload.png"></div>
+          <div class="info">
+            <strong>icon_upload.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">430 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_user_simple_regist.svg" alt="icon_user_simple_regist.svg"></div>
+          <div class="info">
+            <strong>icon_user_simple_regist.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">2.6 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_view_card.svg" alt="icon_view_card.svg"></div>
+          <div class="info">
+            <strong>icon_view_card.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">455 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/icon_view_list.svg" alt="icon_view_list.svg"></div>
+          <div class="info">
+            <strong>icon_view_list.svg</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">404 B</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/sample/image_thumbnail.png" alt="image_thumbnail.png"></div>
+          <div class="info">
+            <strong>image_thumbnail.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">31.7 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/sample/sample_file.png" alt="sample_file.png"></div>
+          <div class="info">
+            <strong>sample_file.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">223.7 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/sample/sample_member.png" alt="sample_member.png"></div>
+          <div class="info">
+            <strong>sample_member.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">21.1 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/sample/sample_profile.png" alt="sample_profile.png"></div>
+          <div class="info">
+            <strong>sample_profile.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">21.0 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/sample/sample32_02.png" alt="sample32_02.png"></div>
+          <div class="info">
+            <strong>sample32_02.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">26.4 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/sample/sample32.png" alt="sample32.png"></div>
+          <div class="info">
+            <strong>sample32.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">57.2 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb-wrap"><img class="thumb" src="/assets/images/sample/sample600.png" alt="sample600.png"></div>
+          <div class="info">
+            <strong>sample600.png</strong>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">2.5 KB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
+          </div>
+        </article></section>
+  </main>
+  <script>
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach((card) => {
+      const img = card.querySelector('img');
+      const dimensionEl = card.querySelector('.meta-value.dimensions');
+      if (!img || !dimensionEl) return;
+
+      const renderDimensions = () => {
+        const { naturalWidth, naturalHeight } = img;
+        if (naturalWidth && naturalHeight) {
+          dimensionEl.textContent = Math.round(naturalWidth) + ' × ' + Math.round(naturalHeight) + 'px';
+          dimensionEl.classList.remove('loading');
+        } else {
+          dimensionEl.textContent = '측정 불가';
+          dimensionEl.classList.remove('loading');
+        }
+      };
+
+      if (img.complete) {
+        renderDimensions();
+      } else {
+        img.addEventListener('load', renderDimensions, { once: true });
+        img.addEventListener(
+          'error',
+          () => {
+            dimensionEl.textContent = '로드 실패';
+            dimensionEl.classList.remove('loading');
+          },
+          { once: true }
+        );
+      }
+    });
+  </script>
+</body>
+</html>

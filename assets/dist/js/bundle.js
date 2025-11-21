@@ -13296,19 +13296,62 @@ var AppBundle = (function (exports) {
   templateSwiperMine.on('slideChange', bindCardClickEvents);
 
   // 평가 템플릿 SWIPER
-  new Swiper(".eva-file-swiper .swiper", {
-    modules: [Navigation, Pagination],
-    slidesPerView: 'auto',
-    spaceBetween: 16,
-    grabCursor: true,
-    freeMode: true,
-    // Navigation arrows
-    navigation: {
-      nextEl: '.button-next.file-nav',
-      prevEl: '.button-prev.file-nav',
-    },
-    pagination: {el: '.swiper-pagination'},
-  });
+  (() => {
+    const swiperElement = document.querySelector('.eva-file-swiper .swiper');
+    const linkItems = document.querySelectorAll('.eva-file-list__wrapper .link-item');
+    const fractionElement = document.querySelector('.eva-file-list__topper .fraction');
+
+    if (!swiperElement || linkItems.length === 0) return null;
+
+    const initialSlide = Array.from(linkItems).findIndex((item) =>
+      item.classList.contains('active'),
+    );
+
+    const swiperInstance = new Swiper(swiperElement, {
+      modules: [Navigation, Pagination],
+      slidesPerView: 1,
+      spaceBetween: 16,
+      grabCursor: true,
+      freeMode: false,
+      initialSlide: initialSlide >= 0 ? initialSlide : 0,
+      // Navigation arrows
+      navigation: {
+        nextEl: '.button-next.file-nav',
+        prevEl: '.button-prev.file-nav',
+      },
+      pagination: { el: '.swiper-pagination', clickable: true },
+    });
+
+    const updateFraction = () => {
+      if (!fractionElement) return;
+
+      const total = linkItems.length;
+      const current = swiperInstance.realIndex + 1;
+
+      fractionElement.textContent = `${current}/${total}`;
+    };
+
+    const updateActiveLinkItem = () => {
+      linkItems.forEach((item, idx) => {
+        item.classList.toggle('active', swiperInstance.realIndex === idx);
+      });
+
+      updateFraction();
+    };
+
+    linkItems.forEach((item, idx) => {
+      item.addEventListener('click', (event) => {
+        event.preventDefault();
+        swiperInstance.slideTo(idx);
+      });
+    });
+
+    swiperInstance.on('slideChange', updateActiveLinkItem);
+
+    updateActiveLinkItem();
+
+    return swiperInstance;
+  })();
 
   // noUiSlider initialization for slider question cards
   const initSliderQuestionCard = () => {
