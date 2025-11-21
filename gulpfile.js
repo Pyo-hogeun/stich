@@ -86,8 +86,14 @@ function generateImageGallery(done) {
     .card { background:#fff; border:1px solid #e5e7eb; border-radius: 12px; padding: 10px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); display:flex; flex-direction:column; gap: 10px; }
     .thumb-wrap { background:#f9fafb; border:1px solid #e5e7eb; border-radius: 10px; padding: 8px; display:flex; align-items:center; justify-content:center; height: 120px; overflow: hidden; }
     .thumb { max-width: 100%; max-height: 100%; object-fit: contain; }
-    .info { font-size: 13px; color:#374151; word-break: break-all; }
-    .info strong { display:block; color:#111827; margin-bottom: 4px; }
+    .info { font-size: 13px; color:#374151; word-break: break-all; display:flex; flex-direction:column; gap: 4px; }
+    .info strong { display:block; color:#111827; margin-bottom: 4px; font-size: 14px; }
+    .meta-row { display:flex; justify-content:space-between; gap: 8px; align-items:center; }
+    .meta-row span { display:block; }
+    .meta-label { color:#6b7280; font-size:12px; letter-spacing: -0.01em; }
+    .meta-value { color:#111827; font-weight:600; font-size: 13px; }
+    .meta-value.dimensions { color:#1f2937; }
+    .meta-value.loading { color:#9ca3af; font-weight:500; }
     .empty { padding: 24px; border:1px dashed #d1d5db; border-radius: 12px; text-align:center; background:#fff; color:#6b7280; }
   </style>
 </head>
@@ -106,12 +112,53 @@ function generateImageGallery(done) {
           <div class="thumb-wrap"><img class="thumb" src="${file.relPath}" alt="${file.name}"></div>
           <div class="info">
             <strong>${file.name}</strong>
-            <span>${formatBytes(file.size)}</span>
+            <div class="meta-row">
+              <span class="meta-label">파일 크기</span>
+              <span class="meta-value">${formatBytes(file.size)}</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">이미지 크기</span>
+              <span class="meta-value dimensions loading">계산 중...</span>
+            </div>
           </div>
         </article>`
           )
           .join('')}</section>`}
   </main>
+  <script>
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach((card) => {
+      const img = card.querySelector('img');
+      const dimensionEl = card.querySelector('.meta-value.dimensions');
+      if (!img || !dimensionEl) return;
+
+      const renderDimensions = () => {
+        const { naturalWidth, naturalHeight } = img;
+        if (naturalWidth && naturalHeight) {
+          dimensionEl.textContent = Math.round(naturalWidth) + ' × ' + Math.round(naturalHeight) + 'px';
+          dimensionEl.classList.remove('loading');
+        } else {
+          dimensionEl.textContent = '측정 불가';
+          dimensionEl.classList.remove('loading');
+        }
+      };
+
+      if (img.complete) {
+        renderDimensions();
+      } else {
+        img.addEventListener('load', renderDimensions, { once: true });
+        img.addEventListener(
+          'error',
+          () => {
+            dimensionEl.textContent = '로드 실패';
+            dimensionEl.classList.remove('loading');
+          },
+          { once: true }
+        );
+      }
+    });
+  </script>
 </body>
 </html>`;
 
