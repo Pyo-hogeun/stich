@@ -2936,7 +2936,9 @@ button.btn-add:hover {
   margin: 40px 0 !important;
   border: none;
   border-top: 1px solid #E4E4E4;
-  margin: 24px 0;
+}
+.divider_hr_24 {
+  margin: 24px 0 !important;
 }
 
 .file-upload-area {
@@ -5026,6 +5028,7 @@ button.btn-add:hover {
 .eva-file-swiper {
   width: 100%;
   position: relative;
+  padding-bottom: 20px;
 }
 .eva-file-swiper .swiper-wrapper {
   display: flex;
@@ -5067,7 +5070,7 @@ button.btn-add:hover {
   text-decoration: underline;
   background: #FFF;
   border-radius: 20px;
-  bottom: 16px;
+  bottom: 36px;
   left: calc(50% - 50px);
   z-index: 1;
 }
@@ -5076,7 +5079,7 @@ button.btn-add:hover {
 }
 .eva-file-swiper .swiper-pagination {
   position: absolute;
-  bottom: -20px !important;
+  bottom: 0 !important;
 }
 .eva-file-swiper .swiper-pagination-bullet {
   transition: all 0.2s;
@@ -5085,4 +5088,33 @@ button.btn-add:hover {
   width: 16px !important;
   background-color: #7A53EC;
   border-radius: 10px;
+}
+
+.eva-file-list__topper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.eva-file-list__topper .count {
+  font-size: 12px;
+  color: #919191;
+}
+.eva-file-list__topper a.btn {
+  font-size: 12px;
+}
+.eva-file-list .link-item {
+  background-color: #F9F9F9;
+  border: 0;
+  height: 60px;
+}
+.eva-file-list .link-item__info {
+  height: 100%;
+}
+.eva-file-list .link-item__size, .eva-file-list .link-item__url {
+  font-size: 14px;
+  color: #747474;
+}
+.eva-file-list__wrapper .link-item {
+  margin-bottom: 16px;
+  cursor: pointer;
 }
