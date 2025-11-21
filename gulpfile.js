@@ -48,6 +48,11 @@ const paths = {
 const HTML_GLOB = path.join(paths.pages, '**/*.html');
 const OUT_INDEX = paths.index;
 const OUT_IMAGE_GALLERY = paths.imageGallery;
+const IMAGE_PAGE_DIR = path.dirname(OUT_IMAGE_GALLERY);
+const INDEX_PAGE_DIR = path.dirname(OUT_INDEX);
+const CSS_FILE = path.join(__dirname, 'assets/style/css/style.css');
+const CSS_PATH_FROM_IMAGE_PAGE = path.relative(IMAGE_PAGE_DIR, CSS_FILE).replace(/\\/g, '/');
+const CSS_PATH_FROM_INDEX_PAGE = path.relative(INDEX_PAGE_DIR, CSS_FILE).replace(/\\/g, '/');
 
 // -------------------------------------
 // assets/images → 이미지 미리보기 페이지 생성
@@ -64,7 +69,7 @@ function generateImageGallery(done) {
   const files = globSync(paths.images, { nodir: true })
     .map((filePath) => ({
       filePath,
-      relPath: '/' + path.relative(__dirname, filePath).replace(/\\/g, '/'),
+      relPath: path.relative(IMAGE_PAGE_DIR, filePath).replace(/\\/g, '/'),
       name: path.basename(filePath),
       size: fs.statSync(filePath).size,
     }))
@@ -76,7 +81,7 @@ function generateImageGallery(done) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>이미지 자산 모음</title>
-  <link rel="stylesheet" href="/assets/style/css/style.css">
+  <link rel="stylesheet" href="${CSS_PATH_FROM_IMAGE_PAGE}">
   <style>
     :root { color-scheme: light; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif; padding: 24px; background:#f8fafc; color:#111827; }
@@ -193,7 +198,7 @@ function generateIndex(done) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>STICH 파일 목록</title>
-  <link rel="stylesheet" href="/assets/style/css/style.css">
+  <link rel="stylesheet" href="${CSS_PATH_FROM_INDEX_PAGE}">
   <style>
     :root { color-scheme: light; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif; padding: 24px; line-height:1.6; background:#f6f8fb; color:#111827; }
