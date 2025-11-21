@@ -71,6 +71,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 16px;
     .count{
       font-size: 12px;
       color: $smallText;
@@ -89,6 +90,14 @@
     &__size, &__url{
       font-size: 14px;
       color: $normalText;
+    }
+    &.active{
+      background-color: #F1EEFB;
+      border: 1px solid $primaryColor;
+      .link-item__icon{
+        background-color: #DDDBEA;
+        color: $primaryColor;
+      }
     }
   }
   &__wrapper{

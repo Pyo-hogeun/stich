@@ -5094,6 +5094,7 @@ button.btn-add:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 16px;
 }
 .eva-file-list__topper .count {
   font-size: 12px;
@@ -5113,6 +5114,14 @@ button.btn-add:hover {
 .eva-file-list .link-item__size, .eva-file-list .link-item__url {
   font-size: 14px;
   color: #747474;
+}
+.eva-file-list .link-item.active {
+  background-color: #F1EEFB;
+  border: 1px solid #7A53EC;
+}
+.eva-file-list .link-item.active .link-item__icon {
+  background-color: #DDDBEA;
+  color: #7A53EC;
 }
 .eva-file-list__wrapper .link-item {
   margin-bottom: 16px;
