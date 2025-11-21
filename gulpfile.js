@@ -138,7 +138,8 @@ function generateIndex(done) {
         event.preventDefault();
         const url = btn.dataset.preview;
         previewFrame.src = url;
-        previewStatus.textContent = url.replace(/^\.\//, '');
+        const cleanLabel = url.startsWith('./') ? url.slice(2) : url;
+        previewStatus.textContent = cleanLabel;
         previewFrame.focus();
         previewFrame.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
