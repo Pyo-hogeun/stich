@@ -273,6 +273,7 @@
       const fileUploadArea = document.querySelector('.file-upload-area');
       const urlUploadArea = document.querySelector('.upload-forms .url-upload-area');
       const textUploadArea = document.querySelector('.upload-forms .text-upload-area');
+      const selectTypeItems = document.querySelectorAll('.select-type__item');
 
       const toggleUploadArea = (target) => {
         const isFile = target === 'file';
@@ -297,6 +298,14 @@
 
           tabLinks.forEach((tab) => tab.classList.toggle('active', tab === link));
           toggleUploadArea(target);
+        });
+      });
+
+      selectTypeItems.forEach((item) => {
+        item.addEventListener('click', () => {
+          selectTypeItems.forEach((target) => {
+            target.classList.toggle('active', target === item);
+          });
         });
       });
 
