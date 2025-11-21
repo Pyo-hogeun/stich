@@ -200,7 +200,31 @@
                 업로드한 파일 크기 : <em>15.00MB</em>
               </div>
             </div>
+
             <div id="fileList" class="file-list" data-upload-variant="sortable">
+              <div class="file-item" data-file-id="">
+                <div class="file-item__content">
+                  <div class="file-item__info">
+                    <div class="file-item__icon">
+                      <img src="../../assets/images/icon_file_added.png" alt="파일">
+                    </div>
+                    <span class="file-item__name">샘플이미지.png</span>
+                    <span class="divider"></span>
+                    <span class="file-item__size">26.34KB</span>
+                  </div>
+                  <div class="item-actions">
+                    <button class="item-drag-handle" aria-label="항목 순서 변경">
+                      <img src="../../assets/images/icon_handle.svg" alt="">
+                    </button>
+                    <button class="item-close-btn" aria-label="항목 삭제">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.33203 3.3335L12.6659 12.6674" stroke="#0A0A0A" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.668 3.3335L3.3341 12.6674" stroke="#0A0A0A" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
   
@@ -237,9 +261,9 @@
         const isUrl = target === 'url';
         const isText = target === 'text';
 
-        fileUploadArea.style.display = isFile ? 'block' : 'none';
-        urlUploadArea.style.display = isUrl ? 'block' : 'none';
-        textUploadArea.style.display = isText ? 'block' : 'none';
+        fileUploadArea.style.display = isFile ? 'flex' : 'none';
+        urlUploadArea.style.display = isUrl ? 'flex' : 'none';
+        textUploadArea.style.display = isText ? 'flex' : 'none';
       };
 
       tabLinks.forEach((link) => {
