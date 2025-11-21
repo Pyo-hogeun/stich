@@ -70,6 +70,7 @@ function generateImageGallery(done) {
     .map((filePath) => ({
       filePath,
       relPath: path.relative(IMAGE_PAGE_DIR, filePath).replace(/\\/g, '/'),
+      rootPath: path.relative(__dirname, filePath).replace(/\\/g, '/'),
       name: path.basename(filePath),
       size: fs.statSync(filePath).size,
     }))
@@ -114,7 +115,7 @@ function generateImageGallery(done) {
           .map(
             (file) => `
         <article class="card">
-          <div class="thumb-wrap"><img class="thumb" src="${file.relPath}" alt="${file.name}"></div>
+          <div class="thumb-wrap"><img class="thumb" src="${file.relPath}" data-asset-path="${file.rootPath}" alt="${file.name}"></div>
           <div class="info">
             <strong>${file.name}</strong>
             <div class="meta-row">
@@ -133,10 +134,24 @@ function generateImageGallery(done) {
   <script>
     const cards = document.querySelectorAll('.card');
 
+    const computeBasePath = () => {
+      const segments = window.location.pathname.split('/').filter(Boolean);
+      const repo = segments.length > 0 ? segments[0] : '';
+      return repo ? '/' + repo : '';
+    };
+
+    const basePath = computeBasePath();
+
     cards.forEach((card) => {
       const img = card.querySelector('img');
       const dimensionEl = card.querySelector('.meta-value.dimensions');
       if (!img || !dimensionEl) return;
+
+      const assetPath = img.getAttribute('data-asset-path');
+      if (assetPath) {
+        const normalized = (basePath + '/' + assetPath).replace(/[/\\]+/g, '/');
+        img.src = normalized;
+      }
 
       const renderDimensions = () => {
         const { naturalWidth, naturalHeight } = img;
