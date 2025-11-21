@@ -5270,18 +5270,19 @@ button.btn-add:hover {
   display: flex;
   width: 100%;
   gap: 24px;
+  margin-bottom: 24px;
 }
 .eva-committee-regist .select-type__item {
   display: flex;
   gap: 12px;
   flex: 1 1 50%;
-  border: 1px solid #EAEAEA;
+  box-shadow: 0 0 0 1px #EAEAEA;
   border-radius: 8px;
   padding: 20px 16px;
   cursor: pointer;
 }
 .eva-committee-regist .select-type__item.active {
-  border: 2px solid #7A53EC;
+  box-shadow: 0 0 0 2px #7A53EC;
 }
 .eva-committee-regist .select-type__item.active .select-type__circle {
   background-color: #8967EE;

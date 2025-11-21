@@ -146,16 +146,17 @@
     display: flex;
     width: 100%;
     gap: 24px;
+    margin-bottom: 24px;
     &__item{
       display: flex;
       gap: 12px;
       flex: 1 1 50%;
-      border: 1px solid #EAEAEA;
+      box-shadow: 0 0 0 1px #EAEAEA;
       border-radius: 8px;
       padding: 20px 16px;
       cursor: pointer;
       &.active{
-        border: 2px solid $primaryColor;
+        box-shadow: 0 0 0 2px $primaryColor;
         .select-type__circle{
           background-color: #8967EE;
           color: #FFF;
