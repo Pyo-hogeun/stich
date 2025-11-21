@@ -135,4 +135,8 @@
       }
     }
   }
+  .url-upload-area, .text-upload-area{
+    display: flex;
+    gap: 8px;
+  }
 }

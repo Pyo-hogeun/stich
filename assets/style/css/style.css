@@ -2848,6 +2848,9 @@ button.btn-add:hover {
   border-bottom: 1px solid #B0B0B0;
   padding-bottom: 16px;
 }
+.agree-template__checklist_body {
+  padding-top: 16px;
+}
 .agree-template__checklist_body > ul {
   display: grid;
   grid-template-columns: repeat(2, 180px);
@@ -5255,4 +5258,8 @@ button.btn-add:hover {
 .eva-committee-regist .file-list__topper em {
   color: #9071EB;
   font-weight: 400;
+}
+.eva-committee-regist .url-upload-area, .eva-committee-regist .text-upload-area {
+  display: flex;
+  gap: 8px;
 }

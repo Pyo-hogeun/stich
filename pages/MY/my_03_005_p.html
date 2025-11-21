@@ -158,11 +158,40 @@
                 </div>
               </div>
             </div>
+
+            <!-- 파일등록 -->
             <label class="file-upload-area" id="fileUploadArea" data-upload-variant="sortable">
               <img src="../../assets/images/icon_upload_primary.png" alt="파일업로드 아이콘" class="file-upload-icon">
               <span class="file-upload-text">파일 추가 또는 파일을 여기로 드래그 해주세요. 파일당 10MB 이내만 가능. (단 영상 파일의 경우 300MB 이내)</span>
               <input type="file" id="fileInput" hidden="">
             </label>
+
+            <div class="upload-forms">
+              <!-- URL등록 -->
+              <div class="url-upload-area">
+                <div class="input-text-wrapper__wide">
+                  <input type="text" class="input-text" placeholder="유튜브 링크를 입력해 주세요.">
+                </div>
+                <button class="btn border h40">
+                  <img src="../../assets/images/icon_plus_black.svg" alt="">
+                  등록
+                </button>
+              </div>
+  
+              <!-- 텍스트등록 -->
+              <div class="text-upload-area">
+                <div class="input-text-wrapper__wide">
+                  <input type="text" class="input-text" placeholder="평가 관련된 텍스트를 입력하세요.">
+                </div>
+                <button class="btn border h40">
+                  <img src="../../assets/images/icon_plus_black.svg" alt="">
+                  등록
+                </button>
+              </div>
+            </div>
+
+
+
             <div class="file-list__topper">
               <div class="file-list__count">
                 총 업로드한 파일 : <em>2/5개</em>
