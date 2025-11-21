@@ -24,6 +24,7 @@
     font-size: 14px;
     font-weight: 600;
     color: $Title_Dark;
+    margin-bottom: 8px;
     &.required{
       &:after{
         content: '*';
@@ -177,6 +178,7 @@
     &__label{
       color: #A68FEB;
       font-size: 12px;
+      
       .title{
         display: block;
         font-size: 14px;
@@ -194,4 +196,42 @@
   font-size: 14px;
   color: $smallText;
   margin-top: -8px;
+}
+.eva-committee{
+  &__manual{
+    &_item{
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 16px;
+      padding-top: 8px;
+      justify-content: space-between;
+      gap: 20px;
+      .start{
+
+        .title{
+          font-size: 14px;
+          font-weight: 600;
+          color: $primaryColor;
+        }
+        .sub-text{
+          margin-top: 8px;
+          font-size: 14px;
+          color: $normalText;
+          line-height: 1.5;
+          word-break: keep-all;
+        }
+      }
+    }
+    .manual-img{
+      display: flex;
+      gap: 16px;
+      padding: 20px 16px;
+      border-radius: 8px;
+      background-color: $bgLightGray;
+      margin-bottom: 24px;
+      img{
+        width: 100%;
+      }
+    }
+  }
 }

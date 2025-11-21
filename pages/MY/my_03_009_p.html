@@ -1,0 +1,266 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STICH</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+  <link rel="stylesheet" href="../../assets/dist/js/bundle.css">
+  <style>
+
+  </style>
+
+</head>
+
+<body>
+  <header class="gnb">
+    <div class="gnb-container">
+      <a href="/" class="gnb-logo">
+        <img src="../../assets/images/icon_gnb_logo.svg" alt="stich logo">
+      </a>
+
+      <nav class="gnb-menu">
+        <a href="/" class="gnb-menu-item menu-home">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_home.png" alt="home" class="icon-gnb-home">
+          </div>
+        </a>
+
+        <a href="/pages/COM/com_01_001.html" class="gnb-menu-item menu-competition gnb-menu-item-active">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_competition.png" alt="home" class="icon-gnb-competition">
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-notice">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_notice.png" alt="home" class="icon-gnb-notice">
+            <div class="badge-new">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="20" rx="10" fill="#FF44BF" />
+                <path
+                  d="M13.4863 5.51562V14H12.127L8.10742 8.19922H8.03711V14H6.51367V5.51562H7.89648L11.8926 11.3164H11.9746V5.51562H13.4863Z"
+                  fill="white" />
+              </svg>
+
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-career">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_career.png" alt="home" class="icon-gnb-career">
+          </div>
+        </a>
+      </nav>
+
+      <div class="gnb-user">
+        <div class="gnb-profile">
+          <div class="gnb-profile-icon">
+            <img src="../../assets/images/icon_my_profile.png" alt="사용자 아이콘">
+          </div>
+          <p class="gnb-profile-text">
+            <span class="gnb-profile-greeting">안녕하세요. </span>
+            <span class="gnb-profile-name">홍길동님</span>
+          </p>
+          <a href="/" class="gnb-settings" aria-label="설정">
+            <img src="../../assets/images/icon_my_setting.png" alt="사용자 설정">
+          </a>
+        </div>
+
+        <div class="gnb-divider"></div>
+
+        <button class="gnb-logout">
+          <img src="../../assets/images/icon_gnb_logout.png" class="icon-gnb-logout" alt="로그아웃 아이콘">
+          <span>로그아웃</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="content-wrapper">
+    </div>
+  </main>
+
+  <div class="layer-dimmed" role="dialog" aria-modal="true">
+    <div class="layer-popup">
+      <div class="layer-popup__header">
+        <h3 class="layer-popup__title">엑셀로 여러 평가 대상 수정/등록</h3>
+        <button type="button" class="layer-popup__close" aria-label="레이어 닫기">
+          <img src="../../assets/images/icon_close_popup.svg" alt="">
+        </button>
+      </div>
+      <div class="layer-popup__body">
+        <p class="description-word">평가 파일을 한번에 업로드하면 파일 이름으로 평가 대상을 자동으로 생성해요.</p>
+        <div class="eva-committee-regist excel">
+          <div class="eva-committee-regist__form">
+            <div class="eva-committee-regist__label required">평가분야 선택</div>
+            <div class="combo" style="width: 150px">
+              <input type="checkbox" id="combo" class="combo-toggle">
+              <label for="combo" class="combo-label">평가분야 명</label>
+              <ul class="combo-options">
+                <li><a href="#" class="selected">평가분야 명</a></li>
+                <li><a href="#">평가분야 명2</a></li>
+                <li><a href="#">평가분야 명3</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="eva-committee__manual">
+            <div class="eva-committee__manual_item">
+              <div class="start">
+                <div class="title">Step 01. 엑셀로 평가 대상 등록 시작</div>
+                <div class="sub-text">엑셀 양식을 다운로드 받아 양식에 맞춰 평가 대상 정보를 입력해 주세요.<br>
+                  등록한 평가 대상 정보를 수정하거나, 새로운 평가 대상 정보를 입력해 추가로 평가 대상을 등록할 수 있어요.</div>
+              </div>
+              <div class="end">
+                <button class="btn border h40">
+                  <img src="../../assets/images/icon_download_16.svg" alt="">
+                  평가대상 정보 수정/등록용 양식 받기
+                </button>
+              </div>
+            </div>
+
+            <div class="eva-committee__manual_item">
+              <div class="start">
+                <div class="title">Step 02. 평가 대상 수정 / 추가 입력</div>
+                <div class="sub-text">등록한 평가 대상 정보를 수정하거나, 추가 등록할 대상의 이름을 ‘평가대상명’에 입력해 주세요.<br>
+                  상세 설명을 추가로 입력할 수도 있어요. 대상번호는 자동 입력되므로 입력하지 않아도 괜찮아요.</div>
+              </div>
+            </div>
+            <div class="manual-img">
+              <img src="../../assets/images/manual/image_manual_step2.png" alt="">
+            </div>
+
+            <div class="eva-committee__manual_item">
+              <div class="start">
+                <div class="title">Step 03. 입력한 양식 등록</div>
+                <div class="sub-text">입력이 끝난 엑셀 양식을 업로드하면 평가 대상을 자동으로 등록해요.</div>
+              </div>
+              <div class="end">
+                <button class="btn border h40">
+                  <img src="../../assets/images/icon_upload_16.svg" alt="">
+                  입력한 양식 등록하기
+                </button>
+              </div>
+            </div>
+
+            <div class="manual-img">
+              <div class="manual-img__wrapper">
+                <img src="../../assets/images/manual/image_manual_step3_01.png" alt="" style="flex: 1 1 50%;">
+              </div>
+              <div class="manual-img__wrapper">
+                <img src="../../assets/images/manual/image_manual_step3_02.png" alt="" style="flex: 1 1 50%;">
+              </div>
+            </div>
+
+            <div class="eva-committee__manual_item">
+              <div class="start">
+                <div class="title">Step 04. 평가 파일 등록</div>
+                <div class="sub-text">엑셀 양식으로 등록된 평가 대상의 대상명/대상번호로 매칭하여<br>
+                  파일을 등록할 수 있어요.</div>
+              </div>
+              <div class="end">
+                <button class="btn border h40">
+                  <img src="../../assets/images/icon_upload_16.svg" alt="">
+                  평가 대상 파일 등록하기
+                </button>
+              </div>
+            </div>
+
+            <div class="manual-img">
+              <img src="../../assets/images/manual/image_manual_step4.png" alt="">
+            </div>
+          </div>
+          
+
+
+
+
+        </div>
+      </div>
+      <div class="layer-popup__footer">
+        <div class="layer-popup__footer-left">
+        </div>
+        <div class="layer-popup__footer-center">
+          <button type="button" class="btn border border__icon submit">
+            닫기
+          </button>
+        </div>
+        <div class="layer-popup__footer-right">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/dist/js/bundle.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabLinks = document.querySelectorAll('.eva-committee-regist__tabs_item a');
+      const fileUploadArea = document.querySelector('.file-upload-area');
+      const urlUploadArea = document.querySelector('.upload-forms .url-upload-area');
+      const textUploadArea = document.querySelector('.upload-forms .text-upload-area');
+      const selectTypeItems = document.querySelectorAll('.select-type__item');
+
+      const toggleUploadArea = (target) => {
+        const isFile = target === 'file';
+        const isUrl = target === 'url';
+        const isText = target === 'text';
+
+        fileUploadArea.style.display = isFile ? 'flex' : 'none';
+        urlUploadArea.style.display = isUrl ? 'flex' : 'none';
+        textUploadArea.style.display = isText ? 'flex' : 'none';
+      };
+
+      tabLinks.forEach((link) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+
+          const tabText = link.textContent.trim();
+          const target = tabText.includes('유튜브')
+            ? 'url'
+            : tabText.includes('텍스트')
+              ? 'text'
+              : 'file';
+
+          tabLinks.forEach((tab) => tab.classList.toggle('active', tab === link));
+          toggleUploadArea(target);
+        });
+      });
+
+      selectTypeItems.forEach((item) => {
+        item.addEventListener('click', () => {
+          selectTypeItems.forEach((target) => {
+            target.classList.toggle('active', target === item);
+          });
+        });
+      });
+
+      toggleUploadArea('file');
+    });
+  </script>
+</body>
+
+</html>

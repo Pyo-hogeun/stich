@@ -5155,6 +5155,7 @@ button.btn-add:hover {
   font-size: 14px;
   font-weight: 600;
   color: #0A0A0A;
+  margin-bottom: 8px;
 }
 .eva-committee-regist__label.required:after {
   content: "*";
@@ -5318,4 +5319,36 @@ button.btn-add:hover {
   font-size: 14px;
   color: #919191;
   margin-top: -8px;
+}
+
+.eva-committee__manual_item {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  justify-content: space-between;
+  gap: 20px;
+}
+.eva-committee__manual_item .start .title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #7A53EC;
+}
+.eva-committee__manual_item .start .sub-text {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #747474;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+.eva-committee__manual .manual-img {
+  display: flex;
+  gap: 16px;
+  padding: 20px 16px;
+  border-radius: 8px;
+  background-color: #F9F9F9;
+  margin-bottom: 24px;
+}
+.eva-committee__manual .manual-img img {
+  width: 100%;
 }
