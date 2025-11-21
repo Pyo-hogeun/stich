@@ -225,6 +225,42 @@
   </div>
 
   <script src="../../assets/dist/js/bundle.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabLinks = document.querySelectorAll('.eva-committee-regist__tabs_item a');
+      const fileUploadArea = document.querySelector('.file-upload-area');
+      const urlUploadArea = document.querySelector('.upload-forms .url-upload-area');
+      const textUploadArea = document.querySelector('.upload-forms .text-upload-area');
+
+      const toggleUploadArea = (target) => {
+        const isFile = target === 'file';
+        const isUrl = target === 'url';
+        const isText = target === 'text';
+
+        fileUploadArea.style.display = isFile ? 'block' : 'none';
+        urlUploadArea.style.display = isUrl ? 'block' : 'none';
+        textUploadArea.style.display = isText ? 'block' : 'none';
+      };
+
+      tabLinks.forEach((link) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+
+          const tabText = link.textContent.trim();
+          const target = tabText.includes('유튜브')
+            ? 'url'
+            : tabText.includes('텍스트')
+              ? 'text'
+              : 'file';
+
+          tabLinks.forEach((tab) => tab.classList.toggle('active', tab === link));
+          toggleUploadArea(target);
+        });
+      });
+
+      toggleUploadArea('file');
+    });
+  </script>
 </body>
 
 </html>
