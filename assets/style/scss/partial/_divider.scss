@@ -10,5 +10,7 @@
   margin: 40px 0 !important;
   border: none;
   border-top: 1px solid $cardBorderColor;
-  margin: 24px 0;
+  &_24{
+    margin: 24px 0 !important;
+  }
 }

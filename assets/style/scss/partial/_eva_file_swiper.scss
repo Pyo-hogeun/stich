@@ -5,6 +5,7 @@
 .eva-file-swiper{
   width: 100%;
   position: relative;
+  padding-bottom: 20px;
   .swiper-wrapper{
     display: flex;
     height: auto;
@@ -45,7 +46,7 @@
     text-decoration: underline;
     background: #FFF;
     border-radius: 20px;
-    bottom: 16px;
+    bottom: 36px;
     left: calc(50% - 50px);
     z-index: 1;
     img{
@@ -54,7 +55,7 @@
   }
   .swiper-pagination{
     position: absolute;
-    bottom: -20px !important;
+    bottom: 0 !important;
   }
   .swiper-pagination-bullet{
     transition: all 0.2s;
@@ -63,5 +64,37 @@
     width: 16px !important;
     background-color: $primaryColor;
     border-radius: 10px;
+  }
+}
+.eva-file-list{
+  &__topper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .count{
+      font-size: 12px;
+      color: $smallText;
+    }
+    a.btn{
+      font-size: 12px;
+    }
+  }
+  .link-item{
+    background-color: $bgLightGray;
+    border: 0;
+    height: 60px;
+    &__info{
+      height: 100%;
+    }
+    &__size, &__url{
+      font-size: 14px;
+      color: $normalText;
+    }
+  }
+  &__wrapper{
+    .link-item{
+      margin-bottom: 16px;
+      cursor: pointer;
+    }
   }
 }
