@@ -139,4 +139,58 @@
     display: flex;
     gap: 8px;
   }
+  &.easy{
+    margin-top: 24px;
+  }
+  .select-type{
+    display: flex;
+    width: 100%;
+    gap: 24px;
+    &__item{
+      display: flex;
+      gap: 12px;
+      flex: 1 1 50%;
+      border: 1px solid #EAEAEA;
+      border-radius: 8px;
+      padding: 20px 16px;
+      cursor: pointer;
+      &.active{
+        border: 2px solid $primaryColor;
+        .select-type__circle{
+          background-color: #8967EE;
+          color: #FFF;
+        }
+      }
+    }
+    &__circle{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $smallText;
+      background-color: #F5F5F5;
+      border-radius: 50%;
+      height: 24px;
+      width: 24px;
+      flex: 0 0 24px;
+    }
+    &__label{
+      color: #A68FEB;
+      font-size: 12px;
+      .title{
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .empas{
+        display: inline-block;
+        color: $pointColor1;
+        margin-top: 4px;
+      }
+    }
+  }
+}
+.description-word{
+  font-size: 14px;
+  color: $smallText;
+  margin-top: -8px;
 }
