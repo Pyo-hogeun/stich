@@ -614,6 +614,12 @@ h2 {
 .layer-popup__body p + p {
   margin-top: 16px;
 }
+.layer-popup__body .title-18 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0A0A0A;
+  margin-bottom: 24px;
+}
 .layer-popup__footer {
   display: flex;
   align-items: center;
@@ -1180,7 +1186,6 @@ h2 {
 .template-swiper-container {
   position: relative;
   width: 100%;
-  overflow: hidden;
 }
 .template-swiper-container .fade-dim {
   position: absolute;
@@ -2382,6 +2387,65 @@ button.btn-add:hover {
   margin-top: 8px;
 }
 
+.reply__item {
+  display: flex;
+  gap: 16px;
+}
+.reply__item .left {
+  flex: 0 0 26px;
+}
+.reply__item .right__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+.reply__item .right__footer .end {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: flex-end;
+}
+.reply__item .right__footer .re-reply, .reply__item .right__footer .delete-reply {
+  text-decoration: underline;
+  color: #747474;
+  font-size: 14px;
+}
+.reply__item .right__footer .re-reply img {
+  margin-right: 4px;
+}
+.reply__profile {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../../images/icon_member.svg");
+  background-size: 40%;
+  background-color: #EBEBEB;
+}
+.reply__profile img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.reply__nickname {
+  font-size: 14px;
+  color: #0A0A0A;
+  font-weight: 600;
+}
+.reply__time-ago {
+  font-size: 12px;
+  color: #919191;
+  margin-left: 12px;
+}
+.reply__content {
+  font-size: 14px;
+  color: #0A0A0A;
+  line-height: 1.5;
+}
+
 .evaluation-card {
   position: relative;
   background-color: #FFF;
@@ -2872,7 +2936,9 @@ button.btn-add:hover {
   margin: 40px 0 !important;
   border: none;
   border-top: 1px solid #E4E4E4;
-  margin: 24px 0;
+}
+.divider_hr_24 {
+  margin: 24px 0 !important;
 }
 
 .file-upload-area {
@@ -4953,4 +5019,102 @@ button.btn-add:hover {
   color: #919191;
   border: 0;
   white-space: nowrap;
+}
+
+:root {
+  --nav-button-height: 30px;
+}
+
+.eva-file-swiper {
+  width: 100%;
+  position: relative;
+  padding-bottom: 20px;
+}
+.eva-file-swiper .swiper-wrapper {
+  display: flex;
+  height: auto;
+}
+.eva-file-swiper .button-next, .eva-file-swiper .button-prev {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFF;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - var(--nav-button-height) / 2);
+  width: 30px;
+  height: var(--nav-button-height);
+  z-index: 11;
+  box-shadow: 0 1px 4px 0 rgba(122, 83, 236, 0.2);
+  color: #7A53EC;
+  cursor: pointer;
+}
+.eva-file-swiper .button-next.swiper-button-disabled, .eva-file-swiper .button-prev.swiper-button-disabled {
+  color: #B0B0B0;
+}
+.eva-file-swiper .button-prev {
+  left: -15px;
+}
+.eva-file-swiper .button-prev svg {
+  transform: rotate(180deg);
+}
+.eva-file-swiper .button-next {
+  right: -15px;
+}
+.eva-file-swiper .download-file {
+  position: absolute;
+  display: inline-flex;
+  padding: 10px 16px;
+  font-size: 12px;
+  color: #0A0A0A;
+  text-decoration: underline;
+  background: #FFF;
+  border-radius: 20px;
+  bottom: 36px;
+  left: calc(50% - 50px);
+  z-index: 1;
+}
+.eva-file-swiper .download-file img {
+  margin-right: 4px;
+}
+.eva-file-swiper .swiper-pagination {
+  position: absolute;
+  bottom: 0 !important;
+}
+.eva-file-swiper .swiper-pagination-bullet {
+  transition: all 0.2s;
+}
+.eva-file-swiper .swiper-pagination-bullet-active {
+  width: 16px !important;
+  background-color: #7A53EC;
+  border-radius: 10px;
+}
+
+.eva-file-list__topper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.eva-file-list__topper .count {
+  font-size: 12px;
+  color: #919191;
+}
+.eva-file-list__topper a.btn {
+  font-size: 12px;
+}
+.eva-file-list .link-item {
+  background-color: #F9F9F9;
+  border: 0;
+  height: 60px;
+}
+.eva-file-list .link-item__info {
+  height: 100%;
+}
+.eva-file-list .link-item__size, .eva-file-list .link-item__url {
+  font-size: 14px;
+  color: #747474;
+}
+.eva-file-list__wrapper .link-item {
+  margin-bottom: 16px;
+  cursor: pointer;
 }

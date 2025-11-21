@@ -708,6 +708,21 @@ document.addEventListener('DOMContentLoaded', bindCardClickEvents);
 templateSwiper.on('slideChange', bindCardClickEvents);
 templateSwiperMine.on('slideChange', bindCardClickEvents);
 
+// 평가 템플릿 SWIPER
+const evaluationFileSwiper = new Swiper(".eva-file-swiper .swiper", {
+  modules: [Navigation, Pagination],
+  slidesPerView: 'auto',
+  spaceBetween: 16,
+  grabCursor: true,
+  freeMode: true,
+  // Navigation arrows
+  navigation: {
+    nextEl: '.button-next.file-nav',
+    prevEl: '.button-prev.file-nav',
+  },
+  pagination: {el: '.swiper-pagination'},
+});
+
 // noUiSlider initialization for slider question cards
 export const initSliderQuestionCard = () => {
   document.querySelectorAll('.question-card--slider').forEach((card) => {

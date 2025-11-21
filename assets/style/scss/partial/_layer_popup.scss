@@ -73,6 +73,12 @@
     p + p {
       margin-top: 16px;
     }
+    .title-18{
+      font-size: 18px;
+      font-weight: 700;
+      color: $Title_Dark;
+      margin-bottom: 24px;
+    }
   }
 
   &__footer {
