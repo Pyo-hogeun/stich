@@ -149,7 +149,7 @@ function generateImageGallery(done) {
 
       const assetPath = img.getAttribute('data-asset-path');
       if (assetPath) {
-        const normalized = (basePath + '/' + assetPath).replace(/[\\/]+/g, '/');
+        const normalized = (basePath + '/' + assetPath).replace(/[/\\]+/g, '/');
         img.src = normalized;
       }
 
