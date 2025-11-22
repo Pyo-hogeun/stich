@@ -25,5 +25,33 @@
     }
   }
   &.multie-select{
+    display: flex;
+    flex-direction: column;
+
+    .ckb{
+      width: 100%;
+      align-items: flex-start;
+      gap: 12px;
+
+      .ckb__box{
+        margin-top: 6px;
+      }
+
+      .select-type-list__item{
+        width: 100%;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      &:last-child {
+        .select-type-list__item {
+          margin-bottom: 0;
+        }
+      }
+
+      input[type="checkbox"]:checked + .ckb__box + .select-type-list__item{
+        border-color: $primaryColor2;
+        box-shadow: 0 0 0 1px $primaryColor2;
+      }
+    }
   }
 }
