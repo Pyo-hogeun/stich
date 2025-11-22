@@ -1,4 +1,7 @@
 @use 'variables' as *;
+:root{
+  --ck-size: 24px;
+}
 .select-type-list {
   &__item {
     display: flex;
@@ -25,5 +28,39 @@
     }
   }
   &.multie-select{
+    display: flex;
+    flex-direction: column;
+
+    .ckb{
+      position: relative;
+      width: 100%;
+      align-items: flex-start;
+      gap: 12px;
+
+      .ckb__box{
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 24px;
+        height: 24px;
+        margin-top: 6px;
+      }
+
+      .select-type-list__item{
+        width: 100%;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      &:last-child {
+        .select-type-list__item {
+          margin-bottom: 0;
+        }
+      }
+
+      input[type="checkbox"]:checked + .ckb__box + .select-type-list__item{
+        border-color: $primaryColor2;
+        box-shadow: 0 0 0 1px $primaryColor2;
+      }
+    }
   }
 }

@@ -5600,6 +5600,10 @@ button.btn-add:hover {
   width: 100%;
 }
 
+:root {
+  --ck-size: 24px;
+}
+
 .select-type-list__item {
   display: flex;
   width: 720px;
@@ -5622,6 +5626,36 @@ button.btn-add:hover {
   font-size: 14px;
   color: #747474;
 }
+.select-type-list.multie-select {
+  display: flex;
+  flex-direction: column;
+}
+.select-type-list.multie-select .ckb {
+  position: relative;
+  width: 100%;
+  align-items: flex-start;
+  gap: 12px;
+}
+.select-type-list.multie-select .ckb .ckb__box {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 24px;
+  height: 24px;
+  margin-top: 6px;
+}
+.select-type-list.multie-select .ckb .select-type-list__item {
+  width: 100%;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.select-type-list.multie-select .ckb:last-child .select-type-list__item {
+  margin-bottom: 0;
+}
+.select-type-list.multie-select .ckb input[type=checkbox]:checked + .ckb__box + .select-type-list__item {
+  border-color: #4D24C3;
+  box-shadow: 0 0 0 1px #4D24C3;
+}
+
 .term-editor h3 {
   font-size: 18px;
   font-weight: 700;
