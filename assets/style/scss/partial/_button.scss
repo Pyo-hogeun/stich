@@ -12,6 +12,9 @@
   line-height: 1;
   vertical-align: middle;
   white-space: nowrap;
+  &:disabled{
+    cursor: default;
+  }
   &.border{
     border: 1px solid $Line_Normal;
     border-radius: 8px;
@@ -39,6 +42,10 @@
       .icon{
         margin-right: 4px;
       }
+    }
+    &:disabled{
+      background-color: #F1EEFB;
+      color: #C6C1E0;
     }
   }
   &.underline{

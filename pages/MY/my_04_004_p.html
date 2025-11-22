@@ -107,87 +107,105 @@
   <div class="layer-dimmed" role="dialog" aria-modal="true">
     <div class="layer-popup">
       <div class="layer-popup__header">
-        <h3 class="layer-popup__title">접수 정보 미리보기</h3>
+        <h3 class="layer-popup__title">접수 폼 항목 추가하기</h3>
         <button type="button" class="layer-popup__close" aria-label="레이어 닫기">
           <img src="../../assets/images/icon_close_popup.svg" alt="">
         </button>
       </div>
       <div class="layer-popup__body">
-        <div class="eva-preview">
-          <div class="content-header">
-            <div class="badge eva-before">접수 전</div>
-          </div>
-          <div class="content-title">
-            <h3>2025년 대한민국 물산업 혁신 창업대전 (Startup Water 2025) 참가자(팀) 모집 공고</h3>
-          </div>
-          <div class="content-body">
-            <div class="summary">
-              <div class="thumbnail">
-                <img src="../../assets/images/sample/sample32.png" alt="썸네일">
-              </div>
-  
-              <div class="summary-area">
-                <ul>
-                  <li>
-                    <div class="label">주최</div>
-                    <div class="data">
-                      <div class="profile__img">
-                        <img src="../../assets/images/sample/sample600.png" alt="">
-                      </div>
-                      <div class="profile__name">오뚜기</div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="label">접수기간</div>
-                    <div class="data">2024.09.26 ~ 2024.10.26 까지</div>
-                  </li>
-                  <li>
-                    <div class="label">접수제한</div>
-                    <div class="data">선착순 접수 (1,000명 남음)</div>
-                  </li>
-                  <li>
-                    <div class="label">접수분야</div>
-                    <div class="data">
-                      <div class="tags">
-                        <span class="item">공모전</span>
-                        <span class="item">디자인공모전</span>
-                        <span class="item">2020페스티벌</span>
-                        <span class="item">2020디자인공모전</span>
-                        <span class="item">공모전</span>
-                        <span class="item">디자인공모전</span>
-                        <span class="item">2020페스티벌</span>
-                        <span class="item">2020디자인공모전</span>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+        <div class="select-type-list">
+          <div class="select-type-list__item">
+            <div class="img-wrap">
+              <img src="../../assets/images/icon_form_type_01_single.svg" alt="">
             </div>
-  
-            <div class="content-detail-article">
-              상세설명 영역입니다 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim lorem hac a ultricies. Id ornare
-              turpis vulputate enim sed magna sit. A id cursus dolor urna. Aliquam diam integer vitae eget. Lorem ipsum
-              dolor sit...ursus dolor urna. Aliquam diam integer vitae eget. Lorem ipsum dolor sit...ursus dolor urna.
-              Aliquam diam integer vitae eget. Lorem ipsum dolor sit...
+            <div class="select-type-list__content">
+              <div class="name">텍스트 - 단답형</div>
+              <div class="desc">한 줄 정도의 간단한 텍스트를 입력하는 형식을 추가할 수 있어요.</div>
             </div>
           </div>
-          <div class="notice-box">
-            <div class="icon">
-              <img src="../../assets/images/icon_alram.svg" alt="안내">
+          <div class="select-type-list__item">
+            <div class="img-wrap">
+              <img src="../../assets/images/icon_form_type_02_write.svg" alt="">
             </div>
-            <div class="notice-content">
-              <div class="title">스티치에서 알립니다</div>
-              <div class="body">본 내용은 주최사가 제공하는 내용으로 오류가 있을 수 있으며, 관련 정보 및 일정이 변경될 수 있으니 접수 전 반드시 일정과 상세 내용을 확인하시기 바랍니다. 등록한 내용에 대하여 사용자가 이를 신뢰하여 취한 조치에 대해서 스티치는 어떠한 책임도 지지 않습니다.</div>
+            <div class="select-type-list__content">
+              <div class="name">텍스트 - 서술형</div>
+              <div class="desc">여러 줄의 긴 텍스트를 입력하는 형식을 추가할 수 있어요.</div>
             </div>
           </div>
-          <div class="submit">
-            <button type="button" class="btn filled submit" disabled>접수하기</button>
+          <div class="select-type-list__item">
+            <div class="img-wrap">
+              <img src="../../assets/images/icon_form_type_03_phone.svg" alt="">
+            </div>
+            <div class="select-type-list__content">
+              <div class="name">연락처 - 전화번호형</div>
+              <div class="desc">전화번호를 입력하는 형식을 추가할 수 있어요. 연락처는 평가 위원에게 노출되지 않아요.</div>
+            </div>
           </div>
-
-          <hr class="divider_hr">
-
-          <div class="eva-preview__sub-title">지원 내용 작성하기</div>
+          <div class="select-type-list__item">
+            <div class="img-wrap">
+              <img src="../../assets/images/icon_form_type_04_adress.svg" alt="">
+            </div>
+            <div class="select-type-list__content">
+              <div class="name">연락처 - 주소형</div>
+              <div class="desc">주소 검색을 통해 쉽게 주소를 입력할 수 형식을 추가할 수 있어요. 연락처는 평가 위원에게 노출되지 않아요.</div>
+            </div>
+          </div>
+          <div class="select-type-list__item">
+            <div class="img-wrap">
+              <img src="../../assets/images/icon_form_type_05_date.svg" alt="">
+            </div>
+            <div class="select-type-list__content">
+              <div class="name">날짜형</div>
+              <div class="desc">날짜를 선택하는 형식을 추가할 수 있어요.</div>
+            </div>
+          </div>
+          <div class="select-type-list__item">
+            <div class="img-wrap">
+              <img src="../../assets/images/icon_form_type_06_range.svg" alt="">
+            </div>
+            <div class="select-type-list__content">
+              <div class="name">기간형</div>
+              <div class="desc">기간을 선택하는 형식을 추가할 수 있어요.</div>
+            </div>
+          </div>
+          <div class="select-type-list__item">
+            <div class="img-wrap">
+              <img src="../../assets/images/icon_form_type_07_choice_one.svg" alt="">
+            </div>
+            <div class="select-type-list__content">
+              <div class="name">단일 선택형</div>
+              <div class="desc">여러 선택 항목 중 한 항목을 선택하는 형식을 추가할 수 있어요.</div>
+            </div>
+          </div>
+          <div class="select-type-list__item">
+            <div class="img-wrap">
+              <img src="../../assets/images/icon_form_type_08_choice_multie.svg" alt="">
+            </div> 
+            <div class="select-type-list__content">
+              <div class="name">복수 선택형</div>
+              <div class="desc">여러 선택 항목 중 여러 개의 항목을 중복 선택하는 형식을 추가할 수 있어요.</div>
+            </div>
+          </div>
+          <div class="select-type-list__item">
+            <div class="img-wrap">
+              <img src="../../assets/images/icon_form_type_09_file.svg" alt="">
+            </div> 
+            <div class="select-type-list__content">
+              <div class="name">파일 첨부형</div>
+              <div class="desc">파일을 첨부하는 형식을 추가할 수 있어요.</div>
+            </div>
+          </div>
+          <div class="select-type-list__item">
+            <div class="img-wrap">
+              <img src="../../assets/images/icon_form_type_10_url.svg" alt="">
+            </div> 
+            <div class="select-type-list__content">
+              <div class="name">유튜브 URL형</div>
+              <div class="desc">유튜브 URL을 등록하는 형식을 추가할 수 있어요.</div>
+            </div>
+          </div>
         </div>
+
       </div>
       <div class="layer-popup__footer">
         <div class="layer-popup__footer-left">
