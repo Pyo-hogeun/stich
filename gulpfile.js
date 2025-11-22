@@ -220,7 +220,7 @@ function generateIndex(done) {
     h1 { margin: 0 0 4px; font-size: 26px; }
     .page-header { margin-bottom: 20px; border-bottom: 1px solid #e5e7eb; padding-bottom: 12px; }
     .meta { color:#6b7280; font-size: 13px; }
-    .layout { display: grid; grid-template-columns: 1.1fr 1.5fr; gap: 20px; align-items: start; }
+    .layout { --list-width: 45%; display: grid; grid-template-columns: minmax(260px, var(--list-width)) 10px 1fr; gap: 16px; align-items: stretch; }
     .list-panel, .preview-panel { background:#fff; border:1px solid #e5e7eb; border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
     .category { margin-bottom: 18px; }
     .category h2 { margin: 0 0 8px; font-size: 17px; color:#1f2937; }
@@ -232,12 +232,15 @@ function generateIndex(done) {
     a.file-link:hover { text-decoration: underline; }
     .preview-btn { border:1px solid #d1d5db; background:#fff; color:#111827; border-radius: 8px; padding:6px 10px; cursor:pointer; font-size: 13px; transition: background 0.2s, border-color 0.2s; }
     .preview-btn:hover { background:#eff6ff; border-color:#bfdbfe; color:#1d4ed8; }
+    .divider { width: 10px; cursor: col-resize; border-radius: 12px; background: linear-gradient(180deg, #e5e7eb 0%, #cbd5e1 100%); border:1px solid #d1d5db; box-shadow: inset 0 1px 1px rgba(255,255,255,0.6); transition: background 0.2s, border-color 0.2s; }
+    .layout.dragging .divider { background: linear-gradient(180deg, #d1d5db 0%, #9ca3af 100%); border-color:#9ca3af; }
     .preview-panel { position: sticky; top: 12px; }
     .preview-panel h2 { margin: 0 0 10px; font-size: 18px; }
     .preview-status { color:#6b7280; font-size: 13px; margin-bottom: 10px; word-break: break-all; }
     #previewFrame { width: 100%; height: 70vh; border:1px solid #e5e7eb; border-radius: 12px; background:#fff; }
     @media (max-width: 900px) {
-      .layout { grid-template-columns: 1fr; }
+      .layout { grid-template-columns: 1fr; gap: 12px; }
+      .divider { display: none; }
       .preview-panel { position: static; }
     }
   </style>
@@ -267,6 +270,7 @@ function generateIndex(done) {
   }
 
   html += `    </section>
+    <div class="divider" role="separator" aria-orientation="vertical" aria-label="목록과 미리보기 사이 조절 막대"></div>
     <section class="preview-panel" aria-live="polite">
       <h2>미리보기</h2>
       <div id="previewStatus" class="preview-status">왼쪽 목록의 '미리보기' 버튼을 클릭하면 이 영역에서 바로 확인할 수 있어요.</div>
@@ -287,6 +291,39 @@ function generateIndex(done) {
         previewFrame.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
+
+    const layout = document.querySelector('.layout');
+    const divider = document.querySelector('.divider');
+    const minPercent = 25;
+    const maxPercent = 75;
+
+    const clampPercent = (value) => Math.min(maxPercent, Math.max(minPercent, value));
+    const updateWidth = (percent) => {
+      layout.style.setProperty('--list-width', clampPercent(percent) + '%');
+    };
+
+    divider.addEventListener('pointerdown', (event) => {
+      divider.setPointerCapture(event.pointerId);
+      layout.classList.add('dragging');
+    });
+
+    divider.addEventListener('pointermove', (event) => {
+      if (!divider.hasPointerCapture(event.pointerId)) return;
+      const rect = layout.getBoundingClientRect();
+      const relativeX = event.clientX - rect.left;
+      const percent = (relativeX / rect.width) * 100;
+      updateWidth(percent);
+    });
+
+    const endDrag = (event) => {
+      if (divider.hasPointerCapture(event.pointerId)) {
+        divider.releasePointerCapture(event.pointerId);
+      }
+      layout.classList.remove('dragging');
+    };
+
+    divider.addEventListener('pointerup', endDrag);
+    divider.addEventListener('pointercancel', endDrag);
   </script>
   </body></html>`;
 
