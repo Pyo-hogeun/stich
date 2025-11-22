@@ -113,16 +113,20 @@
         </button>
       </div>
       <div class="layer-popup__body">
-        <div class="select-type-list">
-          <div class="select-type-list__item">
-            <div class="img-wrap">
-              <img src="../../assets/images/icon_form_type_01_single.svg" alt="">
+        <div class="select-type-list multie-select">
+          <label class="ckb question-card__checkbox">
+            <input type="checkbox" />
+            <span class="ckb__box"></span>
+            <div class="select-type-list__item">
+              <div class="img-wrap">
+                <img src="../../assets/images/icon_form_type_01_single.svg" alt="">
+              </div>
+              <div class="select-type-list__content">
+                <div class="name">텍스트 - 단답형</div>
+                <div class="desc">한 줄 정도의 간단한 텍스트를 입력하는 형식을 추가할 수 있어요.</div>
+              </div>
             </div>
-            <div class="select-type-list__content">
-              <div class="name">텍스트 - 단답형</div>
-              <div class="desc">한 줄 정도의 간단한 텍스트를 입력하는 형식을 추가할 수 있어요.</div>
-            </div>
-          </div>
+          </label>
           <div class="select-type-list__item">
             <div class="img-wrap">
               <img src="../../assets/images/icon_form_type_02_write.svg" alt="">
@@ -212,10 +216,15 @@
         </div>
         <div class="layer-popup__footer-center">
           <button type="button" class="btn border border__icon submit">
-            닫기
+            <img src="../../assets/images/icon_close_16.svg" alt="" class="icon">
+            취소
           </button>
         </div>
         <div class="layer-popup__footer-right">
+          <button class="btn filled filled__icon submit">
+            <img src="../../assets/images/icon_check_10_white.svg" alt="" class="icon">
+            평가항목 등록
+          </button>
         </div>
       </div>
     </div>
