@@ -220,8 +220,8 @@ function generateIndex(done) {
     h1 { margin: 0 0 4px; font-size: 26px; }
     .page-header { margin-bottom: 20px; border-bottom: 1px solid #e5e7eb; padding-bottom: 12px; }
     .meta { color:#6b7280; font-size: 13px; }
-    .layout { --list-width: 45%; display: grid; grid-template-columns: minmax(260px, var(--list-width)) 10px 1fr; gap: 16px; align-items: stretch; }
-    .list-panel, .preview-panel { background:#fff; border:1px solid #e5e7eb; border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+    .layout { --list-width: 45%; display: grid; grid-template-columns: minmax(260px, var(--list-width)) 10px 1fr; gap: 16px; align-items: stretch; height: 83vh}
+    .list-panel, .preview-panel { background:#fff; border:1px solid #e5e7eb; border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); } .list-panel{ overflow-y: auto;}
     .category { margin-bottom: 18px; }
     .category h2 { margin: 0 0 8px; font-size: 17px; color:#1f2937; }
     ul { margin: 6px 0 12px; padding: 0; }
@@ -232,7 +232,7 @@ function generateIndex(done) {
     a.file-link:hover { text-decoration: underline; }
     .preview-btn { border:1px solid #d1d5db; background:#fff; color:#111827; border-radius: 8px; padding:6px 10px; cursor:pointer; font-size: 13px; transition: background 0.2s, border-color 0.2s; }
     .preview-btn:hover { background:#eff6ff; border-color:#bfdbfe; color:#1d4ed8; }
-    .divider { width: 10px; cursor: col-resize; border-radius: 12px; background: linear-gradient(180deg, #e5e7eb 0%, #cbd5e1 100%); border:1px solid #d1d5db; box-shadow: inset 0 1px 1px rgba(255,255,255,0.6); transition: background 0.2s, border-color 0.2s; }
+    .divider { position: sticky; top: 50%; width: 10px; cursor: col-resize; border-radius: 12px; background: linear-gradient(180deg, #e5e7eb 0%, #cbd5e1 100%); border:1px solid #d1d5db; box-shadow: inset 0 1px 1px rgba(255,255,255,0.6); transition: background 0.2s, border-color 0.2s; height: 50px;}
     .layout.dragging .divider { background: linear-gradient(180deg, #d1d5db 0%, #9ca3af 100%); border-color:#9ca3af; }
     .preview-panel { position: sticky; top: 12px; }
     .preview-panel h2 { margin: 0 0 10px; font-size: 18px; }
