@@ -11,6 +11,9 @@
         font-size: 12px;
         color: $smallText;
       }
+      .eva-committee-regist__label{
+        margin-bottom: 0;
+      }
     }
     &_topper{
       width: 100%;
@@ -216,6 +219,7 @@
           font-weight: 600;
           color: $primaryColor;
         }
+
         .sub-text{
           margin-top: 8px;
           font-size: 14px;

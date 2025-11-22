@@ -187,6 +187,194 @@
           <hr class="divider_hr">
 
           <div class="eva-preview__sub-title">지원 내용 작성하기</div>
+
+          <div class="eva-committee-regist__form">
+            <div class="eva-committee-regist__label">(필수) 평가 분야를 선택해 주세요.</div>
+            <div class="combo" style="width: 150px">
+              <input type="checkbox" id="combo" class="combo-toggle">
+              <label for="combo" class="combo-label">평가분야 명</label>
+              <ul class="combo-options">
+                <li><a href="#" class="selected">평가분야 명</a></li>
+                <li><a href="#">평가분야 명2</a></li>
+                <li><a href="#">평가분야 명3</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="eva-committee-regist__form">
+            <div class="eva-committee-regist__label">1. (필수) 이메일을 입력해 주세요.</div>
+            <div class="input-text__wrapper__wide">
+              <input type="text" class="input-text">
+            </div>
+          </div>
+          <div class="eva-committee-regist__form">
+            <div class="eva-committee-regist__label">2. (필수) 텍스트-단답형의 항목 제목</div>
+            <div class="input-text__wrapper__wide">
+              <input type="text" class="input-text">
+            </div>
+          </div>
+          <div class="eva-committee-regist__form">
+            <div class="eva-committee-regist__label">3. (필수) 텍스트-서술형의 항목 제목</div>
+            <div class="input-text__wrapper__wide">
+              <textarea name="" id="" cols="30" rows="10" class="input-textarea"></textarea>
+            </div>
+          </div>
+          <div class="eva-committee-regist__form">
+            <div class="eva-committee-regist__label">4. (필수) 연락처-전화번호형의 항목 제목</div>
+            <div class="input-text__wrapper__wide">
+              <input type="text" class="input-text">
+            </div>
+          </div>
+          <div class="eva-committee-regist__form">
+            <div class="eva-committee-regist__label">5. (필수) 연락처-주소형의 항목 제목</div>
+            <div class="address-wrap">
+              <div class="first-line">
+                <div class="input-text-wrapper__wide">
+                  <input type="text" class="input-text search" disabled>
+                </div>
+                <button class="btn border btn-search-address">
+                  <img src="../../assets/images/icon_search_16.svg" alt="">
+                  주소검색
+                </button>
+              </div>
+              <div class="second-line">
+                <div class="input-text-wrapper__wide">
+                  <input type="text" class="input-text">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="eva-committee-regist__form">
+            <div class="eva-committee-regist__label">6. 날짜를 선택해 주세요.</div>
+            <div class="input-text-wrapper__wide">
+              <div class="question-option-item">
+                <input data-type="datepicker" id="datePicker" class="input-text-calendar" placeholder="YYYY-MM-DD HH:MM">
+              </div>
+            </div>
+          </div>
+          <div class="eva-committee-regist__form">
+            <div class="eva-committee-regist__label">7. 항목을 선택해 주세요. (1개 선택)</div>
+            <div class="question-card__options">
+
+              <div class="question-card__options-list">
+                <div class="question-option-item">
+                  <label class="radio-btn">
+                    <input type="radio" name="single-choice-demo" class="radio-btn__input">
+                    <span class="radio-btn__circle sm"></span>
+                    <span class="label">
+                      입력한 단일 선택지 출력 (선택시 2번 색션으로 이동)
+                    </span>
+                  </label>
+                </div>
+                <div class="question-option-item">
+                  <label class="radio-btn">
+                    <input type="radio" name="single-choice-demo" class="radio-btn__input">
+                    <span class="radio-btn__circle sm"></span>
+                    <span class="label">
+                      입력한 단일 선택지 출력 (선택시 2번 색션으로 이동)
+                    </span>
+                  </label>
+                </div>
+                <div class="question-option-item">
+                  <label class="radio-btn">
+                    <input type="radio" name="single-choice-demo" class="radio-btn__input">
+                    <span class="radio-btn__circle sm"></span>
+                    <span class="label">
+                      입력한 단일 선택지 출력 (선택시 2번 색션으로 이동)
+                    </span>
+                  </label>
+                </div>
+    
+              </div>
+            </div>
+          </div>
+          <div class="eva-committee-regist__form">
+            <div class="eva-committee-regist__label">8. 항목을 선택해 주세요. (여러 개 선택 가능)</div>
+            <div class="question-card__options">
+
+              <div class="question-card__options-list">
+                <div class="question-option-item">
+                  <label class="ckb question-card__checkbox">
+                    <input type="checkbox">
+                    <span class="ckb__box"></span>
+                    <span class="ckb__label">입력한 복수 선택지 출력</span>
+                  </label>
+                </div>
+                <div class="question-option-item">
+                  <label class="ckb question-card__checkbox">
+                    <input type="checkbox">
+                    <span class="ckb__box"></span>
+                    <span class="ckb__label">입력한 복수 선택지 출력</span>
+                  </label>
+                </div>
+                <div class="question-option-item">
+                  <label class="ckb question-card__checkbox">
+                    <input type="checkbox">
+                    <span class="ckb__box"></span>
+                    <span class="ckb__label">입력한 복수 선택지 출력</span>
+                  </label>
+                </div>
+    
+              </div>
+            </div>
+          </div>
+          <div class="eva-committee-regist__form">
+            <div class="eva-committee-regist__label">9. 파일을 선택해 주세요.</div>
+            <label class="file-upload-area" id="fileUploadArea" data-upload-variant="sortable" data-file-upload-initialized="true" data-file-upload-active-variant="sortable" style="display: flex;">
+              <img src="../../assets/images/icon_upload_primary.png" alt="파일업로드 아이콘" class="file-upload-icon">
+              <span class="file-upload-text">첨부할 파일을 선택 해주세요 (파일당 3MB 이내만 가능)</span>
+              <input type="file" id="fileInput" hidden="">
+            </label>
+
+            <div id="fileList" class="file-list" data-upload-variant="sortable" data-file-upload-initialized="true" data-file-upload-active-variant="sortable">
+              <div class="file-item" data-file-id="">
+                <div class="file-item__content">
+                  <div class="file-item__info">
+                    <div class="file-item__icon">
+                      <img src="../../assets/images/icon_file_added.png" alt="파일">
+                    </div>
+                    <span class="file-item__name">샘플이미지.png</span>
+                    <span class="divider"></span>
+                    <span class="file-item__size">26.34KB</span>
+                  </div>
+                  <div class="item-actions">
+                    <button class="item-drag-handle" aria-label="항목 순서 변경">
+                      <img src="../../assets/images/icon_handle.svg" alt="">
+                    </button>
+                    <button class="item-close-btn" aria-label="항목 삭제">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.33203 3.3335L12.6659 12.6674" stroke="#0A0A0A" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.668 3.3335L3.3341 12.6674" stroke="#0A0A0A" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="eva-committee-regist__form">
+            <div class="eva-committee-regist__label">10. 유튜브 URL을 등록해 주세요.</div>
+            <div class="input-text__wrapper__wide">
+              <input type="text" class="input-text">
+            </div>
+          </div>
+
+          <hr class="divider_hr">
+
+          <div class="gray-box agree-term">
+            <div class="agree-term__header">
+              (필수) 접수 약관 동의 <a href="" class="btn underline show-term">약관보기</a>
+            </div>
+            <div class="agree-term__body">
+              <label class="ckb question-card__checkbox">
+                <input type="checkbox">
+                <span class="ckb__box"></span>
+                <span class="ckb__label">본인은 접수 관련 약관을 확인하였으며 동의합니다.</span>
+              </label>
+            </div>
+
+          </div>
+
+          
         </div>
       </div>
       <div class="layer-popup__footer">
