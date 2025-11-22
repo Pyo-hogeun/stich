@@ -1,0 +1,9 @@
+@use 'variables' as *;
+.term-editor{
+  h3{
+    font-size: 18px;
+    font-weight: 700;
+    color: $Title_Dark;
+    margin: 24px 0 16px;
+  }
+}

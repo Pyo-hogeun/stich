@@ -107,98 +107,105 @@
   <div class="layer-dimmed" role="dialog" aria-modal="true">
     <div class="layer-popup">
       <div class="layer-popup__header">
-        <h3 class="layer-popup__title">엑셀로 여러 평가 대상 수정/등록</h3>
+        <h3 class="layer-popup__title">접수 폼 항목 추가하기</h3>
         <button type="button" class="layer-popup__close" aria-label="레이어 닫기">
           <img src="../../assets/images/icon_close_popup.svg" alt="">
         </button>
       </div>
       <div class="layer-popup__body">
-        <div class="eva-committee-regist excel">
-          <div class="eva-committee-regist__form">
-            <div class="eva-committee-regist__label required">평가분야 선택</div>
-            <div class="combo" style="width: 150px">
-              <input type="checkbox" id="combo" class="combo-toggle">
-              <label for="combo" class="combo-label">평가분야 명</label>
-              <ul class="combo-options">
-                <li><a href="#" class="selected">평가분야 명</a></li>
-                <li><a href="#">평가분야 명2</a></li>
-                <li><a href="#">평가분야 명3</a></li>
-              </ul>
+        <div class="select-type-list">
+          <div class="select-type-list__item">
+            <div class="img-wrap">
+              <img src="../../assets/images/icon_form_type_01_single.svg" alt="">
+            </div>
+            <div class="select-type-list__content">
+              <div class="name">텍스트 - 단답형</div>
+              <div class="desc">한 줄 정도의 간단한 텍스트를 입력하는 형식을 추가할 수 있어요.</div>
             </div>
           </div>
-
-          <div class="eva-committee__manual">
-            <div class="eva-committee__manual_item">
-              <div class="start">
-                <div class="title">Step 01. 엑셀로 평가 대상 등록 시작</div>
-                <div class="sub-text">엑셀 양식을 다운로드 받아 양식에 맞춰 평가 대상 정보를 입력해 주세요.<br>
-                  등록한 평가 대상 정보를 수정하거나, 새로운 평가 대상 정보를 입력해 추가로 평가 대상을 등록할 수 있어요.</div>
-              </div>
-              <div class="end">
-                <button class="btn border h40">
-                  <img src="../../assets/images/icon_download_16.svg" alt="">
-                  평가대상 정보 수정/등록용 양식 받기
-                </button>
-              </div>
+          <div class="select-type-list__item">
+            <div class="img-wrap">
+              <img src="../../assets/images/icon_form_type_02_write.svg" alt="">
             </div>
-
-            <div class="eva-committee__manual_item">
-              <div class="start">
-                <div class="title">Step 02. 평가 대상 수정 / 추가 입력</div>
-                <div class="sub-text">등록한 평가 대상 정보를 수정하거나, 추가 등록할 대상의 이름을 ‘평가대상명’에 입력해 주세요.<br>
-                  상세 설명을 추가로 입력할 수도 있어요. 대상번호는 자동 입력되므로 입력하지 않아도 괜찮아요.</div>
-              </div>
-            </div>
-            <div class="manual-img">
-              <img src="../../assets/images/manual/image_manual_step2.png" alt="">
-            </div>
-
-            <div class="eva-committee__manual_item">
-              <div class="start">
-                <div class="title">Step 03. 입력한 양식 등록</div>
-                <div class="sub-text">입력이 끝난 엑셀 양식을 업로드하면 평가 대상을 자동으로 등록해요.</div>
-              </div>
-              <div class="end">
-                <button class="btn border h40">
-                  <img src="../../assets/images/icon_upload_16.svg" alt="">
-                  입력한 양식 등록하기
-                </button>
-              </div>
-            </div>
-
-            <div class="manual-img">
-              <div class="manual-img__wrapper">
-                <img src="../../assets/images/manual/image_manual_step3_01.png" alt="" style="flex: 1 1 50%;">
-              </div>
-              <div class="manual-img__wrapper">
-                <img src="../../assets/images/manual/image_manual_step3_02.png" alt="" style="flex: 1 1 50%;">
-              </div>
-            </div>
-
-            <div class="eva-committee__manual_item">
-              <div class="start">
-                <div class="title">Step 04. 평가 파일 등록</div>
-                <div class="sub-text">엑셀 양식으로 등록된 평가 대상의 대상명/대상번호로 매칭하여<br>
-                  파일을 등록할 수 있어요.</div>
-              </div>
-              <div class="end">
-                <button class="btn border h40">
-                  <img src="../../assets/images/icon_upload_16.svg" alt="">
-                  평가 대상 파일 등록하기
-                </button>
-              </div>
-            </div>
-
-            <div class="manual-img">
-              <img src="../../assets/images/manual/image_manual_step4.png" alt="">
+            <div class="select-type-list__content">
+              <div class="name">텍스트 - 서술형</div>
+              <div class="desc">여러 줄의 긴 텍스트를 입력하는 형식을 추가할 수 있어요.</div>
             </div>
           </div>
-          
-
-
-
-
+          <div class="select-type-list__item">
+            <div class="img-wrap">
+              <img src="../../assets/images/icon_form_type_03_phone.svg" alt="">
+            </div>
+            <div class="select-type-list__content">
+              <div class="name">연락처 - 전화번호형</div>
+              <div class="desc">전화번호를 입력하는 형식을 추가할 수 있어요. 연락처는 평가 위원에게 노출되지 않아요.</div>
+            </div>
+          </div>
+          <div class="select-type-list__item">
+            <div class="img-wrap">
+              <img src="../../assets/images/icon_form_type_04_adress.svg" alt="">
+            </div>
+            <div class="select-type-list__content">
+              <div class="name">연락처 - 주소형</div>
+              <div class="desc">주소 검색을 통해 쉽게 주소를 입력할 수 형식을 추가할 수 있어요. 연락처는 평가 위원에게 노출되지 않아요.</div>
+            </div>
+          </div>
+          <div class="select-type-list__item">
+            <div class="img-wrap">
+              <img src="../../assets/images/icon_form_type_05_date.svg" alt="">
+            </div>
+            <div class="select-type-list__content">
+              <div class="name">날짜형</div>
+              <div class="desc">날짜를 선택하는 형식을 추가할 수 있어요.</div>
+            </div>
+          </div>
+          <div class="select-type-list__item">
+            <div class="img-wrap">
+              <img src="../../assets/images/icon_form_type_06_range.svg" alt="">
+            </div>
+            <div class="select-type-list__content">
+              <div class="name">기간형</div>
+              <div class="desc">기간을 선택하는 형식을 추가할 수 있어요.</div>
+            </div>
+          </div>
+          <div class="select-type-list__item">
+            <div class="img-wrap">
+              <img src="../../assets/images/icon_form_type_07_choice_one.svg" alt="">
+            </div>
+            <div class="select-type-list__content">
+              <div class="name">단일 선택형</div>
+              <div class="desc">여러 선택 항목 중 한 항목을 선택하는 형식을 추가할 수 있어요.</div>
+            </div>
+          </div>
+          <div class="select-type-list__item">
+            <div class="img-wrap">
+              <img src="../../assets/images/icon_form_type_08_choice_multie.svg" alt="">
+            </div> 
+            <div class="select-type-list__content">
+              <div class="name">복수 선택형</div>
+              <div class="desc">여러 선택 항목 중 여러 개의 항목을 중복 선택하는 형식을 추가할 수 있어요.</div>
+            </div>
+          </div>
+          <div class="select-type-list__item">
+            <div class="img-wrap">
+              <img src="../../assets/images/icon_form_type_09_file.svg" alt="">
+            </div> 
+            <div class="select-type-list__content">
+              <div class="name">파일 첨부형</div>
+              <div class="desc">파일을 첨부하는 형식을 추가할 수 있어요.</div>
+            </div>
+          </div>
+          <div class="select-type-list__item">
+            <div class="img-wrap">
+              <img src="../../assets/images/icon_form_type_10_url.svg" alt="">
+            </div> 
+            <div class="select-type-list__content">
+              <div class="name">유튜브 URL형</div>
+              <div class="desc">유튜브 URL을 등록하는 형식을 추가할 수 있어요.</div>
+            </div>
+          </div>
         </div>
+
       </div>
       <div class="layer-popup__footer">
         <div class="layer-popup__footer-left">

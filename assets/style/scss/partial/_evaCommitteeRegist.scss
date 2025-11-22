@@ -196,6 +196,9 @@
   font-size: 14px;
   color: $smallText;
   margin-top: -8px;
+  em{
+    font-weight: 700;
+  }
 }
 .eva-committee{
   &__manual{

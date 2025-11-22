@@ -5320,6 +5320,9 @@ button.btn-add:hover {
   color: #919191;
   margin-top: -8px;
 }
+.description-word em {
+  font-weight: 700;
+}
 
 .eva-committee__manual_item {
   display: flex;
@@ -5351,4 +5354,34 @@ button.btn-add:hover {
 }
 .eva-committee__manual .manual-img img {
   width: 100%;
+}
+
+.select-type-list__item {
+  display: flex;
+  width: 720px;
+  padding: 24px;
+  align-items: center;
+  border-radius: 16px;
+  border: 1px solid #E4E4E4;
+  background: #FFF;
+  gap: 16px;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+.select-type-list__content .name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0A0A0A;
+  margin-bottom: 16px;
+}
+.select-type-list__content .desc {
+  font-size: 14px;
+  color: #747474;
+}
+
+.term-editor h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0A0A0A;
+  margin: 24px 0 16px;
 }
