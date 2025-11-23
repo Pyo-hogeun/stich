@@ -1405,6 +1405,7 @@ h2 {
   --color-gray-light: #D9D9D9;
   --bg-step-tab-active: #DDD3FF;
   --bg-step-tab-text-active: #4322A3;
+  --ck-size-sm: 16px;
 }
 
 .eva-detail {
@@ -1659,6 +1660,24 @@ h2 {
   font-size: 14px;
   font-weight: 700;
 }
+.eva-field .eva-list .list-topper .selected-status-bar {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+.eva-field .eva-list .list-topper .selected-status-bar .ckb__box {
+  width: var(--ck-size-sm);
+  min-width: var(--ck-size-sm);
+  height: var(--ck-size-sm);
+}
+.eva-field .eva-list .list-topper .selected-status-bar .ckb__box::after {
+  width: calc(var(--ck-size-sm) * 0.5);
+  height: calc(var(--ck-size-sm) * 0.5);
+}
+.eva-field .eva-list .list-topper .selected-status-bar .label {
+  font-size: 14px;
+  color: #747474;
+}
 .eva-field .eva-list .list-topper .toolbar {
   display: flex;
   justify-content: space-between;
@@ -1700,6 +1719,30 @@ h2 {
   background: #FFF;
   box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.12);
 }
+.eva-field .eva-list .list-wrap .item.disabled {
+  border: 1px solid rgba(189, 189, 189, 0.5);
+}
+.eva-field .eva-list .list-wrap .item.disabled:after {
+  content: "평가 제외";
+  display: inline-flex;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  height: 22px;
+  padding: 0 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  background-color: #B0B0B0;
+  color: #747474;
+  opacity: 0.5;
+  font-size: 12px;
+  font-weight: 700;
+}
+.eva-field .eva-list .list-wrap .item.disabled .evaluation-card__content {
+  opacity: 0.5;
+}
 
 .eva-template h5.title {
   font-size: 14px;
@@ -1731,7 +1774,8 @@ h2 {
   display: flex;
   justify-content: space-between;
 }
-.eva-section-container .content-header__lower .start, .eva-section-container .content-header__lower .end {
+.eva-section-container .content-header__lower .start,
+.eva-section-container .content-header__lower .end {
   display: flex;
   gap: 12px;
 }
@@ -1784,7 +1828,8 @@ h2 {
 }
 .has-aside aside {
   position: sticky;
-  top: 100px; /* 헤더 높이에 맞게 조정 */
+  top: 100px;
+  /* 헤더 높이에 맞게 조정 */
   align-self: flex-start;
   margin-top: 93px;
   height: -moz-fit-content;
@@ -2699,6 +2744,11 @@ button.btn-add:hover {
 .evaluation-card .ckb {
   color: #747474;
   margin-bottom: 20px;
+}
+.evaluation-card .ckb__box {
+  height: 16px;
+  width: 16px;
+  min-width: 16px;
 }
 .evaluation-card__content {
   display: flex;
@@ -4651,7 +4701,7 @@ button.btn-add:hover {
   width: 260px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+  gap: 12px;
 }
 .file-list-popup__title {
   margin: 0;
@@ -4671,16 +4721,17 @@ button.btn-add:hover {
   align-items: flex-start;
   gap: 12px;
   align-self: stretch;
+  margin-top: 12px;
 }
 .file-list-popup__item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   align-self: stretch;
 }
 .file-list-popup__item-info {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
 }
 .file-list-popup__file-icon {
@@ -4696,17 +4747,21 @@ button.btn-add:hover {
   height: 16px;
 }
 .file-list-popup__file-name {
+  display: inline-block;
+  margin-top: 2px;
   color: #747474;
   font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 150%;
+  cursor: pointer;
 }
 .file-list-popup__delete-btn {
   display: flex;
   width: 16px;
   height: 16px;
   padding: 2px;
+  margin-top: 3px;
   justify-content: center;
   align-items: center;
   background: none;
@@ -4721,16 +4776,13 @@ button.btn-add:hover {
   width: 16px;
   height: 16px;
 }
-.file-list-popup__divider {
-  height: 1px;
-  align-self: stretch;
-  background: #E4E4E4;
-}
 .file-list-popup__actions {
   display: flex;
   align-items: flex-start;
   gap: 12px;
   align-self: stretch;
+  border-top: 1px solid #E4E4E4;
+  padding-top: 12px;
 }
 .file-list-popup__action-btn {
   display: flex;
@@ -4749,6 +4801,9 @@ button.btn-add:hover {
 .file-list-popup__action-btn svg {
   width: 16px;
   height: 16px;
+}
+.file-list-popup__action-btn:last-child {
+  justify-content: flex-end;
 }
 .file-list-popup__action-text {
   color: #0A0A0A;

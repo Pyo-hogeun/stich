@@ -4,6 +4,7 @@
   --color-gray-light: #D9D9D9;
   --bg-step-tab-active: #DDD3FF;
   --bg-step-tab-text-active: #4322A3;
+  --ck-size-sm: 16px;
 }
 
 .eva-detail {
@@ -189,6 +190,7 @@
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 12px;
+
       li {
         border-radius: 12px;
 
@@ -236,7 +238,8 @@
           height: 48px;
           border-radius: 30px;
           white-space: nowrap;
-          &.active{
+
+          &.active {
             background-color: var(--bg-step-tab-active);
             border-color: $primaryColor;
             color: var(--bg-step-tab-text-active);
@@ -318,6 +321,27 @@
         font-weight: 700;
       }
 
+      .selected-status-bar {
+        display: flex;
+        gap: 8px;
+        margin-top: 16px;
+
+        .ckb__box {
+          width: var(--ck-size-sm);
+          min-width: var(--ck-size-sm);
+          height: var(--ck-size-sm);
+          &::after {
+            width: calc(var(--ck-size-sm) * 0.5);
+            height: calc(var(--ck-size-sm) * 0.5);
+          }
+        }
+        .label {
+          font-size: 14px;
+          color: $normalText;
+        }
+
+      }
+
       .toolbar {
         display: flex;
         justify-content: space-between;
@@ -360,52 +384,88 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 24px;
       margin-top: 24px;
+
       .item {
         padding: 24px;
         border-radius: 16px;
         border: 1px solid #BDBDBD;
         background: #FFF;
         box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.12);
+        &.disabled{
+          border: 1px solid rgba(189,189,189,.5);
+          &:after{
+            content: '평가 제외';
+            display: inline-flex;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            height: 22px;
+            padding: 0 4px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 4px;
+            background-color: #B0B0B0;
+            color: $normalText;
+            opacity: 0.5;
+            font-size: 12px;
+            font-weight: 700;
+          }
+          .evaluation-card__content{
+            opacity: 0.5;
+          }
+        }
       }
     }
   }
 }
-.eva-template{
-  h5.title{
+
+.eva-template {
+  h5.title {
     font-size: 14px;
     font-weight: 600;
     color: $Title_Dark;
     margin-bottom: 16px;
-    &:not(:first-child){
+
+    &:not(:first-child) {
       margin-top: 24px;
     }
   }
 }
-.eva-section-container{
+
+.eva-section-container {
   margin-top: 24px;
   padding: 24px;
-  .content-header{
+
+  .content-header {
     margin-bottom: 24px;
     font-size: 14px;
     color: $normalText;
-    &__upper{
+
+    &__upper {
       margin-bottom: 16px;
-      em{
+
+      em {
         color: $primaryColor;
         font-weight: 700;
       }
     }
-    &__lower{
+
+    &__lower {
       display: flex;
       justify-content: space-between;
-      .start, .end{
+
+      .start,
+      .end {
         display: flex;
-        gap: 12px; 
+        gap: 12px;
       }
-      .end{
+
+      .end {
         justify-content: flex-end;
       }
-      .toggle-switch__label{
+
+      .toggle-switch__label {
         color: $normalText;
       }
     }
@@ -413,46 +473,57 @@
 
 
 }
-.submit-btn-wrap{
+
+.submit-btn-wrap {
   display: flex;
   padding: 24px 0 60px;
-  &__start{
+
+  &__start {
     flex-basis: 50%;
   }
-  &__end{
+
+  &__end {
     flex-basis: 50%;
     display: flex;
     justify-content: flex-end;
     gap: 16px;
   }
-  &__center{
+
+  &__center {
     flex: 1 1 auto;
     display: flex;
     justify-content: center;
   }
-  img{
+
+  img {
     width: 16px;
     margin-right: 4px;
   }
 }
-.pagination-container{
+
+.pagination-container {
   position: relative;
-  .select-view-length{
+
+  .select-view-length {
     position: absolute;
     left: 0;
   }
 }
-.has-aside{
+
+.has-aside {
   display: flex;
   justify-content: center;
   gap: 24px;
-  .content-wrapper{
+
+  .content-wrapper {
     flex: 1 1 auto;
     margin: unset;
   }
-  aside{
+
+  aside {
     position: sticky;
-    top: 100px; /* 헤더 높이에 맞게 조정 */
+    top: 100px;
+    /* 헤더 높이에 맞게 조정 */
     align-self: flex-start;
     margin-top: 93px;
     height: fit-content;
