@@ -1,0 +1,22 @@
+@use 'variables' as *;
+.tooltip {
+  position: absolute;
+  display: inline-block;
+  padding: 12px;
+  border-radius: 0 8px 8px 8px;
+  border: 1px solid #7A53EC;
+  background: #FFF;
+  font-style: normal;
+  &:before{
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -1px;
+    display: inline-block;
+    border-left: 6px solid #7A53EC;
+    border-bottom: 6px solid #7A53EC;
+    border-right: 6px solid transparent;
+    border-top: 6px solid transparent;
+    
+  }
+}

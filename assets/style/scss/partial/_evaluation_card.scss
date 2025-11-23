@@ -206,4 +206,9 @@
     }
   }
 }
-
+.info-tooltip{
+  position: relative;
+  .tooltip{
+    top: 0;
+  }
+}
