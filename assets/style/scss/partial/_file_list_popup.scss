@@ -17,16 +17,9 @@
     top: -8px;
     width: 21px;
     height: 21px;
-    background: #A68FEB;
-    border: 1px solid #7A53EC;
-    border-radius: 15px;
+    border: 0;
     padding: 0;
     cursor: pointer;
-    transition: opacity 0.2s ease;
-
-    &:hover {
-      opacity: 0.8;
-    }
   }
 
   &__close-line {

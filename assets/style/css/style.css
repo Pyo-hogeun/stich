@@ -1187,6 +1187,26 @@ h2 {
   border-radius: 16px;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+  padding: 12px;
+  border-radius: 0 8px 8px 8px;
+  border: 1px solid #7A53EC;
+  background: #FFF;
+}
+.tooltip:before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 0;
+  display: inline-block;
+  border-left: 6px solid #7A53EC;
+  border-bottom: 6px solid #7A53EC;
+  border-right: 6px solid transparent;
+  border-top: 6px solid transparent;
+}
+
 :root {
   --nav-button-height: 30px;
 }
@@ -4668,15 +4688,9 @@ button.btn-add:hover {
   top: -8px;
   width: 21px;
   height: 21px;
-  background: #A68FEB;
-  border: 1px solid #7A53EC;
-  border-radius: 15px;
+  border: 0;
   padding: 0;
   cursor: pointer;
-  transition: opacity 0.2s ease;
-}
-.file-list-popup__close-btn:hover {
-  opacity: 0.8;
 }
 .file-list-popup__close-line {
   position: absolute;
