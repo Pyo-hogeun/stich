@@ -4686,6 +4686,7 @@ button.btn-add:hover {
   border: 1px solid #7A53EC;
   border-radius: 8px;
   box-shadow: 0 12px 20px 0 rgba(90, 75, 121, 0.2);
+  z-index: 1;
 }
 .file-list-popup__close-btn {
   position: absolute;
@@ -5672,10 +5673,6 @@ button.btn-add:hover {
 }
 .eva-committee__manual .manual-img img {
   width: 100%;
-}
-
-:root {
-  --ck-size: 24px;
 }
 
 .select-type-list__item {

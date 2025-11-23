@@ -1046,6 +1046,98 @@ export const tooltipInit = () => {
   });
 
 }
+export const filelistPopTemplateInit = () => {
+  const popupTemplate = document.getElementById('file-list-popup-template');
+  if(!popupTemplate) return;
+
+  const popupGap = 8;
+  let activePopup = null;
+  let activeButton = null;
+
+  const closePopup = () => {
+    if (activePopup) {
+      activePopup.remove();
+      activePopup = null;
+      activeButton = null;
+    }
+
+    document.removeEventListener('click', handleOutsideClick);
+    window.removeEventListener('resize', repositionPopup);
+    window.removeEventListener('scroll', repositionPopup);
+  };
+
+  const handleOutsideClick = (event) => {
+    if (!activePopup) return;
+
+    const clickedPopup = event.target.closest('.file-list-popup');
+    const clickedButton = event.target.closest('.files__action-btn');
+    if (!clickedPopup && !clickedButton) {
+      closePopup();
+    }
+  };
+
+  const repositionPopup = () => {
+    if (!activePopup || !activeButton) return;
+    positionPopup(activePopup, activeButton);
+  };
+
+  const positionPopup = (popup, button) => {
+    const buttonRect = button.getBoundingClientRect();
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
+
+    popup.style.position = 'absolute';
+    popup.style.left = `${buttonRect.left + scrollLeft}px`;
+
+    const proposedTop = buttonRect.bottom + scrollTop + popupGap;
+    const popupHeight = popup.offsetHeight;
+    const viewportBottom = scrollTop + window.innerHeight;
+
+    if (proposedTop + popupHeight > viewportBottom && buttonRect.top - popupGap - popupHeight > 0) {
+      popup.style.top = `${buttonRect.top + scrollTop - popupGap - popupHeight}px`;
+    } else {
+      popup.style.top = `${proposedTop}px`;
+    }
+  };
+
+  const openPopup = (button) => {
+    if (!popupTemplate) return;
+
+    closePopup();
+
+    const popup = popupTemplate.content.firstElementChild.cloneNode(true);
+    document.body.appendChild(popup);
+    activePopup = popup;
+    activeButton = button;
+
+    positionPopup(popup, button);
+
+    const closeBtn = popup.querySelector('.file-list-popup__close-btn');
+    closeBtn?.addEventListener('click', (event) => {
+      event.stopPropagation();
+      closePopup();
+    });
+
+    setTimeout(() => {
+      document.addEventListener('click', handleOutsideClick);
+    }, 0);
+
+    window.addEventListener('resize', repositionPopup);
+    window.addEventListener('scroll', repositionPopup, { passive: true });
+  };
+
+  const fileViewButtons = Array.from(
+    document.querySelectorAll('.list-wrap .item.evaluation-card .files__action-btn')
+  ).filter((button) => button.textContent.trim().includes('파일 전체보기'));
+
+  fileViewButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      openPopup(button);
+    });
+  });
+}
 
 // DOM 로드 시 실행
 document.addEventListener('DOMContentLoaded', () => {
@@ -1056,5 +1148,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initStarRatingUI();
   initStepScoreTab();
   tooltipInit();
+  filelistPopTemplateInit();
 });
 
