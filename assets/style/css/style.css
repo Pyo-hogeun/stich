@@ -1189,12 +1189,12 @@ h2 {
 
 .tooltip {
   position: absolute;
-  display: inline-block;
   padding: 12px;
   border-radius: 0 8px 8px 8px;
   border: 1px solid #7A53EC;
   background: #FFF;
   font-style: normal;
+  min-width: 300px;
 }
 .tooltip:before {
   content: "";
@@ -2937,9 +2937,6 @@ button.btn-add:hover {
 
 .info-tooltip {
   position: relative;
-}
-.info-tooltip .tooltip {
-  top: 0;
 }
 
 .eva-create h3 {

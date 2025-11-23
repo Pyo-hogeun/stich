@@ -1021,6 +1021,32 @@ export const initStepScoreTab = () => {
   })
 }
 
+
+export const tooltipInit = () => {
+  const tooltipTriggers = document.querySelectorAll('.info-tooltip');
+  
+  tooltipTriggers.forEach((trigger) => {
+    const tooltip = trigger.querySelector('.tooltip');
+    if (!tooltip) return;
+  
+    const showTooltip = () => {
+      tooltip.hidden = false;
+    };
+  
+    const hideTooltip = () => {
+      tooltip.hidden = true;
+    };
+  
+    tooltip.hidden = true;
+  
+    trigger.addEventListener('mouseenter', showTooltip);
+    trigger.addEventListener('mouseleave', hideTooltip);
+    trigger.addEventListener('focus', showTooltip);
+    trigger.addEventListener('blur', hideTooltip);
+  });
+
+}
+
 // DOM 로드 시 실행
 document.addEventListener('DOMContentLoaded', () => {
   rangePickerInit("#rangePicker");
@@ -1029,5 +1055,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initStarRateSetting();
   initStarRatingUI();
   initStepScoreTab();
+  tooltipInit();
 });
 

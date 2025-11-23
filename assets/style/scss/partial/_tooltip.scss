@@ -1,12 +1,13 @@
 @use 'variables' as *;
 .tooltip {
   position: absolute;
-  display: inline-block;
+  // display: inline-block;
   padding: 12px;
   border-radius: 0 8px 8px 8px;
   border: 1px solid #7A53EC;
   background: #FFF;
   font-style: normal;
+  min-width: 300px;
   &:before{
     content: '';
     position: absolute;

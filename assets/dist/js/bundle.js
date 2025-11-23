@@ -13608,6 +13608,32 @@ var AppBundle = (function (exports) {
     });
   };
 
+
+  const tooltipInit = () => {
+    const tooltipTriggers = document.querySelectorAll('.info-tooltip');
+    
+    tooltipTriggers.forEach((trigger) => {
+      const tooltip = trigger.querySelector('.tooltip');
+      if (!tooltip) return;
+    
+      const showTooltip = () => {
+        tooltip.hidden = false;
+      };
+    
+      const hideTooltip = () => {
+        tooltip.hidden = true;
+      };
+    
+      tooltip.hidden = true;
+    
+      trigger.addEventListener('mouseenter', showTooltip);
+      trigger.addEventListener('mouseleave', hideTooltip);
+      trigger.addEventListener('focus', showTooltip);
+      trigger.addEventListener('blur', hideTooltip);
+    });
+
+  };
+
   // DOM 로드 시 실행
   document.addEventListener('DOMContentLoaded', () => {
     rangePickerInit("#rangePicker");
@@ -13616,6 +13642,7 @@ var AppBundle = (function (exports) {
     initStarRateSetting();
     initStarRatingUI();
     initStepScoreTab();
+    tooltipInit();
   });
 
   exports.datePickerInit = datePickerInit;
@@ -13627,6 +13654,7 @@ var AppBundle = (function (exports) {
   exports.initStarRatingUI = initStarRatingUI;
   exports.initStepScoreTab = initStepScoreTab;
   exports.rangePickerInit = rangePickerInit;
+  exports.tooltipInit = tooltipInit;
 
   return exports;
 
