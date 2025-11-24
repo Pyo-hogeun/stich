@@ -137,3 +137,209 @@
     }
   }
 }
+.eva-target-regist{
+  &__form{
+    margin-bottom: 24px;
+    .start{
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      .sub-text{
+        font-size: 12px;
+        color: $smallText;
+      }
+      .eva-committee-regist__label{
+        margin-bottom: 0;
+      }
+    }
+    &_topper{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 8px;
+    }
+  }
+  &__label{
+    font-size: 14px;
+    font-weight: 600;
+    color: $Title_Dark;
+    margin-bottom: 8px;
+    &.required{
+      &:after{
+        content: '*';
+        vertical-align: text-top;
+        color: #FF44BF;
+        font-size: 1em;
+        margin-left: 1px;
+      }
+    }
+  }
+  &__tabs{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #B0B0B0;
+    &_item{
+      a{
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        font-size: 14px;
+        padding: 0 16px;
+        height: 40px;
+        &.active{
+          color: $primaryColor2;
+          font-weight: 600;
+          &:after{
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background-color: $primaryColor2;
+          }
+        }
+      }
+    }
+  }
+  .file-item{
+    background-color: $bgLightGray;
+    padding: 18px 16px;
+    height: 60px;
+    border: 0;
+    margin-bottom: 8px;
+    .item-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .item-drag-handle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      width: 16px;
+      height: 16px;
+      padding: 3.5px 2px;
+      background: transparent;
+      border: none;
+      cursor: grab;
+  
+      &:active {
+        cursor: grabbing;
+      }
+    }
+    .item-close-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+  
+      &:hover {
+        opacity: 0.7;
+      }
+  
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+    &__size, &__url{
+      font-size: 14px;
+      color: $normalText;
+    }
+    &__url{
+      max-width: 70%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+  .file-list{
+    margin-top: 8px;
+    &__topper{
+      display: flex;
+      font-size: 14px;
+      color: $smallText;
+      justify-content: space-between;
+      margin-top: 16px;
+      em{
+        color: #9071EB;
+        font-weight: 400;
+      }
+    }
+  }
+  .url-upload-area, .text-upload-area{
+    display: flex;
+    gap: 8px;
+  }
+  &.easy{
+    margin-top: 24px;
+  }
+  .select-type{
+    display: flex;
+    width: 100%;
+    gap: 24px;
+    margin-bottom: 24px;
+    &__item{
+      display: flex;
+      gap: 12px;
+      flex: 1 1 50%;
+      box-shadow: 0 0 0 1px #EAEAEA;
+      border-radius: 8px;
+      padding: 20px 16px;
+      cursor: pointer;
+      &.active{
+        box-shadow: 0 0 0 2px $primaryColor;
+        .select-type__circle{
+          background-color: #8967EE;
+          color: #FFF;
+        }
+      }
+    }
+    &__circle{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $smallText;
+      background-color: #F5F5F5;
+      border-radius: 50%;
+      height: 24px;
+      width: 24px;
+      flex: 0 0 24px;
+    }
+    &__label{
+      color: #A68FEB;
+      font-size: 12px;
+      
+      .title{
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .empas{
+        display: inline-block;
+        color: $pointColor1;
+        margin-top: 4px;
+      }
+    }
+  }
+  .address-wrap {
+    .first-line {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .btn-search-address {
+      height: 40px;
+    }
+  }
+}

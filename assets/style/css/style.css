@@ -2661,6 +2661,200 @@ button.btn-add:hover {
   right: 0;
 }
 
+.eva-target-regist__form {
+  margin-bottom: 24px;
+}
+.eva-target-regist__form .start {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.eva-target-regist__form .start .sub-text {
+  font-size: 12px;
+  color: #919191;
+}
+.eva-target-regist__form .start .eva-committee-regist__label {
+  margin-bottom: 0;
+}
+.eva-target-regist__form_topper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 8px;
+}
+.eva-target-regist__label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0A0A0A;
+  margin-bottom: 8px;
+}
+.eva-target-regist__label.required:after {
+  content: "*";
+  vertical-align: text-top;
+  color: #FF44BF;
+  font-size: 1em;
+  margin-left: 1px;
+}
+.eva-target-regist__tabs {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #B0B0B0;
+}
+.eva-target-regist__tabs_item a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  padding: 0 16px;
+  height: 40px;
+}
+.eva-target-regist__tabs_item a.active {
+  color: #4D24C3;
+  font-weight: 600;
+}
+.eva-target-regist__tabs_item a.active:after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background-color: #4D24C3;
+}
+.eva-target-regist .file-item {
+  background-color: #F9F9F9;
+  padding: 18px 16px;
+  height: 60px;
+  border: 0;
+  margin-bottom: 8px;
+}
+.eva-target-regist .file-item .item-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.eva-target-regist .file-item .item-drag-handle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 16px;
+  height: 16px;
+  padding: 3.5px 2px;
+  background: transparent;
+  border: none;
+  cursor: grab;
+}
+.eva-target-regist .file-item .item-drag-handle:active {
+  cursor: grabbing;
+}
+.eva-target-regist .file-item .item-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.eva-target-regist .file-item .item-close-btn:hover {
+  opacity: 0.7;
+}
+.eva-target-regist .file-item .item-close-btn svg {
+  width: 16px;
+  height: 16px;
+}
+.eva-target-regist .file-item__size, .eva-target-regist .file-item__url {
+  font-size: 14px;
+  color: #747474;
+}
+.eva-target-regist .file-item__url {
+  max-width: 70%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.eva-target-regist .file-list {
+  margin-top: 8px;
+}
+.eva-target-regist .file-list__topper {
+  display: flex;
+  font-size: 14px;
+  color: #919191;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.eva-target-regist .file-list__topper em {
+  color: #9071EB;
+  font-weight: 400;
+}
+.eva-target-regist .url-upload-area, .eva-target-regist .text-upload-area {
+  display: flex;
+  gap: 8px;
+}
+.eva-target-regist.easy {
+  margin-top: 24px;
+}
+.eva-target-regist .select-type {
+  display: flex;
+  width: 100%;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.eva-target-regist .select-type__item {
+  display: flex;
+  gap: 12px;
+  flex: 1 1 50%;
+  box-shadow: 0 0 0 1px #EAEAEA;
+  border-radius: 8px;
+  padding: 20px 16px;
+  cursor: pointer;
+}
+.eva-target-regist .select-type__item.active {
+  box-shadow: 0 0 0 2px #7A53EC;
+}
+.eva-target-regist .select-type__item.active .select-type__circle {
+  background-color: #8967EE;
+  color: #FFF;
+}
+.eva-target-regist .select-type__circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #919191;
+  background-color: #F5F5F5;
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  flex: 0 0 24px;
+}
+.eva-target-regist .select-type__label {
+  color: #A68FEB;
+  font-size: 12px;
+}
+.eva-target-regist .select-type__label .title {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+.eva-target-regist .select-type__label .empas {
+  display: inline-block;
+  color: #FF44BF;
+  margin-top: 4px;
+}
+.eva-target-regist .address-wrap .first-line {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.eva-target-regist .address-wrap .btn-search-address {
+  height: 40px;
+}
+
 .eva-preview .badge {
   display: inline-flex;
   align-items: center;
