@@ -64,6 +64,27 @@
     overflow: auto;
     color: #3A3A3A;
     line-height: 1.6;
+    /* 스크롤바 전체의 너비 설정 */
+    &::-webkit-scrollbar {
+      width: 8px; /* 원하는 너비로 변경 */
+    }
+
+    /* 스크롤바 트랙의 배경색 설정 */
+    &::-webkit-scrollbar-track {
+      background: #E9E9E9; /* 원하는 색상으로 변경 */
+      border-radius: 20px;
+    }
+
+    /* 스크롤바 핸들의 배경색 설정 */
+    &::-webkit-scrollbar-thumb {
+      background: #888; /* 원하는 색상으로 변경 */
+      border-radius: 20px;
+    }
+
+    /* 스크롤바 핸들에 마우스를 올렸을 때의 색상 설정 */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #919191; /* 원하는 색상으로 변경 */
+    }
     h3{
       font-size: 14px;
       font-weight: 600;

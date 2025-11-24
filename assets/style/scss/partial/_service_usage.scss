@@ -1,0 +1,368 @@
+@use 'variables'as *;
+
+.service-usage {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  height: 60vh;
+  justify-content: space-between;
+
+
+  &__divider-thick {
+    height: 2px;
+    background: #5E5E5E;
+  }
+
+  &__divider-thin {
+    height: 1px;
+    background: $cardBorderColor;
+  }
+
+  &__usage {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 50%;
+    padding: 24px 0;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  h3 {
+    color: $Title_Dark;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__usage-label {
+    color: $normalText;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+
+    &-current {
+      color: $primaryColor;
+      font-weight: 700;
+    }
+
+    &-max {
+      color: $normalText;
+    }
+  }
+
+
+  &__usage-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .item-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .item-name {
+      color: $normalText;
+      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 150%;
+    }
+
+    .item-value {
+      color: $normalText;
+      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: normal;
+      text-align: right;
+
+      &-current {
+        color: $primaryColor;
+        font-weight: 700;
+      }
+
+      &-max {
+        color: $normalText;
+      }
+    }
+  }
+
+  &__badge {
+    display: flex;
+    height: 22px;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background: #E9E9E9;
+    color: #484848;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 150%;
+  }
+
+  &__add-service {
+    border-bottom: 2px solid #5E5E5E;
+
+    .item {
+      border-bottom: 1px solid $cardBorderColor;
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+
+      &:last-child {
+        border-bottom: 0;
+        margin-bottom: 0;
+      }
+
+      .label {
+        font-size: 14px;
+        font-weight: 600;
+        color: $normalText;
+
+        .price {
+          font-size: 12px;
+          color: $smallText;
+        }
+
+      }
+    }
+
+    .price-set-input {
+      display: inline-flex;
+      width: 130px;
+      border-radius: 8px;
+      background: #F9F9F9;
+      border: none;
+      color: #7A53EC;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+      align-items: center;
+      justify-content: flex-end;
+
+      .input-text-price {
+        flex: 1 1 auto;
+        padding: 8px 12px;
+        height: 100%;
+        width: 100%;
+        border: 0;
+        background-color: transparent;
+        border-radius: 8px;
+        text-align: center;
+        color: #7A53EC;
+        font-size: 14px;
+        font-weight: 700;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        &:focus {
+          outline: none;
+          // box-shadow: 0 0 0 2px rgba(122, 83, 236, 0.2);
+        }
+      }
+
+    }
+
+    .price-set {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 16px;
+
+      .item-price {
+        font-size: 20px;
+        font-weight: 700;
+        color: $primaryColor;
+      }
+    }
+
+    &_total-price {
+      display: flex;
+      justify-content: space-between;
+
+      .label {
+        font-size: 14px;
+        font-weight: 600;
+        color: $Title_Dark;
+      }
+
+      .value {
+        font-size: 20px;
+        font-weight: 700;
+        color: $primaryColor;
+      }
+    }
+
+  }
+
+  .history {
+    display: flex;
+    width: 320px;
+    margin-top: 24px;
+    height: calc(100% - 48px);
+    
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 16px;
+    border: 1px solid #E4E4E4;
+    background: #FFF;
+
+    &__topper {
+      width: 100%;
+      padding: 24px 24px 0;
+      .total-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #5E5E5E;
+        padding-bottom: 16px;
+
+        .label {
+          font-size: 14px;
+          font-weight: 600;
+          color: $normalText;
+        }
+
+        .price {
+          font-size: 20px;
+          font-weight: 700;
+          color: $primaryColor;
+        }
+      }
+    }
+
+    &__list {
+      width: 100%;
+      overflow-y: auto;
+      padding-left: 3px;
+      padding-top: 16px;
+      /* 스크롤바 전체의 너비 설정 */
+      &::-webkit-scrollbar {
+        width: 8px; /* 원하는 너비로 변경 */
+      }
+
+      /* 스크롤바 트랙의 배경색 설정 */
+      &::-webkit-scrollbar-track {
+        background: #E9E9E9; /* 원하는 색상으로 변경 */
+        border-radius: 20px;
+      }
+
+      /* 스크롤바 핸들의 배경색 설정 */
+      &::-webkit-scrollbar-thumb {
+        background: #888; /* 원하는 색상으로 변경 */
+        border-radius: 20px;
+      }
+
+      /* 스크롤바 핸들에 마우스를 올렸을 때의 색상 설정 */
+      &::-webkit-scrollbar-thumb:hover {
+        background: #919191; /* 원하는 색상으로 변경 */
+      }
+
+      .item {
+        margin-bottom: 16px;
+        display: flex;
+        padding: 0 24px;
+
+        &__header {
+          color: $smallText;
+          font-size: 12px;
+        }
+
+        &__detail {
+          font-size: 16px;
+          font-weight: 700;
+          color: $normalText;
+
+          em {
+            color: $Title_Dark;
+          }
+        }
+
+        &__bottom {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 6px;
+
+          .badge {
+            display: flex;
+            height: 22px;
+            padding: 0 8px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            border: 1px solid #747474;
+            font-size: 12px;
+            color: #484848;
+          }
+
+          .price {
+            font-size: 18px;
+            font-weight: 700;
+            color: $primaryColor;
+          }
+        }
+
+        .timeline {
+          position: relative;
+          padding-right: 12px;
+
+          .dot {
+            position: absolute;
+            top: 6px;
+            left: -2px;
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: #747474;
+            z-index: 1;
+          }
+
+          .line {
+            position: absolute;
+            display: inline-block;
+            width: 1px;
+            height: 120%;
+            background-color: #EAEAEA;
+            top: 7px;
+          }
+        }
+
+        &__body {
+          flex: 1 1 auto;
+        }
+
+        &:nth-last-child(1) {
+          .timeline {
+            .line {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+}

@@ -13199,6 +13199,7 @@ var AppBundle = (function (exports) {
       nextArrow: nextArrow,
       prevArrow: prevArrow,
       static: true,            // ✅ position 문제 방지
+      enableTime: true,
       onChange: (selectedDates, dateStr) => {
         console.log(`📅 Selected range: ${dateStr}`);
         updateResult(selectedDates);
