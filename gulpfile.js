@@ -220,7 +220,7 @@ function generateIndex(done) {
     h1 { margin: 0 0 4px; font-size: 26px; }
     .page-header { margin-bottom: 20px; border-bottom: 1px solid #e5e7eb; padding-bottom: 12px; }
     .meta { color:#6b7280; font-size: 13px; }
-    .layout { --list-width: 45%; display: grid; grid-template-columns: minmax(260px, var(--list-width)) 10px 1fr; gap: 16px; align-items: stretch; height: 83vh}
+    .layout { --list-width: 20%; display: grid; grid-template-columns: minmax(100px, var(--list-width)) 10px 1fr; gap: 16px; align-items: stretch; height: 83vh}
     .list-panel, .preview-panel { background:#fff; border:1px solid #e5e7eb; border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); } .list-panel{ overflow-y: auto;}
     .category { margin-bottom: 18px; }
     .category h2 { margin: 0 0 8px; font-size: 17px; color:#1f2937; }
