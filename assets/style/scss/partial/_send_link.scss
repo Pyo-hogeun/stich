@@ -1,0 +1,74 @@
+@use 'variables' as *;
+.send-link{
+  &__label{
+    font-size: 14px;
+    font-weight: 600;
+    color: $Title_Dark;
+    margin-bottom: 8px;
+  }
+  &__email_receiver{
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  &__email-list{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow: hidden;
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      thead{
+        th{
+          background-color: #E9E9E9;
+          color: $normalText;
+          font-size: 14px;
+          font-weight: 600;
+          padding: 8px;
+        }
+      }
+      tbody{
+        tr:nth-of-type(even){
+          td{
+            background-color: #F9F9F9;
+          }
+        }
+        tr.disabled{
+          td{
+            opacity: 0.5;
+          }
+        }
+        td{
+          color: $normalText;
+          font-size: 14px;
+          padding: 12px 8px;
+          text-align: center;
+          &:first-child{
+            text-align: left;
+          }
+        }
+      }
+    }
+    .btn.underline{
+      color: $normalText;
+    }
+  }
+  &__notice{
+    margin-top: 16px;
+    ul>li{
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 8px;
+      &:before{
+        content: '';
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: $normalText;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+    }
+  }
+}

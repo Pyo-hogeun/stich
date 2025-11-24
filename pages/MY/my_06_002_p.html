@@ -1,0 +1,207 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STICH</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+  <link rel="stylesheet" href="../../assets/dist/js/bundle.css">
+
+</head>
+
+<body>
+  <header class="gnb">
+    <div class="gnb-container">
+      <a href="/" class="gnb-logo">
+        <img src="../../assets/images/icon_gnb_logo.svg" alt="stich logo">
+      </a>
+
+      <nav class="gnb-menu">
+        <a href="/" class="gnb-menu-item menu-home">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_home.png" alt="home" class="icon-gnb-home">
+          </div>
+        </a>
+
+        <a href="/pages/COM/com_01_001.html" class="gnb-menu-item menu-competition gnb-menu-item-active">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_competition.png" alt="home" class="icon-gnb-competition">
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-notice">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_notice.png" alt="home" class="icon-gnb-notice">
+            <div class="badge-new">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="20" rx="10" fill="#FF44BF" />
+                <path
+                  d="M13.4863 5.51562V14H12.127L8.10742 8.19922H8.03711V14H6.51367V5.51562H7.89648L11.8926 11.3164H11.9746V5.51562H13.4863Z"
+                  fill="white" />
+              </svg>
+
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-career">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_career.png" alt="home" class="icon-gnb-career">
+          </div>
+        </a>
+      </nav>
+
+      <div class="gnb-user">
+        <div class="gnb-profile">
+          <div class="gnb-profile-icon">
+            <img src="../../assets/images/icon_my_profile.png" alt="사용자 아이콘">
+          </div>
+          <p class="gnb-profile-text">
+            <span class="gnb-profile-greeting">안녕하세요. </span>
+            <span class="gnb-profile-name">홍길동님</span>
+          </p>
+          <a href="/" class="gnb-settings" aria-label="설정">
+            <img src="../../assets/images/icon_my_setting.png" alt="사용자 설정">
+          </a>
+        </div>
+
+        <div class="gnb-divider"></div>
+
+        <button class="gnb-logout">
+          <img src="../../assets/images/icon_gnb_logout.png" class="icon-gnb-logout" alt="로그아웃 아이콘">
+          <span>로그아웃</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="content-wrapper">
+      <div class="mypage-main">
+      </div>
+    </div>
+  </main>
+
+  <div class="layer-dimmed" role="dialog" aria-modal="true">
+    <div class="layer-popup">
+      <div class="layer-popup__header">
+        <h3 class="layer-popup__title">평가 결과 링크 보내기</h3>
+        <button type="button" class="layer-popup__close" aria-label="레이어 닫기">
+          <img src="../../assets/images/icon_close_popup.svg" alt="">
+        </button>
+      </div>
+      <div class="layer-popup__body">
+        <div class="send-link">
+          <div class="send-link__label">받는 사람 이메일</div>
+          <div class="send-link__email_receiver">
+            <div class="input-text-wrapper__wide">
+              <input type="text" class="input-text" placeholder="평가 결과를 받을 사람의 이메일 주소를 입력해 주세요.">
+            </div>
+            <button type="button" class="btn border border__icon submit" disabled>
+              <img src="../../assets/images/icon_send.svg" alt="" class="icon-edit">
+              전송하기
+            </button>
+          </div>
+
+          <div class="send-link__label">보낸 사람 이메일</div>
+          <div class="send-link__email-list">
+            <table>
+              <colgroup>
+                <col style="width: 40%">
+                <col style="width: 15%">
+                <col style="width: 15%">
+                <col style="width: 15%">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>이메일</th>
+                  <th>전송 가능 횟수</th>
+                  <th>평가 결과 재전송</th>
+                  <th>열람 권한</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>japafo2712@pacfut.com </td>
+                  <td>(1/3)</td>
+                  <td><button class="btn underline underline__icon"><img src="../../assets/images/icon_send.svg" alt="" class="icon"> 재전송하기</button></td>
+                  <td><button href="" class="btn underline underline__icon">
+                    <img src="../../assets/images/icon_delete.svg" alt="" class="icon"> 삭제</button></td>
+                </tr>
+                <tr>
+                  <td>japafo2712@pacfut.com </td>
+                  <td>(1/3)</td>
+                  <td><button class="btn underline underline__icon"><img src="../../assets/images/icon_send.svg" alt="" class="icon"> 재전송하기</button></td>
+                  <td><button href="" class="btn underline underline__icon">
+                    <img src="../../assets/images/icon_delete.svg" alt="" class="icon"> 삭제</button></td>
+                </tr>
+                <tr>
+                  <td>japafo2712@pacfut.com </td>
+                  <td>(1/3)</td>
+                  <td><button class="btn underline underline__icon"><img src="../../assets/images/icon_send.svg" alt="" class="icon"> 재전송하기</button></td>
+                  <td><button href="" class="btn underline underline__icon">
+                    <img src="../../assets/images/icon_delete.svg" alt="" class="icon"> 삭제</button></td>
+                </tr>
+                <tr class="disabled">
+                  <td>japafo2712@pacfut.com </td>
+                  <td>(1/3)</td>
+                  <td><button disabled class="btn underline underline__icon"><img src="../../assets/images/icon_send.svg" alt="" class="icon"> 재전송하기</button></td>
+                  <td><button disabled href="" class="btn underline underline__icon">
+                    <img src="../../assets/images/icon_delete.svg" alt="" class="icon"> 삭제</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="send-link__notice">
+            <ul>
+              <li>이메일 주소는 “N”건까지 등록가능하고, 건 당 “n”회 발송 제한이 있습니다.</li>
+              <li>평가 결과페이지 URL은 평가 기간 내에만 열람 가능합니다.</li>
+              <li>적용 버튼 클릭 시 바로 적용 됩니다. 버튼 클릭 전 신중히 선택해 주세요.</li>
+              <li>결과페이지 URL 유출에 의한 피해 및 문제 발생 시 스티치는 어떠한 책임도 지지 않습니다.</li>
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="layer-popup__footer">
+        <div class="layer-popup__footer-left">
+        </div>
+        <div class="layer-popup__footer-center">
+          <button type="button" class="btn border border__icon submit">
+            닫기
+          </button>
+        </div>
+        <div class="layer-popup__footer-right">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/dist/js/bundle.js"></script>
+  
+</body>
+
+</html>
