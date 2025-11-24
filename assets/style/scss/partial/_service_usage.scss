@@ -196,20 +196,28 @@
     }
 
     &_total-price {
-      display: flex;
-      justify-content: space-between;
-
-      .label {
-        font-size: 14px;
-        font-weight: 600;
-        color: $Title_Dark;
+      .item{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        line-height: 1;
+        margin-bottom: 16px;
+        .label {
+          font-size: 14px;
+          font-weight: 600;
+          color: $Title_Dark;
+        }
+  
+        .value {
+          font-size: 20px;
+          font-weight: 700;
+          color: $primaryColor;
+          em{
+            color: $pointColor1;
+          }
+        }
       }
 
-      .value {
-        font-size: 20px;
-        font-weight: 700;
-        color: $primaryColor;
-      }
     }
 
   }

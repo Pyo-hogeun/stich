@@ -4099,19 +4099,25 @@ button.btn-add:hover {
   font-weight: 700;
   color: #7A53EC;
 }
-.service-usage__add-service_total-price {
+.service-usage__add-service_total-price .item {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
+  line-height: 1;
+  margin-bottom: 16px;
 }
-.service-usage__add-service_total-price .label {
+.service-usage__add-service_total-price .item .label {
   font-size: 14px;
   font-weight: 600;
   color: #0A0A0A;
 }
-.service-usage__add-service_total-price .value {
+.service-usage__add-service_total-price .item .value {
   font-size: 20px;
   font-weight: 700;
   color: #7A53EC;
+}
+.service-usage__add-service_total-price .item .value em {
+  color: #FF44BF;
 }
 .service-usage .history {
   display: flex;
