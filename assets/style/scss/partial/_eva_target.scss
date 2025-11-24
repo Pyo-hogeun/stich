@@ -25,6 +25,13 @@
   }
   &__detail{
     margin-bottom: 8px;
+    &_header{
+      font-size: 18px;
+      font-weight: 700;
+      color: $Title_Dark;
+      margin-bottom: 24px;
+      margin-top: 16px;
+    }
   }
   &__file{
     margin-top: 10px;
