@@ -9,8 +9,13 @@
     gap: 20px;
     justify-content: space-between;
     &__left{
-      background-color: var(--content-bg);
-      padding: 10px;
+      .gray-box{
+        background-color: var(--content-bg);
+        padding: 10px;
+        &__topper{
+          margin-bottom: 24px;
+        }
+      }
       flex: 1 1 50%;
       overflow-y: auto;
       &::-webkit-scrollbar {
@@ -76,5 +81,49 @@
   }
   .eva-target__tabs{
     margin-top: 14px;
+  }
+  .eva-file-swiper{
+    width: calc(100% + 20px);
+    margin-left: -10px;
+    margin-top: -10px;
+    .swiper-pagination{
+      position: relative;
+    }
+    .button-next, .button-prev{
+      display: inline-flex;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      background-color: #FFF;
+      border-radius: 50%;
+      top: unset;
+      width: 30px;
+      height: var(--nav-button-height);
+      z-index: 11;
+      box-shadow: 0 1px 4px 0 rgba(122,83,236,0.20);
+      color: $primaryColor;
+      cursor: pointer;
+      &.swiper-button-disabled{
+        color: #B0B0B0;
+      }
+    }
+    .button-next, .button-prev{
+      left: unset;
+      right: unset;
+    }
+    .nav-wrap{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 24px;
+      .swiper-pagination{
+        width: auto;
+      }
+    }
+    
+  }
+  .divider_hr_24{
+    border-top: 1px solid #BDBDBD;
   }
 }
