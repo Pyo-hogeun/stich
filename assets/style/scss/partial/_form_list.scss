@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'mixin' as *;
 .form-list{
   width: 100%;
   &__item{
@@ -17,13 +18,7 @@
     font-size: 14px;
     color: $normalText;
     &.required{
-      &:after{
-        content: '*';
-        vertical-align: text-top;
-        color: #FF44BF;
-        font-size: 20px;
-        margin-left: -2px;
-      }
+      @include required;
     }
   }
   &__input{

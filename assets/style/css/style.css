@@ -509,7 +509,8 @@ h1.required:after, h2.required:after, h3.required:after, h4.required:after {
   content: "*";
   vertical-align: text-top;
   color: #FF44BF;
-  font-size: 1em;
+  font-size: 1.1em;
+  line-height: 1;
 }
 
 body {
@@ -842,6 +843,65 @@ h2 {
   opacity: 1;
 }
 .ckb__label {
+  cursor: pointer;
+}
+
+:root {
+  --ck-size: 16px;
+  --ck-size-lg: 24px;
+  --ck-border: 1px;
+  --ck-radius: 4px;
+  --ck-color: #4D24C3;
+  --ck-border-color: #4D24C3;
+  --ck-focus: 3px rgb(77, 36, 195, 0.15);
+  --ck-disabled: #f2f2f2;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chips .chip input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+.chips .chip__box {
+  position: relative;
+  display: inline-flex;
+  width: auto;
+  padding: 0 8px;
+  height: 32px;
+  border-radius: 30px;
+  border: 1px solid #D9D9D9;
+  background: #FFF;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 150ms ease, border-color 150ms ease, transform 120ms ease;
+  color: #919191;
+  font-size: 14px;
+}
+.chips .chip input[type=checkbox]:checked + .chip__box {
+  background: var(--ck-color);
+  border-color: var(--ck-color);
+  color: #FFF;
+}
+.chips .chip input[type=checkbox]:checked + .chip__box::after {
+  border-color: #fff;
+  transform: rotate(-45deg) scale(1) translate(1px, -1px);
+  opacity: 1;
+}
+.chips .chip input[type=checkbox]:disabled + .chip__box {
+  background: var(--ck-disabled);
+  border-color: #e6e6e6;
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+.chips .chip__label {
   cursor: pointer;
 }
 
@@ -1443,8 +1503,8 @@ h2 {
   content: "*";
   vertical-align: text-top;
   color: #FF44BF;
-  font-size: 20px;
-  margin-left: -2px;
+  font-size: 1.1em;
+  line-height: 1;
 }
 .form-list__input {
   flex: 1 1 auto;
@@ -1999,7 +2059,8 @@ h2 {
   content: "*";
   vertical-align: text-top;
   color: #FF44BF;
-  font-size: 1em;
+  font-size: 1.1em;
+  line-height: 1;
 }
 
 .regist-detail-desc {
@@ -2123,7 +2184,8 @@ h2 {
   content: "*";
   vertical-align: text-top;
   color: #FF44BF;
-  font-size: 18px;
+  font-size: 1.1em;
+  line-height: 1;
 }
 .section-container .section__description {
   margin-bottom: 24px;
@@ -2721,8 +2783,8 @@ button.btn-add:hover {
   content: "*";
   vertical-align: text-top;
   color: #FF44BF;
-  font-size: 1em;
-  margin-left: 1px;
+  font-size: 1.1em;
+  line-height: 1;
 }
 .eva-target-regist__tabs {
   display: flex;
@@ -3525,7 +3587,8 @@ button.btn-add:hover {
   content: "*";
   vertical-align: text-top;
   color: #FF44BF;
-  font-size: 1em;
+  font-size: 1.1em;
+  line-height: 1;
 }
 .eva-create .img-select {
   display: grid;
@@ -3711,7 +3774,8 @@ button.btn-add:hover {
   content: "*";
   vertical-align: text-top;
   color: #FF44BF;
-  font-size: 1em;
+  font-size: 1.1em;
+  line-height: 1;
 }
 .agree-template__desc {
   font-size: 14px;
@@ -4762,7 +4826,8 @@ button.btn-add:hover {
   content: "*";
   vertical-align: text-top;
   color: #FF44BF;
-  font-size: 1em;
+  font-size: 1.1em;
+  line-height: 1;
 }
 .toggle-switch__input {
   position: absolute;
@@ -5179,7 +5244,8 @@ button.btn-add:hover {
   content: "*";
   vertical-align: text-top;
   color: #FF44BF;
-  font-size: 1em;
+  font-size: 1.1em;
+  line-height: 1;
 }
 
 .text-length, .text-notice {
@@ -6795,8 +6861,8 @@ button.btn-add:hover {
   content: "*";
   vertical-align: text-top;
   color: #FF44BF;
-  font-size: 1em;
-  margin-left: 1px;
+  font-size: 1.1em;
+  line-height: 1;
 }
 .eva-committee-regist__tabs {
   display: flex;
@@ -7047,4 +7113,49 @@ button.btn-add:hover {
   font-weight: 700;
   color: #0A0A0A;
   margin: 24px 0 16px;
+}
+
+.eva-member-add__label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0A0A0A;
+  margin-bottom: 8px;
+  margin-top: 24px;
+}
+.eva-member-add__label.required:after {
+  content: "*";
+  vertical-align: text-top;
+  color: #FF44BF;
+  font-size: 1.1em;
+  line-height: 1;
+}
+.eva-member-add__label:nth-of-type(1) {
+  margin-top: 0;
+}
+.eva-member-add__list .profile-add__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.eva-member-add__list .profile-add__img {
+  display: inline-block;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-image: url("../../images/icon_profile_dummy.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+.eva-member-add__list .profile-add__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.eva-member-add__list .profile-add__content .notice {
+  font-size: 14px;
+  color: #B0B0B0;
+  margin-top: 12px;
 }

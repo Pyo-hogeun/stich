@@ -1,0 +1,9 @@
+@mixin required {
+  &:after{
+    content: '*';
+    vertical-align: text-top;
+    color: #FF44BF;
+    font-size: 1.1em;
+    line-height: 1;
+  }
+}

@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'mixin' as *;
 .agree-template{
   margin-top: 16px;
   h3{
@@ -8,12 +9,7 @@
     color: $Title_Dark;
     margin: 24px 0 16px;
     &.required{
-      &:after{
-        content: '*';
-        vertical-align: text-top;
-        color: #FF44BF;
-        font-size: 1em;
-      }
+      @include required;
     }
   }
   &__desc{

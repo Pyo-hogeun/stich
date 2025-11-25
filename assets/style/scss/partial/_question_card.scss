@@ -1,4 +1,5 @@
 @use 'variables'as *;
+@use 'mixin' as *;
 :root{
   --ch-size: 24px;
 }
@@ -194,14 +195,10 @@
       font-size: 14px;
       font-weight: 600;
 
-      &.required {
-        &:after {
-          content: '*';
-          vertical-align: text-top;
-          color: #FF44BF;
-          font-size: 1em;
-        }
+      &.required{
+        @include required;
       }
+
     }
   }
 }

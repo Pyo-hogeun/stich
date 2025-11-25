@@ -1,5 +1,5 @@
 @use 'variables' as *;
-
+@use 'mixin' as *;
 .eva-committee-regist{
   &__form{
     margin-bottom: 24px;
@@ -29,13 +29,7 @@
     color: $Title_Dark;
     margin-bottom: 8px;
     &.required{
-      &:after{
-        content: '*';
-        vertical-align: text-top;
-        color: #FF44BF;
-        font-size: 1em;
-        margin-left: 1px;
-      }
+      @include required;
     }
   }
   &__tabs{

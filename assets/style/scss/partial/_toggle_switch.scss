@@ -1,5 +1,5 @@
 @use 'variables' as *;
-
+@use 'mixin' as *;
 .toggle-switch {
   display: flex;
   align-items: center;
@@ -13,13 +13,9 @@
     font-weight: 400;
     line-height: normal;
     &.required{
-      &:after{
-        content: '*';
-        vertical-align: text-top;
-        color: #FF44BF;
-        font-size: 1em;
-      }
+      @include required;
     }
+
   }
 
   &__input {

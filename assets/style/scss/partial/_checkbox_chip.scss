@@ -1,0 +1,82 @@
+@use 'variables'as *;
+
+// 기본 변수 (원하면 오버라이드)
+:root {
+  --ck-size: 16px;
+  --ck-size-lg: 24px;
+  --ck-border: 1px;
+  --ck-radius: 4px;
+  --ck-color: #4D24C3; // 체크된 배경
+  --ck-border-color: #4D24C3; // 비활성 테두리
+  --ck-focus: 3px rgb(77, 36, 195, 0.15);
+  --ck-disabled: #f2f2f2;
+}
+
+.chips{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  .chip {
+  
+    // 숨긴 실제 체크박스(하지만 화면리더/폼 동작 유지)
+    input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+      margin: 0;
+      padding: 0;
+    }
+  
+    // 시각적 박스
+    &__box {
+      position: relative;
+      display: inline-flex;
+      width: auto;
+      padding: 0 8px;
+      height: 32px;
+      border-radius: 30px;
+      border: 1px solid #D9D9D9;
+      background: #FFF;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 150ms ease, border-color 150ms ease, transform 120ms ease;
+      color: $smallText;
+      font-size: 14px;
+    }
+  
+  
+    // checked 상태: 배경색, 체크아이콘 보이기
+    input[type="checkbox"]:checked+.chip__box {
+      background: var(--ck-color);
+      border-color: var(--ck-color);
+      color: #FFF;
+      &::after {
+        border-color: #fff;
+        transform: rotate(-45deg) scale(1) translate(1px, -1px);
+        opacity: 1;
+      }
+  
+    }
+  
+    // hover 효과 (마우스 오버 시)
+    &:hover input[type="checkbox"]+.chip__box {
+      // transform: translateY(-1px);
+    }
+  
+    // disabled 상태
+    input[type="checkbox"]:disabled+.chip__box {
+      background: var(--ck-disabled);
+      border-color: #e6e6e6;
+      cursor: not-allowed;
+      opacity: 0.9;
+    }
+  
+  
+  
+    // 접근성: 레이블이 버튼처럼 포커스 되도록 처리 (키보드 이용시 input에 포커스)
+    &__label {
+      cursor: pointer;
+    }
+  }
+}

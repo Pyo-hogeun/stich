@@ -1,0 +1,197 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STICH</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+  <link rel="stylesheet" href="../../assets/dist/js/bundle.css">
+
+</head>
+
+<body>
+  <header class="gnb">
+    <div class="gnb-container">
+      <a href="/" class="gnb-logo">
+        <img src="../../assets/images/icon_gnb_logo.svg" alt="stich logo">
+      </a>
+
+      <nav class="gnb-menu">
+        <a href="/" class="gnb-menu-item menu-home">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_home.png" alt="home" class="icon-gnb-home">
+          </div>
+        </a>
+
+        <a href="/pages/COM/com_01_001.html" class="gnb-menu-item menu-competition gnb-menu-item-active">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_competition.png" alt="home" class="icon-gnb-competition">
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-notice">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_notice.png" alt="home" class="icon-gnb-notice">
+            <div class="badge-new">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="20" rx="10" fill="#FF44BF" />
+                <path
+                  d="M13.4863 5.51562V14H12.127L8.10742 8.19922H8.03711V14H6.51367V5.51562H7.89648L11.8926 11.3164H11.9746V5.51562H13.4863Z"
+                  fill="white" />
+              </svg>
+
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-career">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_career.png" alt="home" class="icon-gnb-career">
+          </div>
+        </a>
+      </nav>
+
+      <div class="gnb-user">
+        <div class="gnb-profile">
+          <div class="gnb-profile-icon">
+            <img src="../../assets/images/icon_my_profile.png" alt="사용자 아이콘">
+          </div>
+          <p class="gnb-profile-text">
+            <span class="gnb-profile-greeting">안녕하세요. </span>
+            <span class="gnb-profile-name">홍길동님</span>
+          </p>
+          <a href="/" class="gnb-settings" aria-label="설정">
+            <img src="../../assets/images/icon_my_setting.png" alt="사용자 설정">
+          </a>
+        </div>
+
+        <div class="gnb-divider"></div>
+
+        <button class="gnb-logout">
+          <img src="../../assets/images/icon_gnb_logout.png" class="icon-gnb-logout" alt="로그아웃 아이콘">
+          <span>로그아웃</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="content-wrapper">
+      <div class="mypage-main">
+      </div>
+    </div>
+  </main>
+
+  <div class="layer-dimmed" role="dialog" aria-modal="true">
+    <div class="layer-popup">
+      <div class="layer-popup__header">
+        <h3 class="layer-popup__title">평가 위원 추가하기</h3>
+        <button type="button" class="layer-popup__close" aria-label="레이어 닫기">
+          <img src="../../assets/images/icon_close_popup.svg" alt="">
+        </button>
+      </div>
+      <div class="layer-popup__body">
+        <div class="eva-member-add__list">
+          <div class="eva-member-add__label required">평가 위원 이름</div>
+          <div class="input-text-wrapper__wide">
+            <input type="text" class="input-text" placeholder="이름을 입력하세요.">
+          </div>
+
+          <div class="eva-member-add__label">프로필 이미지</div>
+          <div class="profile-add__wrapper">
+            <div class="profile-add__img">
+              <!-- 등록한 이미지가 있을 경우 -->
+              <img src="" alt="">
+            </div>
+            <div class="profile-add__content">
+              <button class="btn border border__icon h40">
+                <img src="../../assets/images/icon_plus_16.svg" alt="" class="icon">
+                프로필 사진 등록
+              </button>
+              <p class="notice">*프로필 이미지는 최대 3MB까지, 파일 형식은 JPEG, JPG, PNG, GIF만 가능해요.</p>
+            </div>
+          </div>
+
+          <div class="eva-member-add__label required">평가 위원 이메일 주소</div>
+          <div class="input-text-wrapper__wide">
+            <input type="text" class="input-text" placeholder="이메일 주소를 입력하세요.">
+          </div>
+
+          <div class="eva-member-add__label required">평가 위원 소속</div>
+          <div class="input-text-wrapper__wide">
+            <input type="text" class="input-text" placeholder="회사 또는 기관명과 소속팀을 입력해주세요">
+          </div>
+
+          <div class="eva-member-add__label">평가 위원 직책</div>
+          <div class="input-text-wrapper__wide">
+            <input type="text" class="input-text" placeholder="직책을 입력해주세요">
+          </div>
+          
+          <div class="eva-member-add__label required">평가 분야 선택</div>
+          <div class="chips">
+            <label class="chip">
+              <input type="checkbox" />
+              <span class="chip__box">분야 전체</span>
+            </label>
+            <label class="chip">
+              <input type="checkbox" />
+              <span class="chip__box">분야 1</span>
+            </label>
+            <label class="chip">
+              <input type="checkbox" />
+              <span class="chip__box">분야 2</span>
+            </label>
+          </div>
+
+          <div class="eva-member-add__label">평가 위원 상세 설명</div>
+          <div class="input-text-wrap__wide">
+            <textarea class="input-textarea" name="" id="" cols="30" rows="10" placeholder="평가 위원에 대한 상세 설명을 입력하세요&#10;(평가 위원은 설명을 볼 수 없어요.)"></textarea>
+            <div class="text-length align-r">0/1,000자</div>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="layer-popup__footer">
+        <div class="layer-popup__footer-left">
+        </div>
+        <div class="layer-popup__footer-center">
+          <button type="button" class="btn border border__icon submit">
+            닫기
+          </button>
+        </div>
+        <div class="layer-popup__footer-right">
+          <button type="button" class="btn filled filled__icon submit">
+            <img src="../../assets/images/icon_check_10_white.svg" alt="" class="icon">
+            추가하기
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/dist/js/bundle.js"></script>
+</body>
+
+</html>
