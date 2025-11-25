@@ -4954,6 +4954,14 @@ button.btn-add:hover {
   flex-direction: column;
   gap: 8px;
 }
+.question-card__options-list .question-option-item {
+  display: flex;
+  justify-content: space-between;
+}
+.question-card__options-list .radio__score {
+  font-size: 18px;
+  font-weight: 700;
+}
 .question-card__options-list .radio-btn .label {
   font-size: 14px;
   color: #3A3A3A;

@@ -148,6 +148,15 @@
     flex-direction: column;
     gap: 8px;
 
+    .question-option-item{
+      display: flex;
+      justify-content: space-between;
+    }
+    .radio__score{
+      font-size: 18px;
+      font-weight: 700;
+    }
+
     .radio-btn {
       .label {
         font-size: 14px;
