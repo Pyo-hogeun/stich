@@ -1,0 +1,250 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STICH</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+  <link rel="stylesheet" href="../../assets/dist/js/bundle.css">
+
+</head>
+
+<body>
+  <header class="gnb">
+    <div class="gnb-container">
+      <a href="/" class="gnb-logo">
+        <img src="../../assets/images/icon_gnb_logo.svg" alt="stich logo">
+      </a>
+
+      <nav class="gnb-menu">
+        <a href="/" class="gnb-menu-item menu-home">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_home.png" alt="home" class="icon-gnb-home">
+          </div>
+        </a>
+
+        <a href="/pages/COM/com_01_001.html" class="gnb-menu-item menu-competition gnb-menu-item-active">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_competition.png" alt="home" class="icon-gnb-competition">
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-notice">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_notice.png" alt="home" class="icon-gnb-notice">
+            <div class="badge-new">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="20" rx="10" fill="#FF44BF" />
+                <path
+                  d="M13.4863 5.51562V14H12.127L8.10742 8.19922H8.03711V14H6.51367V5.51562H7.89648L11.8926 11.3164H11.9746V5.51562H13.4863Z"
+                  fill="white" />
+              </svg>
+
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-career">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_career.png" alt="home" class="icon-gnb-career">
+          </div>
+        </a>
+      </nav>
+
+      <div class="gnb-user">
+        <div class="gnb-profile">
+          <div class="gnb-profile-icon">
+            <img src="../../assets/images/icon_my_profile.png" alt="사용자 아이콘">
+          </div>
+          <p class="gnb-profile-text">
+            <span class="gnb-profile-greeting">안녕하세요. </span>
+            <span class="gnb-profile-name">홍길동님</span>
+          </p>
+          <a href="/" class="gnb-settings" aria-label="설정">
+            <img src="../../assets/images/icon_my_setting.png" alt="사용자 설정">
+          </a>
+        </div>
+
+        <div class="gnb-divider"></div>
+
+        <button class="gnb-logout">
+          <img src="../../assets/images/icon_gnb_logout.png" class="icon-gnb-logout" alt="로그아웃 아이콘">
+          <span>로그아웃</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="content-wrapper">
+      <div class="mypage-main">
+      </div>
+    </div>
+  </main>
+
+  <div class="layer-dimmed" role="dialog" aria-modal="true">
+    <div class="layer-popup">
+      <div class="layer-popup__header">
+        <h3 class="layer-popup__title">점수 배점하기</h3>
+        <button type="button" class="layer-popup__close" aria-label="레이어 닫기">
+          <img src="../../assets/images/icon_close_popup.svg" alt="">
+        </button>
+      </div>
+      <div class="layer-popup__body">
+        <div class="point-allocation">
+          <button class="btn border border__icon h40">
+            <img src="../../assets/images/icon_graph.svg" alt="" class="icon">
+            비율 균등하게 분배하기
+          </button>
+
+          <div class="point-allocation__header">
+            <div class="item-total">총 항목 : <em>3개</em></div>
+            <div class="point-total">입력한 배점 비율 : <em>0%</em></div>
+            <p class="notice alert">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.00024 2.5C8.12985 2.50006 8.25809 2.53516 8.37329 2.60254C8.45998 2.65324 8.53748 2.72119 8.60083 2.80371L8.65942 2.89062L14.0579 12.2539H14.0588C14.1288 12.3797 14.1658 12.5241 14.1663 12.6719C14.1667 12.8195 14.13 12.9636 14.0608 13.0898C13.9916 13.216 13.8928 13.3196 13.7766 13.3906C13.6607 13.4614 13.5303 13.4985 13.3987 13.5H2.60083C2.46916 13.4984 2.33882 13.4615 2.2229 13.3906C2.10674 13.3196 2.00796 13.216 1.93872 13.0898C1.86961 12.9637 1.83285 12.8194 1.83325 12.6719C1.83356 12.561 1.85461 12.4521 1.89478 12.3516L1.94165 12.2539L7.34009 2.88965L7.34106 2.89062C7.41227 2.76867 7.51087 2.67006 7.62622 2.60254C7.74152 2.5351 7.87052 2.5 8.00024 2.5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 6.6665V9.33317" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="7.99992" cy="11.3332" r="0.666667" fill="#FF44BF"/>
+                </svg>
+                
+              <span class="fc-pink">100% 기준으로 각 항목의 배점 비율을 조정해 주세요.</span>
+            </p>
+            <p class="notice good">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 7.54286V8.00286C12.9994 9.08107 12.6503 10.1302 12.0047 10.9938C11.3591 11.8573 10.4516 12.4891 9.41768 12.7948C8.38372 13.1005 7.27863 13.0638 6.26724 12.6902C5.25584 12.3165 4.39233 11.6259 3.80548 10.7214C3.21863 9.81688 2.9399 8.74689 3.01084 7.67102C3.08178 6.59514 3.4986 5.57103 4.19914 4.7514C4.89968 3.93177 5.84639 3.36055 6.89809 3.12293C7.9498 2.88532 9.05013 2.99403 10.035 3.43286M13 4.00293L8 9.00793L6.5 7.50793" stroke="#34A66F" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                
+              <span class="fc-pink">100% 기준으로 각 항목의 배점 비율을 조정해 주세요.</span>
+            </p>
+          </div>
+
+          <div class="point-allocation__list">
+            <div class="item">
+              <div class="label">항목1</div>
+              <div class="set-allocation">
+                <div class="set-allocation__label">
+                  배점 비율
+                </div>
+                <div class="score-ratio-input">
+                  <input type="number" class="input-text-ratio" value="20.0">
+                  %
+                </div>
+              </div>
+              <div class="info">
+                <div class="item__name">항목명</div>
+                <div class="item__desc">평가 항목 상세 설명평가 항목 상세 설명평가 항목 상세 설명평가 항목 상세 설명평가 항목 상세 설명평가 항목 상세 설명</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="label">항목2</div>
+              <div class="set-allocation">
+                <div class="set-allocation__label">
+                  배점 비율
+                </div>
+                <div class="score-ratio-input">
+                  <input type="number" class="input-text-ratio" value="20.0">
+                  %
+                </div>
+              </div>
+              <div class="info">
+                <div class="item__name">항목명</div>
+                <div class="item__desc">평가 항목 상세 설명평가 항목 상세 설명평가 항목 상세 설명평가 항목 상세 설명평가 항목 상세 설명평가 항목 상세 설명</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="label">항목2</div>
+              <div class="set-allocation">
+                <div class="set-allocation__label">
+                  배점 비율
+                </div>
+                <div class="score-ratio-input">
+                  <input type="number" class="input-text-ratio" value="20.0">
+                  %
+                </div>
+              </div>
+              <div class="info">
+                <div class="item__name">항목명</div>
+                <div class="item__desc">평가 항목 상세 설명평가 항목 상세 설명평가 항목 상세 설명평가 항목 상세 설명평가 항목 상세 설명평가 항목 상세 설명</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="label">항목2</div>
+              <div class="set-allocation">
+                <div class="set-allocation__label">
+                  배점 비율
+                </div>
+                <div class="score-ratio-input">
+                  <input type="number" class="input-text-ratio" value="20.0">
+                  %
+                </div>
+              </div>
+              <div class="info">
+                <div class="item__name">항목명</div>
+                <div class="item__desc">평가 항목 상세 설명평가 항목 상세 설명평가 항목 상세 설명평가 항목 상세 설명평가 항목 상세 설명평가 항목 상세 설명</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="label">항목2</div>
+              <div class="set-allocation">
+                <div class="set-allocation__label">
+                  배점 비율
+                </div>
+                <div class="score-ratio-input">
+                  <input type="number" class="input-text-ratio" value="20.0">
+                  %
+                </div>
+              </div>
+              <div class="info">
+                <div class="item__name">항목명</div>
+                <div class="item__desc">평가 항목 상세 설명평가 항목 상세 설명평가 항목 상세 설명평가 항목 상세 설명평가 항목 상세 설명평가 항목 상세 설명</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="layer-popup__footer">
+        <div class="layer-popup__footer-left">
+        </div>
+        <div class="layer-popup__footer-center">
+          <button type="button" class="btn border border__icon submit">
+            취소
+          </button>
+        </div>
+        <div class="layer-popup__footer-right">
+          <button class="btn filled filled__icon submit">
+            <img src="../../assets/images/icon_check_10_white.svg" alt="" class="icon">
+            적용하기
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/dist/js/bundle.js"></script>
+  
+</body>
+
+</html>
