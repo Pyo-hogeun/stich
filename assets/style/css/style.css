@@ -6517,6 +6517,88 @@ button.btn-add:hover {
   cursor: pointer;
 }
 
+:root {
+  --content-bg: #F7F8F9;
+}
+
+.eva-preview-for-member .layout {
+  display: flex;
+  height: 55vh;
+  gap: 20px;
+  justify-content: space-between;
+}
+.eva-preview-for-member .layout__left {
+  background-color: var(--content-bg);
+  padding: 10px;
+  flex: 1 1 50%;
+  overflow-y: auto;
+}
+.eva-preview-for-member .layout__left::-webkit-scrollbar {
+  width: 8px; /* 원하는 너비로 변경 */
+}
+.eva-preview-for-member .layout__left {
+  /* 스크롤바 트랙의 배경색 설정 */
+}
+.eva-preview-for-member .layout__left::-webkit-scrollbar-track {
+  background: #E9E9E9; /* 원하는 색상으로 변경 */
+  border-radius: 20px;
+}
+.eva-preview-for-member .layout__left {
+  /* 스크롤바 핸들의 배경색 설정 */
+}
+.eva-preview-for-member .layout__left::-webkit-scrollbar-thumb {
+  background: #888; /* 원하는 색상으로 변경 */
+  border-radius: 20px;
+}
+.eva-preview-for-member .layout__left {
+  /* 스크롤바 핸들에 마우스를 올렸을 때의 색상 설정 */
+}
+.eva-preview-for-member .layout__left::-webkit-scrollbar-thumb:hover {
+  background: #919191; /* 원하는 색상으로 변경 */
+}
+.eva-preview-for-member .layout__right {
+  flex: 1 1 50%;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+.eva-preview-for-member .layout__right::-webkit-scrollbar {
+  width: 8px; /* 원하는 너비로 변경 */
+}
+.eva-preview-for-member .layout__right {
+  /* 스크롤바 트랙의 배경색 설정 */
+}
+.eva-preview-for-member .layout__right::-webkit-scrollbar-track {
+  background: #E9E9E9; /* 원하는 색상으로 변경 */
+  border-radius: 20px;
+}
+.eva-preview-for-member .layout__right {
+  /* 스크롤바 핸들의 배경색 설정 */
+}
+.eva-preview-for-member .layout__right::-webkit-scrollbar-thumb {
+  background: #888; /* 원하는 색상으로 변경 */
+  border-radius: 20px;
+}
+.eva-preview-for-member .layout__right {
+  /* 스크롤바 핸들에 마우스를 올렸을 때의 색상 설정 */
+}
+.eva-preview-for-member .layout__right::-webkit-scrollbar-thumb:hover {
+  background: #919191; /* 원하는 색상으로 변경 */
+}
+.eva-preview-for-member .layout__divider {
+  height: 100%;
+  width: 1px;
+  border-right: 1px solid #5E5E5E;
+}
+.eva-preview-for-member .question-card {
+  border-radius: 0;
+  padding: 24px 0;
+  border: 0;
+  border-bottom: 1px solid #E4E4E4;
+}
+.eva-preview-for-member .question-card:nth-last-of-type(1) {
+  border-bottom: 0;
+}
+
 .eva-committee-regist__form {
   margin-bottom: 24px;
 }
