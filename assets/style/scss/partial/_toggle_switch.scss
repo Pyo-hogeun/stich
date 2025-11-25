@@ -12,6 +12,14 @@
     font-size: 14px;
     font-weight: 400;
     line-height: normal;
+    &.required{
+      &:after{
+        content: '*';
+        vertical-align: text-top;
+        color: #FF44BF;
+        font-size: 1em;
+      }
+    }
   }
 
   &__input {

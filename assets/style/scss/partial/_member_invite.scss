@@ -1,0 +1,119 @@
+@use 'variables' as *;
+.member-invite{
+  .set-member-agree-toggle{
+    display: flex;
+    margin-top: 40px;
+    margin-bottom: 16px;
+    gap: 16px;
+    .toggle-switch__label{
+      color: $normalText;
+    }
+    .icon-setting{
+      background-image: url('../../images/icon_setting.svg');
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      background-size: 12px 12px;
+      padding-right: 40px;
+    }
+  }
+  &__total{
+    font-size: 14px;
+    color: $normalText;
+    font-weight: 400;
+    em{
+      color: #4D24C3;
+      font-weight: 700;
+    }
+  }
+  .list-topper{
+  }
+  &__list{
+    margin-top: 24px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow: hidden;
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      thead{
+        th{
+          background-color: #E9E9E9;
+          color: $normalText;
+          font-size: 14px;
+          font-weight: 600;
+          padding: 8px;
+          white-space: nowrap;
+          height: 50px;
+        }
+      }
+      tbody{
+        tr:nth-of-type(even){
+          td{
+            background-color: #F9F9F9;
+          }
+        }
+        tr.disabled{
+          td{
+            opacity: 0.5;
+          }
+        }
+        td{
+          color: $normalText;
+          font-size: 14px;
+          padding: 12px 8px;
+          text-align: center;
+          white-space: nowrap;
+          .ellipsis{
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            &.w-100{
+              width: 100px;
+            }
+            &.w-150{
+              width: 150px;
+            }
+          }
+          &:first-child{
+            text-align: left;
+          }
+        }
+      }
+    }
+    .btn.underline{
+      color: $normalText;
+    }
+    .download-wrap{
+      display: flex;
+      gap: 12px;
+      .icon-check{
+        display: inline-flex;
+        width: 24px;
+        height: 24px;
+        background-color: #E9E9E9;
+        border-radius: 4px;
+        color: #B0B0B0;
+        align-items: center;
+        justify-content: center;
+        &.checked{
+          background-color: $primaryColor;
+          color: #FFF;
+        }
+      }
+    }
+    .badge{
+      display: inline-flex;
+      height: 22px;
+      padding: 4px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      background-color: #E9E9E9;
+    }
+    .icon-setting{
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
