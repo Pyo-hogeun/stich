@@ -4520,6 +4520,50 @@ button.btn-add:hover {
   margin-right: 5px;
 }
 
+.template-preview .template-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #7A53EC;
+  margin-top: 40px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #A68FEB;
+}
+.template-preview__header {
+  display: flex;
+  align-items: center;
+  padding-top: 24px;
+}
+.template-preview__header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+.template-preview__header span {
+  font-size: 14px;
+  color: #747474;
+  margin-left: 12px;
+}
+.template-preview .question-card {
+  border: 0;
+  padding: 24px 0;
+  border-bottom: 1px solid #E4E4E4;
+  border-radius: 0;
+  gap: 10px;
+}
+.template-preview .question-card:nth-last-of-type(1) {
+  border-bottom: 0;
+}
+.template-preview .question-card__header-right .tag {
+  height: 20px;
+  line-height: 1.1;
+}
+.template-preview .question-card.answer .question-card__options-list {
+  gap: 16px;
+}
+.template-preview .question-card.answer .question-card__header-left .description {
+  margin-top: 0;
+}
+
 .toggle-switch {
   display: flex;
   align-items: center;

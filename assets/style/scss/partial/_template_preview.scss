@@ -1,0 +1,60 @@
+@use 'variables'as *;
+
+.template-preview {
+  .template-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: $primaryColor;
+    margin-top: 40px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #A68FEB;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    padding-top: 24px;
+
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+
+    span {
+      font-size: 14px;
+      color: $normalText;
+      margin-left: 12px;
+    }
+  }
+  .question-card{
+    border: 0;
+    padding: 24px 0;
+    border-bottom: 1px solid $cardBorderColor;
+    border-radius: 0;
+    gap: 10px;
+    &:nth-last-of-type(1){
+      border-bottom: 0;
+    }
+    &__header-right{
+      .tag{
+        height: 20px;
+        line-height: 1.1;
+      }
+    }
+    
+    &.question-card--single-choice-score{
+
+    }
+  }
+  .question-card.answer{
+    .question-card__options-list{
+      gap: 16px;
+    }
+    .question-card__header-left{
+      .description{
+        margin-top: 0 ;
+      }
+    }
+  }
+}
