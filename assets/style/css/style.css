@@ -6598,6 +6598,9 @@ button.btn-add:hover {
 .eva-preview-for-member .question-card:nth-last-of-type(1) {
   border-bottom: 0;
 }
+.eva-preview-for-member .eva-target__tabs {
+  margin-top: 14px;
+}
 
 .eva-committee-regist__form {
   margin-bottom: 24px;

@@ -13303,6 +13303,7 @@ var AppBundle = (function (exports) {
     const fractionElement = document.querySelector('.eva-file-list__topper .fraction');
 
     if (!swiperElement || linkItems.length === 0) return null;
+    if(!swiperElement) console.log('no swiper');
 
     const initialSlide = Array.from(linkItems).findIndex((item) =>
       item.classList.contains('active'),
