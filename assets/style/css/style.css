@@ -2522,6 +2522,27 @@ button.btn-add:hover {
 .eva-target__score-list .item__score_wrap .progress-bar + .score em {
   color: #000;
 }
+.eva-target__score-list .item__step_score_wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.eva-target__score-list .item__step_score_wrap .legend {
+  font-size: 12px;
+  color: #919191;
+  white-space: nowrap;
+  flex: 0 0 60px;
+}
+.eva-target__score-list .item__step_score_wrap .progress-bar .bar {
+  background-color: #747474;
+}
+.eva-target__score-list .item__step_score_wrap .progress-bar + .score {
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #000;
+}
 
 .eva-committee {
   display: flex;
@@ -7466,4 +7487,124 @@ button.btn-add:hover {
 }
 .eva-result .eva-schedule ul li:nth-last-of-type(1):after {
   content: none;
+}
+.eva-result .eva-member-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.eva-result .evaluator-card {
+  display: flex;
+  width: 230px;
+  padding: 16px;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  border-radius: 12px;
+  background-color: #F9F9F9;
+}
+.eva-result .evaluator-card__profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+.eva-result .evaluator-card__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.eva-result .evaluator-card__avatar img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.eva-result .evaluator-card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+}
+.eva-result .evaluator-card__name {
+  width: 100%;
+  color: #0A0A0A;
+  text-align: center;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.eva-result .evaluator-card__department {
+  width: 100%;
+  color: #0A0A0A;
+  text-align: center;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+.eva-result .evaluator-card__details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+.eva-result .evaluator-card__details-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  color: #0A0A0A;
+  text-overflow: ellipsis;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.eva-result .evaluator-card__details-content {
+  width: 100%;
+  color: #747474;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.eva-result .eva-detail-score {
+  margin-top: 16px;
+}
+.eva-result .eva-detail-score__label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0A0A0A;
+}
+.eva-result .eva-detail-score__sub-text {
+  font-size: 14px;
+  color: #747474;
+}
+.eva-result .eva-detail-score .eva-target__score-list .item {
+  padding: 16px 0;
+}
+.eva-result .eva-detail-score .eva-target__score-list .item:nth-last-of-type(1) {
+  border-bottom: 0;
+}
+.eva-result .eva-detail-score .eva-target__score-list .item__title {
+  font-size: 14px;
+  color: #0A0A0A;
+}
+.eva-result .eva-detail-score .eva-target__score-list .item__score_info .end .calc-score {
+  color: #7A53EC;
+}
+.eva-result .eva-detail-score .eva-target__score-list .item__score_info .end .calc-score__label {
+  font-weight: 400;
+}
+.eva-result .eva-detail-score .eva-target__score-list .item .progress-bar .bar {
+  background-color: #7A53EC;
 }
