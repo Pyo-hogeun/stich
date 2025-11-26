@@ -4520,6 +4520,39 @@ button.btn-add:hover {
   display: none;
 }
 
+.table-component-wrapper {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  overflow: hidden;
+}
+
+.table-component {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table-component thead th {
+  background-color: #E9E9E9;
+  color: #747474;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px;
+}
+.table-component tbody tr:nth-of-type(even) td {
+  background-color: #F9F9F9;
+}
+.table-component tbody tr.table-component__row--disabled td {
+  opacity: 0.5;
+}
+.table-component tbody td {
+  color: #747474;
+  font-size: 14px;
+  padding: 12px 8px;
+  text-align: center;
+}
+.table-component tbody td:first-child {
+  text-align: left;
+}
+
 .send-link__label {
   font-size: 14px;
   font-weight: 600;
@@ -4530,37 +4563,6 @@ button.btn-add:hover {
   display: flex;
   gap: 24px;
   margin-bottom: 24px;
-}
-.send-link__email-list {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  overflow: hidden;
-}
-.send-link__email-list table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.send-link__email-list table thead th {
-  background-color: #E9E9E9;
-  color: #747474;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 8px;
-}
-.send-link__email-list table tbody tr:nth-of-type(even) td {
-  background-color: #F9F9F9;
-}
-.send-link__email-list table tbody tr.disabled td {
-  opacity: 0.5;
-}
-.send-link__email-list table tbody td {
-  color: #747474;
-  font-size: 14px;
-  padding: 12px 8px;
-  text-align: center;
-}
-.send-link__email-list table tbody td:first-child {
-  text-align: left;
 }
 .send-link__email-list .btn.underline {
   color: #747474;

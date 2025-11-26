@@ -12,43 +12,6 @@
     margin-bottom: 24px;
   }
   &__email-list{
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    overflow: hidden;
-    table{
-      width: 100%;
-      border-collapse: collapse;
-      thead{
-        th{
-          background-color: #E9E9E9;
-          color: $normalText;
-          font-size: 14px;
-          font-weight: 600;
-          padding: 8px;
-        }
-      }
-      tbody{
-        tr:nth-of-type(even){
-          td{
-            background-color: #F9F9F9;
-          }
-        }
-        tr.disabled{
-          td{
-            opacity: 0.5;
-          }
-        }
-        td{
-          color: $normalText;
-          font-size: 14px;
-          padding: 12px 8px;
-          text-align: center;
-          &:first-child{
-            text-align: left;
-          }
-        }
-      }
-    }
     .btn.underline{
       color: $normalText;
     }
