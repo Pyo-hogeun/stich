@@ -1,0 +1,105 @@
+@use 'variables' as *;
+.status-summary-card{
+  display: flex;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  &__section{
+    flex: 1 1 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 130px;
+    background-color: #EDEDED;
+    .label{
+      font-size: 16px;
+      font-weight: 700;
+      color: $smallText;
+    }
+    .value{
+      font-size: 32px;
+      font-weight: 700;
+      color: $Title_Dark;
+    }
+    &:nth-child(2){
+      background-color: #E4E4E4;
+    }
+  }
+}
+.usage-summary-card {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+
+  &__section {
+    display: flex;
+    padding: 33px 32px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    flex: 1 0 0;
+
+    &--additional {
+      border-radius: 16px 0 0 16px;
+      background: $cardBorderColor;
+    }
+
+    &--unpaid {
+      align-self: stretch;
+      justify-content: center;
+      gap: 2px;
+      border-radius: 0 16px 16px 0;
+      background: #EDEDED;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+  }
+
+  &__label {
+    color: $smallText;
+    text-align: center;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+  }
+
+  &__value {
+    color: $Title_Dark;
+    text-align: center;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__divider {
+    height: 1px;
+    align-self: stretch;
+
+    &--additional {
+      background: #BDBDBD;
+    }
+
+    &--unpaid {
+      background: #B0B0B0;
+    }
+  }
+}
