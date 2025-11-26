@@ -1,0 +1,142 @@
+@use 'variables'as *;
+
+.item.competition-card {
+  display: flex;
+  width: 100%;
+  padding-bottom: 27px;
+  flex-direction: column;
+  border-radius: 16px;
+  border: 1px solid $cardBorderColor;
+  background: #FFF;
+  box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.12);
+  box-sizing: border-box;
+
+  &:hover {
+    border-color: $primaryColor2;
+    outline: 1px solid $primaryColor2;
+    box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.50);
+    .competition-title{
+      color: $primaryColor2;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .item__img {
+    height: 200px;
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .item__body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .competition-status {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &__badges {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .status-text {
+        color: $primaryColor2;
+        text-align: center;
+        font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: normal;
+      }
+
+      .status-divider {
+        width: 1px;
+        height: 10px;
+        background: #BDBDBD;
+      }
+    }
+
+    &__notice {
+      color: $primaryColor;
+      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  .competition-title {
+    color: $Title_Dark;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .competition-divider {
+    width: 100%;
+    height: 1px;
+    background: $cardBorderColor;
+  }
+
+  .competition-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &__row {
+      display: flex;
+      gap: 8px;
+    }
+
+    &__label {
+      color: $Title_Dark;
+      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: normal;
+      flex-shrink: 0;
+    }
+
+    &__value {
+      color: $Title_Dark;
+      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    &__tags {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-wrap: wrap;
+      flex: 1;
+
+      .tag-item {
+        color: $Title_Dark;
+        font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .tag-divider {
+        width: 1px;
+        height: 8px;
+        background: #BDBDBD;
+      }
+    }
+  }
+}

@@ -7783,117 +7783,127 @@ button.btn-add:hover {
   gap: 24px;
   margin-top: 24px;
 }
-.eva-list-current .eva-list__card .content-wrap .list-wrap .item {
-  border: 1px solid #E4E4E4;
+
+.item.competition-card {
+  display: flex;
+  width: 100%;
+  padding-bottom: 27px;
+  flex-direction: column;
   border-radius: 16px;
+  border: 1px solid #E4E4E4;
+  background: #FFF;
+  box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.12);
+  box-sizing: border-box;
+}
+.item.competition-card:hover {
+  border-color: #4D24C3;
+  outline: 1px solid #4D24C3;
+  box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.5);
+}
+.item.competition-card:hover .competition-title {
+  color: #4D24C3;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.item.competition-card .item__img {
+  height: 200px;
+  border-radius: 16px 16px 0 0;
   overflow: hidden;
 }
-.eva-list-current .eva-list__card .content-wrap .list-wrap .item__img {
-  position: relative;
-  height: 260px;
-}
-.eva-list-current .eva-list__card .content-wrap .list-wrap .item__img > img {
+.item.competition-card .item__img img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.eva-list-current .eva-list__card .content-wrap .list-wrap .item__img .badge-list {
-  position: absolute;
-  left: 24px;
-  top: 24px;
-  display: flex;
-  gap: 8px;
-}
-.eva-list-current .eva-list__card .content-wrap .list-wrap .item__img .badge-list .badge {
-  display: inline-flex;
-  height: 22px;
-  gap: 4px;
-  align-items: center;
-  padding: 4px;
-  font-size: 12px;
-  font-weight: 700;
-  color: #484848;
-  background-color: var(--normal-gray);
-  border-radius: 4px;
-}
-.eva-list-current .eva-list__card .content-wrap .list-wrap .item__img .badge-list .badge.eva-before {
-  color: #A68FEB;
-}
-.eva-list-current .eva-list__card .content-wrap .list-wrap .item__img .badge-list .badge.eva-now {
-  color: #7A53EC;
-}
-.eva-list-current .eva-list__card .content-wrap .list-wrap .item__body {
+.item.competition-card .item__body {
   padding: 24px;
-  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
-.eva-list-current .eva-list__card .content-wrap .list-wrap .item__title {
-  font-size: 24px;
-  color: #0A0A0A;
+.item.competition-card .competition-status {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.item.competition-card .competition-status__badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.item.competition-card .competition-status__badges .status-text {
+  color: #4D24C3;
+  text-align: center;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 1.3;
-  word-break: keep-all;
+  line-height: normal;
 }
-.eva-list-current .eva-list__card .content-wrap .list-wrap .item__desc {
-  font-size: 14px;
-  color: #484848;
-  line-height: 1.5;
-  margin: 12px 0;
+.item.competition-card .competition-status__badges .status-divider {
+  width: 1px;
+  height: 10px;
+  background: #BDBDBD;
 }
-.eva-list-current .eva-list__card .content-wrap .list-wrap .item__date {
+.item.competition-card .competition-status__notice {
+  color: #7A53EC;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 12px;
-  color: #919191;
-  color: #484848;
-  margin-bottom: 12px;
+  font-weight: 400;
+  line-height: normal;
 }
-.eva-list-current .eva-list__card .content-wrap .list-wrap .item__summary {
+.item.competition-card .competition-title {
+  color: #0A0A0A;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: normal;
+}
+.item.competition-card .competition-divider {
+  width: 100%;
+  height: 1px;
+  background: #E4E4E4;
+}
+.item.competition-card .competition-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.item.competition-card .competition-info__row {
   display: flex;
   gap: 8px;
-  justify-content: space-between;
 }
-.eva-list-current .eva-list__card .content-wrap .list-wrap .item__summary .box {
-  flex: 1 1 auto;
-  background-color: #F1EEFB;
-  border-radius: 4px;
-  padding: 12px;
-  text-align: center;
+.item.competition-card .competition-info__label {
+  color: #0A0A0A;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  flex-shrink: 0;
 }
-.eva-list-current .eva-list__card .content-wrap .list-wrap .item__summary_label {
-  color: #8A8A8A;
-  font-size: 14px;
+.item.competition-card .competition-info__value {
+  color: #0A0A0A;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
 }
-.eva-list-current .eva-list__card .content-wrap .list-wrap .item__summary_label em {
-  font-weight: 600;
-  color: #000;
-}
-.eva-list-current .eva-list__card .content-wrap .list-wrap .item__summary_value {
+.item.competition-card .competition-info__tags {
   display: flex;
-  justify-content: center;
-  gap: 6px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #000;
-  margin-top: 6px;
-}
-.eva-list-current .eva-list__card .content-wrap .list-wrap .item__summary_value .progress-bar {
-  margin-top: 2px;
-}
-.eva-list-current .eva-list__card .content-wrap .list-wrap .item__footer {
-  padding: 0 24px 24px;
-}
-.eva-list-current .eva-list__card .content-wrap .list-wrap .item__footer .tag-list {
-  display: flex;
+  align-items: center;
   gap: 4px;
   flex-wrap: wrap;
+  flex: 1;
 }
-.eva-list-current .eva-list__card .content-wrap .list-wrap .item__footer .tag-list .item {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px;
-  background-color: var(--tag-bg);
-  border-radius: 20px;
-  font-size: 12px;
-  color: #919191;
-  border: 0;
-  white-space: nowrap;
+.item.competition-card .competition-info__tags .tag-item {
+  color: #0A0A0A;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+}
+.item.competition-card .competition-info__tags .tag-divider {
+  width: 1px;
+  height: 8px;
+  background: #BDBDBD;
 }
