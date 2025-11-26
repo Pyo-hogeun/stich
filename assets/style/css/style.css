@@ -7408,3 +7408,13 @@ button.btn-add:hover {
   height: 1px;
   background: #E4E4E4;
 }
+
+.refund__label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 24px;
+}
+.refund__label:first-child {
+  margin-top: 0;
+}

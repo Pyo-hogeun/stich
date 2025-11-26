@@ -1,0 +1,11 @@
+.refund{
+  &__label{
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-top: 24px;
+    &:first-child{
+      margin-top: 0;
+    }
+  }
+}
