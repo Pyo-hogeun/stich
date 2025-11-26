@@ -229,6 +229,7 @@ function generateIndex(done) {
     li { list-style: none; }
     .file-item { display:flex; gap: 10px; align-items: center; padding: 6px 8px; border-radius: 10px; border:1px solid transparent; transition: background 0.2s, border-color 0.2s; }
     .file-item:hover { background: #f9fafb; border-color:#e5e7eb; }
+    .file-item.active { background:#eff6ff; border-color:#bfdbfe; }
     a.file-link { text-decoration: none; color: #2563eb; font-weight: 600; flex:1; word-break: break-all; }
     a.file-link:hover { text-decoration: underline; }
     .preview-btn { border:1px solid #d1d5db; background:#fff; color:#111827; border-radius: 8px; padding:6px 10px; cursor:pointer; font-size: 13px; transition: background 0.2s, border-color 0.2s; }
@@ -281,10 +282,27 @@ function generateIndex(done) {
   <script>
     const previewFrame = document.getElementById('previewFrame');
     const previewStatus = document.getElementById('previewStatus');
+    const fileItems = Array.from(document.querySelectorAll('.file-item'));
+
+    const setActiveItem = (element) => {
+      fileItems.forEach((item) => item.classList.remove('active'));
+      if (element) {
+        element.classList.add('active');
+      }
+    };
+
+    document.querySelectorAll('.file-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        setActiveItem(link.closest('.file-item'));
+      });
+    });
+
     document.querySelectorAll('.preview-btn').forEach((btn) => {
       btn.addEventListener('click', (event) => {
         event.preventDefault();
         const url = btn.dataset.preview;
+        const parentItem = btn.closest('.file-item');
+        setActiveItem(parentItem);
         previewFrame.src = url;
         const cleanLabel = url.startsWith('./') ? url.slice(2) : url;
         previewStatus.textContent = cleanLabel;

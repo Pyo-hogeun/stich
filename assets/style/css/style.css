@@ -3883,6 +3883,7 @@ button.btn-add:hover {
 .divider {
   width: 1px;
   height: 16px;
+  border: none;
   background: var(--color-gray-light);
   flex-shrink: 0;
 }
@@ -3891,9 +3892,11 @@ button.btn-add:hover {
   display: block;
   margin: 40px 0 !important;
   border: none;
-  border-top: 1px solid #E4E4E4;
+  height: 1px;
+  border-top: 1px solid var(--color-gray-light); /* 원하는 색상과 스타일 지정 */
 }
 .divider_hr_24 {
+  border-top: 1px solid var(--color-gray-light); /* 원하는 색상과 스타일 지정 */
   margin: 24px 0 !important;
 }
 
@@ -7417,4 +7420,50 @@ button.btn-add:hover {
 }
 .refund__label:first-child {
   margin-top: 0;
+}
+
+.eva-result h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0A0A0A;
+}
+.eva-result .label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0A0A0A;
+  margin-bottom: 8px;
+}
+.eva-result .label:before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background-color: #0A0A0A;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+.eva-result .content {
+  padding-left: 8px;
+  color: #747474;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.eva-result .eva-schedule ul {
+  display: flex;
+  gap: 4px;
+}
+.eva-result .eva-schedule ul li:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  background-image: url("../../images/icon_chevron_right-16.svg");
+  background-repeat: no-repeat;
+  margin-left: 4px;
+}
+.eva-result .eva-schedule ul li:nth-last-of-type(1):after {
+  content: none;
 }
