@@ -237,12 +237,19 @@
             color: $primaryColor;
           }
         }
+        .fc-pink{
+          color: $pointColor1;
+        }
+        .fc-blue{
+          color: $pointColor2;
+        }
       }
     }
   }
   &__filters{
     display: flex;
     align-items: flex-end;
+    flex-wrap: wrap;
     gap: 12px;
     padding-bottom: 24px;
     margin-bottom: 24px;

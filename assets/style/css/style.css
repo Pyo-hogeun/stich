@@ -6322,9 +6322,16 @@ button.btn-add:hover {
   background-color: #F1EEFB;
   color: #7A53EC;
 }
+.mypage-main__history .eva-list .table-component .fc-pink {
+  color: #FF44BF;
+}
+.mypage-main__history .eva-list .table-component .fc-blue {
+  color: #007AFF;
+}
 .mypage-main__filters {
   display: flex;
   align-items: flex-end;
+  flex-wrap: wrap;
   gap: 12px;
   padding-bottom: 24px;
   margin-bottom: 24px;
