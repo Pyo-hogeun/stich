@@ -216,11 +216,12 @@ function generateIndex(done) {
   <link rel="stylesheet" href="${CSS_PATH_FROM_INDEX_PAGE}">
   <style>
     :root { color-scheme: light; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif; padding: 24px; line-height:1.6; background:#f6f8fb; color:#111827; }
-    h1 { margin: 0 0 4px; font-size: 26px; }
-    .page-header { margin-bottom: 20px; border-bottom: 1px solid #e5e7eb; padding-bottom: 12px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif; padding: 15px; line-height:1.6; background:#f6f8fb; color:#111827; }
+    h1 { margin: 0 0 4px; font-size: 16px; }
+    .page-header { margin-bottom: 10px; border-bottom: 1px solid #e5e7eb; padding-bottom: 5px; }
+    
     .meta { color:#6b7280; font-size: 13px; }
-    .layout { --list-width: 20%; display: grid; grid-template-columns: minmax(100px, var(--list-width)) 10px 1fr; gap: 16px; align-items: stretch; height: 83vh}
+    .layout { --list-width: 20%; display: grid; grid-template-columns: minmax(100px, var(--list-width)) 10px 1fr; gap: 16px; align-items: stretch; height: 89vh}
     .list-panel, .preview-panel { background:#fff; border:1px solid #e5e7eb; border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); } .list-panel{ overflow-y: auto;}
     .category { margin-bottom: 18px; }
     .category h2 { margin: 0 0 8px; font-size: 17px; color:#1f2937; }

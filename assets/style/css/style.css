@@ -7116,6 +7116,7 @@ button.btn-add:hover {
 }
 
 .eva-member-add__label {
+  display: inline-block;
   font-size: 14px;
   font-weight: 600;
   color: #0A0A0A;
@@ -7131,6 +7132,11 @@ button.btn-add:hover {
 }
 .eva-member-add__label:nth-of-type(1) {
   margin-top: 0;
+}
+.eva-member-add__sub {
+  color: #919191;
+  font-size: 12px;
+  margin-left: 8px;
 }
 .eva-member-add__list .profile-add__wrapper {
   display: flex;
