@@ -119,7 +119,7 @@
           <div class="mypage-main__tabs_item"><a href="" class="active">이용내역</a></div>
         </div>
 
-        <div class="mypage-main__profile">
+        <div class="mypage-main__history">
           <h2 style="margin-bottom: 16px">이용내역</h2>
           <div class="mypage-main__profile__category">
             <div class="item active">평가현황</div>
@@ -170,49 +170,150 @@
             </div>
           </div>
 
-          <div class="eva-list table-component-wrapper">
-            <table class="table-component">
-              <colgroup>
-              </colgroup>
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>평가명</th>
-                  <th>평가 기간</th>
-                  <th>종료</th>
-                  <th>평가상태</th>
-                  <th>평가대상</th>
-                  <th>평가위원</th>
-                  <th>추가 서비스<br>이용</th>
-                  <th>이용요금</th>
-                  <th>평가대상 파일<br>다운로드</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                <tr>
-                  <td>
-                    <label for="" class="ckb">
-                      <input type="checkbox" />
-                      <span class="ckb__box"></span>
-                    </label>
-                  </td>
-                  <td>콘텐츠 공모전 1차 온라인 평가</td>
-                  <td>
-                    <span class="start">YYYY.MM.DD ~</span>
-                    <span class="end">YYYY.MM.DD</span>
-                  </td>
-                  <td>D-10</td>
-                  <td>평가전</td>
-                  <td>158</td>
-                  <td>1</td>
-                  <td>대상148 / <br>용량120GB</td>
-                  <td>0원</td>
-                  <td>다운로드</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="card">
+            <div class="mypage-main__filters">
+              <div class="filter__item">
+                <div class="filter__label">기간</div>
+                <div class="filter__wrapper">
+                  <div class="input-text-wrapper">
+                    <input data-type="datepicker" id="rangePicker" class="input-text-calendar"
+                      placeholder="검색기간 설정" style="width: 200px">
+                  </div>
+                  <button class="btn border">1주일</button>
+                  <button class="btn border">3개월</button>
+                  <button class="btn border">8개월</button>
+                  <button class="btn border">전체</button>
+                </div>
+              </div>
+              <div class="filter__item">
+                <div class="filter__label">평가상태</div>
+                <div class="filter__wrapper">
+                  <div class="combo" style="width: 150px">
+                    <input type="checkbox" id="combo-toggle" class="combo-toggle" />
+                    <label for="combo-toggle" class="combo-label">전체</label>
+                    <ul class="combo-options">
+                      <li><a href="#" class="selected">전체</a></li>
+                      <li><a href="#">평가 전</a></li>
+                      <li><a href="#">평가 중</a></li>
+                      <li><a href="#">평가 종료</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="filter__item">
+                <div class="filter__label">검색어</div>
+                <div class="filter__wrapper">
+                  <div class="input-text-wrapper" style="width: 200px">
+                    <input id="q" name="q" type="text" class="input-text search" placeholder="평가명,키워드 입력" autocomplete="off">
+                    <button type="button" class="search-btn" aria-label="검색">
+                      <img src="../../assets/images/icon_search.svg" alt="검색">
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <button class="btn filled submit">조회하기</button>
+            </div>
+            <div class="eva-list table-component-wrapper">
+              <div class="table-topper">
+                전체 : <em>17</em>
+
+                <button class="btn border" style="margin-left: 12px">평가내역삭제</button>
+              </div>
+              <table class="table-component">
+                <colgroup>
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>평가명</th>
+                    <th>평가 기간</th>
+                    <th>종료</th>
+                    <th>평가상태</th>
+                    <th>평가대상</th>
+                    <th>평가위원</th>
+                    <th>추가 서비스<br>이용</th>
+                    <th>이용요금</th>
+                    <th>평가대상 파일<br>다운로드</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <label class="ckb">
+                        <input type="checkbox" />
+                        <span class="ckb__box"></span>
+                      </label>
+                    </td>
+                    <td>콘텐츠 공모전 1차 온라인 평가</td>
+                    <td>
+                      <span class="start">YYYY.MM.DD ~</span>
+                      <span class="end">YYYY.MM.DD</span>
+                    </td>
+                    <td>D-10</td>
+                    <td>평가전</td>
+                    <td>158</td>
+                    <td>1</td>
+                    <td>대상148 / <br>용량120GB</td>
+                    <td>0원</td>
+                    <td>
+                      <button class="btn border sm">
+                        다운로드
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="ckb">
+                        <input type="checkbox" />
+                        <span class="ckb__box"></span>
+                      </label>
+                    </td>
+                    <td>콘텐츠 공모전 1차 온라인 평가</td>
+                    <td>
+                      <span class="start">YYYY.MM.DD ~</span>
+                      <span class="end">YYYY.MM.DD</span>
+                    </td>
+                    <td>D-10</td>
+                    <td>평가전</td>
+                    <td>158</td>
+                    <td>1</td>
+                    <td>대상148 / <br>용량120GB</td>
+                    <td>0원</td>
+                    <td>
+                      <button class="btn border sm">
+                        다운로드
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="ckb">
+                        <input type="checkbox" />
+                        <span class="ckb__box"></span>
+                      </label>
+                    </td>
+                    <td>콘텐츠 공모전 1차 온라인 평가</td>
+                    <td>
+                      <span class="start">YYYY.MM.DD ~</span>
+                      <span class="end">YYYY.MM.DD</span>
+                    </td>
+                    <td>D-10</td>
+                    <td>평가전</td>
+                    <td>158</td>
+                    <td>1</td>
+                    <td>대상148 / <br>용량120GB</td>
+                    <td>0원</td>
+                    <td>
+                      <button class="btn border sm" disabled>
+                        다운로드
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
+
 
         </div>
 

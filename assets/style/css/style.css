@@ -686,6 +686,10 @@ h2 {
 .btn:disabled {
   cursor: default;
 }
+.btn.sm {
+  height: 20px;
+  padding: 0 8px;
+}
 .btn.border {
   border: 1px solid #3A3A3A;
   border-radius: 8px;
@@ -702,6 +706,9 @@ h2 {
 .btn.border:disabled {
   opacity: 0.3;
   color: #0A0A0A;
+}
+.btn.border.sm {
+  border-radius: 6px;
 }
 .btn.submit {
   height: 44px;
@@ -6290,6 +6297,48 @@ button.btn-add:hover {
   color: #FFF;
   border-color: #7A53EC;
   cursor: de;
+}
+.mypage-main__history .card {
+  padding: 24px;
+  margin-top: 24px;
+}
+.mypage-main__history .table-topper {
+  font-size: 14px;
+  color: #747474;
+  margin-bottom: 16px;
+}
+.mypage-main__history .table-topper em {
+  color: #7A53EC;
+  font-weight: 700;
+}
+.mypage-main__history .eva-list .start, .mypage-main__history .eva-list .end {
+  display: block;
+  text-align: left;
+}
+.mypage-main__filters {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #E4E4E4;
+}
+.mypage-main__filters .filter__item:first-child {
+  flex: 1 1 auto;
+}
+.mypage-main__filters .filter__item:first-child .input-text-wrapper {
+  width: auto;
+}
+.mypage-main__filters .filter__label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0A0A0A;
+  margin-bottom: 8px;
+}
+.mypage-main__filters .filter__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .profile-edit .profile__wrapper {
