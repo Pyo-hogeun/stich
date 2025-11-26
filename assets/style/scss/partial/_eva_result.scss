@@ -191,5 +191,47 @@
       }
     }
   }
+  .total-opinion{
+    &__label{
+      font-size: 16px;
+      font-weight: 700;
+      color: $Title_Dark;
+      &:before{
+        content: '';
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        background-color: $Title_Dark;
+        border-radius: 50%;
+        vertical-align: middle;
+        margin-right: 4px;
+      }
+    }
+    &__content{
+      padding-left: 8px;
+      margin-top: 8px;
+      font-size: 14px;
+      color: $normalText;
+      line-height: 1.5;
+    }
+    &__btn-wrap{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 24px;
+      .start, .center, .end{
+        display: flex;
+        flex-basis: 30%;
+      }
+      .center{
+        justify-content: center;
+      }
+      .end{
+        justify-content: flex-end;
+      }
+      .btn + .btn{
+        margin-left: 16px;
+      }
+    }
+  }
 
 }

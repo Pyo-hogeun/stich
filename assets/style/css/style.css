@@ -7608,6 +7608,46 @@ button.btn-add:hover {
 .eva-result .eva-detail-score .eva-target__score-list .item .progress-bar .bar {
   background-color: #7A53EC;
 }
+.eva-result .total-opinion__label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0A0A0A;
+}
+.eva-result .total-opinion__label:before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background-color: #0A0A0A;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+.eva-result .total-opinion__content {
+  padding-left: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #747474;
+  line-height: 1.5;
+}
+.eva-result .total-opinion__btn-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+.eva-result .total-opinion__btn-wrap .start, .eva-result .total-opinion__btn-wrap .center, .eva-result .total-opinion__btn-wrap .end {
+  display: flex;
+  flex-basis: 30%;
+}
+.eva-result .total-opinion__btn-wrap .center {
+  justify-content: center;
+}
+.eva-result .total-opinion__btn-wrap .end {
+  justify-content: flex-end;
+}
+.eva-result .total-opinion__btn-wrap .btn + .btn {
+  margin-left: 16px;
+}
 
 .category-top-10 {
   display: grid;
