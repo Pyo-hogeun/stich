@@ -322,6 +322,24 @@
   </main>
 
   <script src="../../assets/dist/js/bundle.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var rows = document.querySelectorAll('.eva-list .table-component tbody tr');
+
+      rows.forEach(function (row) {
+        var checkbox = row.querySelector('input[type="checkbox"]');
+
+        if (!checkbox) return;
+
+        var updateRowState = function () {
+          row.classList.toggle('is-selected', checkbox.checked);
+        };
+
+        checkbox.addEventListener('change', updateRowState);
+        updateRowState();
+      });
+    });
+  </script>
 </body>
 
 </html>

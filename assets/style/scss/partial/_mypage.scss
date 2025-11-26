@@ -227,6 +227,13 @@
         display: block;
         text-align: left;
       }
+      .table-component{
+        tbody{
+          tr.is-selected{
+            background-color: #F5F8FF;
+          }
+        }
+      }
     }
   }
   &__filters{
