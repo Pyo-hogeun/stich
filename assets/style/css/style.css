@@ -7355,3 +7355,56 @@ button.btn-add:hover {
 .usage-summary-card__divider--unpaid {
   background: #B0B0B0;
 }
+
+.receipt-details {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.receipt-details__section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.receipt-details__section-title {
+  color: #0A0A0A;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: normal;
+}
+.receipt-details__info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.receipt-details__label {
+  color: #747474;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+.receipt-details__value {
+  color: #0A0A0A;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: right;
+}
+.receipt-details__value--success {
+  color: #34A66F;
+}
+.receipt-details__value--bold {
+  font-weight: 700;
+}
+.receipt-details__value--primary {
+  color: #7A53EC;
+  font-size: 24px;
+  line-height: normal;
+}
+.receipt-details__divider {
+  height: 1px;
+  background: #E4E4E4;
+}

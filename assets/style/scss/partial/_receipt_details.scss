@@ -1,0 +1,63 @@
+@use 'variables' as *;
+
+.receipt-details {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__section-title {
+    color: $Title_Dark;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__label {
+    color: $normalText;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__value {
+    color: $Title_Dark;
+    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: right;
+
+    &--success {
+      color: #34A66F;
+    }
+
+    &--bold {
+      font-weight: 700;
+    }
+
+    &--primary {
+      color: $primaryColor;
+      font-size: 24px;
+      line-height: normal;
+    }
+  }
+
+  &__divider {
+    height: 1px;
+    background: $cardBorderColor;
+  }
+}
