@@ -7763,3 +7763,137 @@ button.btn-add:hover {
   font-weight: 400;
   line-height: 1.5;
 }
+
+.eva-list-current .eva-list__card {
+  padding: 24px;
+  margin-top: 40px;
+}
+.eva-list-current .eva-list__card .content-wrap__topper {
+  display: flex;
+  justify-content: space-between;
+}
+.eva-list-current .eva-list__card .content-wrap__topper .start {
+  display: flex;
+  gap: 12px;
+  flex: 1 1 auto;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap .item {
+  border: 1px solid #E4E4E4;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap .item__img {
+  position: relative;
+  height: 260px;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap .item__img > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap .item__img .badge-list {
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  display: flex;
+  gap: 8px;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap .item__img .badge-list .badge {
+  display: inline-flex;
+  height: 22px;
+  gap: 4px;
+  align-items: center;
+  padding: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #484848;
+  background-color: var(--normal-gray);
+  border-radius: 4px;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap .item__img .badge-list .badge.eva-before {
+  color: #A68FEB;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap .item__img .badge-list .badge.eva-now {
+  color: #7A53EC;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap .item__body {
+  padding: 24px;
+  min-height: 300px;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap .item__title {
+  font-size: 24px;
+  color: #0A0A0A;
+  font-weight: 700;
+  line-height: 1.3;
+  word-break: keep-all;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap .item__desc {
+  font-size: 14px;
+  color: #484848;
+  line-height: 1.5;
+  margin: 12px 0;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap .item__date {
+  font-size: 12px;
+  color: #919191;
+  color: #484848;
+  margin-bottom: 12px;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap .item__summary {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap .item__summary .box {
+  flex: 1 1 auto;
+  background-color: #F1EEFB;
+  border-radius: 4px;
+  padding: 12px;
+  text-align: center;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap .item__summary_label {
+  color: #8A8A8A;
+  font-size: 14px;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap .item__summary_label em {
+  font-weight: 600;
+  color: #000;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap .item__summary_value {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  margin-top: 6px;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap .item__summary_value .progress-bar {
+  margin-top: 2px;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap .item__footer {
+  padding: 0 24px 24px;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap .item__footer .tag-list {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.eva-list-current .eva-list__card .content-wrap .list-wrap .item__footer .tag-list .item {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px;
+  background-color: var(--tag-bg);
+  border-radius: 20px;
+  font-size: 12px;
+  color: #919191;
+  border: 0;
+  white-space: nowrap;
+}
