@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table Component - STICH</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+</head>
+
+<body>
+  <main class="main-content" style="padding: 40px; max-width: 960px; margin: 0 auto;">
+    <h1 style="margin-bottom: 24px; font-size: 24px; font-weight: 600;">Table Component</h1>
+
+    <div class="table-component-wrapper">
+      <table class="table-component">
+        <colgroup>
+          <col style="width: 40%">
+          <col style="width: 20%">
+          <col style="width: 20%">
+          <col style="width: 20%">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>이메일</th>
+            <th>전송 가능 횟수</th>
+            <th>평가 결과 재전송</th>
+            <th>열람 권한</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>example_01@stich.com</td>
+            <td>(1/3)</td>
+            <td><button class="btn underline underline__icon"><img src="../../assets/images/icon_send.svg" alt="" class="icon"> 재전송하기</button></td>
+            <td><button class="btn underline underline__icon"><img src="../../assets/images/icon_delete.svg" alt="" class="icon"> 삭제</button></td>
+          </tr>
+          <tr>
+            <td>example_02@stich.com</td>
+            <td>(2/3)</td>
+            <td><button class="btn underline underline__icon"><img src="../../assets/images/icon_send.svg" alt="" class="icon"> 재전송하기</button></td>
+            <td><button class="btn underline underline__icon"><img src="../../assets/images/icon_delete.svg" alt="" class="icon"> 삭제</button></td>
+          </tr>
+          <tr class="table-component__row--disabled">
+            <td>example_03@stich.com</td>
+            <td>(3/3)</td>
+            <td><button disabled class="btn underline underline__icon"><img src="../../assets/images/icon_send.svg" alt="" class="icon"> 재전송하기</button></td>
+            <td><button disabled class="btn underline underline__icon"><img src="../../assets/images/icon_delete.svg" alt="" class="icon"> 삭제</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+
+</html>
