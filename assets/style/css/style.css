@@ -8721,3 +8721,81 @@ button.btn-add:hover {
   background-color: #F5F5F5;
   color: #919191;
 }
+
+.cs-notice__tabs {
+  display: inline-flex;
+  justify-content: center;
+  border-bottom: 1px solid #B0B0B0;
+}
+.cs-notice__tabs_item a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-size: 18px;
+  padding: 0 16px;
+  height: 40px;
+}
+.cs-notice__tabs_item a.active {
+  color: #4D24C3;
+  font-weight: 700;
+}
+.cs-notice__tabs_item a.active:after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background-color: #4D24C3;
+}
+.cs-notice__list .topper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+.cs-notice__list .topper .total {
+  font-size: 12px;
+  color: #747474;
+}
+.cs-notice__list .topper .total em {
+  font-weight: 700;
+  color: #000;
+}
+.cs-notice__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 16px;
+  border-top: 1px solid #E4E4E4;
+  gap: 16px;
+}
+.cs-notice__item .title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0A0A0A;
+  word-break: keep-all;
+}
+.cs-notice__item .title.new:after {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-image: url("../../images/icon_new.svg");
+  background-repeat: no-repeat;
+}
+.cs-notice__item .date {
+  font-size: 12px;
+  color: #919191;
+  white-space: nowrap;
+}
+.cs-notice .no-data {
+  padding: 100px 0;
+  text-align: center;
+}
+.cs-notice .no-data .message {
+  margin-top: 40px;
+  font-size: 24px;
+  color: #7A53EC;
+}

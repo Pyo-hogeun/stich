@@ -7,6 +7,9 @@
   <title>STICH</title>
   <link rel="stylesheet" href="../../assets/style/css/style.css">
   <link rel="stylesheet" href="../../assets/dist/js/bundle.css">
+  <style>
+    
+  </style>
 
 </head>
 
@@ -98,99 +101,64 @@
 
   <main class="main-container">
     <div class="content-wrapper">
-      <div class="mypage-main">
-      </div>
     </div>
   </main>
 
   <div class="layer-dimmed" role="dialog" aria-modal="true">
-    <div class="layer-popup address-search">
+    <div class="layer-popup cs-notice">
       <div class="layer-popup__header">
-        <h3 class="layer-popup__title">주소 검색하기</h3>
+        <h3 class="layer-popup__title">고객지원</h3>
         <button type="button" class="layer-popup__close" aria-label="레이어 닫기">
           <img src="../../assets/images/icon_close_popup.svg" alt="">
         </button>
       </div>
       <div class="layer-popup__body">
-        <div class="input-label">주소 입력하기</div>
-        <div class="input-text-wrapper__wide" style="margin-bottom: 16px">
-          <input id="q" name="q" type="text" class="input-text search" placeholder="주소 검색"
-            autocomplete="off">
-          <button type="button" class="search-btn" aria-label="검색">
-            <img src="../../assets/images/icon_search.svg" alt="검색">
-          </button>
+        <div class="cs-notice__tabs">
+          <div class="cs-notice__tabs_item"><a href="" class="active">공지사항</a></div>
+          <div class="cs-notice__tabs_item"><a href="">FAQ</a></div>
+          <div class="cs-notice__tabs_item"><a href="">문의하기</a></div>
+        </div> 
+
+        <div class="cs-notice__list">
+          <div class="topper">
+            <div class="total">
+              총 갯수: <em>108</em>
+            </div>
+            <div class="input-text-wrapper" style="width: 200px">
+              <input id="q" name="q" type="text" class="input-text search" placeholder="주소 검색" autocomplete="off">
+              <button type="button" class="search-btn" aria-label="검색">
+                <img src="../../assets/images/icon_search.svg" alt="검색">
+              </button>
+            </div>
+          </div>
+
+          <div class="cs-notice__item">
+            <a href="" class="title new">
+              평가 플랫폼 서비스 운영 관련 공지사항입니다.
+            </a>
+            <div class="date">2023. 12. 31</div>
+          </div>
+          <div class="cs-notice__item">
+            <a href="" class="title new">
+              평가 플랫폼 서비스 운영 관련 공지사항입니다.
+            </a>
+            <div class="date">2023. 12. 31</div>
+          </div>
+          <div class="cs-notice__item">
+            <a href="" class="title">
+              평가 플랫폼 서비스 운영 관련 공지사항입니다.
+            </a>
+            <div class="date">2023. 12. 31</div>
+          </div>
+          <div class="cs-notice__item">
+            <a href="" class="title">
+              평가 플랫폼 서비스 3차 업데이트와 관련한 서비스 이용중지 안내입니다. 평가 플랫폼 서비스 3차 업데이트와 관련한 서비스 이용중지 안내입니다.
+            </a>
+            <div class="date">2023. 12. 31</div>
+          </div>
+
         </div>
 
-        <!-- 검색전 -->
-        <div class="input-label">주소를 검색해 주세요.</div>
-        <p class="sub-text">도로명(예 : 디지털로 9길 41)또는 건물명(예 : 삼성IT해링턴타워), 지번(가산동 60-48)로 검색해 보세요.</p>
-
-        <br>
-        
-        <!-- 결과없는경우 -->
-        <div class="input-label">검색 결과가 없습니다.</div>
-        <p class="sub-text">검색어가 잘못 작성되었거나 정확한 주소인지 다시 한번 확인해 주세요.<br>도로명(예 : 디지털로 9길 41)또는 건물명(예 : 삼성IT해링턴타워), 지번(가산동 60-48)로 검색해 보세요.</p>
-
-        <div class="title-h3">주소를 선택해 주세요.</div>
-        <div class="address-list">
-          <div class="address-list__item">
-            <div class="item">
-              <div class="mail-number">12345</div>
-              <div class="address">
-                <span class="badge-new">도로명</span>
-                서울특별시 금천구 디지털로 9길 41 (가산동)
-              </div>
-              <div class="address">
-                <span class="badge-old">지번</span>
-                서울특별시 금천구 가산동 60-48
-              </div>
-            </div>
-            <div class="item__btn">
-              <button class="btn underline underline__icon">
-                <img src="../../assets/images/icon_check_select_16.svg" alt="" class="icon">
-                선택하기
-              </button>
-            </div>
-          </div>
-          <div class="address-list__item">
-            <div class="item">
-              <div class="mail-number">12345</div>
-              <div class="address">
-                <span class="badge-new">도로명</span>
-                서울특별시 금천구 디지털로 9길 41 (가산동)
-              </div>
-              <div class="address">
-                <span class="badge-old">지번</span>
-                서울특별시 금천구 가산동 60-48
-              </div>
-            </div>
-            <div class="item__btn">
-              <button class="btn underline underline__icon">
-                <img src="../../assets/images/icon_check_select_16.svg" alt="" class="icon">
-                선택하기
-              </button>
-            </div>
-          </div>
-          <div class="address-list__item">
-            <div class="item">
-              <div class="mail-number">12345</div>
-              <div class="address">
-                <span class="badge-new">도로명</span>
-                서울특별시 금천구 디지털로 9길 41 (가산동)
-              </div>
-              <div class="address">
-                <span class="badge-old">지번</span>
-                서울특별시 금천구 가산동 60-48
-              </div>
-            </div>
-            <div class="item__btn">
-              <button class="btn underline underline__icon">
-                <img src="../../assets/images/icon_check_select_16.svg" alt="" class="icon">
-                선택하기
-              </button>
-            </div>
-          </div>
-        </div>
 
         <div class="pagination-container">
           <nav class="pagination" aria-label="페이지네이션">
@@ -240,13 +208,13 @@
             </div>
           </nav>
         </div>
-
       </div>
       <div class="layer-popup__footer">
         <div class="layer-popup__footer-left">
         </div>
         <div class="layer-popup__footer-center">
-          <button type="button" class="btn border submit">
+          <button type="button" class="btn border border__icon submit">
+            <img src="../../assets/images/icon_close_16.svg" alt="" class="icon">
             닫기
           </button>
         </div>
