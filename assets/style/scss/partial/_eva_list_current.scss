@@ -18,9 +18,15 @@
         }
         .list-wrap{
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 24px;
           margin-top: 24px;
+          &.type-card{
+            gap: 24px;
+            grid-template-columns: repeat(2, 1fr);
+          }
+          &.type-list{
+            grid-template-columns: 1fr;
+
+          }
         }
       }
     }
