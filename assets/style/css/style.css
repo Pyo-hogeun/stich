@@ -482,6 +482,18 @@ img[src$=".svg"] {
     padding: 20px 16px;
   }
 }
+header.logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  text-align: center;
+  padding: 10px 0;
+}
+
 .progress-bar {
   display: block;
   position: relative;
@@ -521,7 +533,7 @@ body {
   padding-top: 80px;
 }
 .main-container .content-topper {
-  display: block;
+  display: flex;
   gap: 12px;
 }
 .main-container .content-topper .btn-nav {
@@ -539,6 +551,11 @@ h2 {
   font-size: 24px;
   font-weight: 700;
   color: #0A0A0A;
+}
+h2.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .content-wrapper {
@@ -745,6 +762,10 @@ h2 {
 .btn.underline__icon .icon {
   position: absolute;
   left: -20px;
+}
+.btn.underline.sm {
+  font-size: 12px;
+  font-weight: 400;
 }
 .btn-primary {
   background-color: #7A53EC;
@@ -8558,4 +8579,30 @@ button.btn-add:hover {
   margin-top: 93px;
   height: -moz-fit-content;
   height: fit-content;
+}
+
+.regist-form {
+  padding: 24px;
+}
+.regist-form h3 {
+  text-align: center;
+  font-size: 32px;
+}
+.regist-form__term-agree.gray-box {
+  background-color: #F1EEFB;
+  border-radius: 8px;
+  padding: 24px;
+}
+.regist-form__term-agree .label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0A0A0A;
+  margin-bottom: 16px;
+}
+.regist-form__term-agree .label .btn {
+  margin-left: 12px;
+}
+.regist-form__bottom {
+  margin-top: 24px;
+  text-align: center;
 }

@@ -5,7 +5,7 @@ body{
 .main-container{
   padding-top: $gnbHeight;
   .content-topper{
-    display: block;
+    display: flex;
     gap: 12px;
     .btn-nav{
       margin-right: 12px;
@@ -23,6 +23,11 @@ h2{
   // line-height: 1.4;
   font-weight: 700;
   color: $Title_Dark;
+  &.ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 .content-wrapper {
   max-width: 1000px;

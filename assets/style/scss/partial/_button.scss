@@ -76,6 +76,10 @@
         left: -20px;
       }
     }
+    &.sm{
+      font-size: 12px;
+      font-weight: 400;
+    }
   }
   &-primary{
     background-color: $primaryColor;
