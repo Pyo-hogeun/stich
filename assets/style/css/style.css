@@ -8659,3 +8659,61 @@ button.btn-add:hover {
   height: 44px;
   right: 0;
 }
+
+.address-search .input-label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0A0A0A;
+}
+.address-search .title-h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0A0A0A;
+  margin-top: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #5E5E5E;
+}
+.address-search .address-list__item {
+  display: flex;
+  padding: 24px 0;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #E4E4E4;
+}
+.address-search .address-list__item:nth-last-of-type(1) {
+  border-bottom: 1px solid #5e5e5e;
+}
+.address-search .address-list__item .item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.address-search .address-list__item .item .mail-number {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0A0A0A;
+}
+.address-search .address-list__item .item .address {
+  font-size: 14px;
+  color: #747474;
+}
+.address-search .address-list__item .item .address [class*=badge] {
+  display: inline-flex;
+  font-size: 12px;
+  height: 24px;
+  width: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  border-radius: 30px;
+}
+.address-search .address-list__item .item .address .badge-new {
+  background-color: #007AFF;
+  color: #FFF;
+}
+.address-search .address-list__item .item .address .badge-old {
+  background-color: #F5F5F5;
+  color: #919191;
+}
