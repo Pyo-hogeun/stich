@@ -51,7 +51,8 @@
       display: flex;
       gap: 24px;
 
-      .thumbnail {
+      &__thumbnail {
+        flex: 0 0 200px;
         width: 200px;
         height: 200px;
         border-radius: 12px;
@@ -64,38 +65,70 @@
         }
       }
 
-      .gray-box {
+      &__box {
         flex: 1 1 auto;
-        padding: 20px 16px;
-        border-radius: 12px;
-        background-color: $bgPrimaryLight;
 
         ul {
           li {
             display: flex;
-            gap: 16px;
+            gap: 8px;
             margin-bottom: 18px;
+
 
             &:last-child {
               margin-bottom: 0;
             }
 
             .label {
-              color: #747474;
-              font-size: 14px;
+              color: $Title_Dark;
+              font-size: 16px;
+              font-weight: 700;
+              width: 60px;
+              white-space: nowrap;
             }
 
             .data {
-              font-size: 14px;
-              font-weight: 700;
-
+              font-size: 16px;
+              color: $Title_Dark;
+              .notice{
+                font-size: 12px;
+                color: $primaryColor;
+                margin-left: 8px;
+              }
               .period {
                 color: $normalText;
                 margin-bottom: 4px;
               }
+              .thumbnail{
+                width: 45px;
+                height: 45px;
+                img{
+                  width: 100%;
+                  height: 100%;
+                  object-fit: contain;
+                }
+              }
+              
             }
 
             .btn-wrap {}
+          }
+        }
+        .tag-list{
+          display: flex;
+          gap: 8px;
+          flex-wrap: wrap;
+          .item{
+            display: inline-flex;
+            align-items: center;
+            padding: 0 8px;
+            background-color: var(--tag-bg);
+            border-radius: 20px;
+            font-size: 12px;
+            color: $smallText;
+            border: 0;
+            white-space: nowrap;
+            height: 24px;
           }
         }
       }
@@ -166,6 +199,10 @@
       display: flex;
       align-items: center;
     }
+  }
+  .content-footer{
+    text-align: right;
+    margin-top: 24px;
   }
 }
 

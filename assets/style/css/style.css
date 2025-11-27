@@ -8132,43 +8132,76 @@ button.btn-add:hover {
   display: flex;
   gap: 24px;
 }
-.regist-detail .content-body .summary .thumbnail {
+.regist-detail .content-body .summary__thumbnail {
+  flex: 0 0 200px;
   width: 200px;
   height: 200px;
   border-radius: 12px;
   overflow: hidden;
 }
-.regist-detail .content-body .summary .thumbnail img {
+.regist-detail .content-body .summary__thumbnail img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.regist-detail .content-body .summary .gray-box {
+.regist-detail .content-body .summary__box {
   flex: 1 1 auto;
-  padding: 20px 16px;
-  border-radius: 12px;
-  background-color: #F1EEFB;
 }
-.regist-detail .content-body .summary .gray-box ul li {
+.regist-detail .content-body .summary__box ul li {
   display: flex;
-  gap: 16px;
+  gap: 8px;
   margin-bottom: 18px;
 }
-.regist-detail .content-body .summary .gray-box ul li:last-child {
+.regist-detail .content-body .summary__box ul li:last-child {
   margin-bottom: 0;
 }
-.regist-detail .content-body .summary .gray-box ul li .label {
-  color: #747474;
-  font-size: 14px;
-}
-.regist-detail .content-body .summary .gray-box ul li .data {
-  font-size: 14px;
+.regist-detail .content-body .summary__box ul li .label {
+  color: #0A0A0A;
+  font-size: 16px;
   font-weight: 700;
+  width: 60px;
+  white-space: nowrap;
 }
-.regist-detail .content-body .summary .gray-box ul li .data .period {
+.regist-detail .content-body .summary__box ul li .data {
+  font-size: 16px;
+  color: #0A0A0A;
+}
+.regist-detail .content-body .summary__box ul li .data .notice {
+  font-size: 12px;
+  color: #7A53EC;
+  margin-left: 8px;
+}
+.regist-detail .content-body .summary__box ul li .data .period {
   color: #747474;
   margin-bottom: 4px;
+}
+.regist-detail .content-body .summary__box ul li .data .thumbnail {
+  width: 45px;
+  height: 45px;
+}
+.regist-detail .content-body .summary__box ul li .data .thumbnail img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.regist-detail .content-body .summary__box .tag-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.regist-detail .content-body .summary__box .tag-list .item {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 8px;
+  background-color: var(--tag-bg);
+  border-radius: 20px;
+  font-size: 12px;
+  color: #919191;
+  border: 0;
+  white-space: nowrap;
+  height: 24px;
 }
 .regist-detail .content-body .summary .status {
   width: 300px;
@@ -8224,6 +8257,10 @@ button.btn-add:hover {
 .regist-detail .notice-box .btn-wrap {
   display: flex;
   align-items: center;
+}
+.regist-detail .content-footer {
+  text-align: right;
+  margin-top: 24px;
 }
 
 .eva-field {
