@@ -1,11 +1,14 @@
 @use 'variables' as *;
 .address-search{
   .input-label{
-    // margin-top: 24px;
     margin-bottom: 8px;
     font-size: 14px;
     font-weight: 600;
     color: $Title_Dark;
+  }
+  .sub-text{
+    font-size: 12px;
+    color: $normalText;
   }
   .title-h3{
     font-size: 18px;

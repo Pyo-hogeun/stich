@@ -8666,6 +8666,10 @@ button.btn-add:hover {
   font-weight: 600;
   color: #0A0A0A;
 }
+.address-search .sub-text {
+  font-size: 12px;
+  color: #747474;
+}
 .address-search .title-h3 {
   font-size: 18px;
   font-weight: 700;
