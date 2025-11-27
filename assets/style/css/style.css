@@ -8650,6 +8650,12 @@ button.btn-add:hover {
   color: #747474;
 }
 .regist-result__footer {
+  position: relative;
   margin-top: 40px;
   text-align: center;
+}
+.regist-result__footer .retry {
+  position: absolute;
+  height: 44px;
+  right: 0;
 }

@@ -40,7 +40,13 @@
     }
   }
   &__footer{
+    position: relative;
     margin-top: 40px;
     text-align: center;
+    .retry{
+      position: absolute;
+      height: 44px;
+      right: 0;
+    }
   }
 }
