@@ -8959,7 +8959,7 @@ button.btn-add:hover {
   font-size: 16px;
   color: #0A0A0A;
 }
-.cs-faq__category a:hover {
+.cs-faq__category a:hover, .cs-faq__category a.active {
   color: #7A53EC;
   font-weight: 700;
 }
@@ -9017,6 +9017,7 @@ button.btn-add:hover {
 .cs-faq__accordion .item__toggle .icon {
   display: inline-flex;
   transition: transform 0.2s ease;
+  transform: rotate(180deg);
 }
 .cs-faq__accordion .item__content {
   font-size: 14px;
@@ -9026,7 +9027,7 @@ button.btn-add:hover {
   display: none;
 }
 .cs-faq__accordion .item.open .item__toggle .icon {
-  transform: rotate(180deg);
+  transform: rotate(0deg);
 }
 .cs-faq__accordion .item.open .item__content {
   display: block;

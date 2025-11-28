@@ -13,7 +13,7 @@
       height: 100%;
       font-size: 16px;
       color: $Title_Dark;
-      &:hover{
+      &:hover, &.active{
         color: $primaryColor;
         font-weight: 700;
       }
@@ -74,6 +74,7 @@
         .icon{
           display: inline-flex;
           transition: transform 0.2s ease;
+          transform: rotate(180deg);
         }
       }
       &__content{
@@ -86,7 +87,7 @@
       &.open{
         .item__toggle{
           .icon{
-            transform: rotate(180deg);
+            transform: rotate(0deg);
           }
         }
         .item__content{
