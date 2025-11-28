@@ -1,6 +1,7 @@
 @use 'variables' as *;
 .cs-faq{
   &__category{
+    position: relative;
     display: flex;
     justify-content: space-around;
     border: 1px solid $cardBorderColor;
@@ -27,6 +28,23 @@
       border: 0;
       background-color: transparent;
       width: 48px;
+      color: $normalText;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      &.on{
+        background-color: $primaryColor;
+        color: #FFF;
+      }
+    }
+    .btn-etc + .combo-options{
+      width: 150px;
+      left: unset;
+      right: 0;
+    }
+    .btn-etc.on + .combo-options{
+      max-height: 200px;
+      opacity: 1;
+      transform: translateY(0);
     }
   }
   &__list{

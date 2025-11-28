@@ -129,11 +129,15 @@
           </div>
           <button type="button" class="btn-etc">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="22" y="10" width="4" height="4" rx="2" transform="rotate(90 22 10)" fill="#747474" />
-              <rect x="14" y="10" width="4" height="4" rx="2" transform="rotate(90 14 10)" fill="#747474" />
-              <rect x="6" y="10" width="4" height="4" rx="2" transform="rotate(90 6 10)" fill="#747474" />
+              <rect x="22" y="10" width="4" height="4" rx="2" transform="rotate(90 22 10)" fill="currentColor" />
+              <rect x="14" y="10" width="4" height="4" rx="2" transform="rotate(90 14 10)" fill="currentColor" />
+              <rect x="6" y="10" width="4" height="4" rx="2" transform="rotate(90 6 10)" fill="currentColor" />
             </svg>
-          </buttonß>
+          </button>
+          <ul class="combo-options">
+            <li><a href="#" class="selected">select1</a></li>
+            <li><a href="#">select2</a></li>
+          </ul>
         </div>
 
         <div class="cs-faq__list">
@@ -233,6 +237,7 @@
 
   <script src="../../assets/dist/js/bundle.js"></script>
   <script>
+    // 아코디언
     document.addEventListener('DOMContentLoaded', () => {
       const accordion = document.querySelector('.cs-faq__accordion');
 
@@ -279,6 +284,21 @@
         });
       });
     });
+
+    // 카테고리 탭 더보기
+    document.addEventListener('DOMContentLoaded', () => {
+      const categoryBtnEtc = document.querySelector('.btn-etc');
+      if(!categoryBtnEtc) return;
+
+      categoryBtnEtc.addEventListener('click', function(e){
+        const isOpen = categoryBtnEtc.classList.contains('on');
+        if(isOpen){
+          categoryBtnEtc.classList.remove('on');
+        } else {
+          categoryBtnEtc.classList.add('on');
+        }
+      });
+    })
   </script>
 </body>
 

@@ -8945,6 +8945,7 @@ button.btn-add:hover {
 }
 
 .cs-faq__category {
+  position: relative;
   display: flex;
   justify-content: space-around;
   border: 1px solid #E4E4E4;
@@ -8972,6 +8973,23 @@ button.btn-add:hover {
   border: 0;
   background-color: transparent;
   width: 48px;
+  color: #747474;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.cs-faq__category .btn-etc.on {
+  background-color: #7A53EC;
+  color: #FFF;
+}
+.cs-faq__category .btn-etc + .combo-options {
+  width: 150px;
+  left: unset;
+  right: 0;
+}
+.cs-faq__category .btn-etc.on + .combo-options {
+  max-height: 200px;
+  opacity: 1;
+  transform: translateY(0);
 }
 .cs-faq__list .topper {
   display: flex;
