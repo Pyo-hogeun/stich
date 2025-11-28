@@ -271,12 +271,6 @@
         toggle.addEventListener('click', () => {
           const isOpen = item.classList.contains('open');
 
-          items.forEach((otherItem) => {
-            if (otherItem !== item && otherItem.classList.contains('open')) {
-              closeItem(otherItem);
-            }
-          });
-
           if (isOpen) {
             closeItem(item);
           } else {
