@@ -137,11 +137,11 @@
               <div class="item__content">등록된 FAQ 내용 출력 등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력</div>
             </div>
             <div class="item">
-              <button type="button" class="item__toggle"><span class="title">등록된 FAQ 제목1등록된 FAQ 제목1등록된 FAQ 제목1등록된 FAQ 제목1등록된 FAQ 제목1등록된 FAQ 제목1등록된 FAQ 제목1등록된 FAQ 제목1등록된 FAQ 제목1등록된 FAQ 제목1등록된 FAQ 제목1등록된 FAQ 제목1</span><span class="icon"><img src="../../assets/images/icon_arrow_upside_24.svg" alt=""></span></button>
+              <button type="button" class="item__toggle"><span class="title">등록된 FAQ 제목1등록된 FAQ 제목2</span><span class="icon"><img src="../../assets/images/icon_arrow_upside_24.svg" alt=""></span></button>
               <div class="item__content">등록된 FAQ 내용 출력 등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력</div>
             </div>
             <div class="item">
-              <button type="button" class="item__toggle"><span class="title">등록된 FAQ 제목1등록된 FAQ 제목1등록된 FAQ 제목1등록된 FAQ 제목1등록된 FAQ 제목1등록된 FAQ 제목1등록된 FAQ 제목1등록된 FAQ 제목1등록된 FAQ 제목1등록된 FAQ 제목1등록된 FAQ 제목1등록된 FAQ 제목1</span><span class="icon"><img src="../../assets/images/icon_arrow_upside_24.svg" alt=""></span></button>
+              <button type="button" class="item__toggle"><span class="title">등록된 FAQ 제목3</span><span class="icon"><img src="../../assets/images/icon_arrow_upside_24.svg" alt=""></span></button>
               <div class="item__content">등록된 FAQ 내용 출력 등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력등록된 FAQ 내용 출력</div>
             </div>
           </div>
@@ -201,8 +201,7 @@
         <div class="layer-popup__footer-left">
         </div>
         <div class="layer-popup__footer-center">
-          <button type="button" class="btn border border__icon submit">
-            <img src="../../assets/images/icon_close_16.svg" alt="" class="icon">
+          <button type="button" class="btn border submit">
             닫기
           </button>
         </div>
@@ -213,6 +212,60 @@
   </div>
 
   <script src="../../assets/dist/js/bundle.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const accordion = document.querySelector('.cs-faq__accordion');
+
+      if (!accordion) return;
+
+      const items = accordion.querySelectorAll('.item');
+
+      const closeItem = (item) => {
+        const toggle = item.querySelector('.item__toggle');
+        const content = item.querySelector('.item__content');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        if (content) content.hidden = true;
+        item.classList.remove('open');
+      };
+
+      const openItem = (item) => {
+        const toggle = item.querySelector('.item__toggle');
+        const content = item.querySelector('.item__content');
+        if (toggle) toggle.setAttribute('aria-expanded', 'true');
+        if (content) content.hidden = false;
+        item.classList.add('open');
+      };
+
+      items.forEach((item) => {
+        const toggle = item.querySelector('.item__toggle');
+        const content = item.querySelector('.item__content');
+
+        if (!toggle || !content) return;
+
+        if (item.classList.contains('open')) {
+          openItem(item);
+        } else {
+          closeItem(item);
+        }
+
+        toggle.addEventListener('click', () => {
+          const isOpen = item.classList.contains('open');
+
+          items.forEach((otherItem) => {
+            if (otherItem !== item && otherItem.classList.contains('open')) {
+              closeItem(otherItem);
+            }
+          });
+
+          if (isOpen) {
+            closeItem(item);
+          } else {
+            openItem(item);
+          }
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

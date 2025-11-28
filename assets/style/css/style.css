@@ -8974,6 +8974,8 @@ button.btn-add:hover {
   border: 0;
   background-color: transparent;
   padding: 0;
+  width: 100%;
+  cursor: pointer;
 }
 .cs-faq__accordion .item__toggle .title {
   display: flex;
@@ -8983,9 +8985,20 @@ button.btn-add:hover {
   color: #0A0A0A;
   text-align: left;
 }
+.cs-faq__accordion .item__toggle .icon {
+  display: inline-flex;
+  transition: transform 0.2s ease;
+}
 .cs-faq__accordion .item__content {
   font-size: 14px;
   line-height: 1.5;
   color: #747474;
   word-break: keep-all;
+  display: none;
+}
+.cs-faq__accordion .item.open .item__toggle .icon {
+  transform: rotate(180deg);
+}
+.cs-faq__accordion .item.open .item__content {
+  display: block;
 }

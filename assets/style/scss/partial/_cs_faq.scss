@@ -32,6 +32,8 @@
         border: 0;
         background-color: transparent;
         padding: 0;
+        width: 100%;
+        cursor: pointer;
         .title{
           display: flex;
           flex: 0 0 calc(100% - 50px);
@@ -40,12 +42,27 @@
           color: $Title_Dark;
           text-align: left;
         }
+        .icon{
+          display: inline-flex;
+          transition: transform 0.2s ease;
+        }
       }
       &__content{
         font-size: 14px;
         line-height: 1.5;
         color: $normalText;
         word-break: keep-all;
+        display: none;
+      }
+      &.open{
+        .item__toggle{
+          .icon{
+            transform: rotate(180deg);
+          }
+        }
+        .item__content{
+          display: block;
+        }
       }
     }
   }
