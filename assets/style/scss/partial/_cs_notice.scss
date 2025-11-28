@@ -1,5 +1,5 @@
 @use 'variables' as *;
-.cs-notice{
+.cs{
   &__tabs{
     display: inline-flex;
     justify-content: center;
@@ -28,6 +28,8 @@
       }
     }
   }
+}
+.cs-notice{
   &__list{
     .topper{
       display: flex;
