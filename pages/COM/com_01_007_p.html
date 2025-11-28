@@ -1,0 +1,236 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STICH</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+  <link rel="stylesheet" href="../../assets/dist/js/bundle.css">
+  <style>
+
+  </style>
+
+</head>
+
+<body>
+  <header class="gnb">
+    <div class="gnb-container">
+      <a href="/" class="gnb-logo">
+        <img src="../../assets/images/icon_gnb_logo.svg" alt="stich logo">
+      </a>
+
+      <nav class="gnb-menu">
+        <a href="/" class="gnb-menu-item menu-home">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_home.png" alt="home" class="icon-gnb-home">
+          </div>
+        </a>
+
+        <a href="/pages/COM/com_01_001.html" class="gnb-menu-item menu-competition gnb-menu-item-active">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_competition.png" alt="home" class="icon-gnb-competition">
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-notice">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_notice.png" alt="home" class="icon-gnb-notice">
+            <div class="badge-new">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="20" rx="10" fill="#FF44BF" />
+                <path
+                  d="M13.4863 5.51562V14H12.127L8.10742 8.19922H8.03711V14H6.51367V5.51562H7.89648L11.8926 11.3164H11.9746V5.51562H13.4863Z"
+                  fill="white" />
+              </svg>
+
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-career">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_career.png" alt="home" class="icon-gnb-career">
+          </div>
+        </a>
+      </nav>
+
+      <div class="gnb-user">
+        <div class="gnb-profile">
+          <div class="gnb-profile-icon">
+            <img src="../../assets/images/icon_my_profile.png" alt="사용자 아이콘">
+          </div>
+          <p class="gnb-profile-text">
+            <span class="gnb-profile-greeting">안녕하세요. </span>
+            <span class="gnb-profile-name">홍길동님</span>
+          </p>
+          <a href="/" class="gnb-settings" aria-label="설정">
+            <img src="../../assets/images/icon_my_setting.png" alt="사용자 설정">
+          </a>
+        </div>
+
+        <div class="gnb-divider"></div>
+
+        <button class="gnb-logout">
+          <img src="../../assets/images/icon_gnb_logout.png" class="icon-gnb-logout" alt="로그아웃 아이콘">
+          <span>로그아웃</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="content-wrapper">
+    </div>
+  </main>
+
+  <div class="layer-dimmed" role="dialog" aria-modal="true">
+    <div class="layer-popup cs-notice">
+      <div class="layer-popup__header">
+        <h3 class="layer-popup__title">고객지원</h3>
+        <button type="button" class="layer-popup__close" aria-label="레이어 닫기">
+          <img src="../../assets/images/icon_close_popup.svg" alt="">
+        </button>
+      </div>
+      <div class="layer-popup__body">
+        <div class="cs__tabs">
+          <div class="cs__tabs_item"><a href="">공지사항</a></div>
+          <div class="cs__tabs_item"><a href="">FAQ</a></div>
+          <div class="cs__tabs_item"><a href="" class="active">문의하기</a></div>
+        </div>
+
+        <div class="cs-contact">
+          <div class="cs-contact__banner">
+            <div class="start">
+              <h4>도움이 필요하신가요?</h4>
+              <p><a href="" class="link">FAQ</a>를 확인하거나,<br>이곳으로 문의해주세요.</p>
+            </div>
+            <div class="end">
+              <span class="label">문의 번호</span>
+              <span class="number">1234-1234</span>
+            </div>
+          </div>
+
+          <div class="cs-contact__form">
+            <div class="item">
+              <div class="item__label">문의 유형</div>
+              <div class="combo" style="width: 100%">
+                <input type="checkbox" id="combo" class="combo-toggle">
+                <label for="combo" class="combo-label">문의 유형을 입력해 주세요.</label>
+                <ul class="combo-options">
+                  <li><a href="#" class="selected">문의 유형1</a></li>
+                  <li><a href="#">문의 유형2</a></li>
+                  <li><a href="#">문의 유형3</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item__label required">이메일</div>
+              <div class="input-text-wrapper__wide">
+                <input type="text" class="input-text" placeholder="이메일 주소를 입력해 주세요.">
+              </div>
+            </div>
+            <div class="item">
+              <div class="item__label">연락처</div>
+              <div class="input-text-wrapper__wide">
+                <input type="text" class="input-text" placeholder="연락처를 입력해 주세요.">
+              </div>
+            </div>
+            <div class="item wide">
+              <div class="item__label required">제목</div>
+              <div class="input-text-wrapper__wide">
+                <input type="text" class="input-text" placeholder="연락처를 입력해 주세요.">
+              </div>
+            </div>
+            <div class="item wide">
+              <div class="item__label required">내용</div>
+              <div class="input-text-wrapper__wide">
+                <textarea name="" id="" cols="30" rows="10" class="input-textarea" placeholder="문의 하시는 내용을 입력해 주세요 ."></textarea>
+              </div>
+            </div>
+            <div class="item wide">
+              <div class="item__label">첨부파일 <span class="sub">*파일당 10MB 이내만 가능. 단 영상 파일의 경우 300MB 이내</span></div>
+              <label class="file-upload-area" id="fileUploadArea" data-upload-variant="sortable" style="display: flex;">
+                <img src="../../assets/images/icon_upload_primary.png" alt="파일업로드 아이콘" class="file-upload-icon">
+                <span class="file-upload-text">파일 추가 또는 파일을 여기로 드래그 해주세요.</span>
+                <input type="file" id="fileInput" hidden="">
+              </label>
+
+              <div class="file-list__topper">
+                <div class="file-list__count">
+                  총 업로드한 파일 : <em>2/5개</em>
+                </div>
+                <div class="file-list__size">
+                  업로드한 파일 크기 : <em>0/15MB</em>
+                </div>
+              </div>
+
+              <div id="fileList" class="file-list" data-upload-variant="sortable">
+              </div>
+            </div>
+          </div>
+
+          <div class="term-agree">
+            <div class="term-agree__label">개인정보수집 및 이용에 대한 동의 내용</div>
+            <div class="term-agree__content">
+              (주)에코브릿지는 정보통신망 이용촉진 및 정보보호 등 관한 법률을 준수하며 고객님의 개인정보를 수집하고 소중하게 다루고 있습니다.
+              <ol>
+                <li>1. 수집 및 이용 항목 : 이메일, 이름, 연락처</li>
+                <li>2. 수집 및 이용 목적 : 앱 이용 문의에 대한 답변 관련 업무</li>
+                <li>3. 보유 및 이용 기간 : 수집 목적이 달성되면 모든 개인정보를 파기합니다.동의를 하지 않을 경우 문의한 내용에 대한 답변에 제한이 있을 수 있습니다.</li>
+              </ol>
+            </div>
+            <label class="ckb">
+              <input type="checkbox" />
+              <span class="ckb__box"></span>
+              <span class="ckb__label">동의합니다.</span>
+            </label>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="layer-popup__footer">
+        <div class="layer-popup__footer-left">
+        </div>
+        <div class="layer-popup__footer-center">
+          <button type="button" class="btn border border__icon submit">
+            <img src="../../assets/images/icon_close_16.svg" alt="" class="icon">
+            취소
+          </button>
+        </div>
+        <div class="layer-popup__footer-right">
+          <button type="button" class="btn filled filled__icon submit">
+            <img src="../../assets/images/icon_check_10_white.svg" alt="" class="icon">
+            문의하기
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/dist/js/bundle.js"></script>
+
+</body>
+
+</html>
