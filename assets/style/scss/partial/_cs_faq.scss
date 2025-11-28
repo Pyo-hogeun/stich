@@ -1,5 +1,34 @@
 @use 'variables' as *;
 .cs-faq{
+  &__category{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid $cardBorderColor;
+    height: 48px;
+    border-radius: 10px;
+    margin-top: 24px;
+    a{
+      display: flex;
+      align-items: center;
+      height: 100%;
+      font-size: 16px;
+      color: $Title_Dark;
+      &:hover{
+        color: $primaryColor;
+        font-weight: 700;
+      }
+    }
+    &_tabs{
+      display: flex;
+      flex: 1 1 auto;
+      justify-content: space-around;
+    }
+    .btn-etc{
+      border: 0;
+      background-color: transparent;
+      width: 48px;
+    }
+  }
   &__list{
     .topper{
       display: flex;

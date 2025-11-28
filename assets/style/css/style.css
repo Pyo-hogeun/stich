@@ -8944,6 +8944,35 @@ button.btn-add:hover {
   margin-left: 16px;
 }
 
+.cs-faq__category {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid #E4E4E4;
+  height: 48px;
+  border-radius: 10px;
+  margin-top: 24px;
+}
+.cs-faq__category a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 16px;
+  color: #0A0A0A;
+}
+.cs-faq__category a:hover {
+  color: #7A53EC;
+  font-weight: 700;
+}
+.cs-faq__category_tabs {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: space-around;
+}
+.cs-faq__category .btn-etc {
+  border: 0;
+  background-color: transparent;
+  width: 48px;
+}
 .cs-faq__list .topper {
   display: flex;
   align-items: flex-end;
