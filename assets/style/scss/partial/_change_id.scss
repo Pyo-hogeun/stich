@@ -1,0 +1,50 @@
+@use 'variables' as *;
+@use 'mixin' as *;
+.change-id{
+  &__label{
+    margin-top: 24px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: $Title_Dark;
+    &:nth-of-type(1){
+      margin-top: 0;
+    }
+    &.required{
+      @include required;
+    }
+  }
+  &__data{
+    font-size: 14px;
+    color: $normalText;
+  }
+  .gray-box{
+    background-color: #F1EEFB;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 32px;
+    ul>li{
+      position: relative;
+      color: $normalText;
+      font-size: 14px;
+      padding-left: 10px;
+      padding-bottom: 8px;
+
+      &:before{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: $normalText;
+        vertical-align: middle;
+      }
+    }
+  }
+  .notice{
+    margin-top: 24px;
+  }
+}

@@ -1,0 +1,140 @@
+@use 'variables'as *;
+
+.company-profile {
+  &__tabs {
+    display: inline-flex;
+    justify-content: center;
+    border-bottom: 1px solid #B0B0B0;
+
+    &_item {
+      a {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        font-size: 18px;
+        padding: 0 16px;
+        height: 40px;
+
+        &.active {
+          color: $primaryColor2;
+          font-weight: 700;
+
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background-color: $primaryColor2;
+          }
+        }
+      }
+    }
+  }
+
+  &__label {
+    margin-top: 24px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .profile-edit {
+    margin-top: 40px;
+
+    .profile__wrapper {
+      align-items: center;
+    }
+
+    .input-text-wrapper__sub {
+      justify-content: space-between;
+
+      .btn {
+        font-size: 12px;
+        color: $Title_Dark;
+      }
+
+      .text-length {
+        margin-top: 0;
+      }
+    }
+
+    .input-with-btn {
+      display: flex;
+      gap: 12px;
+
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: $Title_Dark;
+
+      .sub {
+        font-size: 12px;
+        font-weight: 400;
+        color: $smallText;
+        margin-left: 12px;
+      }
+    }
+
+    .manager-info-regist {
+      .item {
+        display: grid;
+        grid-template-columns: 180px 230px 1fr;
+        gap: 12px;
+        margin-bottom: 16px;
+
+        .form {
+          &__label {
+            font-size: 14px;
+            font-weight: 600;
+            color: $Title_Dark;
+            margin-bottom: 8px;
+          }
+
+          input:disabled {
+            cursor: default;
+          }
+
+          .function-btn {
+            width: 48px;
+
+            img {
+              margin-right: 0;
+            }
+          }
+
+          &.wide {
+            grid-column: 1 / 4;
+          }
+
+          .divider {
+            display: inline-block;
+          }
+
+          .message {
+            font-size: 12px;
+            color: $guideColor;
+          }
+
+          &.email-check {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            label.chb{
+              .chb__label{
+                font-size: 14px;
+                color: $normalText;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .btn.draw{
+    color: $normalText;
+  }
+}

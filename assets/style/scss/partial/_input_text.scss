@@ -32,7 +32,16 @@
     max-width: 100%;
     flex: 1;
   }
+  &__sub{
+    display: flex;
+    margin-top: 8px;
+    &_text{
+      font-size: 12px;
+      color: $guideColor;
+    }
+  }
 }
+
 
 /* 실제 텍스트 입력 */
 .input-text, .input-textarea, .input-text-calendar, .input-time {

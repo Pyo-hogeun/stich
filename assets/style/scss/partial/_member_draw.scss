@@ -1,0 +1,114 @@
+@use 'variables' as *;
+.member-draw{
+  .greeting{
+    display: flex;
+    justify-content: space-between;
+    .message{
+      font-size: 14px;
+      color: $normalText;
+    }
+  }
+  .faq-help{
+    &__header{
+      .sub-text{
+        margin-top: 16px;
+        font-size: 14px;
+        color: $normalText;
+      }
+    }
+    .cs-faq{
+      &__accordion{
+        .item__content{
+          .solution{
+            margin-top: 8px;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+  .gray-box{
+    background-color: #F1EEFB;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 32px;
+  }
+  .alert{
+    h4{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 18px;
+      color: $pointColor1;
+    }
+    &__content{
+      font-size: 14px;
+      line-height: 1.4;
+      em{
+        color: $pointColor1;
+        font-weight: 400;
+      }
+      .bold{
+        font-weight: 700;
+      }
+    }
+  }
+  .confirm-me{
+    &__header{
+      h4{
+        font-size: 14px;
+        font-weight: 600;
+        color: $Title_Dark;
+      }
+      .sub-text{
+        margin-top: 8px;
+        font-size: 14px;
+        color: $normalText;
+      }
+    }
+    &__label{
+      margin-top: 24px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: $Title_Dark;
+    }
+  }
+  .img-wrap{
+    text-align: center;
+  }
+  .alert-message{
+    margin-top: 40px;
+    text-align: center;
+    p{
+      font-size: 16px;
+      font-weight: 700;
+      color: $Title_Dark;
+    }
+    .history{
+      display: inline-flex;
+      align-items: center;
+      margin: 16px auto;
+      gap: 16px;
+      .item{
+        &__label{
+          font-size: 14px;
+          color: $normalText;
+          margin-bottom: 8px;
+        }
+        .badge{
+          display: inline-flex;
+          border-radius: 99px;
+          align-items: center;
+          padding: 0 8px;
+          height: 25px;
+          background-color: $pointColor2;
+          color: #FFF;
+          font-size: 14px;
+          line-height: 1;
+        }
+  
+      }
+    }
+  }
+}

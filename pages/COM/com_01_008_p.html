@@ -1,0 +1,291 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STICH</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+  <link rel="stylesheet" href="../../assets/dist/js/bundle.css">
+  <style>
+    
+  </style>
+
+</head>
+
+<body>
+  <header class="gnb">
+    <div class="gnb-container">
+      <a href="/" class="gnb-logo">
+        <img src="../../assets/images/icon_gnb_logo.svg" alt="stich logo">
+      </a>
+
+      <nav class="gnb-menu">
+        <a href="/" class="gnb-menu-item menu-home">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_home.png" alt="home" class="icon-gnb-home">
+          </div>
+        </a>
+
+        <a href="/pages/COM/com_01_001.html" class="gnb-menu-item menu-competition gnb-menu-item-active">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_competition.png" alt="home" class="icon-gnb-competition">
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-notice">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_notice.png" alt="home" class="icon-gnb-notice">
+            <div class="badge-new">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="20" rx="10" fill="#FF44BF" />
+                <path
+                  d="M13.4863 5.51562V14H12.127L8.10742 8.19922H8.03711V14H6.51367V5.51562H7.89648L11.8926 11.3164H11.9746V5.51562H13.4863Z"
+                  fill="white" />
+              </svg>
+
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-career">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_career.png" alt="home" class="icon-gnb-career">
+          </div>
+        </a>
+      </nav>
+
+      <div class="gnb-user">
+        <div class="gnb-profile">
+          <div class="gnb-profile-icon">
+            <img src="../../assets/images/icon_my_profile.png" alt="사용자 아이콘">
+          </div>
+          <p class="gnb-profile-text">
+            <span class="gnb-profile-greeting">안녕하세요. </span>
+            <span class="gnb-profile-name">홍길동님</span>
+          </p>
+          <a href="/" class="gnb-settings" aria-label="설정">
+            <img src="../../assets/images/icon_my_setting.png" alt="사용자 설정">
+          </a>
+        </div>
+
+        <div class="gnb-divider"></div>
+
+        <button class="gnb-logout">
+          <img src="../../assets/images/icon_gnb_logout.png" class="icon-gnb-logout" alt="로그아웃 아이콘">
+          <span>로그아웃</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="content-wrapper">
+    </div>
+  </main>
+
+  <div class="layer-dimmed" role="dialog" aria-modal="true">
+    <div class="layer-popup company-profile">
+      <div class="layer-popup__header">
+        <h3 class="layer-popup__title">개인정보 설정</h3>
+        <button type="button" class="layer-popup__close" aria-label="레이어 닫기">
+          <img src="../../assets/images/icon_close_popup.svg" alt="">
+        </button>
+      </div>
+      <div class="layer-popup__body">
+        <div class="company-profile__tabs">
+          <div class="company-profile__tabs_item"><a href="" class="active">기업정보 설정</a></div>
+          <div class="company-profile__tabs_item"><a href="">비밀번호 변경</a></div>
+          <div class="company-profile__tabs_item"><a href="">알림 설정</a></div>
+          <div class="company-profile__tabs_item"><a href="">법적고지 및 정책</a></div>
+        </div>
+        <div class="profile-edit">
+          <div class="profile__wrapper">
+            <div class="profile__img">
+              <div class="img-wrap">
+                <img src="../../assets/images/sample/sample_profile.png" alt="">
+              </div>
+            </div>
+            <div class="profile__name">
+              <div class="profile__name_title">기업프로필_이름</div>
+              <div class="profile__name_desc">프로필 상세소개 영역입니다.</div>
+            </div>
+          </div>
+
+          <hr class="divider_hr_24">
+  
+          <div class="company-profile__label">기업명</div>
+          <div class="input-text-wrapper__wide">
+            <input type="text" class="input-text" value="등록한 기업명 출력" disabled>
+            <div class="input-text-wrapper__sub">
+              <div class="input-text-wrapper__sub_text">
+                기업명 변경을 원하시면 우측 버튼을 클릭해 주세요. &nbsp;
+                <a href="" class="btn underline">기업명 변경 요청하기</a>
+              </div>
+              <span class="text-length">0/50</span>
+            </div>
+          </div>
+          <div class="company-profile__label">로그인 이메일(아이디)</div>
+          <div class="input-text-wrapper__wide">
+            <input type="text" class="input-text" value="등록한 로그인 이메일 출력" disabled>
+            <div class="input-text-wrapper__sub">
+              <div class="input-text-wrapper__sub_text">
+                로그인 이메일 변경을 원하시면 우측 버튼을 클릭 해주세요. &nbsp;
+                <a href="" class="btn underline">로그인 이메일 변경 요청하기</a>
+              </div>
+            </div>
+          </div>
+          <div class="company-profile__label">사업자등록증명원 발급번호</div>
+          <div class="input-text-wrapper__wide">
+            <input type="text" class="input-text" value="등록된 사업자등록증명원 발급번호 출력" disabled>
+          </div>
+
+          <hr class="divider_hr_24">
+
+
+          <h3>담당자 정보 등록<span class="sub">(3/5)</span></h3>
+
+          <div class="manager-info-regist">
+            <div class="item add-item">
+              <div class="form">
+                <div class="form__label">이름</div>
+                <div class="input-text-wrapper__wide">
+                  <input type="text" class="input-text" placeholder="담당자이름을 입력해 주세요.">
+                </div>
+              </div>
+              <div class="form">
+                <div class="form__label">이메일</div>
+                <div class="input-text-wrapper__wide">
+                  <input type="text" class="input-text" placeholder="담당자 이메일을 입력해 주세요.">
+                </div>
+              </div>
+              <div class="form">
+                <div class="form__label">전화번호</div>
+                <div class="input-with-btn">
+                  <div class="input-text-wrapper__wide">
+                    <input type="text" class="input-text" placeholder="담당자 전화번호를 입력해 주세요.">
+                  </div>
+                  <button class="btn border h40 function-btn">
+                    <img src="../../assets/images/icon_plus_16.svg" alt="">
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="form">
+                <div class="input-text-wrapper__wide">
+                  <input type="text" class="input-text" placeholder="담당자이름을 입력해 주세요." disabled value="홍길동">
+                </div>
+              </div>
+              <div class="form">
+                <div class="input-text-wrapper__wide">
+                  <input type="text" class="input-text" placeholder="담당자 이메일을 입력해 주세요." disabled value="asdf@asdf.com">
+                </div>
+              </div>
+              <div class="form">
+                <div class="input-with-btn">
+                  <div class="input-text-wrapper__wide">
+                    <input type="text" class="input-text" placeholder="담당자 전화번호를 입력해 주세요." disabled value="010-1234-1234">
+                  </div>
+                  <button class="btn border h40 function-btn">
+                    <img src="../../assets/images/icon_edit_12.svg" alt="" style="margin: 0">
+                  </button>
+                  <button class="btn border h40 function-btn">
+                    <img src="../../assets/images/icon_minus_16.svg" alt="">
+                  </button>
+                </div>
+              </div>
+              <div class="form wide email-check">
+                <label class="ckb question-card__checkbox">
+                  <input type="checkbox" checked/>
+                  <span class="ckb__box"></span>
+                  <span class="ckb__label">이메일 수신</span>
+                </label>
+                <div class="divider"></div>
+                <span class="message">이메일 인증 후에 메일수신이 가능합니다.</span>
+                <a href="" class="btn underline sm">이메일 인증하기</a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="form">
+                <div class="input-text-wrapper__wide">
+                  <input type="text" class="input-text" placeholder="담당자이름을 입력해 주세요." disabled value="홍길동">
+                </div>
+              </div>
+              <div class="form">
+                <div class="input-text-wrapper__wide">
+                  <input type="text" class="input-text" placeholder="담당자 이메일을 입력해 주세요." disabled value="asdf@asdf.com">
+                </div>
+              </div>
+              <div class="form">
+                <div class="input-with-btn">
+                  <div class="input-text-wrapper__wide">
+                    <input type="text" class="input-text" placeholder="담당자 전화번호를 입력해 주세요." disabled value="010-1234-1234">
+                  </div>
+                  <button class="btn border h40 function-btn">
+                    <img src="../../assets/images/icon_edit_12.svg" alt="" style="margin: 0">
+                  </button>
+                  <button class="btn border h40 function-btn">
+                    <img src="../../assets/images/icon_minus_16.svg" alt="">
+                  </button>
+                </div>
+              </div>
+              <div class="form wide email-check">
+                <label class="ckb question-card__checkbox">
+                  <input type="checkbox" />
+                  <span class="ckb__box"></span>
+                  <span class="ckb__label">이메일 수신</span>
+                </label>
+                <div class="divider"></div>
+                <span class="message">이메일 인증 후에 메일수신이 가능합니다.</span>
+                <a href="" class="btn underline sm">이메일 인증하기</a>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+      <div class="layer-popup__footer">
+        <div class="layer-popup__footer-left">
+          <a href="" class="btn underline submit draw">회원탈퇴</a>
+        </div>
+        <div class="layer-popup__footer-center">
+          <button type="button" class="btn border submit">
+            닫기
+          </button>
+        </div>
+        <div class="layer-popup__footer-right">
+          <button type="button" class="btn filled filled__icon btn-primary submit">
+            <img src="../../assets/images/icon_check_10_white.svg" alt="" class="icon">
+            적용
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/dist/js/bundle.js"></script>
+</body>
+
+</html>
