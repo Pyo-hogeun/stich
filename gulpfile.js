@@ -221,7 +221,7 @@ function generateIndex(done) {
     .page-header { margin-bottom: 10px; border-bottom: 1px solid #e5e7eb; padding-bottom: 5px; }
     
     .meta { color:#6b7280; font-size: 13px; }
-    .layout { --list-width: 20%; display: grid; grid-template-columns: minmax(100px, var(--list-width)) 10px 1fr; gap: 16px; align-items: stretch; height: 89vh}
+    .layout { --list-width: 20%; display: grid; grid-template-columns: minmax(100px, var(--list-width)) 10px 1fr; gap: 16px; align-items: stretch; height: 96vh}
     .list-panel, .preview-panel { background:#fff; border:1px solid #e5e7eb; border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); } .list-panel{ overflow-y: auto;}
     .category { margin-bottom: 18px; }
     .category h2 { margin: 0 0 8px; font-size: 17px; color:#1f2937; }
@@ -239,7 +239,7 @@ function generateIndex(done) {
     .preview-panel { position: sticky; top: 12px; }
     .preview-panel h2 { margin: 0 0 10px; font-size: 18px; }
     .preview-status { color:#6b7280; font-size: 13px; margin-bottom: 10px; word-break: break-all; }
-    #previewFrame { width: 100%; height: 70vh; border:1px solid #e5e7eb; border-radius: 12px; background:#fff; }
+    #previewFrame { width: 100%; height: 87vh; border:1px solid #e5e7eb; border-radius: 12px; background:#fff; }
     @media (max-width: 900px) {
       .layout { grid-template-columns: 1fr; gap: 12px; }
       .divider { display: none; }
@@ -248,12 +248,12 @@ function generateIndex(done) {
   </style>
 </head>
 <body>
-  <header class="page-header">
+<main class="layout">
+<section class="list-panel">
+  <div class="page-header">
     <h1>STICH HTML 파일 목록</h1>
     <div class="meta">생성일: ${now.toLocaleString()}</div>
-  </header>
-  <main class="layout">
-    <section class="list-panel">
+  </div>
 `;
 
   const categoryNames = Object.keys(groups).sort();

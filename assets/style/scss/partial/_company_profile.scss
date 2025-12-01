@@ -137,4 +137,19 @@
   .btn.draw{
     color: $normalText;
   }
+  .password-edit{
+    .input-text-wrapper__sub {
+      justify-content: space-between;
+
+      .btn {
+        font-size: 12px;
+        color: $Title_Dark;
+      }
+
+      .text-length {
+        margin-top: 0;
+      }
+    }
+
+  }
 }

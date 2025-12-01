@@ -29,3 +29,6 @@ em{
 img[src$=".svg"] {
   image-rendering: crisp-edges;
 }
+svg {
+  shape-rendering: geometricPrecision; // 또는 crispEdges
+}

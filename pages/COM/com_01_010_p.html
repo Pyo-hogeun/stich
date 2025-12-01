@@ -114,153 +114,35 @@
       </div>
       <div class="layer-popup__body">
         <div class="company-profile__tabs">
-          <div class="company-profile__tabs_item"><a href="" class="active">기업정보 설정</a></div>
-          <div class="company-profile__tabs_item"><a href="">비밀번호 변경</a></div>
+          <div class="company-profile__tabs_item"><a href="">기업정보 설정</a></div>
+          <div class="company-profile__tabs_item"><a href="" class="active">비밀번호 변경</a></div>
           <div class="company-profile__tabs_item"><a href="">알림 설정</a></div>
           <div class="company-profile__tabs_item"><a href="">법적고지 및 정책</a></div>
         </div>
-        <div class="profile-edit">
-          <div class="profile__wrapper">
-            <div class="profile__img">
-              <div class="img-wrap">
-                <img src="../../assets/images/sample/sample_profile.png" alt="">
-              </div>
-            </div>
-            <div class="profile__name">
-              <div class="profile__name_title">기업프로필_이름</div>
-              <div class="profile__name_desc">프로필 상세소개 영역입니다.</div>
-            </div>
-          </div>
-
-          <hr class="divider_hr_24">
+        <div class="password-edit">
   
-          <div class="company-profile__label">기업명</div>
+          <div class="company-profile__label">이전 비밀번호</div>
           <div class="input-text-wrapper__wide">
-            <input type="text" class="input-text" value="등록한 기업명 출력" disabled>
+            <input type="password" class="input-text" value="" >
+          </div>
+          <div class="company-profile__label">새로운 비밀번호</div>
+          <div class="input-text-wrapper__wide">
+            <input type="password" class="input-text" value="" placeholder="새로운 비밀번호를 입력해 주세요.">
+            <div class="hardness">
+              <span class="step on"></span>
+              <span class="step on"></span>
+              <span class="step"></span>
+              <span class="step"></span>
+            </div>
             <div class="input-text-wrapper__sub">
               <div class="input-text-wrapper__sub_text">
-                기업명 변경을 원하시면 우측 버튼을 클릭해 주세요. &nbsp;
-                <a href="" class="btn underline">기업명 변경 요청하기</a>
+                8자 이상 50자 이하의 숫자, 영문자, 특수문자를 포함한 비밀번호를 입력해 주세요.
               </div>
-              <span class="text-length">0/50</span>
             </div>
           </div>
-          <div class="company-profile__label">로그인 이메일(아이디)</div>
+          <div class="company-profile__label">새로운 비밀번호 재입력</div>
           <div class="input-text-wrapper__wide">
-            <input type="text" class="input-text" value="등록한 로그인 이메일 출력" disabled>
-            <div class="input-text-wrapper__sub">
-              <div class="input-text-wrapper__sub_text">
-                로그인 이메일 변경을 원하시면 우측 버튼을 클릭 해주세요. &nbsp;
-                <a href="" class="btn underline">로그인 이메일 변경 요청하기</a>
-              </div>
-            </div>
-          </div>
-          <div class="company-profile__label">사업자등록증명원 발급번호</div>
-          <div class="input-text-wrapper__wide">
-            <input type="text" class="input-text" value="등록된 사업자등록증명원 발급번호 출력" disabled>
-          </div>
-
-          <hr class="divider_hr_24">
-
-
-          <h3>담당자 정보 등록<span class="sub">(3/5)</span></h3>
-
-          <div class="manager-info-regist">
-            <div class="item add-item">
-              <div class="form">
-                <div class="form__label">이름</div>
-                <div class="input-text-wrapper__wide">
-                  <input type="text" class="input-text" placeholder="담당자이름을 입력해 주세요.">
-                </div>
-              </div>
-              <div class="form">
-                <div class="form__label">이메일</div>
-                <div class="input-text-wrapper__wide">
-                  <input type="text" class="input-text" placeholder="담당자 이메일을 입력해 주세요.">
-                </div>
-              </div>
-              <div class="form">
-                <div class="form__label">전화번호</div>
-                <div class="input-with-btn">
-                  <div class="input-text-wrapper__wide">
-                    <input type="text" class="input-text" placeholder="담당자 전화번호를 입력해 주세요.">
-                  </div>
-                  <button class="btn border h40 function-btn">
-                    <img src="../../assets/images/icon_plus_16.svg" alt="">
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="form">
-                <div class="input-text-wrapper__wide">
-                  <input type="text" class="input-text" placeholder="담당자이름을 입력해 주세요." disabled value="홍길동">
-                </div>
-              </div>
-              <div class="form">
-                <div class="input-text-wrapper__wide">
-                  <input type="text" class="input-text" placeholder="담당자 이메일을 입력해 주세요." disabled value="asdf@asdf.com">
-                </div>
-              </div>
-              <div class="form">
-                <div class="input-with-btn">
-                  <div class="input-text-wrapper__wide">
-                    <input type="text" class="input-text" placeholder="담당자 전화번호를 입력해 주세요." disabled value="010-1234-1234">
-                  </div>
-                  <button class="btn border h40 function-btn">
-                    <img src="../../assets/images/icon_edit_12.svg" alt="" style="margin: 0">
-                  </button>
-                  <button class="btn border h40 function-btn">
-                    <img src="../../assets/images/icon_minus_16.svg" alt="">
-                  </button>
-                </div>
-              </div>
-              <div class="form wide email-check">
-                <label class="ckb question-card__checkbox">
-                  <input type="checkbox" checked/>
-                  <span class="ckb__box"></span>
-                  <span class="ckb__label">이메일 수신</span>
-                </label>
-                <div class="divider"></div>
-                <span class="message">이메일 인증 후에 메일수신이 가능합니다.</span>
-                <a href="" class="btn underline sm">이메일 인증하기</a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="form">
-                <div class="input-text-wrapper__wide">
-                  <input type="text" class="input-text" placeholder="담당자이름을 입력해 주세요." disabled value="홍길동">
-                </div>
-              </div>
-              <div class="form">
-                <div class="input-text-wrapper__wide">
-                  <input type="text" class="input-text" placeholder="담당자 이메일을 입력해 주세요." disabled value="asdf@asdf.com">
-                </div>
-              </div>
-              <div class="form">
-                <div class="input-with-btn">
-                  <div class="input-text-wrapper__wide">
-                    <input type="text" class="input-text" placeholder="담당자 전화번호를 입력해 주세요." disabled value="010-1234-1234">
-                  </div>
-                  <button class="btn border h40 function-btn">
-                    <img src="../../assets/images/icon_edit_12.svg" alt="" style="margin: 0">
-                  </button>
-                  <button class="btn border h40 function-btn">
-                    <img src="../../assets/images/icon_minus_16.svg" alt="">
-                  </button>
-                </div>
-              </div>
-              <div class="form wide email-check">
-                <label class="ckb question-card__checkbox">
-                  <input type="checkbox" />
-                  <span class="ckb__box"></span>
-                  <span class="ckb__label">이메일 수신</span>
-                </label>
-                <div class="divider"></div>
-                <span class="message">이메일 인증 후에 메일수신이 가능합니다.</span>
-                <a href="" class="btn underline sm">이메일 인증하기</a>
-              </div>
-            </div>
+            <input type="password" class="input-text" value="" placeholder="새로운 비밀번호를 재입력해 주세요.">
           </div>
 
           

@@ -38,6 +38,10 @@ img[src$=".svg"] {
   image-rendering: crisp-edges;
 }
 
+svg {
+  shape-rendering: geometricPrecision;
+}
+
 .fc-black {
   color: #000000;
 }
@@ -9320,6 +9324,16 @@ button.btn-add:hover {
 .company-profile .btn.draw {
   color: #747474;
 }
+.company-profile .password-edit .input-text-wrapper__sub {
+  justify-content: space-between;
+}
+.company-profile .password-edit .input-text-wrapper__sub .btn {
+  font-size: 12px;
+  color: #0A0A0A;
+}
+.company-profile .password-edit .input-text-wrapper__sub .text-length {
+  margin-top: 0;
+}
 
 .member-draw .greeting {
   display: flex;
@@ -9462,4 +9476,18 @@ button.btn-add:hover {
 }
 .change-id .notice {
   margin-top: 24px;
+}
+
+.hardness {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+.hardness .step {
+  flex: 1 1 auto;
+  height: 4px;
+  background-color: #BDBDBD;
+}
+.hardness .step.on {
+  background-color: #7A53EC;
 }

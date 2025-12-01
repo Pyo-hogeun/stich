@@ -1,0 +1,14 @@
+@use 'variables' as *;
+.hardness{
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  .step{
+    flex: 1 1 auto;
+    height: 4px;
+    background-color: #BDBDBD;
+    &.on{
+      background-color: $primaryColor;
+    }
+  }
+}
