@@ -9782,6 +9782,17 @@ button.btn-add:hover {
   align-items: flex-start;
   gap: 24px;
 }
+.login-card__content__header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0A0A0A;
+}
+.login-card__content__header .sub-text {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #919191;
+  line-height: 1.2;
+}
 
 .login-tabs {
   display: flex;
@@ -9851,6 +9862,7 @@ button.btn-add:hover {
   width: 100%;
   height: 1px;
   background: #E4E4E4;
+  margin: 8px 0;
 }
 .login-form__links {
   display: flex;

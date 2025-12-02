@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STICH - 로그인</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+  <link rel="stylesheet" href="../../assets/dist/js/bundle.css">
+</head>
+
+<body>
+  <div class="login-page">
+    <div class="login-page__background">
+      <div class="gradient__wrapper">
+        <h2>접수부터 심사까지<br>온라인 평가 플랫폼 Stich</h2>
+        <p class="sub-text">
+          Stich는 공모전, 이벤트, 채용, 사내 응모, 기업 심사 등 평가가 필요한
+          모든 분야에서 접수부터 심사까지 전 과정을 비대면 온라인으로
+          간편하고 공정하게 진행할 수 있는 올인원 평가 플랫폼입니다.
+        </p>
+      </div>
+      <img src="../../assets/images/img_acc_bg.png" alt="Background">
+    </div>
+    
+    <div class="login-page__card">
+      <div class="login-card">
+        <div class="login-card__logo">
+          <img src="../../assets/images/icon_stich_logo.svg" alt="">
+        </div>
+
+        <div class="login-card__content">
+          <div class="login-card__content__header">
+            <h3 >비밀번호가 기억나지 않으시나요?</h3>
+            <p class="sub-text">이메일 주소를 입력하시면 계정에 다시 접속할 수 있는
+              링크를 보내드립니다.</p>
+          </div>
+
+
+          <div class="login-form">
+            <div class="login-form__field">
+              <input type="text" class="login-input" placeholder="이메일 주소 입력">
+            </div>
+
+
+
+            <button type="submit" class="login-form__button">
+              링크 보내기
+            </button>
+
+            <div class="login-form__divider"></div>
+
+            <div class="login-form__links">
+              <div class="login-form__signup">
+                <span class="login-form__signup-text">아직 계정이 없으신가요?</span>
+                <a href="#" class="login-form__signup-link">가입하기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/dist/js/bundle.js"></script>
+  <script>
+    //비밀번호 노출
+    (function () {
+      const passwordInputs = document.querySelectorAll('.input-pw');
+
+      passwordInputs.forEach((wrapper) => {
+        const input = wrapper.querySelector('input');
+        const toggle = wrapper.querySelector('.hide-pw-toggle');
+
+        if (!input || !toggle) {
+          return;
+        }
+
+        const setHiddenState = (shouldHide) => {
+          toggle.classList.toggle('hide', shouldHide);
+          input.type = shouldHide ? 'password' : 'text';
+        };
+
+        setHiddenState(toggle.classList.contains('hide'));
+
+        toggle.addEventListener('click', () => {
+          const isHidden = toggle.classList.contains('hide');
+
+          setHiddenState(!isHidden);
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>

@@ -87,6 +87,19 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;
+    &__header{
+      h3{
+        font-size: 18px;
+        font-weight: 700;
+        color: $Title_Dark;
+      }
+      .sub-text{
+        margin-top: 16px;
+        font-size: 14px;
+        color: $smallText;
+        line-height: 1.2;
+      }
+    }
   }
 }
 
@@ -165,6 +178,7 @@
     width: 100%;
     height: 1px;
     background: #E4E4E4;
+    margin: 8px 0;
   }
 
   &__links {
