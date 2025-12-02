@@ -43,6 +43,7 @@
   
 }
 
+
 /* For Chrome, Safari, Edge, Opera */
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
@@ -130,4 +131,25 @@ input[type=number] {
 .search-btn:disabled {
   opacity: .6;
   cursor: not-allowed;
+}
+
+// 비밀번호 가리기 토글
+.input-pw{
+  position: relative;
+  display: flex;
+  input{
+    padding-right: 40px;
+    &+button.hide-pw-toggle{
+      display: flex;
+      border: 0;
+      padding: 0;
+      background-color: transparent;
+      position: absolute;
+      top: calc(50% - 8px);
+      right: 16px;
+      &.hide{
+        color: $primaryColor;
+      }
+    }
+  }
 }

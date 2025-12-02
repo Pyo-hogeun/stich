@@ -1246,6 +1246,26 @@ input[type=number] {
   cursor: not-allowed;
 }
 
+.input-pw {
+  position: relative;
+  display: flex;
+}
+.input-pw input {
+  padding-right: 40px;
+}
+.input-pw input + button.hide-pw-toggle {
+  display: flex;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% - 8px);
+  right: 16px;
+}
+.input-pw input + button.hide-pw-toggle.hide {
+  color: #7A53EC;
+}
+
 :root {
   --border-width: 1px;
   --border-color: #747474;
