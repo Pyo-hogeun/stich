@@ -138,6 +138,25 @@
     color: $normalText;
   }
   .password-edit{
+    .input-pw{
+      position: relative;
+      display: flex;
+      input[type=password]{
+        padding-right: 40px;
+        &+button.hide-pw-toggle{
+          display: flex;
+          border: 0;
+          padding: 0;
+          background-color: transparent;
+          position: absolute;
+          top: calc(50% - 8px);
+          right: 16px;
+          &.hide{
+            color: $primaryColor;
+          }
+        }
+      }
+    }
     .input-text-wrapper__sub {
       justify-content: space-between;
 

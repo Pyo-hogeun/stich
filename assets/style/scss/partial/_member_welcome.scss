@@ -1,0 +1,21 @@
+@use 'variables' as *;
+.member-welcome, .eva-build-success{
+  .img-wrap{
+    text-align: center;
+  }
+  .alert-message{
+    margin-top: 40px;
+    text-align: center;
+    p{
+      font-size: 16px;
+      font-weight: 700;
+      color: $Title_Dark;
+      &.sub-text{
+        font-size: 14px;
+        color: $normalText;
+        line-height: 1.5;
+        font-weight: 400;
+      }
+    }
+  }
+}

@@ -9341,6 +9341,25 @@ button.btn-add:hover {
 .company-profile .btn.draw {
   color: #747474;
 }
+.company-profile .password-edit .input-pw {
+  position: relative;
+  display: flex;
+}
+.company-profile .password-edit .input-pw input[type=password] {
+  padding-right: 40px;
+}
+.company-profile .password-edit .input-pw input[type=password] + button.hide-pw-toggle {
+  display: flex;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% - 8px);
+  right: 16px;
+}
+.company-profile .password-edit .input-pw input[type=password] + button.hide-pw-toggle.hide {
+  color: #7A53EC;
+}
 .company-profile .password-edit .input-text-wrapper__sub {
   justify-content: space-between;
 }
@@ -9519,6 +9538,25 @@ button.btn-add:hover {
   color: #FFF;
   font-size: 14px;
   line-height: 1;
+}
+
+.member-welcome .img-wrap, .eva-build-success .img-wrap {
+  text-align: center;
+}
+.member-welcome .alert-message, .eva-build-success .alert-message {
+  margin-top: 40px;
+  text-align: center;
+}
+.member-welcome .alert-message p, .eva-build-success .alert-message p {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0A0A0A;
+}
+.member-welcome .alert-message p.sub-text, .eva-build-success .alert-message p.sub-text {
+  font-size: 14px;
+  color: #747474;
+  line-height: 1.5;
+  font-weight: 400;
 }
 
 .change-id__label, .change-company-name__label {
