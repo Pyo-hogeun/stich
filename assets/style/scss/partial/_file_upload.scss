@@ -50,7 +50,13 @@
   border: 1px solid #E0E0E0;
   border-radius: 6px;
   padding: 8px 16px;
-
+  cursor: pointer;
+  &:hover{
+    border-color: $primaryColor;
+    .file-item__name{
+      color: $primaryColor;
+    }
+  }
   &__content {
     display: flex;
     align-items: center;
@@ -94,6 +100,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    
   }
 
   &__delete {

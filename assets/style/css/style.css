@@ -1340,6 +1340,7 @@ input[type=number] {
   background: #FFF;
   font-style: normal;
   min-width: 300px;
+  z-index: 1;
 }
 .tooltip:before {
   content: "";
@@ -3433,22 +3434,14 @@ button.btn-add:hover {
   flex-direction: column;
   gap: 8px;
 }
-.evaluation-card .blocked {
-  z-index: 1;
+.evaluation-card .notice-box {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-.evaluation-card .blocked .notice-box {
-  display: inline-flex;
+  display: none;
   flex-direction: column;
   align-items: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 260px;
   padding: 24px 16px;
   background-color: rgba(77, 36, 195, 0.8);
@@ -3457,11 +3450,36 @@ button.btn-add:hover {
   line-height: 1.5;
   text-align: center;
   border-radius: 16px;
+  z-index: 1;
+  cursor: pointer;
 }
-.evaluation-card .blocked .notice-box .title {
+.evaluation-card .notice-box .title {
   display: block;
   font-weight: 700;
   margin: 12px 0;
+}
+.evaluation-card .detail-view-box {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  gap: 16px;
+  padding: 24px 16px;
+  background-color: rgba(77, 36, 195, 0.8);
+  color: #FFF;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 16px;
+  z-index: 1;
+  cursor: pointer;
+}
+.evaluation-card:hover .notice-box, .evaluation-card:hover .detail-view-box {
+  display: inline-flex;
 }
 .evaluation-card__eva-items {
   display: flex;
@@ -3594,6 +3612,11 @@ button.btn-add:hover {
   gap: 8px;
   color: #0A0A0A;
   justify-content: space-between;
+}
+.files__header h3 {
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }
 .files__title {
   color: #0A0A0A;
@@ -4017,6 +4040,13 @@ button.btn-add:hover {
   border: 1px solid #E0E0E0;
   border-radius: 6px;
   padding: 8px 16px;
+  cursor: pointer;
+}
+.file-item:hover, .link-item:hover {
+  border-color: #7A53EC;
+}
+.file-item:hover .file-item__name, .link-item:hover .file-item__name {
+  color: #7A53EC;
 }
 .file-item__content, .link-item__content {
   display: flex;
