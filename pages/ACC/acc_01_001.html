@@ -1,18 +1,86 @@
+<!DOCTYPE html>
 <html lang="ko">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>STICH</title>
+  <title>STICH - 로그인</title>
   <link rel="stylesheet" href="../../assets/style/css/style.css">
   <link rel="stylesheet" href="../../assets/dist/js/bundle.css">
-
 </head>
 
 <body>
-  <div class="acc-container">
+  <div class="login-page">
+    <div class="login-page__background">
+      <div class="gradient__wrapper">
+        <h2>접수부터 심사까지<br>온라인 평가 플랫폼 Stich</h2>
+        <p class="sub-text">
+          Stich는 공모전, 이벤트, 채용, 사내 응모, 기업 심사 등 평가가 필요한
+          모든 분야에서 접수부터 심사까지 전 과정을 비대면 온라인으로
+          간편하고 공정하게 진행할 수 있는 올인원 평가 플랫폼입니다.
+        </p>
+      </div>
+      <img src="../../assets/images/img_acc_bg.png" alt="Background">
+    </div>
     
+    <div class="login-page__card">
+      <div class="login-card">
+        <div class="login-card__logo">
+          <img src="../../assets/images/icon_stich_logo.svg" alt="">
+        </div>
+
+        <div class="login-card__content">
+          <div class="login-tabs">
+            <div class="login-tabs__item login-tabs__item--active">
+              기업 회원
+            </div>
+          </div>
+
+          <div class="login-form">
+            <div class="login-form__field">
+              <input type="text" class="login-input" placeholder="이메일(기업 아이디) 입력">
+            </div>
+
+            <div class="login-form__field">
+              <div class="login-input-wrapper">
+                <input type="password" class="login-input" placeholder="새로운 비밀번호를 입력해 주세요.">
+                <button type="button" class="login-input__toggle" aria-label="비밀번호 표시">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.3378 7.14696C13.1768 5.9919 10.7783 4 8.0026 4C7.28953 4 6.60003 4.12965 5.94588 4.35359L6.6177 5.07256C7.06559 4.9547 7.53115 4.88398 8.0026 4.88398C10.4483 4.88398 12.6288 6.69319 13.7131 7.77753C13.772 7.83646 13.7838 7.91307 13.7838 7.95433C13.7838 7.99558 13.772 8.07219 13.7131 8.13112C13.1474 8.69687 12.287 9.46298 11.238 10.0582L11.845 10.7182C12.9057 10.0877 13.772 9.32744 14.3378 8.76169C14.7798 8.31381 14.7798 7.59484 14.3378 7.14696ZM4.21329 5.15506C3.12305 5.79153 2.24496 6.56943 1.66743 7.14696C1.22544 7.59484 1.22544 8.31381 1.66743 8.76169C2.82839 9.91676 5.22691 11.9087 8.0026 11.9087C8.73925 11.9087 9.45233 11.7672 10.1242 11.5374L9.6527 11.0306L9.45822 10.8184C8.99266 10.9481 8.50352 11.0247 8.0026 11.0247C5.55693 11.0247 3.37645 9.21547 2.29211 8.13112C2.23317 8.07219 2.22139 7.99558 2.22139 7.95433C2.22139 7.91307 2.23317 7.83646 2.29211 7.77753C2.86964 7.2 3.75362 6.41621 4.82618 5.8151L4.21329 5.15506Z" fill="#747474"/>
+                    <path d="M13.1525 13.4933C13.07 13.5758 12.9581 13.6112 12.852 13.6112C12.7341 13.6112 12.6163 13.564 12.5279 13.4697L10.5713 11.3659L9.92307 10.6705L8.84461 9.50951L8.19636 8.81411L7.15916 7.7003L6.51091 6.99901L5.2203 5.60822L4.59563 4.93639L2.82767 3.03879C2.66266 2.8561 2.67445 2.57912 2.85124 2.41411C3.02804 2.24321 3.31091 2.25499 3.47592 2.43768L5.43246 4.54155L6.08071 5.23695L7.15916 6.3979L7.80741 7.0933L8.84461 8.20711L9.49286 8.9084L10.7835 10.2992L11.4081 10.971L13.1761 12.8686C13.3411 13.0513 13.3293 13.3283 13.1525 13.4933Z" fill="#747474"/>
+                    <path d="M7.7626 8.98465C7.73314 8.99054 7.70367 8.99054 7.67421 8.99054C7.18507 8.99054 6.79023 8.5957 6.79023 8.10657C6.79023 8.05353 6.79612 8.00049 6.80791 7.95334L6.14198 7.23438C5.99465 7.48778 5.90625 7.78833 5.90625 8.10657C5.90625 9.08484 6.69594 9.87452 7.67421 9.87452C7.94529 9.87452 8.20459 9.81559 8.42853 9.70362L7.7626 8.98465Z" fill="#747474"/>
+                    <path d="M10.0393 7.7953C10.0393 8.07817 9.97446 8.33747 9.8566 8.5732L9.15531 7.81298V7.7953C9.15531 7.32384 8.78993 6.94079 8.32437 6.91721L7.61719 6.15699C7.81756 6.0686 8.0415 6.02734 8.27133 6.02734C9.2496 6.02734 10.0393 6.81703 10.0393 7.7953Z" fill="#747474"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="login-form__checkbox">
+              <label class="ckb">
+                <input type="checkbox">
+                <span class="ckb__box"></span>
+                <span class="ckb__label">이메일(기업 아이디) 저장하기</span>
+              </label>
+            </div>
+
+            <button type="submit" class="login-form__button">
+              로그인
+            </button>
+
+            <div class="login-form__divider"></div>
+
+            <div class="login-form__links">
+              <p class="login-form__help-text">비밀번호가 기억나지 않으시나요?</p>
+              <div class="login-form__signup">
+                <span class="login-form__signup-text">아직 계정이 없으신가요?</span>
+                <a href="#" class="login-form__signup-link">가입하기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="../../assets/dist/js/bundle.js"></script>
