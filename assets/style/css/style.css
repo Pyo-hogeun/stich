@@ -675,6 +675,11 @@ h2.ellipsis {
   border-top: 1px solid #EEEEEE;
   box-shadow: 0 -4px 4px 0 rgba(0, 0, 0, 0.1);
 }
+.layer-popup__footer.no-shadow {
+  border: 0;
+  box-shadow: none;
+  padding-top: 5px;
+}
 .layer-popup__footer > div {
   flex: 1 1 0;
   display: flex;
@@ -1133,6 +1138,18 @@ h2.ellipsis {
 .input-text-wrapper__sub_text {
   font-size: 12px;
   color: #BBACCE;
+}
+
+/* For Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* Important for some browsers to fully remove the space */
+}
+
+/* For Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 /* 실제 텍스트 입력 */
@@ -9335,6 +9352,82 @@ button.btn-add:hover {
   margin-top: 0;
 }
 
+.alram-setting .setting-toggle, .terms .setting-toggle {
+  display: flex;
+  justify-content: space-between;
+}
+.alram-setting h4, .terms h4 {
+  margin-top: 24px;
+  line-height: 1;
+  color: #0A0A0A;
+  margin-bottom: 12px;
+}
+.alram-setting .link-list, .terms .link-list {
+  margin-top: 16px;
+  border-bottom: 1px solid #E4E4E4;
+}
+.alram-setting .terms__item, .terms .terms__item {
+  display: flex;
+  padding: 20px 8px;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #E4E4E4;
+}
+
+.confirm-second__wrapper {
+  text-align: center;
+}
+.confirm-second__message {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0A0A0A;
+  margin-bottom: 16px;
+}
+.confirm-second__sub-text {
+  font-size: 14px;
+  color: #747474;
+  margin-bottom: 16px;
+}
+.confirm-second__sub-text em {
+  font-weight: 700;
+  color: #7A53EC;
+}
+.confirm-second .confirm-number {
+  display: flex;
+  gap: 8px;
+}
+.confirm-second .gray-box {
+  background-color: #F1EEFB;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 32px;
+}
+.confirm-second .gray-box ul > li {
+  position: relative;
+  color: #747474;
+  font-size: 14px;
+  padding-left: 10px;
+  padding-bottom: 8px;
+}
+.confirm-second .gray-box ul > li:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #747474;
+  vertical-align: middle;
+}
+.confirm-second .gray-box em {
+  font-weight: 700;
+}
+.confirm-second .notice {
+  margin-top: 24px;
+}
+
 .member-draw .greeting {
   display: flex;
   justify-content: space-between;
@@ -9473,6 +9566,9 @@ button.btn-add:hover {
   border-radius: 50%;
   background-color: #747474;
   vertical-align: middle;
+}
+.change-id .gray-box em, .change-company-name .gray-box em {
+  font-weight: 700;
 }
 .change-id .notice, .change-company-name .notice {
   margin-top: 24px;

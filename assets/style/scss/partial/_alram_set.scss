@@ -1,22 +1,49 @@
 @use 'variables' as *;
-@use 'mixin' as *;
-.change-id, .change-company-name{
-  &__label{
-    margin-top: 24px;
-    margin-bottom: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    color: $Title_Dark;
-    &:nth-of-type(1){
-      margin-top: 0;
-    }
-    &.required{
-      @include required;
-    }
+.alram-setting, .terms{
+  .setting-toggle{
+    display: flex;
+    justify-content: space-between;
   }
-  &__data{
+  h4{
+    margin-top: 24px;
+    line-height: 1;
+    color: $Title_Dark;
+    margin-bottom: 12px;
+  }
+  .link-list{
+    margin-top: 16px;
+    border-bottom: 1px solid #E4E4E4;
+  }
+  .terms__item{
+    display: flex;
+    padding: 20px 8px;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E4E4E4;
+  }
+}
+.confirm-second{
+  &__wrapper{
+    text-align: center;
+  }
+  &__message{
+    font-size: 18px;
+    font-weight: 700;
+    color: $Title_Dark;
+    margin-bottom: 16px;
+  }
+  &__sub-text{
     font-size: 14px;
     color: $normalText;
+    margin-bottom: 16px;
+    em{
+      font-weight: 700;
+      color: $primaryColor;
+    }
+  }
+  .confirm-number{
+    display: flex;
+    gap: 8px;
   }
   .gray-box{
     background-color: #F1EEFB;
@@ -49,12 +76,5 @@
   }
   .notice{
     margin-top: 24px;
-  }
-  .check-same{
-    display: flex;
-    gap: 8px;
-    .input-text-wrapper__wide{
-      flex-direction: column;
-    }
   }
 }

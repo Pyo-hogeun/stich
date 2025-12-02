@@ -40,8 +40,20 @@
       color: $guideColor;
     }
   }
+  
 }
 
+/* For Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* Important for some browsers to fully remove the space */
+}
+
+/* For Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 /* 실제 텍스트 입력 */
 .input-text, .input-textarea, .input-text-calendar, .input-time {
