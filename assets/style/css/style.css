@@ -9491,3 +9491,20 @@ button.btn-add:hover {
 .hardness .step.on {
   background-color: #7A53EC;
 }
+
+.user-info-confirm h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0A0A0A;
+  margin-bottom: 24px;
+}
+.user-info-confirm__label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0A0A0A;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+.user-info-confirm .input-text-wrapper__sub .btn {
+  color: #747474;
+}
