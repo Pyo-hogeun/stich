@@ -9345,10 +9345,10 @@ button.btn-add:hover {
   position: relative;
   display: flex;
 }
-.company-profile .password-edit .input-pw input[type=password] {
+.company-profile .password-edit .input-pw input {
   padding-right: 40px;
 }
-.company-profile .password-edit .input-pw input[type=password] + button.hide-pw-toggle {
+.company-profile .password-edit .input-pw input + button.hide-pw-toggle {
   display: flex;
   border: 0;
   padding: 0;
@@ -9357,7 +9357,7 @@ button.btn-add:hover {
   top: calc(50% - 8px);
   right: 16px;
 }
-.company-profile .password-edit .input-pw input[type=password] + button.hide-pw-toggle.hide {
+.company-profile .password-edit .input-pw input + button.hide-pw-toggle.hide {
   color: #7A53EC;
 }
 .company-profile .password-edit .input-text-wrapper__sub {

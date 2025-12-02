@@ -195,6 +195,33 @@
   </div>
 
   <script src="../../assets/dist/js/bundle.js"></script>
+  <script>
+    (function () {
+      const passwordInputs = document.querySelectorAll('.input-pw');
+
+      passwordInputs.forEach((wrapper) => {
+        const input = wrapper.querySelector('input');
+        const toggle = wrapper.querySelector('.hide-pw-toggle');
+
+        if (!input || !toggle) {
+          return;
+        }
+
+        const setHiddenState = (shouldHide) => {
+          toggle.classList.toggle('hide', shouldHide);
+          input.type = shouldHide ? 'password' : 'text';
+        };
+
+        setHiddenState(toggle.classList.contains('hide'));
+
+        toggle.addEventListener('click', () => {
+          const isHidden = toggle.classList.contains('hide');
+
+          setHiddenState(!isHidden);
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>

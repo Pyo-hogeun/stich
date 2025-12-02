@@ -141,7 +141,7 @@
     .input-pw{
       position: relative;
       display: flex;
-      input[type=password]{
+      input{
         padding-right: 40px;
         &+button.hide-pw-toggle{
           display: flex;
