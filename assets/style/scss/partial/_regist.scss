@@ -123,6 +123,43 @@
     }
   }
 }
+.business-notice{
+  .diagram{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 50px);
+    margin-top: 24px;
+    .item{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      &.gray{
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+        background-color: #E9E9E9;
+        color: $normalText;
+      }
+      &.purple{
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        background-color: $bgPrimaryLight;
+        color: $primaryColor;
+      }
+      &.white{
+        grid-column: 3 / 4;
+        grid-row: 1 / 3;
+        background-color: #F9F9F9;
+        color: $normalText;
+      }
+    }
+    &__message{
+      margin-top: 8px;
+      font-size: 14px;
+      color: $normalText;
+    }
+  }
+}
 .company-info{
   .col-2{
     display: flex;
@@ -215,4 +252,5 @@
       }
     }
   }
+  
 }

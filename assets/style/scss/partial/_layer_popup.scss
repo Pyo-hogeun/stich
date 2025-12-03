@@ -9,6 +9,9 @@
   padding: 40px 20px;
   background: rgba(10, 10, 10, 0.35);
   z-index: 900;
+  &.extend{
+    inset: 0;
+  }
 }
 
 .layer-popup {

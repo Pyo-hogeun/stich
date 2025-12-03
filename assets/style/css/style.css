@@ -578,6 +578,9 @@ h2.ellipsis {
   background: rgba(10, 10, 10, 0.35);
   z-index: 900;
 }
+.layer-dimmed.extend {
+  inset: 0;
+}
 
 .layer-popup {
   width: 800px;
@@ -10074,6 +10077,42 @@ button.btn-add:hover {
 .start__submit .btn.submit {
   justify-content: center;
   width: 200px;
+}
+
+.business-notice .diagram {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 50px);
+  margin-top: 24px;
+}
+.business-notice .diagram .item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.business-notice .diagram .item.gray {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  background-color: #E9E9E9;
+  color: #747474;
+}
+.business-notice .diagram .item.purple {
+  grid-column: 1/3;
+  grid-row: 2/3;
+  background-color: #F1EEFB;
+  color: #7A53EC;
+}
+.business-notice .diagram .item.white {
+  grid-column: 3/4;
+  grid-row: 1/3;
+  background-color: #F9F9F9;
+  color: #747474;
+}
+.business-notice .diagram__message {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #747474;
 }
 
 .company-info .col-2 {
