@@ -1,5 +1,5 @@
-@use 'variables'as *;
-
+@use 'variables' as *;
+@use 'mixin' as *;
 .regist-page {
   position: relative;
   display: flex;
@@ -37,41 +37,182 @@
     border-radius: 16px;
     background-color: #FFFFFF;
     padding: 40px 32px;
-    h2{
+
+    h2 {
       display: block;
       font-size: 24px;
       color: $Title_Dark;
       margin-bottom: 16px;
       text-align: center;
     }
-    .sub-text{
+
+    .sub-text {
       margin-top: 8px;
       margin-bottom: 24px;
       font-size: 14px;
       color: $normalText;
       text-align: center;
     }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .description {
+      margin-bottom: 24px;
+      p {
+        font-size: 14px;
+        color: $normalText;
+        margin-bottom: 16px;
+      }
+
+      .fc-point {
+        color: $primaryColor;
+      }
+
+      em {
+        font-weight: 700;
+        color: $Title_Dark;
+      }
+    }
   }
 
-  &__btn{
+  &__btn {
     justify-content: center;
     width: 100%;
   }
 
 }
-.start{
-  &__terms-list{
+
+.start {
+  &__terms-list {
     display: flex;
     flex-direction: column;
     gap: 16px;
     margin-bottom: 24px;
   }
-  &__terms-item{
+
+  &__terms-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .ckb{
+
+    .ckb {
       display: flex;
+    }
+  }
+  .message{
+    &__point{
+      margin-top: 8px;
+      font-size: 10px;
+      color: $pointColor1;
+    }
+    &__point2{
+      margin-top: 8px;
+      font-size: 10px;
+      color: $pointColor2;
+    }
+  }
+  &__submit{
+    text-align: center;
+    margin-top: 24px;
+    .btn.submit{
+      justify-content: center;
+      width: 200px;
+    }
+  }
+}
+.company-info{
+  .col-2{
+    display: flex;
+    gap: 24px;
+    .col{
+      flex: 0 1 50%;
+    }
+  }
+  &__form{
+  }
+  &__item{
+    margin-bottom: 24px;
+  }
+  &__label{
+    color: $Title_Dark;
+    &.fs-14{
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    &.fs-18{
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    &.required{
+      @include required
+    }
+  }
+  .check-same{
+    display: flex;
+    gap: 8px;
+  }
+
+  .manager-info-regist {
+    .item {
+      display: grid;
+      grid-template-columns: 180px 230px 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+
+      .form {
+        &__label {
+          font-size: 14px;
+          font-weight: 600;
+          color: $Title_Dark;
+          margin-bottom: 8px;
+        }
+
+        input:disabled {
+          cursor: default;
+        }
+
+        .function-btn {
+          width: 48px;
+
+          img {
+            margin-right: 0;
+          }
+        }
+
+        &.wide {
+          grid-column: 1 / 4;
+        }
+
+        .divider {
+          display: inline-block;
+        }
+
+        .message {
+          font-size: 12px;
+          color: $guideColor;
+        }
+
+        &.email-check {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          label.chb{
+            .chb__label{
+              font-size: 14px;
+              color: $normalText;
+            }
+          }
+        }
+        .input-with-btn {
+          display: flex;
+          gap: 12px;
+    
+        }
+      }
     }
   }
 }

@@ -10019,6 +10019,25 @@ button.btn-add:hover {
   color: #747474;
   text-align: center;
 }
+.regist-page__container .logo {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.regist-page__container .description {
+  margin-bottom: 24px;
+}
+.regist-page__container .description p {
+  font-size: 14px;
+  color: #747474;
+  margin-bottom: 16px;
+}
+.regist-page__container .description .fc-point {
+  color: #7A53EC;
+}
+.regist-page__container .description em {
+  font-weight: 700;
+  color: #0A0A0A;
+}
 .regist-page__btn {
   justify-content: center;
   width: 100%;
@@ -10037,6 +10056,102 @@ button.btn-add:hover {
 }
 .start__terms-item .ckb {
   display: flex;
+}
+.start .message__point {
+  margin-top: 8px;
+  font-size: 10px;
+  color: #FF44BF;
+}
+.start .message__point2 {
+  margin-top: 8px;
+  font-size: 10px;
+  color: #007AFF;
+}
+.start__submit {
+  text-align: center;
+  margin-top: 24px;
+}
+.start__submit .btn.submit {
+  justify-content: center;
+  width: 200px;
+}
+
+.company-info .col-2 {
+  display: flex;
+  gap: 24px;
+}
+.company-info .col-2 .col {
+  flex: 0 1 50%;
+}
+.company-info__item {
+  margin-bottom: 24px;
+}
+.company-info__label {
+  color: #0A0A0A;
+}
+.company-info__label.fs-14 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.company-info__label.fs-18 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.company-info__label.required:after {
+  content: "*";
+  vertical-align: text-top;
+  color: #FF44BF;
+  font-size: 1.1em;
+  line-height: 1;
+}
+.company-info .check-same {
+  display: flex;
+  gap: 8px;
+}
+.company-info .manager-info-regist .item {
+  display: grid;
+  grid-template-columns: 180px 230px 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.company-info .manager-info-regist .item .form__label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0A0A0A;
+  margin-bottom: 8px;
+}
+.company-info .manager-info-regist .item .form input:disabled {
+  cursor: default;
+}
+.company-info .manager-info-regist .item .form .function-btn {
+  width: 48px;
+}
+.company-info .manager-info-regist .item .form .function-btn img {
+  margin-right: 0;
+}
+.company-info .manager-info-regist .item .form.wide {
+  grid-column: 1/4;
+}
+.company-info .manager-info-regist .item .form .divider {
+  display: inline-block;
+}
+.company-info .manager-info-regist .item .form .message {
+  font-size: 12px;
+  color: #BBACCE;
+}
+.company-info .manager-info-regist .item .form.email-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.company-info .manager-info-regist .item .form.email-check label.chb .chb__label {
+  font-size: 14px;
+  color: #747474;
+}
+.company-info .manager-info-regist .item .form .input-with-btn {
+  display: flex;
+  gap: 12px;
 }
 
 .terms-content {
