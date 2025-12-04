@@ -3690,6 +3690,81 @@ button.btn-add:hover {
   position: relative;
 }
 
+.eva-info-card {
+  display: flex;
+  padding: 20px 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+  border-radius: 8px;
+  background: #F9F9F9;
+}
+.eva-info-card__layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+}
+.eva-info-card__image {
+  position: relative;
+  display: flex;
+  border-radius: 12px;
+  background: #FFF;
+  width: 104px;
+  height: 104px;
+  overflow: hidden;
+}
+.eva-info-card__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.eva-info-card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1 0 0;
+}
+.eva-info-card__title {
+  align-self: stretch;
+  color: #0A0A0A;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+}
+.eva-info-card__description {
+  align-self: stretch;
+  color: #747474;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+}
+.eva-info-card__period {
+  align-self: stretch;
+  color: #747474;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+}
+.eva-info-card__period-label {
+  display: block;
+  font-weight: 600;
+  color: #0A0A0A;
+}
+.eva-info-card__period-date {
+  display: block;
+  font-weight: 400;
+  color: #747474;
+}
+
 .eva-create h3 {
   font-size: 18px;
   font-weight: 700;
@@ -9910,7 +9985,7 @@ button.btn-add:hover {
   font-size: 14px;
   font-weight: 600;
 }
-.login-form__label:after {
+.login-form__label.required:after {
   content: "*";
   vertical-align: text-top;
   color: #FF44BF;
@@ -10259,4 +10334,163 @@ button.btn-add:hover {
   .terms-content__spacer {
     font-size: 9px;
   }
+}
+
+.eva-page {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F5F5F5;
+  min-height: 100vh;
+  width: 100%;
+}
+.eva-page__background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.eva-page__background .gradient__wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), linear-gradient(109deg, rgba(28, 39, 134, 0.5) 5.29%, rgba(146, 146, 146, 0.4) 100%);
+  background-blend-mode: normal, multiply;
+  z-index: 1;
+  text-align: center;
+}
+.eva-page__background .gradient__wrapper h2 {
+  font-size: 60px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+.eva-page__background .gradient__wrapper p.sub-text {
+  margin: 16px auto;
+  width: 590px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #FFFFFF;
+  word-break: keep-all;
+}
+.eva-page__background img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.eva-card {
+  display: flex;
+  padding: 40px 32px;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  border-radius: 16px;
+  background: #FFF;
+  width: 500px;
+  z-index: 2;
+}
+.eva-card__logo {
+  display: flex;
+  width: 136px;
+  height: 28px;
+  justify-content: center;
+  align-items: center;
+}
+.eva-card__logo .collaboration {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.eva-card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 40px;
+}
+
+.eva-member-login .eva-card {
+  gap: 32px;
+}
+.eva-member-login .eva-card__content__header h3 {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #4D24C3;
+}
+.eva-member-login .eva-card__content__header .sub-text {
+  margin-top: 8px;
+  font-size: 18px;
+  color: #919191;
+  line-height: 1.2;
+}
+.eva-member-login .eva-card .eva-info-card {
+  margin-bottom: 24px;
+}
+.eva-member-login .eva-card .new-pw-set {
+  width: 100%;
+}
+
+.login-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.login-input {
+  display: flex;
+  padding: 12px 16px;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  border-radius: 8px;
+  background: #F9F9F9;
+  border: none;
+  color: #747474;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  box-sizing: border-box;
+  transition: background-color 0.2s;
+}
+.login-input::-moz-placeholder {
+  color: #747474;
+}
+.login-input::placeholder {
+  color: #747474;
+}
+.login-input:focus {
+  outline: none;
+  background: #F0F0F0;
+}
+.login-input-wrapper .login-input {
+  padding-right: 40px;
+}
+
+.login-input__toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-input__toggle svg {
+  width: 16px;
+  height: 16px;
 }
