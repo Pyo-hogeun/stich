@@ -10443,7 +10443,11 @@ button.btn-add:hover {
   margin-top: 8px;
   font-size: 18px;
   color: #919191;
-  line-height: 1.2;
+  line-height: 1.5;
+}
+.eva-member-login .eva-card__content__header .sub-text em {
+  color: #4D24C3;
+  font-weight: 700;
 }
 .eva-member-login .eva-card__content__footer .contact-notice {
   text-decoration: underline;

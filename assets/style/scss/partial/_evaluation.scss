@@ -110,7 +110,11 @@
           margin-top: 8px;
           font-size: 18px;
           color: $smallText;
-          line-height: 1.2;
+          line-height: 1.5;
+          em{
+            color: $primaryColor2;
+            font-weight: 700;
+          }
         }
       }
       &__footer{
