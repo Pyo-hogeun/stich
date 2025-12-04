@@ -885,6 +885,13 @@ h2.ellipsis {
 .ckb__label {
   cursor: pointer;
 }
+.ckb__label.required:after {
+  content: "*";
+  vertical-align: text-top;
+  color: #FF44BF;
+  font-size: 1.1em;
+  line-height: 1;
+}
 
 :root {
   --ck-size: 16px;
@@ -4085,10 +4092,12 @@ button.btn-add:hover {
   margin: 40px 0 !important;
   border: none;
   height: 1px;
+  width: 100%;
   border-top: 1px solid var(--color-gray-light); /* 원하는 색상과 스타일 지정 */
 }
 .divider_hr_24 {
   border-top: 1px solid var(--color-gray-light); /* 원하는 색상과 스타일 지정 */
+  width: 100%;
   margin: 24px 0 !important;
 }
 
@@ -10421,6 +10430,9 @@ button.btn-add:hover {
 .eva-member-login .eva-card {
   gap: 32px;
 }
+.eva-member-login .eva-card__content {
+  gap: 24px;
+}
 .eva-member-login .eva-card__content__header h3 {
   font-size: 32px;
   line-height: 1.2;
@@ -10433,11 +10445,41 @@ button.btn-add:hover {
   color: #919191;
   line-height: 1.2;
 }
+.eva-member-login .eva-card__content__footer .contact-notice {
+  text-decoration: underline;
+  font-size: 14px;
+  color: #747474;
+}
+.eva-member-login .eva-card__content__footer .contact-notice a.btn.re-send {
+  font-weight: 700;
+  color: #4D24C3;
+  border-color: #4D24C3;
+  margin: 16px 0;
+  padding: 0;
+}
+.eva-member-login .eva-card__content__footer .alert-message {
+  color: #B0B0B0;
+  font-size: 12px;
+}
 .eva-member-login .eva-card .eva-info-card {
+  margin-top: 16px;
   margin-bottom: 24px;
 }
-.eva-member-login .eva-card .new-pw-set {
+.eva-member-login .eva-card .new-pw-set, .eva-member-login .eva-card .sign-in {
   width: 100%;
+}
+.eva-member-login .eva-card .sign-in .input-text-wrapper__wide {
+  margin-bottom: 16px;
+}
+.eva-member-login .eva-card .agree-template {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+.eva-member-login .eva-card .login-form {
+  padding-bottom: 24px;
+  border-bottom: 1px solid #E4E4E4;
 }
 
 .login-input-wrapper {

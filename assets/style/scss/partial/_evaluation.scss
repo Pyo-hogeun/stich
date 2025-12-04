@@ -97,6 +97,7 @@
   .eva-card{
     gap: 32px;
     &__content {
+      gap: 24px;
       &__header {
         h3 {
           font-size: 32px;
@@ -112,15 +113,49 @@
           line-height: 1.2;
         }
       }
+      &__footer{
+        .contact-notice{
+          text-decoration: underline;
+          font-size: 14px;
+          color: $normalText;
+          a.btn.re-send{
+            font-weight: 700;
+            color: $primaryColor2;
+            border-color: $primaryColor2;
+            margin: 16px 0;
+            padding: 0;
+          }
+        }
+        .alert-message{
+          color: #B0B0B0;
+          font-size: 12px;
+        }
+      }
     }
     .eva-info-card{
+      margin-top: 16px;
       margin-bottom: 24px;
     }
-    .new-pw-set{
+    .new-pw-set, .sign-in{
       width: 100%;
     }
-  }  
-
+    .sign-in{
+      .input-text-wrapper__wide{
+        margin-bottom: 16px;
+      }
+    }
+    .agree-template{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+    }
+    
+    .login-form{
+      padding-bottom: 24px;
+      border-bottom: 1px solid $cardBorderColor;
+    }
+  }
 }
 .login-input-wrapper {
   position: relative;

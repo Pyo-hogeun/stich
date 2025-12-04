@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'mixin' as *;
 // 기본 변수 (원하면 오버라이드)
 :root {
   --ck-size: 16px;
@@ -127,5 +128,8 @@
   // 접근성: 레이블이 버튼처럼 포커스 되도록 처리 (키보드 이용시 input에 포커스)
   &__label {
     cursor: pointer;
+    &.required{
+      @include required;
+    }
   }
 }
