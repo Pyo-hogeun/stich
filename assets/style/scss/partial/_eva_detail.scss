@@ -26,6 +26,9 @@
     &.eva-before {
       color: #A68FEB;
     }
+    &.eva-now {
+      color: $primaryColor2;
+    }
   }
 
   .content-header {
@@ -228,6 +231,7 @@
       width: 100%;
       flex-wrap: wrap;
       gap: 10px 0;
+      justify-content: center;
 
       li {
         a {
@@ -243,6 +247,7 @@
             background-color: var(--bg-step-tab-active);
             border-color: $primaryColor;
             color: var(--bg-step-tab-text-active);
+            font-weight: 700;
           }
         }
 
