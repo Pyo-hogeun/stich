@@ -1,0 +1,146 @@
+@use 'variables' as *;
+@use 'mixin' as *;
+.evaluator-agree{
+  h3{
+    font-size: 18px;
+    font-weight: 700;
+    color: $Title_Dark;
+  }
+
+  &__form{
+    display: grid;
+    gap: 24px 16px;
+    margin-top: 24px;
+    &.col-2{
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .item{
+    &.wide{
+      grid-column: 1 / 4;
+    }
+    &__heading{
+      grid-column: 1 / 4;
+      font-size: 18px;
+      font-weight: 700;
+      color: $Title_Dark;
+      margin-bottom: 0;
+      @media (max-width: 640px) {
+        font-size: 16px;
+      }
+    }
+    &__label{
+      font-size: 14px;
+      font-weight: 600;
+      color: $Title_Dark;
+      margin-bottom: 8px;
+      &.required{
+        @include required;
+      }
+      .sub{
+        font-size: 12px;
+        font-weight: 400;
+        color: $smallText;
+        margin-left: 4px;
+      }
+    }
+    .file-item{
+      background-color: $bgLightGray;
+      padding: 18px 16px;
+      height: 60px;
+      border: 0;
+      margin-bottom: 8px;
+      .item-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+      .item-drag-handle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        width: 16px;
+        height: 16px;
+        padding: 3.5px 2px;
+        background: transparent;
+        border: none;
+        cursor: grab;
+    
+        &:active {
+          cursor: grabbing;
+        }
+      }
+      .item-close-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+    
+        &:hover {
+          opacity: 0.7;
+        }
+    
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+      &__size, &__url{
+        font-size: 14px;
+        color: $normalText;
+      }
+      &__url{
+        max-width: 70%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+    .file-list{
+      margin-top: 8px;
+      &__topper{
+        display: flex;
+        font-size: 14px;
+        color: $smallText;
+        justify-content: space-between;
+        margin-top: 16px;
+        em{
+          color: #9071EB;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  .eva-term-agree{
+    margin-top: 24px;
+    color: $Title_Dark;
+    &__label{
+      font-size: 14px;
+      font-weight: 700;
+    }
+    &__content{
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.5;
+      em{
+        font-weight: 700;
+      }
+    }
+    &__check{
+      display: flex;
+      justify-content: space-between;
+      .date{
+        font-size: 18px;
+        font-weight: 700;
+        color: $Title_Dark;
+      }
+    }
+  }
+}
