@@ -396,6 +396,12 @@
         border: 1px solid #BDBDBD;
         background: #FFF;
         box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.12);
+        &:hover{
+          border-color: $primaryColor2;
+          outline: 1px solid $primaryColor2;
+          box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.50);
+          background: rgba(241, 238, 251, 0.30);
+        }
         &.disabled{
           border: 1px solid rgba(189,189,189,.5);
           &:after{

@@ -1921,6 +1921,12 @@ input[type=number] {
   background: #FFF;
   box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.12);
 }
+.eva-field .eva-list .list-wrap .item:hover {
+  border-color: #4D24C3;
+  outline: 1px solid #4D24C3;
+  box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.5);
+  background: rgba(241, 238, 251, 0.3);
+}
 .eva-field .eva-list .list-wrap .item.disabled {
   border: 1px solid rgba(189, 189, 189, 0.5);
 }
@@ -3301,6 +3307,12 @@ button.btn-add:hover {
   box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.12);
   padding: 24px;
 }
+.evaluation-card:hover {
+  border-color: #4D24C3;
+  outline: 1px solid #4D24C3;
+  box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.5);
+  background: rgba(241, 238, 251, 0.3);
+}
 .evaluation-card .ckb {
   color: #747474;
   margin-bottom: 20px;
@@ -3570,7 +3582,8 @@ button.btn-add:hover {
   flex: 1 1 auto;
   gap: 12px;
   align-items: center;
-  font-size: 14px;
+  font-size: 12px;
+  line-height: 1.5;
   color: #747474;
 }
 .evaluation-card__eva-items .eva-item__score .count {
@@ -8001,6 +8014,7 @@ button.btn-add:hover {
   border-color: #4D24C3;
   outline: 1px solid #4D24C3;
   box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.5);
+  background: rgba(241, 238, 251, 0.3);
 }
 .type-card .item.competition-card:hover .competition-title {
   color: #4D24C3;

@@ -7,6 +7,12 @@
   border: 1px solid #BDBDBD;
   box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.12);
   padding: 24px;
+  &:hover{
+    border-color: $primaryColor2;
+    outline: 1px solid $primaryColor2;
+    box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.50);
+    background: rgba(241, 238, 251, 0.30);
+  }
 
   .ckb {
     color: $normalText;
@@ -308,7 +314,8 @@
         flex: 1 1 auto;
         gap: 12px;
         align-items: center;
-        font-size: 14px;
+        font-size: 12px;
+        line-height: 1.5;
         color: $normalText;
         .count{
           font-size: 14px;
