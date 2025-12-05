@@ -90,7 +90,8 @@ function generateImageGallery(done) {
     p.meta { margin: 0 0 20px; color:#6b7280; }
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
     .card { background:#fff; border:1px solid #e5e7eb; border-radius: 12px; padding: 10px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); display:flex; flex-direction:column; gap: 10px; }
-    .thumb-wrap { background:#f9fafb; border:1px solid #e5e7eb; border-radius: 10px; padding: 8px; display:flex; align-items:center; justify-content:center; height: 120px; overflow: hidden; }
+    .thumb-wrap { background:#f2f2f2; border:1px solid #e5e7eb; border-radius: 10px; padding: 8px; display:flex; align-items:center; justify-content:center; height: 120px; overflow: hidden; }
+    .thumb-wrap:hover{background: #ddd;}
     .thumb { max-width: 100%; max-height: 100%; object-fit: contain; }
     .info { font-size: 13px; color:#374151; word-break: break-all; display:flex; flex-direction:column; gap: 4px; }
     .info strong { display:block; color:#111827; margin-bottom: 4px; font-size: 14px; }

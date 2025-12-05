@@ -382,6 +382,15 @@
           gap: 16px;
         }
       }
+      .message{
+        display: inline-flex;
+        align-items: center;
+        font-size: 14px;
+        color: $normalText;
+        .fc-primary{
+          color: $primaryColor2;
+        }
+      }
     }
 
     .list-wrap {

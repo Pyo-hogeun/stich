@@ -47,7 +47,7 @@ svg {
 }
 
 .fc-primary {
-  color: #7A53EC;
+  color: #4D24C3;
 }
 
 .icon-eva-delete {
@@ -1907,6 +1907,15 @@ input[type=number] {
 .eva-field .eva-list .list-topper .toolbar .flex-end {
   display: flex;
   gap: 16px;
+}
+.eva-field .eva-list .list-topper .message {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  color: #747474;
+}
+.eva-field .eva-list .list-topper .message .fc-primary {
+  color: #4D24C3;
 }
 .eva-field .eva-list .list-wrap {
   display: grid;
@@ -9743,19 +9752,19 @@ button.btn-add:hover {
   line-height: 1;
 }
 
-.member-welcome .img-wrap, .eva-build-success .img-wrap {
+.member-welcome .img-wrap, .eva-build-success .img-wrap, .eva-build-reset .img-wrap {
   text-align: center;
 }
-.member-welcome .alert-message, .eva-build-success .alert-message {
+.member-welcome .alert-message, .eva-build-success .alert-message, .eva-build-reset .alert-message {
   margin-top: 40px;
   text-align: center;
 }
-.member-welcome .alert-message p, .eva-build-success .alert-message p {
+.member-welcome .alert-message p, .eva-build-success .alert-message p, .eva-build-reset .alert-message p {
   font-size: 16px;
   font-weight: 700;
   color: #0A0A0A;
 }
-.member-welcome .alert-message p.sub-text, .eva-build-success .alert-message p.sub-text {
+.member-welcome .alert-message p.sub-text, .eva-build-success .alert-message p.sub-text, .eva-build-reset .alert-message p.sub-text {
   font-size: 14px;
   color: #747474;
   line-height: 1.5;
