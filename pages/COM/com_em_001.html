@@ -59,13 +59,13 @@
             <!-- 가운데 컨텐츠 영역 -->
             <td class="center-col" width="640" valign="top" align="center" style="background-color: #FFFFFF;">
               <p style="font-size:24px; padding-top: 40px; padding-bottom: 24px; font-weight:700; color:#4D24C3; margin:0;">
-                결제 납입 알림
+                환불 처리 안내
               </p>
               <p style="font-size:14px; font-weight:600; color:#0A0A0A; margin:0;">
                 <span style="color: #4D24C3;">Stich@example.com</span> 님 안녕하세요.
               </p>
               <p style="font-size:14px;color:#747474; padding-top: 12px; padding-bottom: 24px; margin:0; border-bottom: 1px solid #E4E4E4;">
-                성공적으로 결제가 완료 되었습니다. 결제 내역은 아래와 같습니다. 이제부터 제한 없이 평가를 만들어 보세요.
+                요청하신 요금 환불이 승인되었습니다. 환불 요금은 아래와 같습니다.
               </p>
             </td>
 
@@ -80,52 +80,65 @@
             <td class="center-col" width="640" valign="top" align="center" style="background-color: #FFFFFF;">
               <!-- 메인 카드 -->
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <!-- 회색 안내 박스 -->
+                <tr>
+                  <td style="padding:25px 0 32px 0;">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                      style="background-color:#fafafa; border-radius:12px;">
+                      <tr>
+                        <td style="padding:24px 16px;">
+                          <p style="font-size: 14px; font-weight: 600; color: #4D24C3;">환불 정보</p>
+                          <ul style="padding-left: 0;list-style: none;margin: 4px 0;">
+                            <li style="font-size: 14px;color: #0A0A0A;margin-bottom: 4px;">&middot; 환불 요청 평가 : 2025 경북 학생 저널리즘 캠프 [학교 신문 만들기]</li>
+                            <li style="font-size: 14px;color: #0A0A0A;margin-bottom: 4px;">&middot; 환불 처리 결과 : 부분 환불</li>
+                            <li style="font-size: 14px;color: #0A0A0A;margin-bottom: 4px;">&middot; 승인일시 : YYYY-MM-DD HH:MM:SS</li>
+                          </ul>
+                          <p style="font-size: 14px; font-weight: 600; color: #4D24C3;margin-top: 16px;">안내사항</p>
+                          <ul style="padding-left: 0;list-style: none;margin: 4px 0;">
+                            <li style="font-size: 14px;color: #0A0A0A;margin-bottom: 4px;">&middot; 카드 결제 건의 경우, 승인 일시를 기준으로 3~5 영업일 이내 카드사 승인 취소 처리됩니다.</li>
+                            <li style="font-size: 14px;color: #0A0A0A;margin-bottom: 4px;">&middot; 세금계산서가 발행된 결제 건의 경우, 취소발행이 3 영업일 이내 소요될 수 있습니다.</li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
                 <tr>
                   <td>
                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
-
                       <!-- 요금 항목 테이블 -->
                       <tr>
-                        <td style="padding:24px 0 24px 0;">
-
-                          <p style="color: #0A0A0A;text-align: center;font-size: 18px;font-weight: 700;padding-bottom: 24px;">{평가명} 결제 일시 : 2025년 7월 21일 오후 08:29</p>
+                        <td style="padding:0 0 24px 0;">
                           <table class="overage-details-table" style="border-collapse: collapse; width: 100%;color: #747474; font-size: 14px; font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif; border: 1px solid #E4E4E4; border-radius: 8px; overflow: hidden;">
                             <thead>
                               <tr>
-                                <th style="background-color: #E9E9E9; padding: 17px 12px; text-align: center; font-weight: 600; color: #747474; width: 100px; ">항목</th>
-                                <th style="background-color: #E9E9E9; padding: 17px 12px; text-align: center; font-weight: 600; color: #747474; width: 100px; ">무료 제공량</th>
-                                <th style="background-color: #E9E9E9; padding: 17px 4px; text-align: center; font-weight: 600; color: #747474; width: 100px; ">실제 사용량</th>
-                                <th style="background-color: #E9E9E9; padding: 17px 12px; text-align: center; font-weight: 600; color: #747474; width: 100px; ">초과 사용량</th>
-                                <th style="background-color: #E9E9E9; padding: 17px 12px; text-align: center; font-weight: 600; color: #747474; width: 150px;">단가</th>
-                                <th style="background-color: #E9E9E9; padding: 17px 12px; text-align: center; font-weight: 600; color: #747474; width: 150px;">금액</th>
+                                <th style="background-color: #E9E9E9; padding: 17px 12px; text-align: center; font-weight: 600; color: #747474; width: 250px; ">평가명</th>
+                                <th style="background-color: #E9E9E9; padding: 17px 12px; text-align: center; font-weight: 600; color: #747474; width: 150px; ">초과된 항목</th>
+                                <th style="background-color: #E9E9E9; padding: 17px 4px; text-align: center; font-weight: 600; color: #747474; width: 80px; ">초과 사용량</th>
+                                <th style="background-color: #E9E9E9; padding: 17px 12px; text-align: center; font-weight: 600; color: #747474; width: 104px; ">단가</th>
+                                <th style="background-color: #E9E9E9; padding: 17px 12px; text-align: center; font-weight: 600; color: #747474; width: 87px;">금액</th>
                               </tr>
                             </thead>
                             <tbody>
                               <tr>
-                                <td style="background-color: #F9F9F9; padding: 12px; color: #747474;">평가 대상</td>
-                                <td style="background-color: #F9F9F9; padding: 12px; color: #747474; text-align: right;">10건</td>
-                                <td style="background-color: #F9F9F9; padding: 12px; color: #747474; text-align: right;">0건</td>
-                                <td style="background-color: #F9F9F9; padding: 12px; color: #747474; text-align: right;">0건</td>
-                                <td style="background-color: #F9F9F9; padding: 12px; color: #747474; text-align: right;">₩ 1,000/건</td>
-                                <td style="background-color: #F9F9F9; padding: 12px; color: #747474; text-align: right;">₩ 2,000</td>
+                                <td rowspan="3" style="background-color: #F9F9F9;padding: 12px; text-align: left; font-weight: 700; color: #0A0A0A; border-right: 1px solid #E4E4E4; line-height: 21px;">2025 경북 학생 저널리즘 캠프<br>[학교 신문 만들기·30초 영화제]</td>
+                                <td style="background-color: #F9F9F9;padding: 12px; color: #747474;">평가위원 2명 추가 </td>
+                                <td style="background-color: #F9F9F9;padding: 12px; color: #747474; text-align: right;">2건</td>
+                                <td style="background-color: #F9F9F9;padding: 12px; color: #747474; text-align: right;">₩ 1,000/명</td>
+                                <td style="background-color: #F9F9F9;padding: 12px; color: #747474; text-align: right;">₩ 2,000</td>
                               </tr>
                               <tr>
-                                <td style="background-color: #FFFFFF; padding: 12px; color: #747474;">평가 위원</td>
-                                <td style="background-color: #FFFFFF; padding: 12px; color: #747474; text-align: right;">1명</td>
-                                <td style="background-color: #FFFFFF; padding: 12px; color: #747474; text-align: right;">3명</td>
-                                <td style="background-color: #FFFFFF; padding: 12px; color: #747474; text-align: right;">2명</td>
-                                <td style="background-color: #FFFFFF; padding: 12px; color: #747474; text-align: right;">₩ 1,000/명</td>
-                                <td style="background-color: #FFFFFF; padding: 12px; color: #747474; text-align: right;">₩ 2,000</td>
+                                <td style="background-color: #F9F9F9;padding: 12px; color: #747474; border-top: 1px solid #E4E4E4;">평가위원 2명 추가 </td>
+                                <td style="background-color: #F9F9F9;padding: 12px; color: #747474; text-align: right; border-top: 1px solid #E4E4E4;">2명</td>
+                                <td style="background-color: #F9F9F9;padding: 12px; color: #747474; text-align: right; border-top: 1px solid #E4E4E4;">₩ 1,000/명</td>
+                                <td style="background-color: #F9F9F9;padding: 12px; color: #747474; text-align: right; border-top: 1px solid #E4E4E4;">₩ 2,000</td>
                               </tr>
                               <tr>
-                                <td style="background-color: #F9F9F9; padding: 12px; color: #747474;">평가 용량</td>
-                                <td style="background-color: #F9F9F9; padding: 12px; color: #747474; text-align: right;">1GB</td>
-                                <td style="background-color: #F9F9F9; padding: 12px; color: #747474; text-align: right;">1GB</td>
-                                <td style="background-color: #F9F9F9; padding: 12px; color: #747474; text-align: right;">0GB</td>
-                                <td style="background-color: #F9F9F9; padding: 12px; color: #747474; text-align: right;">₩ 1,000/1GB</td>
-                                <td style="background-color: #F9F9F9; padding: 12px; color: #747474; text-align: right;">₩ 2,000</td>
+                                <td style="background-color: #F9F9F9;padding: 12px; color: #747474; border-top: 1px solid #E4E4E4;">평가위원 2명 추가 </td>
+                                <td style="background-color: #F9F9F9;padding: 12px; color: #747474; text-align: right; border-top: 1px solid #E4E4E4;">2GB</td>
+                                <td style="background-color: #F9F9F9;padding: 12px; color: #747474; text-align: right; border-top: 1px solid #E4E4E4;">₩ 1,000/1GB</td>
+                                <td style="background-color: #F9F9F9;padding: 12px; color: #747474; text-align: right; border-top: 1px solid #E4E4E4;">₩ 2,000</td>
                               </tr>
-                              
                             </tbody>
                           </table>
                         </td>
@@ -133,7 +146,8 @@
 
                       <tr>
                         <td colspan="3" style="padding-bottom: 24px;">
-                          <p style="font-size: 24px;text-align: center;">총 결제 금액 <span style="color: #4D24C3;font-weight: 700;">₩ 14,000</span></p>
+                          <p style="font-size: 14px;text-align: center;margin-bottom: 8px;">총 결제 금액 : ₩6,000</p>
+                          <p style="font-size: 14px;text-align: center;">총 환불 금액은 <span style="color: #4D24C3;font-size: 24px;font-weight: 700;">₩ 14,000</span> 입니다.</p>
                         </td>
                       </tr>
 
@@ -154,7 +168,7 @@
                                     text-align:center;
                                     text-decoration: none;
                                   ">
-                                  스티치로 바로가기
+                                  유료 이용 내역 확인하기
                                 </a>
                               </td>
                             </tr>
@@ -169,6 +183,7 @@
                             <tr>
                               <td align="center">
                                 <p style="font-size:10px; line-height:1.6; color:#aaaaaa; margin:0 0 4px 0;">
+                                  본인이 요청하지 않은 경우에는 고객센터로 즉시 신고해 주세요.<br>
                                   본 메일은 발신 전용이며, 메일 수신에 문제가 발생 시 stich 서비스 팀으로 문의 바랍니다.
                                 </p>
                                 <p style="font-size:10px; color:#bbbbbb; margin:0;">
