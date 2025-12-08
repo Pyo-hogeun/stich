@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overage Details Table - STICH</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+</head>
+
+<body>
+  <main class="main-content" style="padding: 40px; max-width: 960px; margin: 0 auto;">
+    <h1 style="margin-bottom: 24px; font-size: 24px; font-weight: 600;">Overage Details Table Component</h1>
+
+    <div class="overage-details-table">
+      <div class="overage-details-table__header">
+        <div class="overage-details-table__header-cell overage-details-table__header-cell--eva-name">
+          <div class="overage-details-table__header-text">평가명</div>
+        </div>
+        <div class="overage-details-table__header-cell overage-details-table__header-cell--exceeded-item">
+          <div class="overage-details-table__header-text">초과된 항목</div>
+        </div>
+        <div class="overage-details-table__header-cell overage-details-table__header-cell--exceeded-usage">
+          <div class="overage-details-table__header-text">초과 사용량</div>
+        </div>
+        <div class="overage-details-table__header-cell overage-details-table__header-cell--unit-price">
+          <div class="overage-details-table__header-text">단가</div>
+        </div>
+        <div class="overage-details-table__header-cell overage-details-table__header-cell--amount">
+          <div class="overage-details-table__header-text">금액</div>
+        </div>
+      </div>
+
+      <div class="overage-details-table__row">
+        <div class="overage-details-table__cell overage-details-table__cell--eva-name overage-details-table__cell--highlight">
+          <div class="overage-details-table__cell-text overage-details-table__cell-text--ellipsis">제 5회 디자인 공모전</div>
+        </div>
+        <div class="overage-details-table__cell overage-details-table__cell--exceeded-item">
+          <div class="overage-details-table__cell-text">평가 위원</div>
+        </div>
+        <div class="overage-details-table__cell overage-details-table__cell--exceeded-usage overage-details-table__cell--align-right">
+          <div class="overage-details-table__cell-text">2명</div>
+        </div>
+        <div class="overage-details-table__cell overage-details-table__cell--unit-price overage-details-table__cell--align-right">
+          <div class="overage-details-table__cell-text">₩ 1,000/명</div>
+        </div>
+        <div class="overage-details-table__cell overage-details-table__cell--amount overage-details-table__cell--align-right">
+          <div class="overage-details-table__cell-text">₩ 2,000</div>
+        </div>
+      </div>
+
+      <div class="overage-details-table__row overage-details-table__row--multi">
+        <div class="overage-details-table__cell overage-details-table__cell--eva-name overage-details-table__cell--highlight overage-details-table__cell--multi-row">
+          <div class="overage-details-table__cell-text overage-details-table__cell-text--ellipsis">맑은 샘물 아리수 캐릭터 공모전</div>
+        </div>
+        <div class="overage-details-table__cell-group">
+          <div class="overage-details-table__sub-row">
+            <div class="overage-details-table__cell overage-details-table__cell--exceeded-item">
+              <div class="overage-details-table__cell-text">평가 대상</div>
+            </div>
+            <div class="overage-details-table__cell overage-details-table__cell--exceeded-usage overage-details-table__cell--align-right">
+              <div class="overage-details-table__cell-text">2건</div>
+            </div>
+            <div class="overage-details-table__cell overage-details-table__cell--unit-price overage-details-table__cell--align-right">
+              <div class="overage-details-table__cell-text">₩ 1,000/건</div>
+            </div>
+            <div class="overage-details-table__cell overage-details-table__cell--amount overage-details-table__cell--align-right overage-details-table__cell--multi-row-content">
+              <div class="overage-details-table__cell-text">₩ 2,000</div>
+            </div>
+          </div>
+          <div class="overage-details-table__sub-row overage-details-table__sub-row--border-top">
+            <div class="overage-details-table__cell overage-details-table__cell--exceeded-item">
+              <div class="overage-details-table__cell-text">평가 위원</div>
+            </div>
+            <div class="overage-details-table__cell overage-details-table__cell--exceeded-usage overage-details-table__cell--align-right">
+              <div class="overage-details-table__cell-text">2명</div>
+            </div>
+            <div class="overage-details-table__cell overage-details-table__cell--unit-price overage-details-table__cell--align-right">
+              <div class="overage-details-table__cell-text">₩ 1,000/명</div>
+            </div>
+            <div class="overage-details-table__cell overage-details-table__cell--amount overage-details-table__cell--align-right overage-details-table__cell--multi-row-content overage-details-table__cell--border-top">
+              <div class="overage-details-table__cell-text">₩ 2,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="overage-details-table__row overage-details-table__row--multi overage-details-table__row--large">
+        <div class="overage-details-table__cell overage-details-table__cell--eva-name overage-details-table__cell--highlight overage-details-table__cell--multi-row">
+          <div class="overage-details-table__cell-text overage-details-table__cell-text--multiline">2025 경북 학생 저널리즘 캠프<br>[학교 신문 만들기·30초 영화제]</div>
+        </div>
+        <div class="overage-details-table__cell-group">
+          <div class="overage-details-table__sub-row">
+            <div class="overage-details-table__cell overage-details-table__cell--exceeded-item">
+              <div class="overage-details-table__cell-text">평가위원 2명 추가 </div>
+            </div>
+            <div class="overage-details-table__cell overage-details-table__cell--exceeded-usage overage-details-table__cell--align-right">
+              <div class="overage-details-table__cell-text">2건</div>
+            </div>
+            <div class="overage-details-table__cell overage-details-table__cell--unit-price overage-details-table__cell--align-right">
+              <div class="overage-details-table__cell-text">₩ 1,000/명</div>
+            </div>
+            <div class="overage-details-table__cell overage-details-table__cell--amount overage-details-table__cell--align-right overage-details-table__cell--multi-row-content">
+              <div class="overage-details-table__cell-text">₩ 2,000</div>
+            </div>
+          </div>
+          <div class="overage-details-table__sub-row overage-details-table__sub-row--border-top">
+            <div class="overage-details-table__cell overage-details-table__cell--exceeded-item">
+              <div class="overage-details-table__cell-text">평가위원 2명 추가 </div>
+            </div>
+            <div class="overage-details-table__cell overage-details-table__cell--exceeded-usage overage-details-table__cell--align-right">
+              <div class="overage-details-table__cell-text">2명</div>
+            </div>
+            <div class="overage-details-table__cell overage-details-table__cell--unit-price overage-details-table__cell--align-right">
+              <div class="overage-details-table__cell-text">₩ 1,000/명</div>
+            </div>
+            <div class="overage-details-table__cell overage-details-table__cell--amount overage-details-table__cell--align-right overage-details-table__cell--multi-row-content overage-details-table__cell--border-top">
+              <div class="overage-details-table__cell-text">₩ 2,000</div>
+            </div>
+          </div>
+          <div class="overage-details-table__sub-row overage-details-table__sub-row--border-top">
+            <div class="overage-details-table__cell overage-details-table__cell--exceeded-item">
+              <div class="overage-details-table__cell-text">평가위원 2명 추가 </div>
+            </div>
+            <div class="overage-details-table__cell overage-details-table__cell--exceeded-usage overage-details-table__cell--align-right">
+              <div class="overage-details-table__cell-text">2GB</div>
+            </div>
+            <div class="overage-details-table__cell overage-details-table__cell--unit-price overage-details-table__cell--align-right">
+              <div class="overage-details-table__cell-text">₩ 1,000/1GB</div>
+            </div>
+            <div class="overage-details-table__cell overage-details-table__cell--amount overage-details-table__cell--align-right overage-details-table__cell--multi-row-content overage-details-table__cell--border-top">
+              <div class="overage-details-table__cell-text">₩ 2,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
