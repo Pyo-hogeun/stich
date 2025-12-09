@@ -8371,6 +8371,7 @@ button.btn-add:hover {
 
 .type-list {
   grid-template-columns: 1fr;
+  gap: 8px;
 }
 .type-list .item.competition-card {
   display: flex;
@@ -8379,30 +8380,20 @@ button.btn-add:hover {
   gap: 16px;
   flex-direction: row;
   align-items: flex-start;
-  border-radius: 0;
-  border: none;
-  border-top: 1px solid #B0B0B0;
   background: transparent;
-  box-shadow: none;
-  box-sizing: border-box;
-}
-.type-list .item.competition-card:hover {
-  border: none;
-  box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.5);
   padding: 32px 24px;
-  outline: 2px solid #4D24C3;
+  outline: 1px solid #E4E4E4;
+  box-shadow: 0 1px 9px 0px rgba(90, 75, 121, 0.1);
   border-radius: 16px;
 }
-.type-list .item.competition-card:hover .competition-title {
+.type-list .item.competition-card .competition-title {
   color: #4D24C3;
   text-decoration: underline;
   cursor: pointer;
 }
-.type-list .item.competition-card:hover + .item.competition-card {
-  border-top: 0;
-}
-.type-list .item.competition-card:nth-of-type(1) {
-  border-top: 0;
+.type-list .item.competition-card:hover {
+  box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.5);
+  outline: 2px solid #4D24C3;
 }
 .type-list .item.competition-card .item__img {
   width: 160px;

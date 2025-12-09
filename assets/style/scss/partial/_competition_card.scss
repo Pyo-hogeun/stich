@@ -146,6 +146,7 @@
 
 .type-list{
   grid-template-columns: 1fr;
+  gap: 8px;
   .item.competition-card {
     display: flex;
     width: 100%;
@@ -153,30 +154,19 @@
     gap: 16px;
     flex-direction: row;
     align-items: flex-start;
-    border-radius: 0;
-    border: none;
-    border-top: 1px solid #B0B0B0;
     background: transparent;
-    box-shadow: none;
-    box-sizing: border-box;
-  
-    &:hover {
-      border: none;
-      box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.50);
-      padding: 32px 24px;
-      outline: 2px solid $primaryColor2;
-      border-radius: 16px;
-      .competition-title{
-        color: $primaryColor2;
-        text-decoration: underline;
-        cursor: pointer;
-      }
-      & + .item.competition-card{
-        border-top: 0;
-      }
+    padding: 32px 24px;
+    outline: 1px solid $cardBorderColor;
+    box-shadow: 0 1px 9px 0px rgba(90, 75, 121, 0.1);
+    border-radius: 16px;
+    .competition-title{
+      color: $primaryColor2;
+      text-decoration: underline;
+      cursor: pointer;
     }
-    &:nth-of-type(1){
-      border-top: 0;
+    &:hover{
+      box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.50);
+      outline: 2px solid $primaryColor2;
     }
   
     .item__img {
