@@ -13774,11 +13774,11 @@ var AppBundle = (function (exports) {
   });
 
   exports.datePickerInit = datePickerInit;
-  exports.initSectionAccordion = initSectionAccordion;
   exports.fileUpload = fileUpload;
   exports.fileUploadAuto = fileUploadAuto;
   exports.fileUploadSortable = fileUploadSortable;
   exports.filelistPopTemplateInit = filelistPopTemplateInit;
+  exports.initSectionAccordion = initSectionAccordion;
   exports.initSliderQuestionCard = initSliderQuestionCard;
   exports.initStarRateSetting = initStarRateSetting;
   exports.initStarRatingUI = initStarRatingUI;

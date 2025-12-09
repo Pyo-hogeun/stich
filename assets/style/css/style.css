@@ -2246,6 +2246,12 @@ input[type=number] {
 .section-container section.sortable-chosen {
   padding: 0 12px;
 }
+.section-container section.section--collapsed > :not(.section__title_bar) {
+  display: none;
+}
+.section-container section.section--collapsed .section__title_bar .fn-group button.toggle img {
+  transform: rotate(0deg);
+}
 .section-container .section__title_bar {
   display: flex;
   height: 40px;
@@ -2275,18 +2281,14 @@ input[type=number] {
   background-color: transparent;
   border: 0;
   margin: 0 8px;
+  height: 20px;
 }
 .section-container .section__title_bar .fn-group button.toggle img {
+  transform: rotate(-180deg);
   transition: transform 0.2s ease;
 }
 .section-container .section__title_bar .handle-drag {
   cursor: pointer;
-}
-.section-container section.section--collapsed > :not(.section__title_bar) {
-  display: none;
-}
-.section-container section.section--collapsed .section__title_bar .fn-group button.toggle img {
-  transform: rotate(-90deg);
 }
 .section-container .section__form_item {
   margin-bottom: 16px;

@@ -190,6 +190,13 @@
     &.sortable-chosen{
       padding: 0 12px;
     }
+    &.section--collapsed > :not(.section__title_bar) {
+      display: none;
+    }
+    &.section--collapsed .section__title_bar .fn-group button.toggle img {
+      transform: rotate(0deg);
+    }
+    
   }
   .section{
     &__title_bar{
@@ -219,12 +226,19 @@
           background-color: transparent;
           border: 0;
           margin: 0 8px;
+          height: 20px;
+          img{
+            transform: rotate(-180deg);
+            transition: transform 0.2s ease;
+          }
         }
       }
       .handle-drag{
         cursor: pointer;
       }
+      
     }
+    
     &__form_item{
       margin-bottom: 16px;
     }
@@ -243,6 +257,8 @@
       font-weight: 600;
     }
   }
+
+  
   
 }
 button.btn-add{
