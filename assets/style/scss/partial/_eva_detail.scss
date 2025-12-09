@@ -180,10 +180,21 @@
 }
 
 .eva-field {
+  position: relative;
   padding: $cardPadding;
   margin-top: 24px;
+  .sticky{
+    position: sticky;
+    padding-top: 10px;
+    top: $gnbHeight;
+    background-color: rgba(255,255,255,.95);
+    z-index: 100;
+  }
 
   .field-tab {
+    position: sticky;
+    top: $gnbHeight;
+    z-index: 100;
     padding: 20px 24px;
     background-color: $primaryColor;
     border-top-left-radius: 16px;
@@ -225,6 +236,9 @@
 
   .step-tab {
     margin-top: 32px;
+    padding-bottom: 10px;
+    position: sticky;
+    top: calc($gnbHeight + 10px);
 
     ol {
       display: flex;
@@ -242,6 +256,7 @@
           height: 48px;
           border-radius: 30px;
           white-space: nowrap;
+          background-color: #FFFFFF;
 
           &.active {
             background-color: var(--bg-step-tab-active);

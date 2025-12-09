@@ -1740,10 +1740,21 @@ input[type=number] {
 }
 
 .eva-field {
+  position: relative;
   padding: 36px 24px;
   margin-top: 24px;
 }
+.eva-field .sticky {
+  position: sticky;
+  padding-top: 10px;
+  top: 80px;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 100;
+}
 .eva-field .field-tab {
+  position: sticky;
+  top: 80px;
+  z-index: 100;
   padding: 20px 24px;
   background-color: #7A53EC;
   border-top-left-radius: 16px;
@@ -1778,6 +1789,9 @@ input[type=number] {
 }
 .eva-field .step-tab {
   margin-top: 32px;
+  padding-bottom: 10px;
+  position: sticky;
+  top: 90px;
 }
 .eva-field .step-tab ol {
   display: flex;
@@ -1794,6 +1808,7 @@ input[type=number] {
   height: 48px;
   border-radius: 30px;
   white-space: nowrap;
+  background-color: #FFFFFF;
 }
 .eva-field .step-tab ol li a.active {
   background-color: var(--bg-step-tab-active);
