@@ -1221,19 +1221,72 @@ export const filelistPopTemplateInit = () => {
       openPopup(button);
     });
   });
-}
+  }
+
+  const initComboBoxes = () => {
+    const combos = Array.from(document.querySelectorAll('.combo'));
+    if (!combos.length) {
+      return;
+    }
+
+    const comboConfigs = combos
+      .map((combo) => {
+        const toggle = combo.querySelector('.combo-toggle');
+        const label = combo.querySelector('.combo-label');
+        const options = Array.from(combo.querySelectorAll('.combo-options li a'));
+
+        if (!toggle || !label || options.length === 0) {
+          return null;
+        }
+
+        const applySelection = (option) => {
+          options.forEach((opt) => opt.classList.remove('selected'));
+          option.classList.add('selected');
+          label.textContent = option.textContent.trim();
+          toggle.checked = false;
+        };
+
+        const preselected = options.find((option) => option.classList.contains('selected'));
+        if (preselected) {
+          label.textContent = preselected.textContent.trim();
+        }
+
+        options.forEach((option) => {
+          option.addEventListener('click', (event) => {
+            event.preventDefault();
+            applySelection(option);
+          });
+        });
+
+        return { combo, toggle };
+      })
+      .filter(Boolean);
+
+    if (!comboConfigs.length) {
+      return;
+    }
+
+    document.addEventListener('click', (event) => {
+      comboConfigs.forEach(({ combo, toggle }) => {
+        if (!combo.contains(event.target)) {
+          toggle.checked = false;
+        }
+      });
+    });
+  };
 
 // DOM 로드 시 실행
-document.addEventListener('DOMContentLoaded', () => {
-  rangePickerInit("#rangePicker");
-  datePickerInit("#datePicker");
-  initSliderQuestionCard();
-  initStarRateSetting();
-  initStarRatingUI();
-  initStepScoreTab();
-  tooltipInit();
-  filelistPopTemplateInit();
-  initSectionActive();
-  initUsageToggleLabels();
-});
+  document.addEventListener('DOMContentLoaded', () => {
+    rangePickerInit("#rangePicker");
+    datePickerInit("#datePicker");
+    initSliderQuestionCard();
+    initStarRateSetting();
+    initStarRatingUI();
+    initStepScoreTab();
+    tooltipInit();
+    filelistPopTemplateInit();
+    initSectionActive();
+    initUsageToggleLabels();
+    initComboBoxes();
+  });
 
