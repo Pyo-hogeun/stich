@@ -196,6 +196,14 @@
     &.section--collapsed .section__title_bar .fn-group button.toggle img {
       transform: rotate(0deg);
     }
+    &.section-active{
+      .section__title_bar{
+        background-color: $primaryColor;
+      }
+      .question-card{
+        border-color: $primaryColor;
+      }
+    }
     
   }
   .section{

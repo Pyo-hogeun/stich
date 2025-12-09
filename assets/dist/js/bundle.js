@@ -13032,6 +13032,20 @@ var AppBundle = (function (exports) {
     });
   };
 
+  const initSectionActive = () => {
+    const sectionContainer = document.querySelector('.section-container');
+    if (!sectionContainer) return;
+
+    const sections = Array.from(sectionContainer.querySelectorAll('section'));
+
+    sections.forEach((section) => {
+      section.addEventListener('click', () => {
+        sections.forEach((item) => item.classList.remove('section-active'));
+        section.classList.add('section-active');
+      });
+    });
+  };
+
 
   /**
    * SortableJS 기반 중첩 드래그&드롭 구현
@@ -13630,9 +13644,9 @@ var AppBundle = (function (exports) {
 
       tabItems.forEach((tab) => {
         const link = tab.querySelector('a');
-        link.addEventListener('click', (e)=>{
+        link.addEventListener('click', (e) => {
           e.preventDefault();
-          tabItems.forEach((item)=>{
+          tabItems.forEach((item) => {
             item.classList.remove('active');
           });
           tab.classList.add('active');
@@ -13646,21 +13660,21 @@ var AppBundle = (function (exports) {
 
   const tooltipInit = () => {
     const tooltipTriggers = document.querySelectorAll('.info-tooltip');
-    
+
     tooltipTriggers.forEach((trigger) => {
       const tooltip = trigger.querySelector('.tooltip');
       if (!tooltip) return;
-    
+
       const showTooltip = () => {
         tooltip.hidden = false;
       };
-    
+
       const hideTooltip = () => {
         tooltip.hidden = true;
       };
-    
+
       tooltip.hidden = true;
-    
+
       trigger.addEventListener('mouseenter', showTooltip);
       trigger.addEventListener('mouseleave', hideTooltip);
       trigger.addEventListener('focus', showTooltip);
@@ -13670,7 +13684,7 @@ var AppBundle = (function (exports) {
   };
   const filelistPopTemplateInit = () => {
     const popupTemplate = document.getElementById('file-list-popup-template');
-    if(!popupTemplate) return;
+    if (!popupTemplate) return;
 
     const popupGap = 8;
     let activePopup = null;
@@ -13771,6 +13785,7 @@ var AppBundle = (function (exports) {
     initStepScoreTab();
     tooltipInit();
     filelistPopTemplateInit();
+    initSectionActive();
   });
 
   exports.datePickerInit = datePickerInit;
@@ -13779,6 +13794,7 @@ var AppBundle = (function (exports) {
   exports.fileUploadSortable = fileUploadSortable;
   exports.filelistPopTemplateInit = filelistPopTemplateInit;
   exports.initSectionAccordion = initSectionAccordion;
+  exports.initSectionActive = initSectionActive;
   exports.initSliderQuestionCard = initSliderQuestionCard;
   exports.initStarRateSetting = initStarRateSetting;
   exports.initStarRatingUI = initStarRatingUI;

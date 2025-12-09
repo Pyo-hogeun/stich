@@ -1193,7 +1193,7 @@ input[type=number] {
 }
 
 /* 포커스 시 시각적 강조 (접근성) */
-.input-text:focus {
+.input-text:focus, .input-textarea:focus {
   border: 1px solid #7A53EC;
 }
 
@@ -2251,6 +2251,12 @@ input[type=number] {
 }
 .section-container section.section--collapsed .section__title_bar .fn-group button.toggle img {
   transform: rotate(0deg);
+}
+.section-container section.section-active .section__title_bar {
+  background-color: #7A53EC;
+}
+.section-container section.section-active .question-card {
+  border-color: #7A53EC;
 }
 .section-container .section__title_bar {
   display: flex;

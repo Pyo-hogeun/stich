@@ -85,7 +85,7 @@ input[type=number] {
   resize: vertical;
 }
 /* 포커스 시 시각적 강조 (접근성) */
-.input-text:focus {
+.input-text:focus, .input-textarea:focus {
   border: 1px solid $primaryColor;
 }
 .input-text-calendar{

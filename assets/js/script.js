@@ -444,6 +444,20 @@ export const initSectionAccordion = (scope = document) => {
   });
 };
 
+export const initSectionActive = () => {
+  const sectionContainer = document.querySelector('.section-container');
+  if (!sectionContainer) return;
+
+  const sections = Array.from(sectionContainer.querySelectorAll('section'));
+
+  sections.forEach((section) => {
+    section.addEventListener('click', () => {
+      sections.forEach((item) => item.classList.remove('section-active'));
+      section.classList.add('section-active');
+    });
+  });
+}
+
 
 /**
  * SortableJS 기반 중첩 드래그&드롭 구현
@@ -1043,9 +1057,9 @@ export const initStepScoreTab = () => {
 
     tabItems.forEach((tab) => {
       const link = tab.querySelector('a');
-      link.addEventListener('click', (e)=>{
+      link.addEventListener('click', (e) => {
         e.preventDefault();
-        tabItems.forEach((item)=>{
+        tabItems.forEach((item) => {
           item.classList.remove('active')
         });
         tab.classList.add('active');
@@ -1059,21 +1073,21 @@ export const initStepScoreTab = () => {
 
 export const tooltipInit = () => {
   const tooltipTriggers = document.querySelectorAll('.info-tooltip');
-  
+
   tooltipTriggers.forEach((trigger) => {
     const tooltip = trigger.querySelector('.tooltip');
     if (!tooltip) return;
-  
+
     const showTooltip = () => {
       tooltip.hidden = false;
     };
-  
+
     const hideTooltip = () => {
       tooltip.hidden = true;
     };
-  
+
     tooltip.hidden = true;
-  
+
     trigger.addEventListener('mouseenter', showTooltip);
     trigger.addEventListener('mouseleave', hideTooltip);
     trigger.addEventListener('focus', showTooltip);
@@ -1083,7 +1097,7 @@ export const tooltipInit = () => {
 }
 export const filelistPopTemplateInit = () => {
   const popupTemplate = document.getElementById('file-list-popup-template');
-  if(!popupTemplate) return;
+  if (!popupTemplate) return;
 
   const popupGap = 8;
   let activePopup = null;
@@ -1184,5 +1198,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initStepScoreTab();
   tooltipInit();
   filelistPopTemplateInit();
+  initSectionActive();
 });
 
