@@ -458,6 +458,41 @@ export const initSectionActive = () => {
   });
 }
 
+const USAGE_LABEL_TEXT = '사용';
+const UNUSED_LABEL_TEXT = '미사용';
+
+export const initUsageToggleLabels = (scope = document) => {
+  const toggles = scope.querySelectorAll('.toggle-switch');
+
+  toggles.forEach((toggle) => {
+    if (toggle.dataset.usageToggleLabelInitialized === 'true') {
+      return;
+    }
+
+    const input = toggle.querySelector('.toggle-switch__input');
+    const label = toggle.querySelector('.toggle-switch__label');
+
+    if (!input || !label) {
+      return;
+    }
+
+    const initialText = label.textContent.trim();
+
+    if (initialText !== USAGE_LABEL_TEXT) {
+      return;
+    }
+
+    toggle.dataset.usageToggleLabelInitialized = 'true';
+
+    const updateLabel = () => {
+      label.textContent = input.checked ? USAGE_LABEL_TEXT : UNUSED_LABEL_TEXT;
+    };
+
+    updateLabel();
+    input.addEventListener('change', updateLabel);
+  });
+};
+
 
 /**
  * SortableJS 기반 중첩 드래그&드롭 구현
@@ -1199,5 +1234,6 @@ document.addEventListener('DOMContentLoaded', () => {
   tooltipInit();
   filelistPopTemplateInit();
   initSectionActive();
+  initUsageToggleLabels();
 });
 
