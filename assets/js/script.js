@@ -413,6 +413,38 @@ if (typeof document !== 'undefined') {
 }
 
 
+const SECTION_COLLAPSED_CLASS = 'section--collapsed';
+
+const updateToggleState = (section, toggleBtn) => {
+  const isCollapsed = section.classList.contains(SECTION_COLLAPSED_CLASS);
+  toggleBtn.setAttribute('aria-expanded', isCollapsed ? 'false' : 'true');
+};
+
+export const initSectionAccordion = (scope = document) => {
+  const sections = scope.querySelectorAll('.section-container section');
+
+  sections.forEach((section) => {
+    if (section.dataset.sectionAccordionInitialized === 'true') {
+      return;
+    }
+
+    const toggleBtn = section.querySelector('.section__title_bar .toggle');
+    if (!toggleBtn) {
+      return;
+    }
+
+    section.dataset.sectionAccordionInitialized = 'true';
+    toggleBtn.type = toggleBtn.getAttribute('type') || 'button';
+    updateToggleState(section, toggleBtn);
+
+    toggleBtn.addEventListener('click', () => {
+      section.classList.toggle(SECTION_COLLAPSED_CLASS);
+      updateToggleState(section, toggleBtn);
+    });
+  });
+};
+
+
 /**
  * SortableJS 기반 중첩 드래그&드롭 구현
  * - 섹션 drag: handle '.handle-drag', container '.section-container'
@@ -421,6 +453,8 @@ if (typeof document !== 'undefined') {
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initSectionAccordion();
+
   // 1) 섹션용 Sortable 초기화
   const sectionContainer = document.querySelector('.section-container');
   let sectionSortable = null;
