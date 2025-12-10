@@ -854,17 +854,23 @@ const evaluationFileSwiper = (() => {
 
 document.addEventListener('DOMContentLoaded', function(){
   const mainSwiper = new Swiper(".how-to-swiper", {
-    modules: [Pagination],
+    modules: [Navigation, Pagination],
     slidesPerView: 1,
     spaceBetween: 0,
-    grabCursor: true,
-    freeMode: true,
+    // grabCursor: true,
+    // freeMode: true,
+    pagination: { el: '.swiper-pagination', clickable: true },
     // Navigation arrows
     // navigation: {
     //   nextEl: '.button-next.tmp',
     //   prevEl: '.button-prev.tmp',
     // },
+    autoplay: {
+      delay: 2500,
+    },
+    
   });
+  mainSwiper.start();
 })
 
 // noUiSlider initialization for slider question cards

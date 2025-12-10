@@ -13440,18 +13440,24 @@ var AppBundle = (function (exports) {
   // 메인페이지 swiper
 
   document.addEventListener('DOMContentLoaded', function(){
-    new Swiper(".how-to-swiper", {
-      modules: [Pagination],
+    const mainSwiper = new Swiper(".how-to-swiper", {
+      modules: [Navigation, Pagination],
       slidesPerView: 1,
       spaceBetween: 0,
-      grabCursor: true,
-      freeMode: true,
+      // grabCursor: true,
+      // freeMode: true,
+      pagination: { el: '.swiper-pagination', clickable: true },
       // Navigation arrows
       // navigation: {
       //   nextEl: '.button-next.tmp',
       //   prevEl: '.button-prev.tmp',
       // },
+      autoplay: {
+        delay: 2500,
+      },
+      
     });
+    mainSwiper.start();
   });
 
   // noUiSlider initialization for slider question cards
