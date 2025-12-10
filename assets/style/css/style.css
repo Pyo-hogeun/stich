@@ -11160,3 +11160,39 @@ button.btn-add:hover {
   font-weight: 700;
   color: #0A0A0A;
 }
+
+:root {
+  --transition: all cubic-bezier(0, 0.69, 0.27, 0.87) 0.5s;
+}
+
+section.main-banner__01 {
+  position: relative;
+  background-color: #FFF;
+  height: 80vh;
+  overflow: hidden;
+}
+section.main-banner__01 .img-main-01 {
+  position: absolute;
+  transition: var(--transition);
+  bottom: -50px;
+  right: 0;
+  opacity: 0;
+}
+section.main-banner__01 .img-main-01.active {
+  bottom: 0;
+  opacity: 1;
+}
+section.main-banner__01 button.btn-link {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 260px;
+  align-items: center;
+  border: 0;
+  height: 72px;
+  padding: 0 30px;
+  border-radius: 40px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: linear-gradient(96deg, rgba(115, 3, 154, 0) 13.2%, rgba(255, 238, 219, 0.25) 87.66%), var(--Primary-Color_01, #4D24C3);
+}
