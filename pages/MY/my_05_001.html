@@ -315,9 +315,11 @@
                   <td>japafo2712@pacfut.com </td>
                   <td><span class="ellipsis w-100">분야1, 분야2, 분야3, 분야4</span></td>
                   <td>
-                    <div class="ellipsis w-150">
-                      <span class="badge">초대메일 발송완료</span>
-                      <span class="badge">평가제외</span>
+                    <div class="member-badge-tooltip w-150">
+                      <div class="ellipsis member-badge-tooltip__target">
+                        <span class="badge">초대메일 발송완료</span>
+                        <span class="badge">평가제외</span>
+                      </div>
                     </div>
                   </td>
                   <td>
@@ -346,7 +348,7 @@
                       </button>
                     </div>
                   </td>
-                  <td><button href="" class="btn underline underline__icon">
+                  <td><button href="" class="btn underline underline__icon setting-toggle">
                     <img src="../../assets/images/icon_setting.svg" alt="" class="icon icon-setting"></button></td>
                 </tr>
                 <tr>
@@ -358,9 +360,15 @@
                   <td>japafo2712@pacfut.com </td>
                   <td><span class="ellipsis w-100">분야1, 분야2, 분야3, 분야4</span></td>
                   <td>
-                    <div class="ellipsis w-150">
-                      <span class="badge">초대메일 발송완료</span>
-                      <span class="badge">평가제외</span>
+                    <div class="member-badge-tooltip w-150">
+                      <div class="ellipsis member-badge-tooltip__target">
+                        <span class="badge">초대메일 발송완료</span>
+                        <span class="badge">평가제외</span>
+                        <span class="badge">초대메일 발송완료</span>
+                        <span class="badge">평가제외</span>
+                        <span class="badge">초대메일 발송완료</span>
+                        <span class="badge">평가제외</span>
+                      </div>
                     </div>
                   </td>
                   <td>
@@ -388,7 +396,7 @@
                       </button>
                     </div>
                   </td>
-                  <td><button href="" class="btn underline underline__icon">
+                  <td><button href="" class="btn underline underline__icon setting-toggle">
                     <img src="../../assets/images/icon_setting.svg" alt="" class="icon icon-setting"></button></td>
                 </tr>
                 
@@ -619,6 +627,110 @@
     </aside>
   </main>
 
+
+  <div class="tooltip center member-badge-tooltip__tooltip member-badge-tooltip__tooltip--floating" aria-hidden="true">
+    <div class="member-badge-tooltip__badges"></div>
+  </div>
+
+  <div class="setting-list-popup">
+    <button class="setting-list-popup__close-btn" aria-label="닫기">
+      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="20" height="20" rx="10" fill="#A68FEB" stroke="#7A53EC"/>
+        <rect x="6.96875" y="14.7422" width="1" height="11" transform="rotate(-135 6.96875 14.7422)" fill="white"/>
+        <rect x="14.0312" y="14.7422" width="11" height="0.999999" transform="rotate(-135 14.0312 14.7422)" fill="white"/>
+        </svg>
+        
+    </button>
+
+    <div class="setting-list-popup__content">
+      <ul class="setting-list-popup__items">
+        <li><a href="" class="setting-list-popup__item"><span class="label">설정</span> <img src="../../assets/images/icon_edit_16.svg" alt=""></a></li>
+        <li><a href="" class="setting-list-popup__item"><span class="label">삭제</span> <img src="../../assets/images/icon_draw.svg" alt=""></a></li>
+        <li><a href="" class="setting-list-popup__item"><span class="label">평가 리셋</span> <img src="../../assets/images/icon_reset.svg" alt=""></a></li>
+        <li><a href="" class="setting-list-popup__item"><span class="label">평가 제외</span> <img src="../../assets/images/icon_file_delete.svg" alt=""></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    //툴팁
+    document.addEventListener('DOMContentLoaded', function () {
+      const floatingTooltip = document.querySelector('.member-badge-tooltip__tooltip--floating');
+      if (!floatingTooltip) return;
+
+      const badgeContainer = floatingTooltip.querySelector('.member-badge-tooltip__badges');
+      const tooltipTargets = document.querySelectorAll('.member-badge-tooltip__target');
+      const tooltipPadding = 8;
+
+      const hideTooltip = () => {
+        floatingTooltip.style.display = 'none';
+      };
+
+      const showTooltip = (target) => {
+        const badges = target.querySelectorAll('.badge');
+        badgeContainer.innerHTML = '';
+
+        badges.forEach((badge) => {
+          badgeContainer.appendChild(badge.cloneNode(true));
+        });
+
+        floatingTooltip.style.display = 'inline-flex';
+
+        const targetRect = target.getBoundingClientRect();
+        const tooltipRect = floatingTooltip.getBoundingClientRect();
+
+        let left = targetRect.left;
+        const maxLeft = window.innerWidth - tooltipRect.width - tooltipPadding;
+        if (left > maxLeft) {
+          left = maxLeft;
+        }
+        if (left < tooltipPadding) {
+          left = tooltipPadding;
+        }
+
+        const top = targetRect.bottom + tooltipPadding + window.scrollY;
+
+        floatingTooltip.style.left = `${left}px`;
+        floatingTooltip.style.top = `${top}px`;
+      };
+
+      tooltipTargets.forEach((target) => {
+        target.addEventListener('mouseenter', () => showTooltip(target));
+        target.addEventListener('focus', () => showTooltip(target));
+        target.addEventListener('mouseleave', hideTooltip);
+        target.addEventListener('blur', hideTooltip);
+      });
+
+      floatingTooltip.addEventListener('mouseleave', hideTooltip);
+    });
+
+    //설정 popup
+    document.addEventListener('DOMContentLoaded', function(){
+      const settingPop = document.querySelector('.setting-list-popup');
+      const settingPopToggle = document.querySelectorAll('.setting-toggle');
+      const settingPopClose = document.querySelector('.setting-list-popup__close-btn');
+      if(!settingPop) return;
+
+      const showPop = (target) => {
+        const targetRect = target.getBoundingClientRect();
+        const top = targetRect.bottom + window.scrollY;
+        let left = targetRect.left;
+        settingPop.style.display = 'block';
+        settingPop.style.left = `${left - 200}px`;
+        settingPop.style.top = `${top}px`;
+      }
+
+      settingPopToggle.forEach((target)=>{
+        target.addEventListener('click', () => showPop(target));
+        
+      });
+      settingPopClose.addEventListener('click', function(e){
+        settingPop.style.display = 'none';
+      })
+      
+
+    })
+  </script>
 
   <script src="../../assets/dist/js/bundle.js"></script>
 </body>

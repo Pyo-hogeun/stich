@@ -1,10 +1,11 @@
 @use 'variables' as *;
 
-.file-list-popup {
+.setting-list-popup {
+  display: none;
   position: absolute;
   left: 0;
   top: 8px;
-  width: 300px;
+  width: 160px;
   padding: 20px;
   background: #FFF;
   border: 1px solid #7A53EC;
@@ -23,56 +24,21 @@
     cursor: pointer;
   }
 
-  &__close-line {
-    position: absolute;
-    background: #FFF;
-
-    &--1 {
-      width: 1px;
-      height: 11px;
-      left: 10px;
-      top: 5px;
-      transform: rotate(-135deg);
-    }
-
-    &--2 {
-      width: 11px;
-      height: 1px;
-      left: 5px;
-      top: 10px;
-      transform: rotate(-135deg);
-    }
-  }
-
   &__content {
     display: flex;
-    width: 260px;
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
-  }
-
-  &__title {
-    margin: 0;
-    color: #0A0A0A;
-    font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 20px;
-    text-transform: uppercase;
-  }
-
-  &__count {
-    color: #4D24C3;
   }
 
   &__items {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    align-self: stretch;
-    margin-top: 12px;
+    width: 100%;
+    li{
+      margin-bottom: 12px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__item {
@@ -80,12 +46,6 @@
     justify-content: space-between;
     align-items: flex-start;
     align-self: stretch;
-  }
-
-  &__item-info {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
   }
 
   &__file-icon {

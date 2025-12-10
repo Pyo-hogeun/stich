@@ -20,4 +20,14 @@
     border-right: 6px solid transparent;
     border-top: 6px solid transparent;
   }
+  &.center{
+    border-radius: 8px;
+    &:before{
+      left: calc(50% - 6px);
+      border-left: 6px solid transparent;
+      border-bottom: 12px solid #7A53EC;
+      border-right: 6px solid transparent;
+      border-top: 0 solid transparent;
+    }
+  }
 }

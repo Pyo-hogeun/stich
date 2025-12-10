@@ -1334,6 +1334,16 @@ input[type=number] {
   border-right: 6px solid transparent;
   border-top: 6px solid transparent;
 }
+.tooltip.center {
+  border-radius: 8px;
+}
+.tooltip.center:before {
+  left: calc(50% - 6px);
+  border-left: 6px solid transparent;
+  border-bottom: 12px solid #7A53EC;
+  border-right: 6px solid transparent;
+  border-top: 0 solid transparent;
+}
 
 :root {
   --nav-button-height: 30px;
@@ -5144,6 +5154,56 @@ button.btn-add:hover {
   width: 14px;
   height: 14px;
 }
+.member-invite__list .member-badge-tooltip {
+  position: relative;
+  display: inline-block;
+}
+.member-invite__list .member-badge-tooltip.w-100 {
+  width: 100px;
+}
+.member-invite__list .member-badge-tooltip.w-150 {
+  width: 150px;
+}
+.member-invite__list .member-badge-tooltip__target {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 100%;
+}
+.member-invite__list .member-badge-tooltip__tooltip {
+  display: none;
+  top: calc(100% + 8px);
+  left: 0;
+  white-space: normal;
+}
+.member-invite__list .member-badge-tooltip:hover .member-badge-tooltip__tooltip {
+  display: block;
+}
+
+.member-badge-tooltip__tooltip {
+  display: none;
+  max-width: 300px;
+  flex-wrap: wrap;
+  transform: translateX(-30%);
+}
+.member-badge-tooltip__tooltip .badge {
+  display: inline-flex;
+  height: 22px;
+  padding: 4px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: #E9E9E9;
+  font-size: 12px;
+  color: #484848;
+}
+.member-badge-tooltip__badges {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
 
 .template-preview .template-name {
   font-size: 18px;
@@ -6464,7 +6524,7 @@ button.btn-add:hover {
   border-radius: 4px;
   background: #F5F5F5;
 }
-.file-list-popup__file-icon svg {
+.file-list-popup__file-icon img {
   width: 16px;
   height: 16px;
 }
@@ -6528,6 +6588,130 @@ button.btn-add:hover {
   justify-content: flex-end;
 }
 .file-list-popup__action-text {
+  color: #0A0A0A;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-decoration-line: underline;
+}
+
+.setting-list-popup {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 160px;
+  padding: 20px;
+  background: #FFF;
+  border: 1px solid #7A53EC;
+  border-radius: 8px;
+  box-shadow: 0 12px 20px 0 rgba(90, 75, 121, 0.2);
+  z-index: 1;
+}
+.setting-list-popup__close-btn {
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  width: 21px;
+  height: 21px;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.setting-list-popup__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.setting-list-popup__items {
+  width: 100%;
+}
+.setting-list-popup__items li {
+  margin-bottom: 12px;
+}
+.setting-list-popup__items li:last-child {
+  margin-bottom: 0;
+}
+.setting-list-popup__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+}
+.setting-list-popup__file-icon {
+  display: flex;
+  padding: 4px;
+  align-items: center;
+  gap: 4px;
+  border-radius: 4px;
+  background: #F5F5F5;
+}
+.setting-list-popup__file-icon img {
+  width: 16px;
+  height: 16px;
+}
+.setting-list-popup__file-name {
+  display: inline-block;
+  margin-top: 2px;
+  color: #747474;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  cursor: pointer;
+}
+.setting-list-popup__delete-btn {
+  display: flex;
+  width: 16px;
+  height: 16px;
+  padding: 2px;
+  margin-top: 3px;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.setting-list-popup__delete-btn:hover {
+  opacity: 0.7;
+}
+.setting-list-popup__delete-btn svg {
+  width: 16px;
+  height: 16px;
+}
+.setting-list-popup__actions {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  align-self: stretch;
+  border-top: 1px solid #E4E4E4;
+  padding-top: 12px;
+}
+.setting-list-popup__action-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1 0 0;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.setting-list-popup__action-btn:hover {
+  opacity: 0.8;
+}
+.setting-list-popup__action-btn svg {
+  width: 16px;
+  height: 16px;
+}
+.setting-list-popup__action-btn:last-child {
+  justify-content: flex-end;
+}
+.setting-list-popup__action-text {
   color: #0A0A0A;
   font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 12px;
