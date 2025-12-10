@@ -5,7 +5,7 @@ import "flatpickr/dist/themes/stich.css";
 import { Korean } from "flatpickr/dist/l10n/ko.js";
 
 import Swiper from "swiper";
-import { Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import "swiper/swiper.css";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -854,7 +854,7 @@ const evaluationFileSwiper = (() => {
 
 document.addEventListener('DOMContentLoaded', function(){
   const mainSwiper = new Swiper(".how-to-swiper", {
-    modules: [Navigation, Pagination],
+    modules: [Autoplay, Navigation, Pagination],
     slidesPerView: 1,
     spaceBetween: 0,
     // grabCursor: true,
@@ -868,9 +868,8 @@ document.addEventListener('DOMContentLoaded', function(){
     autoplay: {
       delay: 2500,
     },
-    
+
   });
-  mainSwiper.start();
 })
 
 // noUiSlider initialization for slider question cards
