@@ -11165,6 +11165,16 @@ button.btn-add:hover {
   --transition: all cubic-bezier(0, 0.69, 0.27, 0.87) 0.5s;
 }
 
+.motion {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.motion.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 section.main-banner__01 {
   position: relative;
   background-color: #FFF;
@@ -11176,11 +11186,7 @@ section.main-banner__01 .img-main-01 {
   transition: var(--transition);
   bottom: -50px;
   right: 0;
-  opacity: 0;
-}
-section.main-banner__01 .img-main-01.active {
-  bottom: 0;
-  opacity: 1;
+  transition-delay: 1s;
 }
 section.main-banner__01 .text-container {
   position: absolute;
@@ -11214,6 +11220,18 @@ section.main-banner__01 button.btn-link {
   font-weight: 700;
   color: #FFFFFF;
   background: linear-gradient(96deg, rgba(115, 3, 154, 0) 13.2%, rgba(255, 238, 219, 0.25) 87.66%), var(--Primary-Color_01, #4D24C3);
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  transition: background-position 0.6s ease;
+}
+section.main-banner__01 button.btn-link svg {
+  transition: transform 0.3s ease;
+}
+section.main-banner__01 button.btn-link:hover {
+  background-position: 100% 50%;
+}
+section.main-banner__01 button.btn-link:hover svg {
+  transform: translateX(6px);
 }
 section.main-banner__02 {
   background: linear-gradient(0deg, #FFF 60%, #E4E8F6 90%);
@@ -11301,4 +11319,66 @@ section.main-banner__02 .features-grid .feature-card.feature-card-bottom-right .
 }
 section.main-banner__02 .features-grid .feature-card.feature-card-bottom-right .feature-card-description {
   max-width: 380px;
+}
+section.main-banner__03 {
+  background-color: #021D7D;
+}
+section.main-banner__03 .banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 320px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+section.main-banner__03 .banner-content h2 {
+  font-size: 35px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+section.main-banner__03 .banner-content button.btn-to-stich {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  width: 280px;
+  height: 75px;
+  color: #021D7D;
+  font-size: 22px;
+  font-weight: 500;
+}
+section.main-banner__04 {
+  background-color: #FFFFFF;
+  padding: 150px 0;
+}
+section.main-banner__04 h2 {
+  display: block;
+  font-size: 55px;
+  text-align: center;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 65px;
+}
+section.main-banner__04 .how-to-wrapper {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+  gap: 120px;
+}
+section.main-banner__04 .how-to-swiper {
+  flex: 0 0 645px;
+  width: 645px;
+  height: 443px;
+}
+section.main-banner__04 .how-to-swiper .capture-card {
+  position: relative;
+  background-color: #F2F3FF;
+  border-radius: 15px;
+  overflow: hidden;
+}
+section.main-banner__04 .how-to-swiper .capture-card img {
+  position: absolute;
+  left: calc(50% - 230px);
+  top: 50px;
 }

@@ -4,6 +4,17 @@
   --transition: all cubic-bezier(0, 0.69, 0.27, 0.87) 0.5s;
 }
 
+.motion {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 section.main-banner {
   &__01 {
     position: relative;
@@ -16,24 +27,28 @@ section.main-banner {
       transition: var(--transition);
       bottom: -50px;
       right: 0;
-      opacity: 0;
+      transition-delay: 1s;
+      // opacity: 0;
 
-      &.active {
-        bottom: 0;
-        opacity: 1;
-      }
+      // &.active {
+      //   bottom: 0;
+      //   opacity: 1;
+      // }
     }
-    .text-container{
+
+    .text-container {
       position: absolute;
       top: 128px;
       left: 220px;
-      h1{
+
+      h1 {
         font-size: 55px;
         line-height: 1.4;
         font-weight: 700;
         color: #111;
       }
-      .sub-text{
+
+      .sub-text {
         margin-top: 32px;
         margin-bottom: 70px;
         font-size: 25px;
@@ -56,16 +71,30 @@ section.main-banner {
       font-weight: 700;
       color: #FFFFFF;
       background: linear-gradient(96deg, rgba(115, 3, 154, 0.00) 13.2%, rgba(255, 238, 219, 0.25) 87.66%), var(--Primary-Color_01, #4D24C3);
+      background-size: 200% 100%;
+      background-position: 0% 50%;
+      transition: background-position 0.6s ease;
+      svg{
+        transition: transform 0.3s ease;
+      }
+      &:hover {
+        background-position: 100% 50%;
+        svg {
+          transform: translateX(6px);
+        }
+      }
     }
   }
 
   &__02 {
     background: linear-gradient(0deg, #FFF 60%, #E4E8F6 90%);
     background-blend-mode: multiply;
-    .banner-content{
+
+    .banner-content {
       padding-top: 150px;
       padding-bottom: 40px;
-      .banner-title{
+
+      .banner-title {
         display: block;
         margin-bottom: 155px;
         font-size: 55px;
@@ -74,85 +103,167 @@ section.main-banner {
         text-align: center;
       }
     }
-    .features-grid{
+
+    .features-grid {
       display: grid;
       grid-template-columns: 490px 140px 490px;
       grid-template-rows: 340px 340px;
       width: 1200px;
       margin: 0 auto;
       gap: 30px 40px;
-      .feature-card{
+
+      .feature-card {
         position: relative;
         padding: 70px 0 0 50px;
         border-radius: 30px;
-        &:nth-of-type(1){
+
+        &:nth-of-type(1) {
           background-color: #F5FAFE;
           grid-column: 1 / 2;
         }
-        &:nth-of-type(2){
+
+        &:nth-of-type(2) {
           background-color: #F3F7FF;
           grid-column: 2 / 4;
         }
-        &:nth-of-type(3){
+
+        &:nth-of-type(3) {
           background-color: #F3F7FF;
           grid-column: 1 / 3;
         }
-        &:nth-of-type(4){
+
+        &:nth-of-type(4) {
           background-color: #F5FAFE;
           grid-column: 3 / 4;
         }
-        &-title{
+
+        &-title {
           font-size: 32px;
           font-weight: 500;
           color: #111;
         }
-        &-description{
+
+        &-description {
           margin-top: 38px;
           font-size: 18px;
           color: #666;
           line-height: 1.4;
         }
 
-        .feature-icon-wrapper{
+        .feature-icon-wrapper {
           position: absolute;
         }
-        &.feature-card-top-left{
-          .feature-icon-wrapper{
+
+        &.feature-card-top-left {
+          .feature-icon-wrapper {
             right: 40px;
             top: -24px;
           }
-          .feature-card-description{
+
+          .feature-card-description {
             max-width: 380px;
           }
         }
-        &.feature-card-top-right{
-          .feature-icon-wrapper{
+
+        &.feature-card-top-right {
+          .feature-icon-wrapper {
             right: 40px;
             top: -50px;
           }
-          .feature-card-description{
+
+          .feature-card-description {
             max-width: 415px;
           }
         }
-        &.feature-card-bottom-left{
-          .feature-icon-wrapper{
+
+        &.feature-card-bottom-left {
+          .feature-icon-wrapper {
             right: -17px;
             top: -55px;
           }
-          .feature-card-description{
+
+          .feature-card-description {
             max-width: 480px;
           }
         }
-        &.feature-card-bottom-right{
-          .feature-icon-wrapper{
+
+        &.feature-card-bottom-right {
+          .feature-icon-wrapper {
             right: 20px;
             top: -25px;
           }
-          .feature-card-description{
+
+          .feature-card-description {
             max-width: 380px;
           }
 
         }
+      }
+    }
+  }
+
+  &__03 {
+
+    background-color: #021D7D;
+    .banner-content{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 320px;
+      max-width: 1200px;
+      margin: 0 auto;
+      h2{
+        font-size: 35px;
+        font-weight: 700;
+        color: #FFFFFF;
+      }
+      button.btn-to-stich{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 40px;
+        width: 280px;
+        height: 75px;
+        color: #021D7D;
+        font-size: 22px;
+        font-weight: 500;
+      }
+    }
+  }
+  &__04{
+    background-color: #FFFFFF;
+    padding: 150px 0;
+    h2{
+      display: block;
+      font-size: 55px;
+      text-align: center;
+      font-weight: 700;
+      color: #111111;
+      margin-bottom: 65px;
+    }
+    .how-to-wrapper{
+      display: flex;
+      width: 1200px;
+      margin: 0 auto;
+      justify-content: space-between;
+      gap: 120px;
+    }
+    .how-to-swiper{
+      flex: 0 0 645px;
+      width: 645px;
+      height: 443px;
+      .capture-card{
+        position: relative;
+        background-color: #F2F3FF;
+        border-radius: 15px;
+        overflow: hidden;
+        img{
+          position: absolute;
+          left: calc(50% - 230px);
+          top: 50px;
+        }
+        // width: 645px;
+        // height: 443px;
       }
     }
   }

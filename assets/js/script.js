@@ -850,6 +850,23 @@ const evaluationFileSwiper = (() => {
   return swiperInstance;
 })();
 
+// 메인페이지 swiper
+
+document.addEventListener('DOMContentLoaded', function(){
+  const mainSwiper = new Swiper(".how-to-swiper", {
+    modules: [Pagination],
+    slidesPerView: 1,
+    spaceBetween: 0,
+    grabCursor: true,
+    freeMode: true,
+    // Navigation arrows
+    // navigation: {
+    //   nextEl: '.button-next.tmp',
+    //   prevEl: '.button-prev.tmp',
+    // },
+  });
+})
+
 // noUiSlider initialization for slider question cards
 export const initSliderQuestionCard = () => {
   document.querySelectorAll('.question-card--slider').forEach((card) => {
