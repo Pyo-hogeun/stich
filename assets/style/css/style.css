@@ -11477,7 +11477,7 @@ section.main-banner__04 .swiper-pagination .swiper-pagination-bullet.swiper-pagi
 }
 section.main-banner__05 {
   background-color: #0A0A0A;
-  padding: 150px 0;
+  padding: 150px 0 190px;
 }
 section.main-banner__05 .banner-content {
   width: 1200px;
@@ -11485,7 +11485,7 @@ section.main-banner__05 .banner-content {
 }
 section.main-banner__05 .section-header {
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 65px;
 }
 section.main-banner__05 .section-title {
   font-size: 55px;
@@ -11514,25 +11514,46 @@ section.main-banner__05 .step-card {
   box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
-section.main-banner__05 .step-card:nth-child(odd) .step-visual {
-  left: 180px;
+section.main-banner__05 .step-card:nth-child(1) .step-visual {
+  left: 204px;
+  top: 104px;
 }
-section.main-banner__05 .step-card:nth-child(odd) .step-content {
-  right: 135px;
+section.main-banner__05 .step-card:nth-child(1) .step-content {
+  right: 194px;
+  top: 120px;
   left: auto;
 }
-section.main-banner__05 .step-card:nth-child(even) .step-visual {
-  right: 180px;
+section.main-banner__05 .step-card:nth-child(2) .step-visual {
+  right: 200px;
+  top: 91px;
   left: auto;
 }
-section.main-banner__05 .step-card:nth-child(even) .step-content {
+section.main-banner__05 .step-card:nth-child(2) .step-content {
   left: 135px;
+  top: 101px;
+  right: auto;
+}
+section.main-banner__05 .step-card:nth-child(3) .step-visual {
+  left: 159px;
+  top: 105px;
+}
+section.main-banner__05 .step-card:nth-child(3) .step-content {
+  right: 194px;
+  top: 100px;
+  left: auto;
+}
+section.main-banner__05 .step-card:nth-child(4) .step-visual {
+  right: 118px;
+  top: 80px;
+  left: auto;
+}
+section.main-banner__05 .step-card:nth-child(4) .step-content {
+  left: 135px;
+  top: 100px;
   right: auto;
 }
 section.main-banner__05 .step-visual {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11542,8 +11563,6 @@ section.main-banner__05 .step-visual .step-icon {
 }
 section.main-banner__05 .step-content {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   max-width: 377px;
 }
 section.main-banner__05 .step-info .step-number {
@@ -11551,19 +11570,19 @@ section.main-banner__05 .step-info .step-number {
   font-size: 55px;
   font-weight: 300;
   color: #9071EB;
-  line-height: 1.2;
-  margin-bottom: 10px;
+  line-height: normal;
+  margin-bottom: 8px;
 }
 section.main-banner__05 .step-info .step-title {
   font-size: 38px;
   font-weight: 400;
   color: #FFFFFF;
-  line-height: 1.2;
+  line-height: normal;
   margin-bottom: 30px;
 }
 section.main-banner__05 .step-info .step-description {
   font-size: 20px;
   font-weight: 400;
   color: #FFFFFF;
-  line-height: 1.2;
+  line-height: normal;
 }

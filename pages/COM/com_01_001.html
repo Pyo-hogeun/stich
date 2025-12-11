@@ -248,14 +248,8 @@
         <div class="steps-grid">
           <div class="step-card motion">
             <div class="step-visual">
-              <svg class="step-icon" width="140" height="140" viewBox="0 0 140 140" fill="none">
-                <rect x="30" y="35" width="80" height="70" rx="8" fill="#7A53EC" opacity="0.2"/>
-                <rect x="35" y="40" width="70" height="60" rx="6" fill="#7A53EC"/>
-                <circle cx="55" cy="60" r="10" fill="white" opacity="0.9"/>
-                <rect x="70" y="55" width="30" height="4" rx="2" fill="white" opacity="0.9"/>
-                <rect x="70" y="65" width="25" height="3" rx="1.5" fill="white" opacity="0.7"/>
-                <rect x="70" y="73" width="20" height="3" rx="1.5" fill="white" opacity="0.7"/>
-              </svg>
+              <img src="../../assets/images/main/icon_sec05_01.svg" alt="">
+                
             </div>
             <div class="step-content">
               <div class="step-info">
@@ -268,17 +262,7 @@
 
           <div class="step-card motion">
             <div class="step-visual">
-              <svg class="step-icon" width="140" height="140" viewBox="0 0 140 140" fill="none">
-                <rect x="35" y="30" width="70" height="80" rx="8" fill="#7A53EC" opacity="0.3"/>
-                <rect x="40" y="35" width="60" height="70" rx="6" fill="#7A53EC"/>
-                <rect x="48" y="45" width="44" height="4" rx="2" fill="white" opacity="0.9"/>
-                <circle cx="50" cy="58" r="3" fill="white" opacity="0.8"/>
-                <rect x="56" y="56" width="30" height="3" rx="1.5" fill="white" opacity="0.8"/>
-                <circle cx="50" cy="68" r="3" fill="white" opacity="0.8"/>
-                <rect x="56" y="66" width="25" height="3" rx="1.5" fill="white" opacity="0.8"/>
-                <circle cx="50" cy="78" r="3" fill="white" opacity="0.8"/>
-                <rect x="56" y="76" width="28" height="3" rx="1.5" fill="white" opacity="0.8"/>
-              </svg>
+              <img src="../../assets/images/main/icon_sec05_02.svg" alt="">
             </div>
             <div class="step-content">
               <div class="step-info">
@@ -291,13 +275,7 @@
 
           <div class="step-card motion">
             <div class="step-visual">
-              <svg class="step-icon" width="140" height="140" viewBox="0 0 140 140" fill="none">
-                <path d="M60 45 L80 35 L80 75 L60 85 Z" fill="#7A53EC" opacity="0.3"/>
-                <path d="M40 55 L60 45 L60 85 L40 95 Z" fill="#7A53EC"/>
-                <polygon points="50,62 48,64 51,67 56,62 54,60 51,63" fill="#FFD700"/>
-                <circle cx="50" cy="70" r="2" fill="white" opacity="0.8"/>
-                <circle cx="50" cy="76" r="2" fill="white" opacity="0.8"/>
-              </svg>
+              <img src="../../assets/images/main/icon_sec05_03.svg" alt="">
             </div>
             <div class="step-content">
               <div class="step-info">
@@ -310,15 +288,7 @@
 
           <div class="step-card motion">
             <div class="step-visual">
-              <svg class="step-icon" width="140" height="140" viewBox="0 0 140 140" fill="none">
-                <rect x="30" y="35" width="80" height="70" rx="8" fill="#7A53EC" opacity="0.2"/>
-                <rect x="35" y="40" width="70" height="60" rx="6" fill="#7A53EC"/>
-                <rect x="45" y="50" width="50" height="3" rx="1.5" fill="white" opacity="0.9"/>
-                <rect x="45" y="58" width="45" height="3" rx="1.5" fill="white" opacity="0.8"/>
-                <rect x="45" y="66" width="40" height="3" rx="1.5" fill="white" opacity="0.8"/>
-                <circle cx="88" cy="82" r="16" fill="#007AFF"/>
-                <path d="M83 82 L87 86 L93 78" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-              </svg>
+              <img src="../../assets/images/main/icon_sec05_04.svg" alt="">
             </div>
             <div class="step-content">
               <div class="step-info">
@@ -330,6 +300,10 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="main-banner__06">
+      
     </section>
   </main>
 
@@ -381,7 +355,7 @@
         const viewportHeight = window.innerHeight;
 
         const progress = clamp((viewportHeight - top) / (viewportHeight + height), 0, 1);
-        const offset = (progress - 0.5) * 30; // 작은 패럴랙스 효과를 위한 오프셋(px)
+        const offset = (progress - 0.5) * 600; // 작은 패럴랙스 효과를 위한 오프셋(px)
 
         bannerSection.style.backgroundPosition = `center calc(50% + ${offset}px)`;
       };
