@@ -853,6 +853,18 @@ const evaluationFileSwiper = (() => {
 // 메인페이지 swiper
 
 document.addEventListener('DOMContentLoaded', function(){
+  const howToContentItems = document.querySelectorAll('.how-to-content .item');
+
+  const toggleHowToContent = (activeIndex) => {
+    if (!howToContentItems.length) return;
+
+    howToContentItems.forEach((item, idx) => {
+      const isActive = idx === activeIndex;
+      item.classList.toggle('active', isActive);
+      item.classList.toggle('show', isActive);
+    });
+  };
+
   const mainSwiper = new Swiper(".how-to-swiper", {
     modules: [Autoplay, Navigation, Pagination],
     slidesPerView: 1,
@@ -870,6 +882,15 @@ document.addEventListener('DOMContentLoaded', function(){
     },
 
   });
+
+  const updateHowToContent = () => {
+    const activeIndex = typeof mainSwiper.realIndex === 'number' ? mainSwiper.realIndex : mainSwiper.activeIndex;
+    toggleHowToContent(activeIndex ?? 0);
+  };
+
+  mainSwiper.on('slideChange', updateHowToContent);
+
+  updateHowToContent();
 })
 
 // noUiSlider initialization for slider question cards

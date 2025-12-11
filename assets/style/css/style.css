@@ -11405,7 +11405,8 @@ section.main-banner__04 .how-to-content__description {
 section.main-banner__04 .how-to-content .item {
   display: none;
 }
-section.main-banner__04 .how-to-content .item.show {
+section.main-banner__04 .how-to-content .item.show,
+section.main-banner__04 .how-to-content .item.active {
   display: block;
 }
 section.main-banner__04 .how-to-swiper {

@@ -288,7 +288,8 @@ section.main-banner {
       }
       .item{
         display: none;
-        &.show{
+        &.show,
+        &.active{
           display: block;
         }
       }
