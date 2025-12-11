@@ -13778,7 +13778,7 @@ var AppBundle = (function (exports) {
     updateHowToContent();
 
     new Swiper(".why-stich-swiper", {
-      modules: [Autoplay, Navigation, Pagination],
+      modules: [Autoplay, Navigation, Pagination, EffectFade],
       slidesPerView: 1,
       spaceBetween: 0,
       pagination: { el: '.swiper-pagination', clickable: true },
@@ -13787,10 +13787,13 @@ var AppBundle = (function (exports) {
       //   nextEl: '.button-next.tmp',
       //   prevEl: '.button-prev.tmp',
       // },
-      crossFade: true,
+      effect: 'fade',
+      fadeEffect: { crossFade: true },
       autoplay: {
         delay: 2500,
+        disableOnInteraction: false,
       },
+      loop: true,
 
     });
   });
