@@ -11370,6 +11370,9 @@ section.main-banner__04 .how-to-wrapper__right {
   position: relative;
   flex: 0 0 645px;
 }
+section.main-banner__04 .how-to-content {
+  flex: 0 0 460px;
+}
 section.main-banner__04 .how-to-content__catch-phrase {
   font-size: 20px;
   font-weight: 700;
@@ -11383,6 +11386,7 @@ section.main-banner__04 .how-to-content__title {
   color: #111;
   margin-bottom: 30px;
   gap: 16px;
+  white-space: nowrap;
 }
 section.main-banner__04 .how-to-content__title .circle {
   display: inline-flex;
@@ -11405,8 +11409,7 @@ section.main-banner__04 .how-to-content__description {
 section.main-banner__04 .how-to-content .item {
   display: none;
 }
-section.main-banner__04 .how-to-content .item.show,
-section.main-banner__04 .how-to-content .item.active {
+section.main-banner__04 .how-to-content .item.show, section.main-banner__04 .how-to-content .item.active {
   display: block;
 }
 section.main-banner__04 .how-to-swiper {

@@ -253,6 +253,7 @@ section.main-banner {
       }
     }
     .how-to-content{
+      flex: 0 0 460px;
       &__catch-phrase{
         font-size: 20px;
         font-weight: 700;
@@ -266,6 +267,7 @@ section.main-banner {
         color: #111;
         margin-bottom: 30px;
         gap: 16px;
+        white-space: nowrap;
         .circle{
           display: inline-flex;
           align-items: center;
