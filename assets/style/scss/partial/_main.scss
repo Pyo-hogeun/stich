@@ -364,4 +364,119 @@ section.main-banner {
       }
     }
   }
+
+  &__05 {
+    background-color: #0A0A0A;
+    padding: 150px 0;
+
+    .banner-content {
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 100px;
+    }
+
+    .section-title {
+      font-size: 55px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #FFFFFF;
+      margin-bottom: 30px;
+    }
+
+    .section-subtitle {
+      font-size: 20px;
+      font-weight: 700;
+      color: #9071EB;
+    }
+
+    .steps-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .step-card {
+      position: relative;
+      width: 100%;
+      height: 460px;
+      border-radius: 80px;
+      border: 1px solid #383838;
+      background: linear-gradient(135deg, rgba(58, 58, 58, 0.4) 0%, rgba(26, 26, 26, 0.6) 100%);
+      box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.20);
+      overflow: hidden;
+
+      &:nth-child(odd) {
+        .step-visual {
+          left: 180px;
+        }
+
+        .step-content {
+          right: 135px;
+          left: auto;
+        }
+      }
+
+      &:nth-child(even) {
+        .step-visual {
+          right: 180px;
+          left: auto;
+        }
+
+        .step-content {
+          left: 135px;
+          right: auto;
+        }
+      }
+    }
+
+    .step-visual {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .step-icon {
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+      }
+    }
+
+    .step-content {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 377px;
+    }
+
+    .step-info {
+      .step-number {
+        display: block;
+        font-size: 55px;
+        font-weight: 300;
+        color: #9071EB;
+        line-height: 1.2;
+        margin-bottom: 10px;
+      }
+
+      .step-title {
+        font-size: 38px;
+        font-weight: 400;
+        color: #FFFFFF;
+        line-height: 1.2;
+        margin-bottom: 30px;
+      }
+
+      .step-description {
+        font-size: 20px;
+        font-weight: 400;
+        color: #FFFFFF;
+        line-height: 1.2;
+      }
+    }
+  }
 }
