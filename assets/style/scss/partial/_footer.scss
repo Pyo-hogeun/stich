@@ -1,5 +1,5 @@
 @use 'variables' as *;
-
+@use "sass:color";
 .main-footer {
   background-color: #FFFFFF;
   padding: 80px 0 100px;
@@ -19,7 +19,6 @@
 
 .footer-link {
   color: #575757;
-  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 700;
   line-height: normal;
@@ -97,7 +96,8 @@
   
   &:hover {
     .social-icon-bg {
-      background-color: darken(#E0E0F2, 5%);
+      // background-color: darken(#E0E0F2, 5%);
+      background-color: color.adjust(#E0E0F2, $lightness: -5%)
     }
   }
 }
