@@ -5,7 +5,7 @@ import "flatpickr/dist/themes/stich.css";
 import { Korean } from "flatpickr/dist/l10n/ko.js";
 
 import Swiper from "swiper";
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination, CrossFade } from 'swiper/modules';
 import "swiper/swiper.css";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -869,8 +869,6 @@ document.addEventListener('DOMContentLoaded', function(){
     modules: [Autoplay, Navigation, Pagination],
     slidesPerView: 1,
     spaceBetween: 0,
-    // grabCursor: true,
-    // freeMode: true,
     pagination: { el: '.swiper-pagination', clickable: true },
     // Navigation arrows
     // navigation: {
@@ -891,6 +889,24 @@ document.addEventListener('DOMContentLoaded', function(){
   mainSwiper.on('slideChange', updateHowToContent);
 
   updateHowToContent();
+
+  const mainSwiperWhy = new Swiper(".why-stich-swiper", {
+    modules: [Autoplay, Navigation, Pagination, CrossFade],
+    slidesPerView: 1,
+    spaceBetween: 0,
+    pagination: { el: '.swiper-pagination', clickable: true },
+    // Navigation arrows
+    // navigation: {
+    //   nextEl: '.button-next.tmp',
+    //   prevEl: '.button-prev.tmp',
+    // },
+    effect: 'fade',
+    crossFade: true,
+    autoplay: {
+      delay: 2500,
+    },
+
+  });
 })
 
 // noUiSlider initialization for slider question cards

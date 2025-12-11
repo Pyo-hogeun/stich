@@ -13756,8 +13756,6 @@ var AppBundle = (function (exports) {
       modules: [Autoplay, Navigation, Pagination],
       slidesPerView: 1,
       spaceBetween: 0,
-      // grabCursor: true,
-      // freeMode: true,
       pagination: { el: '.swiper-pagination', clickable: true },
       // Navigation arrows
       // navigation: {
@@ -13778,6 +13776,23 @@ var AppBundle = (function (exports) {
     mainSwiper.on('slideChange', updateHowToContent);
 
     updateHowToContent();
+
+    new Swiper(".why-stich-swiper", {
+      modules: [Autoplay, Navigation, Pagination],
+      slidesPerView: 1,
+      spaceBetween: 0,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      // Navigation arrows
+      // navigation: {
+      //   nextEl: '.button-next.tmp',
+      //   prevEl: '.button-prev.tmp',
+      // },
+      crossFade: true,
+      autoplay: {
+        delay: 2500,
+      },
+
+    });
   });
 
   // noUiSlider initialization for slider question cards
