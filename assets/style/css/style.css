@@ -11607,7 +11607,7 @@ section.main-banner__06 .why-stich-swiper {
   height: 550px;
 }
 section.main-banner__06 .why-card {
-  width: 1200px;
+  width: 1000px;
   height: 550px;
   border-radius: 30px;
   box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.2);
@@ -11635,23 +11635,21 @@ section.main-banner__06 .why-card-badge {
   height: 38px;
   border-radius: 100px;
   border: 1px solid #7A53EC;
+  background-color: rgba(166, 143, 235, 0.2);
 }
 section.main-banner__06 .why-card-badge span {
-  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 400;
   color: #7A53EC;
   text-transform: capitalize;
 }
 section.main-banner__06 .why-card-title {
-  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 40px;
   font-weight: 400;
   color: #111;
   line-height: normal;
 }
 section.main-banner__06 .why-card-description {
-  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #747474;

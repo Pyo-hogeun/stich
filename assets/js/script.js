@@ -5,7 +5,7 @@ import "flatpickr/dist/themes/stich.css";
 import { Korean } from "flatpickr/dist/l10n/ko.js";
 
 import Swiper from "swiper";
-import { Autoplay, Navigation, Pagination, CrossFade } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination, EffectFade } from 'swiper/modules';
 import "swiper/swiper.css";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -891,17 +891,16 @@ document.addEventListener('DOMContentLoaded', function(){
   updateHowToContent();
 
   const mainSwiperWhy = new Swiper(".why-stich-swiper", {
-    modules: [Autoplay, Navigation, Pagination, CrossFade],
+    modules: [Autoplay, Navigation, Pagination, EffectFade],
     slidesPerView: 1,
     spaceBetween: 0,
-    pagination: { el: '.swiper-pagination', clickable: true },
     // Navigation arrows
     // navigation: {
     //   nextEl: '.button-next.tmp',
     //   prevEl: '.button-prev.tmp',
     // },
     effect: 'fade',
-    crossFade: true,
+    fadeEffect: { crossFade: true },
     autoplay: {
       delay: 2500,
     },

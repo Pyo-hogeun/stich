@@ -5607,6 +5607,9 @@ var AppBundle = (function (exports) {
     };
     animate();
   }
+  function getSlideTransformEl(slideEl) {
+    return slideEl.querySelector('.swiper-slide-transform') || slideEl.shadowRoot && slideEl.shadowRoot.querySelector('.swiper-slide-transform') || slideEl;
+  }
   function elementChildren(element, selector = '') {
     const window = getWindow();
     const children = [...element.children];
@@ -5705,6 +5708,16 @@ var AppBundle = (function (exports) {
       parent = parent.parentElement;
     }
     return parents;
+  }
+  function elementTransitionEnd(el, callback) {
+    function fireCallBack(e) {
+      if (e.target !== el) return;
+      callback.call(el, e);
+      el.removeEventListener('transitionend', fireCallBack);
+    }
+    if (callback) {
+      el.addEventListener('transitionend', fireCallBack);
+    }
   }
   function elementOuterSize(el, size, includeMargins) {
     const window = getWindow();
@@ -10573,6 +10586,162 @@ var AppBundle = (function (exports) {
     });
   }
 
+  function effectInit(params) {
+    const {
+      effect,
+      swiper,
+      on,
+      setTranslate,
+      setTransition,
+      overwriteParams,
+      perspective,
+      recreateShadows,
+      getEffectParams
+    } = params;
+    on('beforeInit', () => {
+      if (swiper.params.effect !== effect) return;
+      swiper.classNames.push(`${swiper.params.containerModifierClass}${effect}`);
+      if (perspective && perspective()) {
+        swiper.classNames.push(`${swiper.params.containerModifierClass}3d`);
+      }
+      const overwriteParamsResult = overwriteParams ? overwriteParams() : {};
+      Object.assign(swiper.params, overwriteParamsResult);
+      Object.assign(swiper.originalParams, overwriteParamsResult);
+    });
+    on('setTranslate _virtualUpdated', () => {
+      if (swiper.params.effect !== effect) return;
+      setTranslate();
+    });
+    on('setTransition', (_s, duration) => {
+      if (swiper.params.effect !== effect) return;
+      setTransition(duration);
+    });
+    on('transitionEnd', () => {
+      if (swiper.params.effect !== effect) return;
+      if (recreateShadows) {
+        if (!getEffectParams || !getEffectParams().slideShadows) return;
+        // remove shadows
+        swiper.slides.forEach(slideEl => {
+          slideEl.querySelectorAll('.swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left').forEach(shadowEl => shadowEl.remove());
+        });
+        // create new one
+        recreateShadows();
+      }
+    });
+    let requireUpdateOnVirtual;
+    on('virtualUpdate', () => {
+      if (swiper.params.effect !== effect) return;
+      if (!swiper.slides.length) {
+        requireUpdateOnVirtual = true;
+      }
+      requestAnimationFrame(() => {
+        if (requireUpdateOnVirtual && swiper.slides && swiper.slides.length) {
+          setTranslate();
+          requireUpdateOnVirtual = false;
+        }
+      });
+    });
+  }
+
+  function effectTarget(effectParams, slideEl) {
+    const transformEl = getSlideTransformEl(slideEl);
+    if (transformEl !== slideEl) {
+      transformEl.style.backfaceVisibility = 'hidden';
+      transformEl.style['-webkit-backface-visibility'] = 'hidden';
+    }
+    return transformEl;
+  }
+
+  function effectVirtualTransitionEnd({
+    swiper,
+    duration,
+    transformElements,
+    allSlides
+  }) {
+    const {
+      activeIndex
+    } = swiper;
+    if (swiper.params.virtualTranslate && duration !== 0) {
+      let eventTriggered = false;
+      let transitionEndTarget;
+      {
+        transitionEndTarget = transformElements;
+      }
+      transitionEndTarget.forEach(el => {
+        elementTransitionEnd(el, () => {
+          if (eventTriggered) return;
+          if (!swiper || swiper.destroyed) return;
+          eventTriggered = true;
+          swiper.animating = false;
+          const evt = new window.CustomEvent('transitionend', {
+            bubbles: true,
+            cancelable: true
+          });
+          swiper.wrapperEl.dispatchEvent(evt);
+        });
+      });
+    }
+  }
+
+  function EffectFade({
+    swiper,
+    extendParams,
+    on
+  }) {
+    extendParams({
+      fadeEffect: {
+        crossFade: false
+      }
+    });
+    const setTranslate = () => {
+      const {
+        slides
+      } = swiper;
+      const params = swiper.params.fadeEffect;
+      for (let i = 0; i < slides.length; i += 1) {
+        const slideEl = swiper.slides[i];
+        const offset = slideEl.swiperSlideOffset;
+        let tx = -offset;
+        if (!swiper.params.virtualTranslate) tx -= swiper.translate;
+        let ty = 0;
+        if (!swiper.isHorizontal()) {
+          ty = tx;
+          tx = 0;
+        }
+        const slideOpacity = swiper.params.fadeEffect.crossFade ? Math.max(1 - Math.abs(slideEl.progress), 0) : 1 + Math.min(Math.max(slideEl.progress, -1), 0);
+        const targetEl = effectTarget(params, slideEl);
+        targetEl.style.opacity = slideOpacity;
+        targetEl.style.transform = `translate3d(${tx}px, ${ty}px, 0px)`;
+      }
+    };
+    const setTransition = duration => {
+      const transformElements = swiper.slides.map(slideEl => getSlideTransformEl(slideEl));
+      transformElements.forEach(el => {
+        el.style.transitionDuration = `${duration}ms`;
+      });
+      effectVirtualTransitionEnd({
+        swiper,
+        duration,
+        transformElements,
+        allSlides: true
+      });
+    };
+    effectInit({
+      effect: 'fade',
+      swiper,
+      on,
+      setTranslate,
+      setTransition,
+      overwriteParams: () => ({
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        watchSlidesProgress: true,
+        spaceBetween: 0,
+        virtualTranslate: !swiper.params.cssMode
+      })
+    });
+  }
+
   var PipsMode;
   (function (PipsMode) {
       PipsMode["Range"] = "range";
@@ -13778,16 +13947,16 @@ var AppBundle = (function (exports) {
     updateHowToContent();
 
     new Swiper(".why-stich-swiper", {
-      modules: [Autoplay, Navigation, Pagination],
+      modules: [Autoplay, Navigation, Pagination, EffectFade],
       slidesPerView: 1,
       spaceBetween: 0,
-      pagination: { el: '.swiper-pagination', clickable: true },
       // Navigation arrows
       // navigation: {
       //   nextEl: '.button-next.tmp',
       //   prevEl: '.button-prev.tmp',
       // },
-      crossFade: true,
+      effect: 'fade',
+      fadeEffect: { crossFade: true },
       autoplay: {
         delay: 2500,
       },

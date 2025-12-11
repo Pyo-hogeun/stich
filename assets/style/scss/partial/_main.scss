@@ -531,7 +531,7 @@ section.main-banner {
     }
 
     .why-card {
-      width: 1200px;
+      width: 1000px;
       height: 550px;
       border-radius: 30px;
       box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.20);
@@ -562,9 +562,9 @@ section.main-banner {
       height: 38px;
       border-radius: 100px;
       border: 1px solid $primaryColor;
+      background-color: rgba(166, 143, 235, 0.20);;
 
       span {
-        font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
         font-size: 18px;
         font-weight: 400;
         color: $primaryColor;
@@ -573,7 +573,6 @@ section.main-banner {
     }
 
     .why-card-title {
-      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
       font-size: 40px;
       font-weight: 400;
       color: #111;
@@ -581,7 +580,6 @@ section.main-banner {
     }
 
     .why-card-description {
-      font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
       font-size: 16px;
       font-weight: 400;
       color: $normalText;
