@@ -9,6 +9,7 @@ import { Autoplay, Navigation, Pagination, EffectFade } from 'swiper/modules';
 import "swiper/swiper.css";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
 import noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
@@ -891,7 +892,7 @@ document.addEventListener('DOMContentLoaded', function(){
   updateHowToContent();
 
   const mainSwiperWhy = new Swiper(".why-stich-swiper", {
-    modules: [Autoplay, Navigation, Pagination, EffectFade],
+    modules: [Autoplay, Pagination, EffectFade],
     slidesPerView: 1,
     spaceBetween: 0,
     // Navigation arrows
@@ -899,10 +900,11 @@ document.addEventListener('DOMContentLoaded', function(){
     //   nextEl: '.button-next.tmp',
     //   prevEl: '.button-prev.tmp',
     // },
+    pagination: { el: '.why-stich-swiper__pagination', clickable: true },
     effect: 'fade',
     fadeEffect: { crossFade: true },
     autoplay: {
-      delay: 2500,
+      delay: 3000,
       disableOnInteraction: false,
     },
     loop: true,

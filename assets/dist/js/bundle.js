@@ -13947,7 +13947,7 @@ var AppBundle = (function (exports) {
     updateHowToContent();
 
     new Swiper(".why-stich-swiper", {
-      modules: [Autoplay, Navigation, Pagination, EffectFade],
+      modules: [Autoplay, Pagination, EffectFade],
       slidesPerView: 1,
       spaceBetween: 0,
       // Navigation arrows
@@ -13955,10 +13955,11 @@ var AppBundle = (function (exports) {
       //   nextEl: '.button-next.tmp',
       //   prevEl: '.button-prev.tmp',
       // },
+      pagination: { el: '.why-stich-swiper__pagination', clickable: true },
       effect: 'fade',
       fadeEffect: { crossFade: true },
       autoplay: {
-        delay: 2500,
+        delay: 3000,
         disableOnInteraction: false,
       },
       loop: true,
