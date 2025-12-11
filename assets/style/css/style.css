@@ -735,72 +735,37 @@ h2.ellipsis {
 .alert-modal__cancel-btn:hover {
   background: #4D24C3;
 }
-
-.submit-evaluation-modal {
-  display: flex;
+.alert-modal--submit-evaluation {
   width: 300px;
-  flex-direction: column;
+  padding: 20px 29px;
+}
+.alert-modal--submit-evaluation .alert-modal__header {
   justify-content: center;
-  align-items: center;
-  border-radius: 16px;
-  background: #FFF;
 }
-.submit-evaluation-modal__content {
-  display: flex;
-  width: 243px;
-  flex-direction: column;
-  align-items: center;
-  gap: 36px;
-  padding: 20px 0;
-}
-.submit-evaluation-modal__title {
-  align-self: stretch;
-  color: #000;
+.alert-modal--submit-evaluation .alert-modal__title {
   text-align: center;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: normal;
 }
-.submit-evaluation-modal__body {
+.alert-modal--submit-evaluation .alert-modal__body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
   align-self: stretch;
 }
-.submit-evaluation-modal__icon {
+.alert-modal--submit-evaluation .alert-modal__icon {
   width: 100px;
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.submit-evaluation-modal__message {
+.alert-modal--submit-evaluation .alert-modal__message {
+  text-align: center;
+  margin-top: 0;
+}
+.alert-modal--submit-evaluation .alert-modal__footer {
   align-self: stretch;
-  color: #747474;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 150%;
-}
-.submit-evaluation-modal__confirm-btn {
-  display: flex;
-  padding: 12px 16px;
   justify-content: center;
-  align-items: center;
-  gap: 4px;
-  border-radius: 8px;
-  background: #7A53EC;
-  color: #FFF;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16px;
-  border: 1px solid transparent;
-  cursor: pointer;
-}
-.submit-evaluation-modal__confirm-btn:hover {
-  background: #4D24C3;
 }
 
 [class*=btn-] {
@@ -905,9 +870,7 @@ h2.ellipsis {
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   font-size: 14px;
   color: #747474;
 }
@@ -1062,9 +1025,7 @@ h2.ellipsis {
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   flex-shrink: 0;
 }
 .radio-btn__input {
@@ -1435,9 +1396,7 @@ input[type=number] {
   color: #fff;
   background: #000;
   transition: all 0.2s;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .view-toggle {
   /* active 상태 - 흰 배경, 검은 글자 */
@@ -1622,10 +1581,8 @@ input[type=number] {
 .template-card__image {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 .template-card__select-icon {
   position: absolute;
@@ -1769,8 +1726,7 @@ input[type=number] {
 .eva-detail .content-body .summary .thumbnail img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .eva-detail .content-body .summary .gray-box {
   flex: 1 1 auto;
@@ -2179,7 +2135,6 @@ input[type=number] {
   /* 헤더 높이에 맞게 조정 */
   align-self: flex-start;
   margin-top: 93px;
-  height: -moz-fit-content;
   height: fit-content;
 }
 
@@ -2264,8 +2219,7 @@ input[type=number] {
 .regist-info__owner .item .thumbnail img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .regist-info__owner .item .name {
   font-size: 14px;
@@ -2479,8 +2433,7 @@ button.btn-add:hover {
 .img-uploader img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .img-uploader .upload-trigger {
   position: absolute;
@@ -2570,8 +2523,7 @@ button.btn-add:hover {
 .eva-target__file_list .item .img-wrap img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .eva-target__file_list .item .img-wrap.png, .eva-target__file_list .item .img-wrap.txt, .eva-target__file_list .item .img-wrap.pdf {
   background-repeat: no-repeat;
@@ -2823,8 +2775,7 @@ button.btn-add:hover {
 .eva-committee__img-wrap img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .eva-committee__name {
   display: block;
@@ -2874,8 +2825,7 @@ button.btn-add:hover {
 .reply__profile img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .reply__nickname {
   font-size: 14px;
@@ -2963,8 +2913,7 @@ button.btn-add:hover {
 .eva-target-detail__file_list .item .img-wrap img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .eva-target-detail__file_list .item .img-wrap.png, .eva-target-detail__file_list .item .img-wrap.txt, .eva-target-detail__file_list .item .img-wrap.pdf {
   background-repeat: no-repeat;
@@ -3256,8 +3205,7 @@ button.btn-add:hover {
 .eva-preview .content-body .summary .thumbnail img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .eva-preview .content-body .summary .summary-area {
   flex: 1 1 auto;
@@ -3284,8 +3232,7 @@ button.btn-add:hover {
 .eva-preview .content-body .summary .summary-area .profile__img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .eva-preview .content-body .summary .summary-area .profile__name {
   font-size: 16px;
@@ -3906,8 +3853,7 @@ button.btn-add:hover {
 .eva-info-card__image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .eva-info-card__content {
   display: flex;
@@ -4079,8 +4025,7 @@ button.btn-add:hover {
 .host-list .item .img-wrap img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .host-list .item .img-wrap:hover {
   position: relative;
@@ -5826,9 +5771,6 @@ button.btn-add:hover {
   font-size: 14px;
   color: #747474;
 }
-.question-card__title-input .input-text::-moz-placeholder {
-  color: #747474;
-}
 .question-card__title-input .input-text::placeholder {
   color: #747474;
 }
@@ -6903,8 +6845,7 @@ button.btn-add:hover {
 .mypage-main__topper .profile-img-wrapper .img-wrap img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .mypage-main__topper .profile-img-wrapper .btn-setting {
   position: absolute;
@@ -7168,8 +7109,7 @@ button.btn-add:hover {
 .profile-edit .profile__img .img-wrap img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .profile-edit .profile__name_title {
   font-size: 40px;
@@ -7363,8 +7303,7 @@ button.btn-add:hover {
 .mypage-main__eva-list .eva-list__card .content-wrap .list-wrap .item__img > img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .mypage-main__eva-list .eva-list__card .content-wrap .list-wrap .item__img .badge-list {
   position: absolute;
@@ -8034,8 +7973,7 @@ button.btn-add:hover {
 .eva-member-add__list .profile-add__img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .eva-member-add__list .profile-add__content .notice {
   font-size: 14px;
@@ -8280,8 +8218,7 @@ button.btn-add:hover {
 .eva-result .evaluator-card__avatar img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .eva-result .evaluator-card__info {
   display: flex;
@@ -8494,8 +8431,7 @@ button.btn-add:hover {
 .category-card__thumbnail img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 8px;
 }
 .category-card__details {
@@ -8578,8 +8514,7 @@ button.btn-add:hover {
 .type-card .item.competition-card .item__img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .type-card .item.competition-card .item__body {
   padding: 24px;
@@ -8710,8 +8645,7 @@ button.btn-add:hover {
 .type-list .item.competition-card .item__img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .type-list .item.competition-card .item__body {
   display: flex;
@@ -8893,8 +8827,7 @@ button.btn-add:hover {
 .regist-detail .content-body .summary__thumbnail img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .regist-detail .content-body .summary__box {
   flex: 1 1 auto;
@@ -8934,8 +8867,7 @@ button.btn-add:hover {
 .regist-detail .content-body .summary__box ul li .data .thumbnail img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .regist-detail .content-body .summary__box .tag-list {
   display: flex;
@@ -9307,7 +9239,6 @@ button.btn-add:hover {
   /* 헤더 높이에 맞게 조정 */
   align-self: flex-start;
   margin-top: 93px;
-  height: -moz-fit-content;
   height: fit-content;
 }
 
@@ -9351,8 +9282,7 @@ button.btn-add:hover {
 .regist-result__thumbnail img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .regist-result__title {
   margin-top: 16px;
@@ -9591,16 +9521,14 @@ button.btn-add:hover {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   background-color: #F9F9F9;
   overflow: hidden;
 }
 .cs-notice__detail-author-img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .cs-notice__detail-author-info {
   display: flex;
@@ -10440,8 +10368,7 @@ button.btn-add:hover {
   position: absolute;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .login-page__card {
   position: relative;
@@ -10589,8 +10516,7 @@ button.btn-add:hover {
   font-weight: 700;
   line-height: 1.4;
   text-decoration: underline;
-  -webkit-text-decoration-skip-ink: none;
-          text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
 }
 .login-form__signup-link:hover {
   color: #7A53EC;
@@ -10628,9 +10554,6 @@ button.btn-add:hover {
   line-height: 16px;
   box-sizing: border-box;
   transition: background-color 0.2s;
-}
-.login-input::-moz-placeholder {
-  color: #747474;
 }
 .login-input::placeholder {
   color: #747474;
@@ -10689,8 +10612,7 @@ button.btn-add:hover {
 .regist-page__background img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .regist-page__container {
   position: absolute;
@@ -11023,8 +10945,7 @@ button.btn-add:hover {
   position: absolute;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .eva-card {
@@ -11137,9 +11058,6 @@ button.btn-add:hover {
   line-height: 16px;
   box-sizing: border-box;
   transition: background-color 0.2s;
-}
-.login-input::-moz-placeholder {
-  color: #747474;
 }
 .login-input::placeholder {
   color: #747474;
@@ -12120,3 +12038,5 @@ section.main-banner__07 .faq-item.faq-item-active .faq-toggle-btn svg {
 .social-icon:hover .social-icon-bg {
   background-color: rgb(206.0340909091, 206.0340909091, 234.4659090909);
 }
+
+/*# sourceMappingURL=style.css.map */

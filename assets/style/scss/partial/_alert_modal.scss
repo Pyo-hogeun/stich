@@ -90,4 +90,43 @@
       background: $primaryColor2;
     }
   }
+
+  &--submit-evaluation {
+    width: 300px;
+    padding: 20px 29px;
+
+    .alert-modal__header {
+      justify-content: center;
+    }
+
+    .alert-modal__title {
+      text-align: center;
+    }
+
+    .alert-modal__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      align-self: stretch;
+    }
+
+    .alert-modal__icon {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .alert-modal__message {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .alert-modal__footer {
+      align-self: stretch;
+      justify-content: center;
+    }
+  }
 }
