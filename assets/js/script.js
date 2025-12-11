@@ -903,7 +903,9 @@ document.addEventListener('DOMContentLoaded', function(){
     fadeEffect: { crossFade: true },
     autoplay: {
       delay: 2500,
+      disableOnInteraction: false,
     },
+    loop: true,
 
   });
 })
