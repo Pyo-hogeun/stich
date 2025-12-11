@@ -360,11 +360,56 @@
       // 수집된 모든 요소에 대해 관찰을 시작한다
       motionElements.forEach((element) => motionObserver.observe(element));
 
-      
+
     });
-    document.addEventListener('scroll', function(){
-      console.log('scroll');
-    })
+    document.addEventListener('DOMContentLoaded', function () {
+      const bannerSection = document.querySelector('section.main-banner__03');
+      if (!bannerSection) {
+        return;
+      }
+
+      const defaultBackgroundPosition = window.getComputedStyle(bannerSection).backgroundPosition;
+      let bannerVisible = false;
+      let scrollListenerAttached = false;
+
+      const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+      const updateBackgroundPosition = () => {
+        if (!bannerVisible) return;
+
+        const { top, height } = bannerSection.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+
+        const progress = clamp((viewportHeight - top) / (viewportHeight + height), 0, 1);
+        const offset = (progress - 0.5) * 30; // 작은 패럴랙스 효과를 위한 오프셋(px)
+
+        bannerSection.style.backgroundPosition = `center calc(50% + ${offset}px)`;
+      };
+
+      const handleScroll = () => updateBackgroundPosition();
+
+      const bannerObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            bannerVisible = true;
+            if (!scrollListenerAttached) {
+              window.addEventListener('scroll', handleScroll, { passive: true });
+              scrollListenerAttached = true;
+            }
+            updateBackgroundPosition();
+          } else {
+            bannerVisible = false;
+            bannerSection.style.backgroundPosition = defaultBackgroundPosition;
+            if (scrollListenerAttached) {
+              window.removeEventListener('scroll', handleScroll);
+              scrollListenerAttached = false;
+            }
+          }
+        });
+      }, { threshold: 0.1 });
+
+      bannerObserver.observe(bannerSection);
+    });
   </script>
   <script src="../../assets/dist/js/bundle.js"></script>
 </body>
