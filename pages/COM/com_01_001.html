@@ -594,6 +594,57 @@
 
       bannerObserver.observe(bannerSection);
     });
+
+    // FAQ 아코디언
+    document.addEventListener('DOMContentLoaded', () => {
+      const faqContainer = document.querySelector('.faq-container');
+      if (!faqContainer) {
+        return;
+      }
+
+      const faqItems = Array.from(faqContainer.querySelectorAll('.faq-item'));
+
+      const closeAllItems = () => {
+        faqItems.forEach((item) => {
+          item.classList.remove('faq-item-active');
+          const toggleButton = item.querySelector('.faq-toggle-btn');
+          if (toggleButton) {
+            toggleButton.setAttribute('aria-label', '열기');
+          }
+        });
+      };
+
+      const toggleItem = (item) => {
+        const isActive = item.classList.contains('faq-item-active');
+        closeAllItems();
+
+        if (!isActive) {
+          item.classList.add('faq-item-active');
+          const toggleButton = item.querySelector('.faq-toggle-btn');
+          if (toggleButton) {
+            toggleButton.setAttribute('aria-label', '닫기');
+          }
+        }
+      };
+
+      faqItems.forEach((item) => {
+        const toggleButton = item.querySelector('.faq-toggle-btn');
+        const clickableArea = item.querySelector('.faq-item-content');
+
+        const handleToggle = (event) => {
+          event.preventDefault();
+          toggleItem(item);
+        };
+
+        if (toggleButton) {
+          toggleButton.addEventListener('click', handleToggle);
+        }
+
+        if (clickableArea) {
+          clickableArea.addEventListener('click', handleToggle);
+        }
+      });
+    });
   </script>
   <script src="../../assets/dist/js/bundle.js"></script>
 </body>
