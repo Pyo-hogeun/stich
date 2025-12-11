@@ -722,7 +722,7 @@ section.main-banner {
   }
   &__07 {
     padding: 150px 0;
-    min-height: 900px;
+    min-height: 1000px;
     background-image: url('../../images/main/main_03.png');
     background-position: center;
     background-size: cover;
@@ -800,14 +800,15 @@ section.main-banner {
         transform: translateY(-50%);
         width: 42px;
         height: 42px;
-        border: 0;
+        border-radius: 50%;
+        border: 1px solid #FFF;
         background: transparent;
         padding: 0;
         cursor: pointer;
         transition: transform 0.3s ease;
-
-        &:hover {
-          transform: translateY(-50%) scale(1.1);
+        color: #FFF;
+        svg{
+          transform: rotate(0);
         }
       }
 
@@ -830,11 +831,10 @@ section.main-banner {
         }
 
         .faq-toggle-btn {
-          top: 71px;
-          transform: translateY(0);
-
-          &:hover {
-            transform: scale(1.1);
+          background-color: #FFF;
+          color: $primaryColor2;
+          svg{
+            transform: rotate(180deg);
           }
         }
       }
