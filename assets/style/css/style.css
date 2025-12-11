@@ -11322,6 +11322,10 @@ section.main-banner__02 .features-grid .feature-card.feature-card-bottom-right .
 }
 section.main-banner__03 {
   background-color: #021D7D;
+  background-image: url("../../images/main/main_02.svg");
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
 }
 section.main-banner__03 .banner-content {
   display: flex;
@@ -11346,6 +11350,7 @@ section.main-banner__03 .banner-content button.btn-to-stich {
   color: #021D7D;
   font-size: 22px;
   font-weight: 500;
+  border: 0;
 }
 section.main-banner__04 {
   background-color: #FFFFFF;
@@ -11372,12 +11377,15 @@ section.main-banner__04 .how-to-wrapper__right {
 }
 section.main-banner__04 .how-to-content {
   flex: 0 0 460px;
+  position: relative;
+  height: 100%;
 }
 section.main-banner__04 .how-to-content__catch-phrase {
   font-size: 20px;
   font-weight: 700;
   color: #4D24C3;
   margin-bottom: 35px;
+  opacity: 0;
 }
 section.main-banner__04 .how-to-content__title {
   display: flex;
@@ -11387,6 +11395,7 @@ section.main-banner__04 .how-to-content__title {
   margin-bottom: 30px;
   gap: 16px;
   white-space: nowrap;
+  opacity: 0;
 }
 section.main-banner__04 .how-to-content__title .circle {
   display: inline-flex;
@@ -11405,12 +11414,35 @@ section.main-banner__04 .how-to-content__description {
   font-size: 20px;
   line-height: 1.3;
   padding-left: 60px;
+  opacity: 0;
 }
 section.main-banner__04 .how-to-content .item {
-  display: none;
+  position: absolute;
+  top: 10px;
+  opacity: 0;
+  transition: all ease-in 0.3s;
+  transition-delay: 0.2s;
 }
 section.main-banner__04 .how-to-content .item.show, section.main-banner__04 .how-to-content .item.active {
-  display: block;
+  opacity: 1;
+  top: 0;
+}
+section.main-banner__04 .how-to-content .item.show .how-to-content__catch-phrase,
+section.main-banner__04 .how-to-content .item.show .how-to-content__title,
+section.main-banner__04 .how-to-content .item.show .how-to-content__description, section.main-banner__04 .how-to-content .item.active .how-to-content__catch-phrase,
+section.main-banner__04 .how-to-content .item.active .how-to-content__title,
+section.main-banner__04 .how-to-content .item.active .how-to-content__description {
+  opacity: 1;
+  transition: all 0.5s;
+}
+section.main-banner__04 .how-to-content .item.show .how-to-content__catch-phrase, section.main-banner__04 .how-to-content .item.active .how-to-content__catch-phrase {
+  transition-delay: 0.2s;
+}
+section.main-banner__04 .how-to-content .item.show .how-to-content__title, section.main-banner__04 .how-to-content .item.active .how-to-content__title {
+  transition-delay: 0.3s;
+}
+section.main-banner__04 .how-to-content .item.show .how-to-content__description, section.main-banner__04 .how-to-content .item.active .how-to-content__description {
+  transition-delay: 0.4s;
 }
 section.main-banner__04 .how-to-swiper {
   position: relative;

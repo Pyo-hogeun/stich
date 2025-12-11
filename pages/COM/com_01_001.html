@@ -219,7 +219,7 @@
           <div class="how-to-wrapper__right">
             <div class="swiper how-to-swiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide capture-card">
+                <div class="swiper-slide capture-card" >
                   <img src="../../assets/images/main/swiper_01.png" alt="">
                 </div>
                 <div class="swiper-slide capture-card">
@@ -267,6 +267,9 @@
       motionElements.forEach((element) => motionObserver.observe(element));
 
       
+    });
+    document.addEventListener('scroll', function(){
+      console.log('scroll');
     })
   </script>
   <script src="../../assets/dist/js/bundle.js"></script>
