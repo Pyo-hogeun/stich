@@ -762,6 +762,19 @@ h2.ellipsis {
   justify-content: center;
 }
 
+.toast-popup-container {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+  z-index: 1000;
+}
+
 .toast-popup {
   display: inline-flex;
   padding: 12px;
@@ -771,6 +784,14 @@ h2.ellipsis {
   border-radius: 8px;
   background: #A68FEB;
   box-shadow: 0 12px 20px 0 rgba(90, 75, 121, 0.2);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: auto;
+}
+.toast-popup.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .toast-popup__message {
   color: #FFF;
