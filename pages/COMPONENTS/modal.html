@@ -11,63 +11,84 @@
 
 <body>
   <div class="layer-dimmed extend">
-    <div class="alert-modal">
-      <div class="alert-modal__header">
-        <h2 class="alert-modal__title">기업회원 로그인</h2>
-        <button class="alert-modal__close" aria-label="닫기">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18.4706 4.46967C18.7635 4.17678 19.2392 4.17678 19.5321 4.46967C19.8246 4.7625 19.8246 5.2374 19.5321 5.53022L13.0614 11.9999L19.5311 18.4697C19.8239 18.7624 19.8237 19.2373 19.5311 19.5302C19.2382 19.8231 18.7635 19.8231 18.4706 19.5302L12.0009 13.0605L5.53113 19.5312C5.23832 19.8238 4.76345 19.8238 4.47058 19.5312C4.17769 19.2383 4.17769 18.7626 4.47058 18.4697L10.9393 11.9999L4.4696 5.53022C4.17675 5.23737 4.17684 4.76257 4.4696 4.46967C4.7625 4.17678 5.23726 4.17678 5.53015 4.46967L11.9999 10.9394L18.4706 4.46967Z" fill="#3A3A3A"/>
-          </svg>
-        </button>
-      </div>
-      <p class="alert-modal__message">이메일(기업 아이디) 또는 비밀번호를 확인해 주세요.</p>
-      <div class="alert-modal__footer">
-        <button class="alert-modal__cancel-btn">취소</button>
-        <button class="alert-modal__confirm-btn">확인</button>
-      </div>
-    </div>
-    &nbsp;
-    <div class="alert-modal alert-modal--submit-evaluation">
-      <div class="alert-modal__header">
-        <h2 class="alert-modal__title">평가결과 제출하기</h2>
-      </div>
-      <div class="alert-modal__body">
-        <div class="alert-modal__icon">
-          <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="100" height="100" fill="white"/>
-            <path d="M16 100L83 100C87.4183 100 91 96.4183 91 92L91 8.00001C91 3.58172 87.4183 -3.14382e-07 83 -7.02192e-07L42.2375 3.34932e-06L8.00001 34.2771L8.00001 92C8.00001 96.4183 11.5817 100 16 100Z" fill="white"/>
-            <path d="M9.00001 92C9.00001 95.866 12.134 99 16 99L83 99C86.866 99 90 95.866 90 92L90 8.00001C90 4.13402 86.866 1.00001 83 1.00001L83 6.9272e-06L83.4121 0.0107492C87.5024 0.218315 90.7817 3.49765 90.9893 7.5879L91 8.00001L91 92C91 96.4183 87.4183 100 83 100L16 100C11.5817 100 8.00001 96.4183 8.00001 92L8.00001 34.2773L42.2373 3.3493e-06L83 6.9272e-06L83 1.00001L42.6524 1L9.00001 34.6904L9.00001 92Z" fill="#3A3A3A"/>
-            <path d="M24.6016 48.793C24.6016 46.5838 26.3924 44.793 28.6016 44.793H70.4016C72.6107 44.793 74.4016 46.5838 74.4016 48.793V49.1263C74.4016 51.3354 72.6107 53.1263 70.4016 53.1263H28.6016C26.3924 53.1263 24.6016 51.3354 24.6016 49.1263V48.793Z" fill="#7A53EC"/>
-            <path d="M24.6016 63.375C24.6016 61.1659 26.3924 59.375 28.6016 59.375H60.0266C62.2357 59.375 64.0266 61.1659 64.0266 63.375V63.7083C64.0266 65.9175 62.2357 67.7083 60.0266 67.7083H28.6016C26.3924 67.7083 24.6016 65.9175 24.6016 63.7083V63.375Z" fill="#7A53EC"/>
-            <path d="M24.6016 77.957C24.6016 75.7479 26.3924 73.957 28.6016 73.957H49.6516C51.8607 73.957 53.6516 75.7479 53.6516 77.957V78.2904C53.6516 80.4995 51.8607 82.2904 49.6516 82.2904H28.6016C26.3924 82.2904 24.6016 80.4995 24.6016 78.2904V77.957Z" fill="#7A53EC"/>
-            <path d="M42.2578 30.375V0H43.2578V30.375C43.2578 32.8603 41.2431 34.875 38.7578 34.875H9.03906V33.875H38.7578C40.6908 33.875 42.2578 32.308 42.2578 30.375Z" fill="#3A3A3A"/>
+
+    <!-- 임시 그리드 실제 사용시엔 .alert-modal 만 사용 -->
+    <div style="display: block; max-height: 100vh; overflow-y: auto;">
+      
+      <div class="alert-modal">
+        <div class="alert-modal__header">
+          <h2 class="alert-modal__title">기업회원 로그인</h2>
+          <button class="alert-modal__close" aria-label="닫기">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.4706 4.46967C18.7635 4.17678 19.2392 4.17678 19.5321 4.46967C19.8246 4.7625 19.8246 5.2374 19.5321 5.53022L13.0614 11.9999L19.5311 18.4697C19.8239 18.7624 19.8237 19.2373 19.5311 19.5302C19.2382 19.8231 18.7635 19.8231 18.4706 19.5302L12.0009 13.0605L5.53113 19.5312C5.23832 19.8238 4.76345 19.8238 4.47058 19.5312C4.17769 19.2383 4.17769 18.7626 4.47058 18.4697L10.9393 11.9999L4.4696 5.53022C4.17675 5.23737 4.17684 4.76257 4.4696 4.46967C4.7625 4.17678 5.23726 4.17678 5.53015 4.46967L11.9999 10.9394L18.4706 4.46967Z" fill="#3A3A3A"/>
             </svg>
-            
+          </button>
         </div>
-        <p class="alert-modal__message">모든 대상의 평가가 완료되어야<br>제출하실 수 있습니다. 평가를 완료해 주세요.</p>
+        <p class="alert-modal__message">이메일(기업 아이디) 또는 비밀번호를 확인해 주세요.</p>
+        <div class="alert-modal__footer">
+          <button class="alert-modal__cancel-btn">취소</button>
+          <button class="alert-modal__confirm-btn">확인</button>
+        </div>
       </div>
-      <div class="alert-modal__footer">
-        <button class="alert-modal__confirm-btn">확인</button>
-      </div>
-    </div>
-    &nbsp;
-    <div class="alert-modal alert-modal--submit-evaluation">
-      <div class="alert-modal__header">
-        <h2 class="alert-modal__title">문의 완료</h2>
-      </div>
-      <div class="alert-modal__body">
-        <div class="alert-modal__icon">
-          <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="49.5" fill="white" stroke="#3A3A3A"/>
-            <path d="M72.084 35.7219C73.6847 37.2787 73.694 39.8467 72.1046 41.4151L47.9738 65.2275C46.4161 66.7646 43.9122 66.7646 42.3546 65.2274L27.8953 50.9585C26.306 49.3902 26.3154 46.8222 27.9162 45.2656C29.4709 43.7537 31.9493 43.7628 33.4929 45.2861L45.1632 56.8023L66.5066 35.742C68.0505 34.2186 70.5292 34.2096 72.084 35.7219Z" fill="#7A53EC"/>
+      &nbsp;
+      <div class="alert-modal">
+        <div class="alert-modal__header">
+          <h2 class="alert-modal__title">기업회원 로그인</h2>
+          <button class="alert-modal__close" aria-label="닫기">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.4706 4.46967C18.7635 4.17678 19.2392 4.17678 19.5321 4.46967C19.8246 4.7625 19.8246 5.2374 19.5321 5.53022L13.0614 11.9999L19.5311 18.4697C19.8239 18.7624 19.8237 19.2373 19.5311 19.5302C19.2382 19.8231 18.7635 19.8231 18.4706 19.5302L12.0009 13.0605L5.53113 19.5312C5.23832 19.8238 4.76345 19.8238 4.47058 19.5312C4.17769 19.2383 4.17769 18.7626 4.47058 18.4697L10.9393 11.9999L4.4696 5.53022C4.17675 5.23737 4.17684 4.76257 4.4696 4.46967C4.7625 4.17678 5.23726 4.17678 5.53015 4.46967L11.9999 10.9394L18.4706 4.46967Z" fill="#3A3A3A"/>
             </svg>
-            
+          </button>
         </div>
-        <p class="alert-modal__message">문의 답변은 담당자가 확인 후<br>접수 시 작성하신 이메일로 발송됩니다.</p>
+        <p class="alert-modal__message"><span style="color: #FF44BF;">평가기간 중 평가분야 변경 시 평가위원의 모든 평가내용이 리셋 됩니다. 평가를 수정하시겠습니까?</span></p>
+        <div class="alert-modal__footer">
+          <button class="alert-modal__cancel-btn">취소</button>
+          <button class="alert-modal__confirm-btn">확인</button>
+        </div>
       </div>
-      <div class="alert-modal__footer">
-        <button class="alert-modal__cancel-btn">취소</button>
-        <button class="alert-modal__confirm-btn">확인</button>
+      &nbsp;
+      <div class="alert-modal alert-modal--submit-evaluation">
+        <div class="alert-modal__header">
+          <h2 class="alert-modal__title">평가결과 제출하기</h2>
+        </div>
+        <div class="alert-modal__body">
+          <div class="alert-modal__icon">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="100" fill="white"/>
+              <path d="M16 100L83 100C87.4183 100 91 96.4183 91 92L91 8.00001C91 3.58172 87.4183 -3.14382e-07 83 -7.02192e-07L42.2375 3.34932e-06L8.00001 34.2771L8.00001 92C8.00001 96.4183 11.5817 100 16 100Z" fill="white"/>
+              <path d="M9.00001 92C9.00001 95.866 12.134 99 16 99L83 99C86.866 99 90 95.866 90 92L90 8.00001C90 4.13402 86.866 1.00001 83 1.00001L83 6.9272e-06L83.4121 0.0107492C87.5024 0.218315 90.7817 3.49765 90.9893 7.5879L91 8.00001L91 92C91 96.4183 87.4183 100 83 100L16 100C11.5817 100 8.00001 96.4183 8.00001 92L8.00001 34.2773L42.2373 3.3493e-06L83 6.9272e-06L83 1.00001L42.6524 1L9.00001 34.6904L9.00001 92Z" fill="#3A3A3A"/>
+              <path d="M24.6016 48.793C24.6016 46.5838 26.3924 44.793 28.6016 44.793H70.4016C72.6107 44.793 74.4016 46.5838 74.4016 48.793V49.1263C74.4016 51.3354 72.6107 53.1263 70.4016 53.1263H28.6016C26.3924 53.1263 24.6016 51.3354 24.6016 49.1263V48.793Z" fill="#7A53EC"/>
+              <path d="M24.6016 63.375C24.6016 61.1659 26.3924 59.375 28.6016 59.375H60.0266C62.2357 59.375 64.0266 61.1659 64.0266 63.375V63.7083C64.0266 65.9175 62.2357 67.7083 60.0266 67.7083H28.6016C26.3924 67.7083 24.6016 65.9175 24.6016 63.7083V63.375Z" fill="#7A53EC"/>
+              <path d="M24.6016 77.957C24.6016 75.7479 26.3924 73.957 28.6016 73.957H49.6516C51.8607 73.957 53.6516 75.7479 53.6516 77.957V78.2904C53.6516 80.4995 51.8607 82.2904 49.6516 82.2904H28.6016C26.3924 82.2904 24.6016 80.4995 24.6016 78.2904V77.957Z" fill="#7A53EC"/>
+              <path d="M42.2578 30.375V0H43.2578V30.375C43.2578 32.8603 41.2431 34.875 38.7578 34.875H9.03906V33.875H38.7578C40.6908 33.875 42.2578 32.308 42.2578 30.375Z" fill="#3A3A3A"/>
+              </svg>
+              
+          </div>
+          <p class="alert-modal__message">모든 대상의 평가가 완료되어야<br>제출하실 수 있습니다. 평가를 완료해 주세요.</p>
+        </div>
+        <div class="alert-modal__footer">
+          <button class="alert-modal__confirm-btn">확인</button>
+        </div>
+      </div>
+      &nbsp;
+      <div class="alert-modal alert-modal--submit-evaluation">
+        <div class="alert-modal__header">
+          <h2 class="alert-modal__title">문의 완료</h2>
+        </div>
+        <div class="alert-modal__body">
+          <div class="alert-modal__icon">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="49.5" fill="white" stroke="#3A3A3A"/>
+              <path d="M72.084 35.7219C73.6847 37.2787 73.694 39.8467 72.1046 41.4151L47.9738 65.2275C46.4161 66.7646 43.9122 66.7646 42.3546 65.2274L27.8953 50.9585C26.306 49.3902 26.3154 46.8222 27.9162 45.2656C29.4709 43.7537 31.9493 43.7628 33.4929 45.2861L45.1632 56.8023L66.5066 35.742C68.0505 34.2186 70.5292 34.2096 72.084 35.7219Z" fill="#7A53EC"/>
+              </svg>
+              
+          </div>
+          <p class="alert-modal__message">문의 답변은 담당자가 확인 후<br>접수 시 작성하신 이메일로 발송됩니다.</p>
+        </div>
+        <div class="alert-modal__footer">
+          <button class="alert-modal__cancel-btn">취소</button>
+          <button class="alert-modal__confirm-btn">확인</button>
+        </div>
       </div>
     </div>
   </div>
