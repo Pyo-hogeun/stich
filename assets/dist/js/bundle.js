@@ -14392,6 +14392,73 @@ var AppBundle = (function (exports) {
       });
     };
 
+    const TOAST_DEFAULT_DURATION = 3000;
+    const TOAST_ANIMATION_DURATION = 200;
+
+    const ensureToastContainer = () => {
+      const existing = document.querySelector('.toast-popup-container');
+      if (existing) {
+        return existing;
+      }
+
+      const container = document.createElement('div');
+      container.className = 'toast-popup-container';
+      document.body.appendChild(container);
+      return container;
+    };
+
+    const createToastElement = (message) => {
+      const toast = document.createElement('div');
+      toast.className = 'toast-popup';
+
+      const text = document.createElement('p');
+      text.className = 'toast-popup__message';
+      text.textContent = message;
+      toast.appendChild(text);
+
+      return toast;
+    };
+
+    const showToast = (message, options = {}) => {
+      if (!message) {
+        return null;
+      }
+
+      const duration = Number.isFinite(options.duration)
+        ? Math.max(0, options.duration)
+        : TOAST_DEFAULT_DURATION;
+
+      const container = ensureToastContainer();
+      const toast = createToastElement(message);
+      container.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classList.add('is-visible');
+      });
+
+      const hide = () => {
+        toast.classList.remove('is-visible');
+        setTimeout(() => {
+          toast.remove();
+          if (!container.hasChildNodes()) {
+            container.remove();
+          }
+        }, TOAST_ANIMATION_DURATION);
+      };
+
+      const hideTimer = setTimeout(hide, duration);
+
+      return {
+        element: toast,
+        hide: () => {
+          clearTimeout(hideTimer);
+          hide();
+        },
+      };
+    };
+
+    window.showToast = showToast;
+
   // DOM 로드 시 실행
     document.addEventListener('DOMContentLoaded', () => {
       rangePickerInit("#rangePicker");
