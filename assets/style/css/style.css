@@ -1423,14 +1423,16 @@ input[type=number] {
   border: 1px solid #000;
   border-radius: 8px;
   overflow: hidden;
+  height: 42px;
   /* 탭 기본 스타일 */
 }
 .view-toggle .view-tab {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   height: 40px;
+  width: 40px;
   gap: 6px;
-  padding: 0 16px;
   font-size: 15px;
   cursor: pointer;
   color: #fff;
@@ -1995,30 +1997,36 @@ input[type=number] {
 }
 .eva-field .eva-list .list-topper .selected-status-bar {
   display: flex;
-  gap: 8px;
   margin-top: 16px;
+  justify-content: space-between;
 }
-.eva-field .eva-list .list-topper .selected-status-bar .ckb__box {
+.eva-field .eva-list .list-topper .selected-status-bar .flex-start {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+.eva-field .eva-list .list-topper .selected-status-bar .flex-start .ckb__box {
   width: var(--ck-size-sm);
   min-width: var(--ck-size-sm);
   height: var(--ck-size-sm);
 }
-.eva-field .eva-list .list-topper .selected-status-bar .ckb__box::after {
+.eva-field .eva-list .list-topper .selected-status-bar .flex-start .ckb__box::after {
   width: calc(var(--ck-size-sm) * 0.5);
   height: calc(var(--ck-size-sm) * 0.5);
 }
-.eva-field .eva-list .list-topper .selected-status-bar .label {
+.eva-field .eva-list .list-topper .selected-status-bar .flex-start .label {
   font-size: 14px;
   color: #747474;
 }
 .eva-field .eva-list .list-topper .toolbar {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   margin-top: 16px;
 }
 .eva-field .eva-list .list-topper .toolbar .flex-start {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 8px;
 }
 .eva-field .eva-list .list-topper .toolbar .flex-start .btn-delete img {

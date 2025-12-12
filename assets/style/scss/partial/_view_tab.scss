@@ -4,14 +4,16 @@
   border: 1px solid #000;
   border-radius: 8px;
   overflow: hidden;
+  height: 42px;
   
   /* 탭 기본 스타일 */
   .view-tab {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     height: 40px;
+    width: 40px;
     gap: 6px;
-    padding: 0 16px;
     font-size: 15px;
     cursor: pointer;
     color: #fff;

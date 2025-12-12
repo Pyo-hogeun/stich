@@ -343,21 +343,25 @@
 
       .selected-status-bar {
         display: flex;
-        gap: 8px;
         margin-top: 16px;
-
-        .ckb__box {
-          width: var(--ck-size-sm);
-          min-width: var(--ck-size-sm);
-          height: var(--ck-size-sm);
-          &::after {
-            width: calc(var(--ck-size-sm) * 0.5);
-            height: calc(var(--ck-size-sm) * 0.5);
+        justify-content: space-between;
+        .flex-start{
+          align-items: center;
+          display: flex;
+          gap: 8px;
+          .ckb__box {
+            width: var(--ck-size-sm);
+            min-width: var(--ck-size-sm);
+            height: var(--ck-size-sm);
+            &::after {
+              width: calc(var(--ck-size-sm) * 0.5);
+              height: calc(var(--ck-size-sm) * 0.5);
+            }
           }
-        }
-        .label {
-          font-size: 14px;
-          color: $normalText;
+          .label {
+            font-size: 14px;
+            color: $normalText;
+          }
         }
 
       }
@@ -365,11 +369,12 @@
       .toolbar {
         display: flex;
         justify-content: space-between;
+        align-items: flex-end;
         margin-top: 16px;
 
         .flex-start {
           display: flex;
-          align-items: center;
+          align-items: flex-end;
           gap: 8px;
 
           .btn-delete {
