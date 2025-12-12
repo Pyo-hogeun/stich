@@ -254,27 +254,39 @@
             </div>
 
             <div class="toolbar">
-              <div class="flex-start">
-                <div>
+              <div class="flex-start" style="align-items: flex-end;">
+                <div class="toolbar__with-label">
                   <div class="label">
                     목록 보기
                   </div>
-                  <div class="combo">
-                    <input type="checkbox" id="combo-toggle" class="combo-toggle" />
-                    <label for="combo-toggle" class="combo-label">전체대상</label>
-                    <ul class="combo-options">
-                      <li><a href="#" class="selected">접수대상</a></li>
-                      <li><a href="#">평가제외대상</a></li>
+                  <div class="combo multie-select">
+                    <input type="checkbox" id="combo-toggle1" class="combo-toggle" />
+                    <label for="combo-toggle1" class="combo-label">전체대상</label>
+                    <ul class="multie-options">
+                      <li>
+                        <label class="ckb">
+                          <input type="checkbox">
+                          <span class="ckb__box"></span>
+                          <span class="ckb__label">접수대상</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label class="ckb">
+                          <input type="checkbox">
+                          <span class="ckb__box"></span>
+                          <span class="ckb__label">평가제외대상</span>
+                        </label>
+                      </li>
                     </ul>
                   </div>
                 </div>
-                <div>
+                <div class="toolbar__with-label">
                   <div class="label">
                     목록 정렬
                   </div>
                   <div class="combo">
-                    <input type="checkbox" id="combo-toggle" class="combo-toggle" />
-                    <label for="combo-toggle" class="combo-label">최신 등록 순</label>
+                    <input type="checkbox" id="combo-toggle2" class="combo-toggle" />
+                    <label for="combo-toggle2" class="combo-label">최신 등록 순</label>
                     <ul class="combo-options">
                       <li><a href="#" class="selected">최신 등록 순</a></li>
                       <li><a href="#">평가 대상자 오름차순</a></li>
@@ -283,7 +295,7 @@
                   </div>
                 </div>
   
-                <div class="input-text-wrapper" style="width: 200px">
+                <div class="input-text-wrapper" style="width: 300px">
                   <input id="q" name="q" type="text" class="input-text search" placeholder="평가 대상을 검색해주세요"
                     autocomplete="off" />
                   <button type="button" class="search-btn" aria-label="검색">

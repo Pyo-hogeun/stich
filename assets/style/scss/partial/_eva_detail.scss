@@ -401,6 +401,13 @@
           display: flex;
           gap: 16px;
         }
+        &__with-label{
+          .label{
+            font-weight: 600;
+            color: $Title_Dark;
+            margin-bottom: 8px;
+          }
+        }
       }
       .message{
         display: inline-flex;
