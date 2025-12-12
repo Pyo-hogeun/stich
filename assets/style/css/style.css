@@ -1140,6 +1140,8 @@ h2.ellipsis {
   position: relative;
   transition: all 0.2s;
   color: #0A0A0A;
+  padding-right: 32px;
+  line-height: 1.4;
 }
 
 .combo-label::after {
@@ -1199,12 +1201,21 @@ h2.ellipsis {
   transform: translateY(-10px);
   transition: all 0.2s ease;
   z-index: 10;
+  padding: 8px 0;
 }
 .multie-options li {
   display: flex;
   align-items: center;
   padding: 0 14px;
   height: 40px;
+}
+.multie-options li .ckb {
+  width: 100%;
+}
+
+.combo.multie-select .combo-label {
+  white-space: normal;
+  min-height: 40px;
 }
 
 /* 토글되었을 때 표시 */

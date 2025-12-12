@@ -14350,10 +14350,60 @@ var AppBundle = (function (exports) {
         .map((combo) => {
           const toggle = combo.querySelector('.combo-toggle');
           const label = combo.querySelector('.combo-label');
+          const isMultiSelect = combo.classList.contains('multie-select');
+
+          if (!toggle || !label) {
+            return null;
+          }
+
+          if (isMultiSelect) {
+            const options = Array.from(
+              combo.querySelectorAll('.multie-options input[type="checkbox"]')
+            );
+
+            if (!options.length) {
+              return { combo, toggle };
+            }
+
+            const findOptionLabel = (checkbox) =>
+              checkbox
+                ?.closest('.ckb')
+                ?.querySelector('.ckb__label')
+                ?.textContent?.trim() ?? '';
+
+            const updateLabel = () => {
+              const selectedOptions = options.filter((option) => option.checked);
+
+              if (!selectedOptions.length) {
+                label.textContent = '';
+                return;
+              }
+
+              if (selectedOptions.length === options.length) {
+                label.textContent = '전체대상';
+                return;
+              }
+
+              const text = selectedOptions
+                .map((option) => findOptionLabel(option))
+                .filter(Boolean)
+                .join(', ');
+
+              label.textContent = text;
+            };
+
+            options.forEach((option) => {
+              option.addEventListener('change', updateLabel);
+            });
+
+            updateLabel();
+            return { combo, toggle };
+          }
+
           const options = Array.from(combo.querySelectorAll('.combo-options li a'));
 
-          if (!toggle || !label || options.length === 0) {
-            return null;
+          if (options.length === 0) {
+            return { combo, toggle };
           }
 
           const applySelection = (option) => {
