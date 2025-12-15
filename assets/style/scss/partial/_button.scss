@@ -85,4 +85,7 @@
     background-color: $primaryColor;
     color: #FFFFFF;
   }
+  &.draw{
+    color: $normalText;
+  }
 }

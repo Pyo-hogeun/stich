@@ -1,5 +1,5 @@
 @use 'variables' as *;
-.member-welcome, .eva-build-success, .eva-build-reset{
+.member-welcome, .eva-build-success, .eva-build-reset, .pay-succeess, .eva-regist-success{
   .img-wrap{
     text-align: center;
   }
@@ -17,5 +17,13 @@
         font-weight: 400;
       }
     }
+  }
+}
+.eva-build-success.layer-popup,
+.eva-regist-success.layer-popup,
+.pay-succeess.layer-popup{
+  width: 600px;
+  .btn.no-more{
+    color: #747474;
   }
 }
