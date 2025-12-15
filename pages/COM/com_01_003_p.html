@@ -1,0 +1,200 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STICH</title>
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+  <link rel="stylesheet" href="../../assets/dist/js/bundle.css">
+  <style>
+    
+  </style>
+
+</head>
+
+<body>
+  <header class="gnb">
+    <div class="gnb-container">
+      <a href="/" class="gnb-logo">
+        <img src="../../assets/images/icon_gnb_logo.svg" alt="stich logo">
+      </a>
+
+      <nav class="gnb-menu">
+        <a href="/" class="gnb-menu-item menu-home">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_home.png" alt="home" class="icon-gnb-home">
+          </div>
+        </a>
+
+        <a href="/pages/COM/com_01_001.html" class="gnb-menu-item menu-competition gnb-menu-item-active">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_competition.png" alt="home" class="icon-gnb-competition">
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-notice">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_notice.png" alt="home" class="icon-gnb-notice">
+            <div class="badge-new">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="20" rx="10" fill="#FF44BF" />
+                <path
+                  d="M13.4863 5.51562V14H12.127L8.10742 8.19922H8.03711V14H6.51367V5.51562H7.89648L11.8926 11.3164H11.9746V5.51562H13.4863Z"
+                  fill="white" />
+              </svg>
+
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="gnb-menu-item menu-career">
+          <div class="gnb-menu-bg">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+            <img src="../../assets/images/icon_union.svg" alt="반짝">
+          </div>
+          <div class="gnb-menu-icon">
+            <img src="../../assets/images/icon_gnb_career.png" alt="home" class="icon-gnb-career">
+          </div>
+        </a>
+      </nav>
+
+      <div class="gnb-user">
+        <div class="gnb-profile">
+          <div class="gnb-profile-icon">
+            <img src="../../assets/images/icon_my_profile.png" alt="사용자 아이콘">
+          </div>
+          <p class="gnb-profile-text">
+            <span class="gnb-profile-greeting">안녕하세요. </span>
+            <span class="gnb-profile-name">홍길동님</span>
+          </p>
+          <a href="/" class="gnb-settings" aria-label="설정">
+            <img src="../../assets/images/icon_my_setting.svg" alt="사용자 설정">
+          </a>
+        </div>
+
+        <div class="gnb-divider"></div>
+
+        <button class="gnb-logout">
+          <img src="../../assets/images/icon_gnb_logout.svg" class="icon-gnb-logout" alt="로그아웃 아이콘">
+          <span>로그아웃</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="content-wrapper">
+    </div>
+  </main>
+
+  <div class="layer-dimmed" role="dialog" aria-modal="true">
+    <div class="layer-popup cs-notice">
+      <div class="layer-popup__header">
+        <h3 class="layer-popup__title">알림</h3>
+        <button type="button" class="layer-popup__close" aria-label="레이어 닫기">
+          <img src="../../assets/images/icon_close_popup.svg" alt="">
+        </button>
+      </div>
+      <div class="layer-popup__body">
+        <div class="notification-list">
+          <div class="notification-item">
+            <div class="notification-header">
+              <div class="notification-title-wrapper">
+                <span class="notification-badge">N</span>
+                <h4 class="notification-title">평가위원이 평가 초대 메일 재발송 요청하였습니다.</h4>
+              </div>
+              <span class="notification-date">2025-06-20 19:21</span>
+            </div>
+          </div>
+
+          <div class="notification-item">
+            <div class="notification-header">
+              <h4 class="notification-title">평가위원이 평가 초대 메일 재발송 요청하였습니다.</h4>
+              <span class="notification-date">2025-06-20 19:21</span>
+            </div>
+            <div class="notification-content">
+              <p class="notification-description">평가 {평가 이름}의 평가위원 {평가 위원 이름}({평가 위원 이메일})님의 초대메일 재발송 요청이 있습니다.</p>
+              <button type="button" class="notification-action-btn">재발송하기</button>
+            </div>
+          </div>
+
+          <div class="notification-item">
+            <div class="notification-header">
+              <h4 class="notification-title">{평가 명}에 등록된 평가 파일이 삭제되기 30일/7일/3일/24시간 전 입니다.</h4>
+              <span class="notification-date">2025-06-20 19:21</span>
+            </div>
+            <div class="notification-content">
+              <p class="notification-description">등록하신 평가파일은 7일 후 자동 삭제될 예정입니다. 필요하신 경우 미리 백업해 주세요.</p>
+              <button type="button" class="notification-action-btn">평가로 이동하기</button>
+            </div>
+          </div>
+
+          <div class="notification-item">
+            <div class="notification-header">
+              <h4 class="notification-title">{평가 명} 평가에 대한 모든 평가를 완료하였습니다.</h4>
+              <span class="notification-date">2025-06-20 19:21</span>
+            </div>
+            <div class="notification-content">
+              <p class="notification-description">{평가 명}평가가 완료 되었습니다. 지금 바로 평가 결과를 확인해 보시겠습니까?</p>
+              <button type="button" class="notification-action-btn">확인하기</button>
+            </div>
+          </div>
+
+          <div class="notification-item">
+            <div class="notification-header">
+              <h4 class="notification-title">후불 요금이 미납된 상태입니다. 원활한 서비스 이용을 위해 결제를 완료해 주세요.</h4>
+              <span class="notification-date">2025-06-20 19:21</span>
+            </div>
+            <div class="notification-content">
+              <p class="notification-description">현재 고객님의 후불 요금이 지정된 결제일을 지나 미납 상태입니다. 미납 상태가 지속될 경우, 일부 기능이 제한되거나 서비스 이용이 중단될 수 있습니다.</p>
+              <button type="button" class="notification-action-btn">지금 결제하기</button>
+            </div>
+          </div>
+
+          <div class="notification-item">
+            <div class="notification-header">
+              <h4 class="notification-title">성공적으로 결제가 완료되었습니다. 제한 없이 평가를 만들어 보세요.</h4>
+              <span class="notification-date">2025-06-20 19:21</span>
+            </div>
+            <div class="notification-content">
+              <p class="notification-description">추가 가능한 평가 대상/평가 위원/평가 용량이 늘어났습니다. 지금 확인해 보시겠습니까?</p>
+              <button type="button" class="notification-action-btn">확인하기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layer-popup__footer">
+        <div class="layer-popup__footer-left">
+        </div>
+        <div class="layer-popup__footer-center">
+          <button type="button" class="btn border border__icon submit">
+            닫기
+          </button>
+        </div>
+        <div class="layer-popup__footer-right">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/dist/js/bundle.js"></script>
+</body>
+
+</html>

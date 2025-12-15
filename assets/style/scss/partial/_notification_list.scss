@@ -1,0 +1,106 @@
+@use 'variables' as *;
+
+.notification-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-item {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $cardBorderColor;
+  padding-bottom: 24px;
+  
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0 0;
+  gap: 16px;
+}
+
+.notification-title-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.notification-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 99px;
+  background-color: $pointColor1;
+  color: #FFF;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 12px;
+  flex-shrink: 0;
+}
+
+.notification-title {
+  color: $Line_Normal;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 150%;
+  margin: 0;
+}
+
+.notification-date {
+  color: $smallText;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 150%;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.notification-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 16px 0 0;
+}
+
+.notification-description {
+  width: 100%;
+  color: $normalText;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0;
+}
+
+.notification-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: $Title_Dark;
+  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  
+  &:hover {
+    opacity: 0.7;
+  }
+}
