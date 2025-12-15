@@ -14442,6 +14442,34 @@ var AppBundle = (function (exports) {
       });
     };
 
+    const LAYER_POPUP_MAX_HEIGHT = 740;
+
+    const initLayerPopupFooterShadow = () => {
+      const layerPopups = Array.from(document.querySelectorAll('.layer-popup'));
+      if (!layerPopups.length) {
+        return;
+      }
+
+      const applyShadowRule = () => {
+        layerPopups.forEach((popup) => {
+          const footer = popup.querySelector('.layer-popup__footer');
+          if (!footer) {
+            return;
+          }
+
+          const popupHeight = popup.getBoundingClientRect().height;
+          if (popupHeight <= LAYER_POPUP_MAX_HEIGHT) {
+            footer.classList.add('no-shadow');
+          } else {
+            footer.classList.remove('no-shadow');
+          }
+        });
+      };
+
+      applyShadowRule();
+      window.addEventListener('resize', applyShadowRule);
+    };
+
     const TOAST_DEFAULT_DURATION = 3000;
     const TOAST_ANIMATION_DURATION = 200;
 
@@ -14522,6 +14550,7 @@ var AppBundle = (function (exports) {
       initSectionActive();
       initUsageToggleLabels();
       initComboBoxes();
+      initLayerPopupFooterShadow();
     });
 
   exports.datePickerInit = datePickerInit;
