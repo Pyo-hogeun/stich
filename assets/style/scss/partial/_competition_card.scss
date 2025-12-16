@@ -160,13 +160,15 @@
     box-shadow: 0 1px 9px 0px rgba(90, 75, 121, 0.1);
     border-radius: 16px;
     .competition-title{
-      color: $primaryColor2;
       text-decoration: underline;
       cursor: pointer;
     }
     &:hover{
       box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.50);
       outline: 2px solid $primaryColor2;
+      .competition-title{
+        color: $primaryColor2;
+      }
     }
   
     .item__img {
@@ -188,8 +190,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 16px;
-      flex: 1 0 0;
+      gap: 24px;
       align-self: stretch;
       padding: 0;
     }
@@ -198,8 +199,8 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 24px;
-      flex: 1 0 0;
+      justify-content: space-between;
+      gap: 8px;
       align-self: stretch;
     }
   
@@ -238,10 +239,12 @@
   
       .status-notice {
         color: $pointColor1;
-        font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
         font-size: 12px;
         font-weight: 400;
         line-height: normal;
+        &.fc-primary{
+          color: $primaryColor;
+        }
       }
     }
   

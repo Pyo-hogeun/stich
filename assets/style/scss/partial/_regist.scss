@@ -161,6 +161,22 @@
   }
 }
 .company-info{
+  h3{
+    font-size: 18px;
+    font-weight: 700;
+    color: $Title_Dark;
+    .sub{
+      font-size: 12px;
+      font-weight: 400;
+      color: $smallText;
+      margin-left: 12px;
+    }
+  }
+  .sub-text-message{
+    font-size: 14px;
+    color: $normalText;
+    margin: 12px 0 24px 0;
+  }
   .col-2{
     display: flex;
     gap: 24px;
@@ -175,15 +191,9 @@
   }
   &__label{
     color: $Title_Dark;
-    &.fs-14{
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
-    &.fs-18{
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
     &.required{
       @include required
     }

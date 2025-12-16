@@ -189,15 +189,14 @@
   margin-top: 24px;
   .sticky{
     position: sticky;
-    padding-top: 10px;
+    padding: 10px 24px 10px;
+    margin: 0 -24px;
     top: $gnbHeight;
     background-color: rgba(255,255,255,.95);
     z-index: 100;
   }
 
   .field-tab {
-    position: sticky;
-    top: $gnbHeight;
     z-index: 100;
     padding: 20px 24px;
     background-color: $primaryColor;
@@ -241,8 +240,6 @@
   .step-tab {
     margin-top: 32px;
     padding-bottom: 10px;
-    position: sticky;
-    top: calc($gnbHeight + 10px);
 
     ol {
       display: flex;
@@ -262,11 +259,16 @@
           white-space: nowrap;
           background-color: #FFFFFF;
 
-          &.active {
+        }
+        &.active {
+          a{
             background-color: var(--bg-step-tab-active);
             border-color: $primaryColor;
             color: var(--bg-step-tab-text-active);
             font-weight: 700;
+          }
+          &:not(:last-child):after{
+            background-image: url('../../images/icon_chevron_right-16-primary.svg');
           }
         }
 
@@ -276,8 +278,7 @@
           vertical-align: middle;
           width: 18px;
           height: 100%;
-          background-image: url('../../images/icon_chevron_right-16.png');
-          background-size: 4px 8px;
+          background-image: url('../../images/icon_chevron_right-16.svg');
           background-repeat: no-repeat;
           background-position: center;
         }

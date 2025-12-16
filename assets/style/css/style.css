@@ -1772,7 +1772,7 @@ input[type=number] {
 }
 
 .eva-detail {
-  padding: 36px 24px;
+  padding: 14px 24px 24px 24px;
 }
 .eva-detail .badge {
   display: inline-flex;
@@ -1911,19 +1911,18 @@ input[type=number] {
 
 .eva-field {
   position: relative;
-  padding: 36px 24px;
+  padding: 14px 24px 24px 24px;
   margin-top: 24px;
 }
 .eva-field .sticky {
   position: sticky;
-  padding-top: 10px;
+  padding: 10px 24px 10px;
+  margin: 0 -24px;
   top: 80px;
   background-color: rgba(255, 255, 255, 0.95);
   z-index: 100;
 }
 .eva-field .field-tab {
-  position: sticky;
-  top: 80px;
   z-index: 100;
   padding: 20px 24px;
   background-color: #7A53EC;
@@ -1960,8 +1959,6 @@ input[type=number] {
 .eva-field .step-tab {
   margin-top: 32px;
   padding-bottom: 10px;
-  position: sticky;
-  top: 90px;
 }
 .eva-field .step-tab ol {
   display: flex;
@@ -1980,11 +1977,14 @@ input[type=number] {
   white-space: nowrap;
   background-color: #FFFFFF;
 }
-.eva-field .step-tab ol li a.active {
+.eva-field .step-tab ol li.active a {
   background-color: var(--bg-step-tab-active);
   border-color: #7A53EC;
   color: var(--bg-step-tab-text-active);
   font-weight: 700;
+}
+.eva-field .step-tab ol li.active:not(:last-child):after {
+  background-image: url("../../images/icon_chevron_right-16-primary.svg");
 }
 .eva-field .step-tab ol li:not(:last-child):after {
   content: "";
@@ -1992,8 +1992,7 @@ input[type=number] {
   vertical-align: middle;
   width: 18px;
   height: 100%;
-  background-image: url("../../images/icon_chevron_right-16.png");
-  background-size: 4px 8px;
+  background-image: url("../../images/icon_chevron_right-16.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -3303,7 +3302,7 @@ button.btn-add:hover {
   color: #A68FEB;
 }
 .eva-preview .content-title h3 {
-  margin-top: 16px;
+  margin: 16px 0;
   font-size: 32px;
   font-weight: 700;
   line-height: 1.2;
@@ -4471,7 +4470,7 @@ button.btn-add:hover {
 
 .service-usage-card {
   width: 348px;
-  padding: 36px 24px;
+  padding: 14px 24px 24px 24px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -5249,6 +5248,9 @@ button.btn-add:hover {
   display: flex;
   gap: 24px;
   margin-bottom: 24px;
+}
+.send-link__email_receiver .btn {
+  height: 40px;
 }
 .send-link__email-list .btn.underline {
   color: #747474;
@@ -7515,6 +7517,7 @@ button.btn-add:hover {
 }
 .mypage-main__eva-list .eva-list__card .content-wrap .list-wrap .item__summary_value .progress-bar {
   margin-top: 2px;
+  background-color: #FFFFFF;
 }
 .mypage-main__eva-list .eva-list__card .content-wrap .list-wrap .item__footer {
   padding: 0 24px 24px;
@@ -7973,7 +7976,7 @@ button.btn-add:hover {
 
 .eva-committee__manual_item {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   margin-bottom: 16px;
   padding-top: 8px;
   justify-content: space-between;
@@ -8761,13 +8764,15 @@ button.btn-add:hover {
   border-radius: 16px;
 }
 .type-list .item.competition-card .competition-title {
-  color: #4D24C3;
   text-decoration: underline;
   cursor: pointer;
 }
 .type-list .item.competition-card:hover {
   box-shadow: 0 2px 8px 0 rgba(90, 75, 121, 0.5);
   outline: 2px solid #4D24C3;
+}
+.type-list .item.competition-card:hover .competition-title {
+  color: #4D24C3;
 }
 .type-list .item.competition-card .item__img {
   width: 160px;
@@ -8787,8 +8792,7 @@ button.btn-add:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
-  flex: 1 0 0;
+  gap: 24px;
   align-self: stretch;
   padding: 0;
 }
@@ -8796,8 +8800,8 @@ button.btn-add:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 24px;
-  flex: 1 0 0;
+  justify-content: space-between;
+  gap: 8px;
   align-self: stretch;
 }
 .type-list .item.competition-card .competition-header {
@@ -8831,10 +8835,12 @@ button.btn-add:hover {
 }
 .type-list .item.competition-card .competition-status-inline .status-notice {
   color: #FF44BF;
-  font-family: Pretendard, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: normal;
+}
+.type-list .item.competition-card .competition-status-inline .status-notice.fc-primary {
+  color: #7A53EC;
 }
 .type-list .item.competition-card .header-divider {
   width: 1px;
@@ -8922,7 +8928,7 @@ button.btn-add:hover {
 }
 
 .regist-detail {
-  padding: 36px 24px;
+  padding: 14px 24px 24px 24px;
 }
 .regist-detail .badge {
   display: inline-flex;
@@ -10794,6 +10800,22 @@ button.btn-add:hover {
   color: #747474;
 }
 
+.company-info h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0A0A0A;
+}
+.company-info h3 .sub {
+  font-size: 12px;
+  font-weight: 400;
+  color: #919191;
+  margin-left: 12px;
+}
+.company-info .sub-text-message {
+  font-size: 14px;
+  color: #747474;
+  margin: 12px 0 24px 0;
+}
 .company-info .col-2 {
   display: flex;
   gap: 24px;
@@ -10806,15 +10828,9 @@ button.btn-add:hover {
 }
 .company-info__label {
   color: #0A0A0A;
-}
-.company-info__label.fs-14 {
   font-size: 14px;
+  font-weight: 600;
   margin-bottom: 8px;
-}
-.company-info__label.fs-18 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 16px;
 }
 .company-info__label.required:after {
   content: "*";

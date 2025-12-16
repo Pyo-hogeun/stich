@@ -10,6 +10,9 @@
     display: flex;
     gap: 24px;
     margin-bottom: 24px;
+    .btn{
+      height: 40px;
+    }
   }
   &__email-list{
     .btn.underline{
