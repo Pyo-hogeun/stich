@@ -13908,7 +13908,7 @@ var AppBundle = (function (exports) {
 
   // 메인페이지 swiper
 
-  document.addEventListener('DOMContentLoaded', function(){
+  document.addEventListener('DOMContentLoaded', function () {
     const howToContentItems = document.querySelectorAll('.how-to-content .item');
 
     const toggleHowToContent = (activeIndex) => {
@@ -14362,221 +14362,221 @@ var AppBundle = (function (exports) {
         openPopup(button);
       });
     });
-    };
+  };
 
-    const initComboBoxes = () => {
-      const combos = Array.from(document.querySelectorAll('.combo'));
-      if (!combos.length) {
-        return;
-      }
+  const initComboBoxes = () => {
+    const combos = Array.from(document.querySelectorAll('.combo'));
+    if (!combos.length) {
+      return;
+    }
 
-      const comboConfigs = combos
-        .map((combo) => {
-          const toggle = combo.querySelector('.combo-toggle');
-          const label = combo.querySelector('.combo-label');
-          const isMultiSelect = combo.classList.contains('multie-select');
+    const comboConfigs = combos
+      .map((combo) => {
+        const toggle = combo.querySelector('.combo-toggle');
+        const label = combo.querySelector('.combo-label');
+        const isMultiSelect = combo.classList.contains('multie-select');
 
-          if (!toggle || !label) {
-            return null;
+        if (!toggle || !label) {
+          return null;
+        }
+
+        if (isMultiSelect) {
+          const options = Array.from(
+            combo.querySelectorAll('.multie-options input[type="checkbox"]')
+          );
+
+          if (!options.length) {
+            return { combo, toggle };
           }
 
-          if (isMultiSelect) {
-            const options = Array.from(
-              combo.querySelectorAll('.multie-options input[type="checkbox"]')
-            );
+          const findOptionLabel = (checkbox) =>
+            checkbox
+              ?.closest('.ckb')
+              ?.querySelector('.ckb__label')
+              ?.textContent?.trim() ?? '';
 
-            if (!options.length) {
-              return { combo, toggle };
+          const updateLabel = () => {
+            const selectedOptions = options.filter((option) => option.checked);
+
+            if (!selectedOptions.length) {
+              label.textContent = '';
+              return;
             }
 
-            const findOptionLabel = (checkbox) =>
-              checkbox
-                ?.closest('.ckb')
-                ?.querySelector('.ckb__label')
-                ?.textContent?.trim() ?? '';
+            if (selectedOptions.length === options.length) {
+              label.textContent = '전체대상';
+              return;
+            }
 
-            const updateLabel = () => {
-              const selectedOptions = options.filter((option) => option.checked);
+            const text = selectedOptions
+              .map((option) => findOptionLabel(option))
+              .filter(Boolean)
+              .join(', ');
 
-              if (!selectedOptions.length) {
-                label.textContent = '';
-                return;
-              }
-
-              if (selectedOptions.length === options.length) {
-                label.textContent = '전체대상';
-                return;
-              }
-
-              const text = selectedOptions
-                .map((option) => findOptionLabel(option))
-                .filter(Boolean)
-                .join(', ');
-
-              label.textContent = text;
-            };
-
-            options.forEach((option) => {
-              option.addEventListener('change', updateLabel);
-            });
-
-            updateLabel();
-            return { combo, toggle };
-          }
-
-          const options = Array.from(combo.querySelectorAll('.combo-options li a'));
-
-          if (options.length === 0) {
-            return { combo, toggle };
-          }
-
-          const applySelection = (option) => {
-            options.forEach((opt) => opt.classList.remove('selected'));
-            option.classList.add('selected');
-            label.textContent = option.textContent.trim();
-            toggle.checked = false;
+            label.textContent = text;
           };
 
-          const preselected = options.find((option) => option.classList.contains('selected'));
-          if (preselected) {
-            label.textContent = preselected.textContent.trim();
-          }
-
           options.forEach((option) => {
-            option.addEventListener('click', (event) => {
-              event.preventDefault();
-              applySelection(option);
-            });
+            option.addEventListener('change', updateLabel);
           });
 
+          updateLabel();
           return { combo, toggle };
-        })
-        .filter(Boolean);
+        }
 
-      if (!comboConfigs.length) {
-        return;
-      }
+        const options = Array.from(combo.querySelectorAll('.combo-options li a'));
 
-      document.addEventListener('click', (event) => {
-        comboConfigs.forEach(({ combo, toggle }) => {
-          if (!combo.contains(event.target)) {
-            toggle.checked = false;
-          }
+        if (options.length === 0) {
+          return { combo, toggle };
+        }
+
+        const applySelection = (option) => {
+          options.forEach((opt) => opt.classList.remove('selected'));
+          option.classList.add('selected');
+          label.textContent = option.textContent.trim();
+          toggle.checked = false;
+        };
+
+        const preselected = options.find((option) => option.classList.contains('selected'));
+        if (preselected) {
+          label.textContent = preselected.textContent.trim();
+        }
+
+        options.forEach((option) => {
+          option.addEventListener('click', (event) => {
+            event.preventDefault();
+            applySelection(option);
+          });
         });
+
+        return { combo, toggle };
+      })
+      .filter(Boolean);
+
+    if (!comboConfigs.length) {
+      return;
+    }
+
+    document.addEventListener('click', (event) => {
+      comboConfigs.forEach(({ combo, toggle }) => {
+        if (!combo.contains(event.target)) {
+          toggle.checked = false;
+        }
+      });
+    });
+  };
+
+  const LAYER_POPUP_MAX_HEIGHT = 739;
+
+  const initLayerPopupFooterShadow = () => {
+    const layerPopups = Array.from(document.querySelectorAll('.layer-popup'));
+    if (!layerPopups.length) {
+      return;
+    }
+
+    const applyShadowRule = () => {
+      layerPopups.forEach((popup) => {
+        const footer = popup.querySelector('.layer-popup__footer');
+        if (!footer) {
+          return;
+        }
+
+        const popupHeight = popup.getBoundingClientRect().height;
+        if (popupHeight <= LAYER_POPUP_MAX_HEIGHT) {
+          footer.classList.add('no-shadow');
+        } else {
+          footer.classList.remove('no-shadow');
+        }
       });
     };
 
-    const LAYER_POPUP_MAX_HEIGHT = 739;
+    applyShadowRule();
+    window.addEventListener('resize', applyShadowRule);
+  };
 
-    const initLayerPopupFooterShadow = () => {
-      const layerPopups = Array.from(document.querySelectorAll('.layer-popup'));
-      if (!layerPopups.length) {
-        return;
-      }
+  const TOAST_DEFAULT_DURATION = 3000;
+  const TOAST_ANIMATION_DURATION = 200;
 
-      const applyShadowRule = () => {
-        layerPopups.forEach((popup) => {
-          const footer = popup.querySelector('.layer-popup__footer');
-          if (!footer) {
-            return;
-          }
+  const ensureToastContainer = () => {
+    const existing = document.querySelector('.toast-popup-container');
+    if (existing) {
+      return existing;
+    }
 
-          const popupHeight = popup.getBoundingClientRect().height;
-          if (popupHeight <= LAYER_POPUP_MAX_HEIGHT) {
-            footer.classList.add('no-shadow');
-          } else {
-            footer.classList.remove('no-shadow');
-          }
-        });
-      };
+    const container = document.createElement('div');
+    container.className = 'toast-popup-container';
+    document.body.appendChild(container);
+    return container;
+  };
 
-      applyShadowRule();
-      window.addEventListener('resize', applyShadowRule);
+  const createToastElement = (message) => {
+    const toast = document.createElement('div');
+    toast.className = 'toast-popup';
+
+    const text = document.createElement('p');
+    text.className = 'toast-popup__message';
+    text.textContent = message;
+    toast.appendChild(text);
+
+    return toast;
+  };
+
+  const showToast = (message, options = {}) => {
+    if (!message) {
+      return null;
+    }
+
+    const duration = Number.isFinite(options.duration)
+      ? Math.max(0, options.duration)
+      : TOAST_DEFAULT_DURATION;
+
+    const container = ensureToastContainer();
+    const toast = createToastElement(message);
+    container.appendChild(toast);
+
+    requestAnimationFrame(() => {
+      toast.classList.add('is-visible');
+    });
+
+    const hide = () => {
+      toast.classList.remove('is-visible');
+      setTimeout(() => {
+        toast.remove();
+        if (!container.hasChildNodes()) {
+          container.remove();
+        }
+      }, TOAST_ANIMATION_DURATION);
     };
 
-    const TOAST_DEFAULT_DURATION = 3000;
-    const TOAST_ANIMATION_DURATION = 200;
+    const hideTimer = setTimeout(hide, duration);
 
-    const ensureToastContainer = () => {
-      const existing = document.querySelector('.toast-popup-container');
-      if (existing) {
-        return existing;
-      }
-
-      const container = document.createElement('div');
-      container.className = 'toast-popup-container';
-      document.body.appendChild(container);
-      return container;
+    return {
+      element: toast,
+      hide: () => {
+        clearTimeout(hideTimer);
+        hide();
+      },
     };
+  };
 
-    const createToastElement = (message) => {
-      const toast = document.createElement('div');
-      toast.className = 'toast-popup';
-
-      const text = document.createElement('p');
-      text.className = 'toast-popup__message';
-      text.textContent = message;
-      toast.appendChild(text);
-
-      return toast;
-    };
-
-    const showToast = (message, options = {}) => {
-      if (!message) {
-        return null;
-      }
-
-      const duration = Number.isFinite(options.duration)
-        ? Math.max(0, options.duration)
-        : TOAST_DEFAULT_DURATION;
-
-      const container = ensureToastContainer();
-      const toast = createToastElement(message);
-      container.appendChild(toast);
-
-      requestAnimationFrame(() => {
-        toast.classList.add('is-visible');
-      });
-
-      const hide = () => {
-        toast.classList.remove('is-visible');
-        setTimeout(() => {
-          toast.remove();
-          if (!container.hasChildNodes()) {
-            container.remove();
-          }
-        }, TOAST_ANIMATION_DURATION);
-      };
-
-      const hideTimer = setTimeout(hide, duration);
-
-      return {
-        element: toast,
-        hide: () => {
-          clearTimeout(hideTimer);
-          hide();
-        },
-      };
-    };
-
-    window.showToast = showToast;
+  window.showToast = showToast;
 
   // DOM 로드 시 실행
-    document.addEventListener('DOMContentLoaded', () => {
-      rangePickerInit("#rangePicker");
-      datePickerInit("#datePicker");
-      initSliderQuestionCard();
-      initStarRateSetting();
-      initStarRatingUI();
-      initStepScoreTab();
-      tooltipInit();
-      filelistPopTemplateInit();
-      initSectionActive();
-      initUsageToggleLabels();
-      initComboBoxes();
-      initLayerPopupFooterShadow();
-      passwordHide();
-    });
+  document.addEventListener('DOMContentLoaded', () => {
+    rangePickerInit("#rangePicker");
+    datePickerInit("#datePicker");
+    initSliderQuestionCard();
+    initStarRateSetting();
+    initStarRatingUI();
+    initStepScoreTab();
+    tooltipInit();
+    filelistPopTemplateInit();
+    initSectionActive();
+    initUsageToggleLabels();
+    initComboBoxes();
+    initLayerPopupFooterShadow();
+    passwordHide();
+  });
 
   exports.datePickerInit = datePickerInit;
   exports.fileUpload = fileUpload;

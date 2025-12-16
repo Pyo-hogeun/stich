@@ -125,7 +125,7 @@
 
 
       </div>
-      <div class="layer-popup__footer">
+      <div class="layer-popup__footer no-shadow">
         <div class="layer-popup__footer-left">
         </div>
         <div class="layer-popup__footer-center">
@@ -141,55 +141,7 @@
   </div>
 
   <script src="../../assets/dist/js/bundle.js"></script>
-  <script>
-    // 아코디언
-    document.addEventListener('DOMContentLoaded', () => {
-      const accordion = document.querySelector('.cs-faq__accordion');
 
-      if (!accordion) return;
-
-      const items = accordion.querySelectorAll('.item');
-
-      const closeItem = (item) => {
-        const toggle = item.querySelector('.item__toggle');
-        const content = item.querySelector('.item__content');
-        if (toggle) toggle.setAttribute('aria-expanded', 'false');
-        if (content) content.hidden = true;
-        item.classList.remove('open');
-      };
-
-      const openItem = (item) => {
-        const toggle = item.querySelector('.item__toggle');
-        const content = item.querySelector('.item__content');
-        if (toggle) toggle.setAttribute('aria-expanded', 'true');
-        if (content) content.hidden = false;
-        item.classList.add('open');
-      };
-
-      items.forEach((item) => {
-        const toggle = item.querySelector('.item__toggle');
-        const content = item.querySelector('.item__content');
-
-        if (!toggle || !content) return;
-
-        if (item.classList.contains('open')) {
-          openItem(item);
-        } else {
-          closeItem(item);
-        }
-
-        toggle.addEventListener('click', () => {
-          const isOpen = item.classList.contains('open');
-
-          if (isOpen) {
-            closeItem(item);
-          } else {
-            openItem(item);
-          }
-        });
-      });
-    });
-  </script>
 </body>
 
 </html>
