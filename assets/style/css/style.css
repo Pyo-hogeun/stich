@@ -1804,6 +1804,7 @@ input[type=number] {
 }
 .eva-detail .content-title h3 {
   margin-top: 16px;
+  margin-bottom: 16px;
   font-size: 32px;
   font-weight: 700;
 }
@@ -1858,6 +1859,9 @@ input[type=number] {
   align-items: center;
   margin-top: 8px;
   gap: 8px;
+}
+.eva-detail .content-body .summary .status .progress-bar-wrap .progress-bar {
+  background-color: #FFFFFF;
 }
 .eva-detail .content-body .content-detail-article {
   font-size: 14px;
@@ -4393,7 +4397,9 @@ button.btn-add:hover {
 .file-item:hover, .link-item:hover {
   border-color: #7A53EC;
 }
-.file-item:hover .file-item__name, .link-item:hover .file-item__name {
+.file-item:hover .file-item__icon,
+.file-item:hover .file-item__name, .link-item:hover .file-item__icon,
+.link-item:hover .file-item__name {
   color: #7A53EC;
 }
 .file-item__content, .link-item__content {
@@ -4420,10 +4426,12 @@ button.btn-add:hover {
   border-radius: 4px;
   padding: 4px;
   flex-shrink: 0;
+  color: #919191;
 }
 .file-item__icon img, .link-item__icon img {
   width: 16px;
   height: 16px;
+  color: #919191;
 }
 .file-item__name, .link-item__name {
   display: inline-block;

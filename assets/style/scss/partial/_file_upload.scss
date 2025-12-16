@@ -53,6 +53,7 @@
   cursor: pointer;
   &:hover{
     border-color: $primaryColor;
+    .file-item__icon,
     .file-item__name{
       color: $primaryColor;
     }
@@ -83,10 +84,11 @@
     border-radius: 4px;
     padding: 4px;
     flex-shrink: 0;
-
+    color: #919191;
     img {
       width: 16px;
       height: 16px;
+      color: #919191;
     }
   }
 

@@ -51,6 +51,7 @@
   .content-title {
     h3 {
       margin-top: 16px;
+      margin-bottom: 16px;
       font-size: 32px;
       font-weight: 700;
     }
@@ -119,6 +120,9 @@
           align-items: center;
           margin-top: 8px;
           gap: 8px;
+          .progress-bar{
+            background-color: #FFFFFF;
+          }
         }
       }
     }
