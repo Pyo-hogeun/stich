@@ -14442,7 +14442,7 @@ var AppBundle = (function (exports) {
       });
     };
 
-    const LAYER_POPUP_MAX_HEIGHT = 740;
+    const LAYER_POPUP_MAX_HEIGHT = 739;
 
     const initLayerPopupFooterShadow = () => {
       const layerPopups = Array.from(document.querySelectorAll('.layer-popup'));
