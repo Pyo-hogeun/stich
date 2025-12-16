@@ -1166,7 +1166,31 @@ export const initStepScoreTab = () => {
 
   })
 }
+export const passwordHide = () => {
+  const passwordInputs = document.querySelectorAll('.input-pw');
 
+  passwordInputs.forEach((wrapper) => {
+    const input = wrapper.querySelector('input');
+    const toggle = wrapper.querySelector('.hide-pw-toggle');
+
+    if (!input || !toggle) {
+      return;
+    }
+
+    const setHiddenState = (shouldHide) => {
+      toggle.classList.toggle('hide', shouldHide);
+      input.type = shouldHide ? 'password' : 'text';
+    };
+
+    setHiddenState(toggle.classList.contains('hide'));
+
+    toggle.addEventListener('click', () => {
+      const isHidden = toggle.classList.contains('hide');
+
+      setHiddenState(!isHidden);
+    });
+  });
+}
 
 export const tooltipInit = () => {
   const tooltipTriggers = document.querySelectorAll('.info-tooltip');
@@ -1496,5 +1520,6 @@ export const filelistPopTemplateInit = () => {
     initUsageToggleLabels();
     initComboBoxes();
     initLayerPopupFooterShadow();
+    passwordHide();
   });
 

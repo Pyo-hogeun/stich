@@ -14221,7 +14221,31 @@ var AppBundle = (function (exports) {
 
     });
   };
+  const passwordHide = () => {
+    const passwordInputs = document.querySelectorAll('.input-pw');
 
+    passwordInputs.forEach((wrapper) => {
+      const input = wrapper.querySelector('input');
+      const toggle = wrapper.querySelector('.hide-pw-toggle');
+
+      if (!input || !toggle) {
+        return;
+      }
+
+      const setHiddenState = (shouldHide) => {
+        toggle.classList.toggle('hide', shouldHide);
+        input.type = shouldHide ? 'password' : 'text';
+      };
+
+      setHiddenState(toggle.classList.contains('hide'));
+
+      toggle.addEventListener('click', () => {
+        const isHidden = toggle.classList.contains('hide');
+
+        setHiddenState(!isHidden);
+      });
+    });
+  };
 
   const tooltipInit = () => {
     const tooltipTriggers = document.querySelectorAll('.info-tooltip');
@@ -14551,6 +14575,7 @@ var AppBundle = (function (exports) {
       initUsageToggleLabels();
       initComboBoxes();
       initLayerPopupFooterShadow();
+      passwordHide();
     });
 
   exports.datePickerInit = datePickerInit;
@@ -14565,6 +14590,7 @@ var AppBundle = (function (exports) {
   exports.initStarRatingUI = initStarRatingUI;
   exports.initStepScoreTab = initStepScoreTab;
   exports.initUsageToggleLabels = initUsageToggleLabels;
+  exports.passwordHide = passwordHide;
   exports.rangePickerInit = rangePickerInit;
   exports.tooltipInit = tooltipInit;
 

@@ -1411,15 +1411,20 @@ input[type=number] {
 }
 .input-pw input + button.hide-pw-toggle {
   display: flex;
+  width: 16px;
+  height: 16px;
   border: 0;
   padding: 0;
   background-color: transparent;
   position: absolute;
   top: calc(50% - 8px);
   right: 16px;
+  background-image: url("../../images/icon_pw_show.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .input-pw input + button.hide-pw-toggle.hide {
-  color: #7A53EC;
+  background-image: url("../../images/icon_pw_hide.svg");
 }
 
 :root {
