@@ -1,9 +1,4 @@
 import Sortable from 'sortablejs';
-import flatpickr from "flatpickr";
-import "flatpickr/dist/flatpickr.min.css";
-import "flatpickr/dist/themes/stich.css";
-import { Korean } from "flatpickr/dist/l10n/ko.js";
-
 import Swiper from "swiper";
 import { Autoplay, Navigation, Pagination, EffectFade } from 'swiper/modules';
 import "swiper/swiper.css";
@@ -599,68 +594,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-export const rangePickerInit = (targetId) => {
-
-  // 문서 로드 후 flatpickr 초기화
-  const prevArrow = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M15 5L9.66939 11.2191C9.2842 11.6684 9.2842 12.3316 9.66939 12.7809L15 19" stroke="#3A3A3A" stroke-width="1.5" stroke-linecap="round"/>
-  </svg>`;
-  const nextArrow = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M9 5L13.6612 10.4381C14.4316 11.3369 14.4316 12.6631 13.6612 13.5619L9 19" stroke="#3A3A3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>`;
-
-  const rangeInput = document.querySelector(targetId);
-  if (!rangeInput) {
-    // console.warn("⚠️ datepicker input not found");
-    return
-  }
-  // const startTimeInput = document.querySelector("#startTime");
-  // const endTimeInput = document.querySelector("#endTime");
-  // const result = document.querySelector("#selectedRange");
-
-  // flatpickr 인스턴스 생성
-  const picker = flatpickr(rangeInput, {
-    mode: "range",           // ✅ 기간 선택 모드
-    locale: Korean,          // ✅ 한국어
-    dateFormat: "Y.m.d",     // ✅ 날짜 + 시간 표시
-    enableTime: true,        // ✅ 시간 선택 활성화
-    time_24hr: true,     // ✅ 12시간제 (PM/AM)
-    minuteIncrement: 5,
-    showMonths: 2,           // ✅ 2개월 표시
-    defaultHour: 12,
-    defaultMinute: 0,
-    nextArrow: nextArrow,
-    prevArrow: prevArrow,
-    static: true,            // ✅ position 문제 방지
-    onChange: (selectedDates, dateStr) => {
-      console.log(`📅 Selected range: ${dateStr}`);
-      updateResult(selectedDates);
-    },
-  });
-  // 시간 변경 시 결과 업데이트
-  // [startTimeInput, endTimeInput].forEach((input) => {
-  //   input.addEventListener("input", () => updateResult(picker.selectedDates));
-  // });
-  // // 결과 영역 업데이트 함수
-  // function updateResult(dates) {
-  //   if (dates.length === 2) {
-  //     const [start, end] = dates;
-
-  //     const startDateStr = `${formatDate(start)} ${startTimeInput.value}`;
-  //     const endDateStr = `${formatDate(end)} ${endTimeInput.value}`;
-  //     result.textContent = `${startDateStr} ~ ${endDateStr}`;
-  //   }
-  // }
-  // function formatDate(date) {
-  //   const y = date.getFullYear();
-  //   const m = String(date.getMonth() + 1).padStart(2, "0");
-  //   const d = String(date.getDate()).padStart(2, "0");
-  //   return `${y}.${m}.${d}`;
-  // }
-
-  console.log(`✅ Initialized rangeInput flatpickr instances`);
-  console.log(rangeInput);
-}
 
 
 export const datePickerInit = (targetId) => {
