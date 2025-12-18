@@ -239,8 +239,8 @@
             </div>
             <div class="input-text-wrapper__wide">
               <div class="question-option-item">
-                <input data-type="datepicker" id="rangePicker" class="input-text-calendar"
-                  placeholder="YYYY-MM-DD ~ YYYY-MM-DD">
+                <input data-type="datepicker" class="input-text-calendar range-picker"
+                  placeholder="YYYY.MM.DD HH:mm ~ YYYY.MM.DD HH:mm">
               </div>
             </div>
             <div class="eva-create__label" style="margin-top: 24px;">
@@ -275,8 +275,8 @@
 
           <div class="input-text-wrapper__wide">
             <div class="question-option-item">
-              <input data-type="datepicker" id="rangePicker" class="input-text-calendar"
-                placeholder="YYYY-MM-DD ~ YYYY-MM-DD">
+              <input data-type="datepicker" class="input-text-calendar range-picker"
+                placeholder="YYYY.MM.DD HH:mm ~ YYYY.MM.DD HH:mm">
             </div>
           </div>
           <hr class="divider_hr">
@@ -362,13 +362,39 @@
 
   <script src="../../assets/dist/js/bundle.js"></script>
   <script>
-    $('input#rangePicker').daterangepicker({
+    const rangePickerOptions = {
       timePicker: true,
+      timePicker24Hour: true,
       startDate: moment().startOf('hour'),
       endDate: moment().startOf('hour').add(32, 'hour'),
       locale: {
-        format: 'YYYY-MM-DD hh:mm A'
+        format: 'YYYY.MM.DD HH:mm',
+        separator: ' ~ ',
+        applyLabel: '적용',
+        cancelLabel: '취소',
+        daysOfWeek: ['일', '월', '화', '수', '목', '금', '토'],
+        monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+        firstDay: 0,
       }
+    };
+
+    const applyStyledSelects = (container) => {
+      container.find('select').each(function () {
+        const $select = $(this);
+        if (!$select.hasClass('styled-select')) {
+          $select.addClass('styled-select');
+        }
+      });
+    };
+
+    $('input.range-picker').each(function () {
+      $(this).daterangepicker(rangePickerOptions);
+      const pickerInstance = $(this).data('daterangepicker');
+      applyStyledSelects(pickerInstance.container);
+
+      $(this).on('show.daterangepicker', function (ev, picker) {
+        applyStyledSelects(picker.container);
+      });
     });
   </script>
 </body>

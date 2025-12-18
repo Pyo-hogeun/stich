@@ -1,0 +1,100 @@
+.daterangepicker {
+  border: 1px solid #E9E9E9;
+  border-radius: 16px;
+  color: #5E5E5E;
+  overflow: hidden;
+
+  .drp-selected {
+    color: #5E5E5E;
+  }
+
+  .drp-calendar {
+    padding: 16px;
+  }
+
+  .calendar-table {
+    border: 1px solid #E9E9E9;
+    border-radius: 12px;
+    padding: 8px;
+
+    th,
+    td {
+      border-radius: 8px;
+    }
+
+    td.available:hover {
+      background-color: #F1EEFB;
+      color: #5E5E5E;
+    }
+
+    td.in-range {
+      background-color: #F1EEFB;
+      color: #5E5E5E;
+    }
+
+    td.active,
+    td.active:hover,
+    td.start-date,
+    td.end-date {
+      background-color: #7A53EC;
+      color: #ffffff;
+    }
+  }
+
+  .daterangepicker_input .input-mini {
+    border-radius: 10px;
+    border: 1px solid #E9E9E9;
+    color: #5E5E5E;
+
+    &:focus {
+      border-color: #7A53EC;
+      box-shadow: 0 0 0 3px #F1EEFB;
+    }
+  }
+
+  .calendar-time {
+    margin-top: 12px;
+
+    select {
+      width: 100%;
+    }
+  }
+
+  .drp-buttons {
+    border-top: 1px solid #E9E9E9;
+    padding: 12px 16px;
+
+    .btn {
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .cancelBtn {
+      background-color: #E9E9E9;
+      color: #5E5E5E;
+      border: none;
+    }
+
+    .applyBtn {
+      background-color: #7A53EC;
+      border-color: #7A53EC;
+      color: #ffffff;
+    }
+  }
+
+  .ranges {
+    li {
+      border-radius: 10px;
+      color: #5E5E5E;
+
+      &:hover {
+        background-color: #F1EEFB;
+      }
+
+      &.active {
+        background-color: #7A53EC;
+        color: #ffffff;
+      }
+    }
+  }
+}
