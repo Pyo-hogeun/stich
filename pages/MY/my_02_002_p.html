@@ -5,14 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>STICH</title>
-  <link rel="stylesheet" href="../../assets/style/css/style.css">
-  <link rel="stylesheet" href="../../assets/dist/js/bundle.css">
-
+  
   <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-
+  <link rel="stylesheet" href="../../assets/style/css/style.css">
+  <link rel="stylesheet" href="../../assets/dist/js/bundle.css">
+  
 </head>
 
 <body>
@@ -364,11 +364,12 @@
   <script>
     const rangePickerOptions = {
       timePicker: true,
-      timePicker24Hour: true,
+      // timePicker24Hour: true,
       startDate: moment().startOf('hour'),
       endDate: moment().startOf('hour').add(32, 'hour'),
+      drops : "auto",
       locale: {
-        format: 'YYYY.MM.DD HH:mm',
+        format: 'YYYY.MM.DD HH:mm A',
         separator: ' ~ ',
         applyLabel: '적용',
         cancelLabel: '취소',

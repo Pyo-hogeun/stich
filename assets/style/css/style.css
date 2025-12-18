@@ -1462,6 +1462,127 @@ input[type=number] {
   box-shadow: 0 0 0 3px var(--border-color-focus);
 }
 
+.daterangepicker {
+  border: 1px solid #E9E9E9;
+  border-radius: 16px;
+  color: #5E5E5E;
+  overflow: hidden;
+}
+.daterangepicker .drp-selected {
+  color: #5E5E5E;
+}
+.daterangepicker .drp-calendar {
+  padding: 16px;
+}
+.daterangepicker .calendar-table {
+  border-radius: 12px;
+  padding: 8px;
+}
+.daterangepicker .calendar-table table.table-condensed {
+  table-layout: fixed;
+}
+.daterangepicker .calendar-table th,
+.daterangepicker .calendar-table td {
+  font-size: 14px;
+  height: 32px;
+}
+.daterangepicker .calendar-table td {
+  width: 32px;
+}
+.daterangepicker .calendar-table th {
+  font-weight: 400;
+}
+.daterangepicker .calendar-table td.available:hover {
+  background-color: #F1EEFB;
+  color: #5E5E5E;
+}
+.daterangepicker .calendar-table td.in-range {
+  background-color: #F1EEFB;
+  color: #5E5E5E;
+}
+.daterangepicker .calendar-table td.active,
+.daterangepicker .calendar-table td.active:hover,
+.daterangepicker .calendar-table td.start-date,
+.daterangepicker .calendar-table td.end-date {
+  background-color: #7A53EC;
+  color: #ffffff;
+}
+.daterangepicker .calendar-table td.start-date {
+  border-radius: 20px 0 0 20px;
+}
+.daterangepicker .calendar-table td.end-date {
+  border-radius: 0 20px 20px 0;
+}
+.daterangepicker .calendar-table th.month {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0A0A0A;
+}
+.daterangepicker .daterangepicker_input .input-mini {
+  border-radius: 10px;
+  border: 1px solid #E9E9E9;
+  color: #5E5E5E;
+}
+.daterangepicker .daterangepicker_input .input-mini:focus {
+  border-color: #7A53EC;
+  box-shadow: 0 0 0 3px #F1EEFB;
+}
+.daterangepicker .calendar-time {
+  display: flex;
+  margin-top: 12px;
+  gap: 12px;
+}
+.daterangepicker .calendar-time .styled-select {
+  min-width: 0;
+  flex: 1 1 auto;
+  background-color: #F9F9F9;
+  font-size: 14px;
+}
+.daterangepicker .calendar-time .hourselect,
+.daterangepicker .calendar-time .minuteselect,
+.daterangepicker .calendar-time .secondselect,
+.daterangepicker .calendar-time .ampmselect {
+  width: auto;
+  height: 40px;
+  background-color: #F9F9F9;
+  flex: 1 1 auto;
+  border: 0;
+  padding: 0 16px;
+  color: #747474;
+  font-size: 14px;
+  border-radius: 8px;
+}
+.daterangepicker .drp-buttons {
+  border-top: 1px solid #E9E9E9;
+}
+.daterangepicker .drp-buttons .btn {
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 12px 16px;
+  height: 40px;
+  border: 0;
+}
+.daterangepicker .drp-buttons .cancelBtn {
+  background-color: #FFFFFF;
+  color: #000;
+  border: 1px solid #3A3A3A;
+}
+.daterangepicker .drp-buttons .applyBtn {
+  background-color: #4D24C3;
+  color: #ffffff;
+}
+.daterangepicker .ranges li {
+  border-radius: 10px;
+  color: #5E5E5E;
+}
+.daterangepicker .ranges li:hover {
+  background-color: #F1EEFB;
+}
+.daterangepicker .ranges li.active {
+  background-color: #7A53EC;
+  color: #ffffff;
+}
+
 /* 탭 그룹 래퍼 */
 .view-toggle {
   display: inline-flex;
