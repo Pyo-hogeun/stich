@@ -7,18 +7,33 @@
   overflow: hidden;
 
   .drp-selected {
-    color: #5E5E5E;
+    color: #0A0A0A;
+    font-size: 14px;
+    padding-right: 8px;
+    padding-top: 12px;
+    padding-left: 10px;
   }
 
   .drp-calendar {
     padding: 16px;
+    &.left{
+      .calendar-time{
+        padding-right: 10px;
+      }
+    }
+    &.right{
+      .calendar-time{
+        padding-left: 10px;
+      }
+    }
   }
 
   .calendar-table {
     // border: 1px solid #E9E9E9;
     border-radius: 12px;
     padding: 8px;
-    table.table-condensed{
+
+    table.table-condensed {
       table-layout: fixed;
     }
 
@@ -28,7 +43,8 @@
       font-size: 14px;
       height: 32px;
     }
-    td{
+
+    td {
       width: 32px;
     }
 
@@ -45,6 +61,9 @@
       background-color: #F1EEFB;
       color: #5E5E5E;
     }
+    td.ends{
+      color: #BDBDBD;
+    }
 
     td.active,
     td.active:hover,
@@ -54,11 +73,13 @@
       color: #ffffff;
     }
 
-    td.start-date {
+    td.start-date,
+    td:nth-of-type(1) {
       border-radius: 20px 0 0 20px;
     }
 
-    td.end-date {
+    td.end-date,
+    td:nth-last-of-type(1) {
       border-radius: 0 20px 20px 0;
     }
 
@@ -66,6 +87,34 @@
       font-size: 14px;
       font-weight: 600;
       color: $Title_Dark;
+    }
+
+    td:not(.ends).disabled,
+    option.disabled {
+      cursor: default;
+      background-color: #E0E0E0;
+      border-radius: 0;
+    }
+
+    /* start */
+    td.disabled:first-child,
+    td:not(.disabled)+td.disabled {
+      border-top-left-radius: 999px;
+      border-bottom-left-radius: 999px;
+    }
+
+    /* end */
+    .disabled:last-child,
+    td.disabled:last-child,
+    td.disabled:has(+ td:not(.disabled)) {
+      border-top-right-radius: 999px;
+      border-bottom-right-radius: 999px;
+    }
+
+    .prev, .next{
+      span{
+        border-width: 0 1px 1px 0;
+      }
     }
   }
 
@@ -91,7 +140,7 @@
       background-color: #F9F9F9;
       font-size: 14px;
     }
-    
+
     .hourselect,
     .minuteselect,
     .secondselect,
@@ -105,6 +154,11 @@
       color: $normalText;
       font-size: 14px;
       border-radius: 8px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url('../../images/icon_select_arrow.svg');
+      background-repeat: no-repeat;
+      background-position: right 10px center;
     }
   }
 

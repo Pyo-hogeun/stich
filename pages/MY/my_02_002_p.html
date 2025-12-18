@@ -5,14 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>STICH</title>
-  
+
   <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
   <link rel="stylesheet" href="../../assets/style/css/style.css">
   <link rel="stylesheet" href="../../assets/dist/js/bundle.css">
-  
+
 </head>
 
 <body>
@@ -367,7 +367,7 @@
       // timePicker24Hour: true,
       startDate: moment().startOf('hour'),
       endDate: moment().startOf('hour').add(32, 'hour'),
-      drops : "auto",
+      drops: "auto",
       locale: {
         format: 'YYYY.MM.DD HH:mm A',
         separator: ' ~ ',
@@ -376,6 +376,14 @@
         daysOfWeek: ['일', '월', '화', '수', '목', '금', '토'],
         monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
         firstDay: 0,
+      },
+      isInvalidDate: function (date) {
+        return date.isBetween(
+          moment('2025-12-10', 'YYYY-MM-DD'),
+          moment('2026-01-20', 'YYYY-MM-DD'),
+          'day',
+          '[]' // inclusive
+        );
       }
     };
 
