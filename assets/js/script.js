@@ -622,9 +622,9 @@ export const rangePickerInit = (targetId) => {
   const picker = flatpickr(rangeInput, {
     mode: "range",           // ✅ 기간 선택 모드
     locale: Korean,          // ✅ 한국어
-    dateFormat: "Y.m.d", // ✅ 날짜 + 시간 표시
-    enableTime: false,        // ✅ 시간 선택 활성화
-    time_24hr: false,        // ✅ 12시간제 (PM/AM)
+    dateFormat: "Y.m.d",     // ✅ 날짜 + 시간 표시
+    enableTime: true,        // ✅ 시간 선택 활성화
+    time_24hr: true,     // ✅ 12시간제 (PM/AM)
     minuteIncrement: 5,
     showMonths: 2,           // ✅ 2개월 표시
     defaultHour: 12,
@@ -1508,7 +1508,7 @@ window.showToast = showToast;
 
 // DOM 로드 시 실행
 document.addEventListener('DOMContentLoaded', () => {
-  rangePickerInit("#rangePicker");
+  // rangePickerInit("#rangePicker");
   datePickerInit("#datePicker");
   initSliderQuestionCard();
   initStarRateSetting();

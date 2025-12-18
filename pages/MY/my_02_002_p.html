@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="../../assets/style/css/style.css">
   <link rel="stylesheet" href="../../assets/dist/js/bundle.css">
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
 </head>
 
 <body>
@@ -155,7 +160,8 @@
               평가 설명
             </div>
             <div class="input-text-wrap__wide">
-              <textarea class="input-textarea" name="" id="" cols="30" rows="10" placeholder="평가 상세 설명을 입력하세요"></textarea>
+              <textarea class="input-textarea" name="" id="" cols="30" rows="10"
+                placeholder="평가 상세 설명을 입력하세요"></textarea>
               <div class="text-length align-r">0/1,000자</div>
             </div>
           </div>
@@ -355,6 +361,16 @@
   </div>
 
   <script src="../../assets/dist/js/bundle.js"></script>
+  <script>
+    $('input#rangePicker').daterangepicker({
+      timePicker: true,
+      startDate: moment().startOf('hour'),
+      endDate: moment().startOf('hour').add(32, 'hour'),
+      locale: {
+        format: 'YYYY-MM-DD hh:mm A'
+      }
+    });
+  </script>
 </body>
 
 </html>
