@@ -26,6 +26,11 @@
         padding-left: 10px;
       }
     }
+    &.single{
+      .start-date, .end-date, td.available:hover{
+        border-radius: 999px;
+      }
+    }
   }
 
   .calendar-table {
@@ -34,7 +39,7 @@
     padding: 8px;
 
     table.table-condensed {
-      table-layout: fixed;
+      // table-layout: fixed;
     }
 
     th,

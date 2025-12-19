@@ -1484,12 +1484,12 @@ input[type=number] {
 .daterangepicker .drp-calendar.right .calendar-time {
   padding-left: 10px;
 }
+.daterangepicker .drp-calendar.single .start-date, .daterangepicker .drp-calendar.single .end-date, .daterangepicker .drp-calendar.single td.available:hover {
+  border-radius: 999px;
+}
 .daterangepicker .calendar-table {
   border-radius: 12px;
   padding: 8px;
-}
-.daterangepicker .calendar-table table.table-condensed {
-  table-layout: fixed;
 }
 .daterangepicker .calendar-table th,
 .daterangepicker .calendar-table td {
