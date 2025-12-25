@@ -1620,6 +1620,14 @@ input[type=number] {
   background-color: #4D24C3;
   color: #ffffff;
 }
+.daterangepicker.show-calendar .drp-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.daterangepicker.show-calendar .drp-buttons .drp-selected {
+  flex: 1 1 auto;
+  text-align: left;
+}
 .daterangepicker .ranges li {
   border-radius: 10px;
   color: #5E5E5E;
@@ -7388,6 +7396,9 @@ button.btn-add:hover {
   align-items: center;
   gap: 12px;
 }
+.mypage-main__filters .btn.submit {
+  height: 40px;
+}
 
 .profile-edit .profile__wrapper {
   display: flex;
@@ -12307,4 +12318,4 @@ section.main-banner__07 .faq-item.faq-item-active .faq-toggle-btn svg {
 }
 .social-icon:hover .social-icon-bg {
   background-color: rgb(206.0340909091, 206.0340909091, 234.4659090909);
-}
+}/*# sourceMappingURL=style.css.map */

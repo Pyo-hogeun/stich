@@ -366,7 +366,7 @@ async function cleanIndex() {
 // -------------------------------------
 function compileScss() {
   return gulp
-    .src('assets/style/scss/**/*.scss')
+    .src('assets/style/scss/**/*.scss', { sourcemaps: true})
     .pipe(
       sass({
         outputStyle: 'expanded',
