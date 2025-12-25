@@ -89,11 +89,14 @@ input[type=number] {
   border: 1px solid $primaryColor;
 }
 .input-text-calendar{
-  width: 400px;
+  width: auto;
   padding: 0 16px 0 52px;
   background-image: url('../../images/icon_calendar.svg');
   background-repeat: no-repeat;
   background-position: left 16px center;
+  &.range-picker{
+    width: 352px;
+  }
 }
 
 /* 검색 버튼 (우측 아이콘) */

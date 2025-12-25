@@ -374,7 +374,7 @@ function compileScss() {
       }).on('error', sass.logError)
     )
     .pipe(postcss([autoprefixer({ overrideBrowserslist: ['> 1%', 'last 2 versions', 'not dead'] })]))
-    .pipe(gulp.dest(paths.cssDest))
+    .pipe(gulp.dest(paths.cssDest, { sourcemaps: '.' }))
     .pipe(browserSync.stream());
 }
 

@@ -18,6 +18,7 @@
     height: 22px;
     padding: 4px;
     background-color: #F5F5F5;
+    border-radius: 4px;
 
     &.eva-open {
       color: #484848;
@@ -343,7 +344,10 @@
       .total {
         color: $normalText;
         font-size: 14px;
-        font-weight: 700;
+        font-weight: 400;
+        span.fc-primary{
+          font-weight: 700;
+        }
       }
 
       .selected-status-bar {
@@ -374,7 +378,7 @@
       .toolbar {
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
+        align-items: center;
         margin-top: 16px;
 
         .flex-start {
