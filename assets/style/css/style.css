@@ -2211,7 +2211,7 @@ input[type=number] {
   top: -2px;
   width: 24px;
   height: 24px;
-  background-image: url("../../images/icon_edit-16.svg");
+  background-image: url("../../images/icon_edit-24.svg");
   background-repeat: no-repeat;
   background-size: auto;
 }
@@ -8291,10 +8291,9 @@ button.btn-add:hover {
   height: 160px;
   border-radius: 50%;
   overflow: hidden;
-  background-image: url("../../images/icon_profile_dummy.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
+  border-radius: 160px;
+  border: 1px solid var(--Line_Light_Gray01, #EAEAEA);
+  background: var(--BG_Light_Gray, #F9F9F9) url("../../images/icon_profile_dummy.svg") no-repeat center;
 }
 .eva-member-add__list .profile-add__img img {
   width: 100%;
