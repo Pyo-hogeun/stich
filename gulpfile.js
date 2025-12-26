@@ -143,6 +143,14 @@ function generateImageGallery(done) {
 
     const basePath = computeBasePath();
 
+    const normalizePath = (value) => {
+      let normalized = value.replaceAll('\\\\', '/');
+      while (normalized.includes('//')) {
+        normalized = normalized.replaceAll('//', '/');
+      }
+      return normalized;
+    };
+
     cards.forEach((card) => {
       const img = card.querySelector('img');
       const dimensionEl = card.querySelector('.meta-value.dimensions');
@@ -150,7 +158,7 @@ function generateImageGallery(done) {
 
       const assetPath = img.getAttribute('data-asset-path');
       if (assetPath) {
-        const normalized = (basePath + '/' + assetPath).replace(/[/\\]+/g, '/');
+        const normalized = normalizePath(basePath + '/' + assetPath);
         img.src = normalized;
       }
 
