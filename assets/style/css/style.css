@@ -1351,7 +1351,7 @@ input[type=number] {
   background-position: left 16px center;
 }
 .input-text-calendar.range-picker {
-  width: 352px;
+  width: 353px;
 }
 
 /* 검색 버튼 (우측 아이콘) */
@@ -7398,6 +7398,8 @@ button.btn-add:hover {
 }
 .mypage-main__filters .btn.submit {
   height: 40px;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .profile-edit .profile__wrapper {
