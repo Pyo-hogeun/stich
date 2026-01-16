@@ -295,7 +295,7 @@
   flex-shrink: 0;
 }
 
-.gnb-logout {
+.gnb-logout, .gnb-login, .gnb-regist {
   display: flex;
   align-items: center;
   gap: 6px;

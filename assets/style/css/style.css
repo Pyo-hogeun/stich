@@ -309,7 +309,7 @@ svg {
   flex-shrink: 0;
 }
 
-.gnb-logout {
+.gnb-logout, .gnb-login, .gnb-regist {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -323,10 +323,10 @@ svg {
   color: var(--color-body-normal);
   transition: opacity 0.2s ease;
 }
-.gnb-logout:hover {
+.gnb-logout:hover, .gnb-login:hover, .gnb-regist:hover {
   opacity: 0.7;
 }
-.gnb-logout span {
+.gnb-logout span, .gnb-login span, .gnb-regist span {
   white-space: nowrap;
 }
 
