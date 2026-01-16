@@ -255,6 +255,11 @@
     font-weight: 700;
     line-height: normal;
   }
+  &:hover{
+    .gnb-profile-name{
+      color: #7A53EC;
+    }
+  }
 
   .gnb-profile-greeting {
     font-weight: 400;

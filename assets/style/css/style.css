@@ -276,6 +276,9 @@ svg {
   font-weight: 700;
   line-height: normal;
 }
+.gnb-profile:hover .gnb-profile-name {
+  color: #7A53EC;
+}
 .gnb-profile .gnb-profile-greeting {
   font-weight: 400;
   color: var(--color-text-gray);
