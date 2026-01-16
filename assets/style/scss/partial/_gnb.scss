@@ -224,7 +224,9 @@
 
 .gnb-user {
   display: flex;
+  flex-basis: 300px;
   align-items: center;
+  justify-content: flex-end;
   gap: 20px;
   flex-shrink: 0;
 }
