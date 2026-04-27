@@ -11,6 +11,12 @@
     gap: 16px;
     margin-bottom: 24px;
     cursor: pointer;
+    .img-wrap{
+      width: 117px;
+      img{
+        width: 100%;
+      }
+    }
   }
   &__content{
     .name{
@@ -27,6 +33,22 @@
   &.multie-select{
     display: flex;
     flex-direction: column;
+    .select-type-list__item{
+      align-items: flex-start;
+      gap: 25px;
+      // .img-wrap{
+      //   // width: 200px;
+      //   img{
+      //     width: 100%;
+      //   }
+      // }
+    }
+    .select-type-list__content{
+      padding-top: 10px;
+      .name{
+        margin-bottom: 5px;
+      }
+    }
 
     .ckb{
       position: relative;
@@ -40,7 +62,7 @@
         top: 20px;
         width: 24px;
         height: 24px;
-        margin-top: 6px;
+        // margin-top: 6px;
       }
 
       .select-type-list__item{

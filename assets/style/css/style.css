@@ -8217,6 +8217,12 @@ button.btn-add:hover {
   margin-bottom: 24px;
   cursor: pointer;
 }
+.select-type-list__item .img-wrap {
+  width: 117px;
+}
+.select-type-list__item .img-wrap img {
+  width: 100%;
+}
 .select-type-list__content .name {
   font-size: 20px;
   font-weight: 700;
@@ -8231,6 +8237,16 @@ button.btn-add:hover {
   display: flex;
   flex-direction: column;
 }
+.select-type-list.multie-select .select-type-list__item {
+  align-items: flex-start;
+  gap: 25px;
+}
+.select-type-list.multie-select .select-type-list__content {
+  padding-top: 10px;
+}
+.select-type-list.multie-select .select-type-list__content .name {
+  margin-bottom: 5px;
+}
 .select-type-list.multie-select .ckb {
   position: relative;
   width: 100%;
@@ -8243,7 +8259,6 @@ button.btn-add:hover {
   top: 20px;
   width: 24px;
   height: 24px;
-  margin-top: 6px;
 }
 .select-type-list.multie-select .ckb .select-type-list__item {
   width: 100%;
